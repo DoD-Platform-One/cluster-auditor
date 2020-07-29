@@ -1,0 +1,61 @@
+---
+# Source: splunk-connect-for-kubernetes/charts/splunk-kubernetes-objects/templates/configMap.yaml
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: cluster-audit-logging
+  labels:
+    app.kubernetes.io/component: collection
+data:
+  fluent.conf: |
+    <system>
+      log_level info
+    </system>
+    <source>
+      @type kubernetes_objects
+      tag kube.objects.*
+      api_version "v1"
+      insecure_ssl false
+      <watch>
+        resource_name pods
+      </watch>
+    </source>
+
+    <filter kube.**>
+      @type jq_transformer
+      # in ruby '\\' will escape and become just '\', since we need two '\' in the `gsub` jq filter, it becomes '\\\\'.
+      jq '.record.source = "namespace:\(env.MY_NAMESPACE)/pod:\(env.MY_POD_NAME)" | .record.sourcetype = (.tag | gsub("\\\\."; ":")) | .record'
+    </filter>
+
+    <filter kube.objects.pods>
+      @type jq_transformer
+      jq '.record.images = [ .record.object.status.containerStatuses | .[]?.image ] | .record'
+    </filter>
+    <filter kube.objects.pods>
+      @type jq_transformer
+      jq '.record.imageIDs = [.record.object.status.containerStatuses | .[]?.imageID ] | .record '
+    </filter>
+
+    <filter kube.objects.pods>
+      @id remove_managed_fields
+      @type record_transformer
+      remove_keys $.metadata.managedFields
+    </filter>
+
+    <match kube.objects.pods>
+      @type elasticsearch
+      include_tag_key true
+      port 9200
+      scheme https
+      ca_file /etc/elasticsearch/certs/ca.crt
+      host elasticsearch-es-http
+      user elastic
+      password "#{ENV['ELASTIC_PASSWORD']}"
+      index_name pods
+      reload_connections true
+      reload_after 100
+      loglevel debug
+      logstash_format true
+      logstash_prefix pods
+    </match>
+

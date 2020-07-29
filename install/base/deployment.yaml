@@ -1,0 +1,60 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: object-logging
+  labels:
+    app.kubernetes.io/component: fluentd
+spec:
+  strategy:
+    type: RollingUpdate
+  selector:
+    matchLabels:
+      engine: fluentd
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        engine: fluentd
+    spec:
+      serviceAccountName: cluster-audit-logging
+      terminationGracePeriodSeconds: 30
+      nodeSelector:
+        beta.kubernetes.io/os: linux
+      containers:
+      - name: cluster-audit-object-logging
+        image: docker.io/runyonsolutions/kube-objects:1.1.4
+        imagePullPolicy: Always
+        env:
+          - name: MY_NAMESPACE
+            valueFrom:
+              fieldRef:
+                fieldPath: metadata.namespace
+          - name: MY_POD_NAME
+            valueFrom:
+              fieldRef:
+                fieldPath: metadata.name
+          - name: NODE_NAME
+            valueFrom:
+              fieldRef:
+                fieldPath: spec.nodeName
+          - name: ELASTIC_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: elasticsearch-es-elastic-user
+                key: elastic
+        resources:
+          requests:
+            cpu: 100m
+            memory: 200Mi
+        volumeMounts:
+        - name: conf-configmap
+          mountPath: /fluentd/etc
+        - name: elasticsearch-certs
+          mountPath: /etc/elasticsearch/certs/
+      volumes:
+      - name: conf-configmap
+        configMap:
+          name: cluster-audit-logging
+      - name: elasticsearch-certs
+        secret:
+          secretName: elasticsearch-es-http-certs-public
