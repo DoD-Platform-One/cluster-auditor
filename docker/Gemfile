@@ -15,4 +15,6 @@ gem 'bigdecimal', '=2.0.0'
 gem 'kubeclient', '=4.6.0'
 gem 'http_parser.rb', '=0.5.3'
 
+gem 'fluent-plugin-dedot_filter', '>= 1.0.0'
+
 gem 'fluent-plugin-kubernetes-objects', ">=1.1.3"
