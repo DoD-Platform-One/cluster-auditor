@@ -27,6 +27,16 @@ data:
       jq '.record.source = "namespace:\(env.MY_NAMESPACE)/pod:\(env.MY_POD_NAME)" | .record.sourcetype = (.tag | gsub("\\\\."; ":")) | .record'
     </filter>
 
+    # This replaces all . with _ in labels/annotations/etc.  This causes issues when there are multiple labels in the environment:
+    # app: foo and app.kubernetes.io/something: foo since app is both a field and an object, so Elasticsearch cannot
+    # understand how to parse
+    <filter **>
+      @type dedot
+      @id test_dedot
+      de_dot_nested true
+      de_dot_separator _
+    </filter>
+
     <filter kube.objects.pods>
       @type jq_transformer
       jq '.record.images = [ .record.object.status.containerStatuses | .[]?.image ] | .record'
@@ -37,9 +47,16 @@ data:
     </filter>
 
     <filter kube.objects.pods>
+      @type jq_transformer
+      jq '.record.phase = [.record.object.status.phase ] | .record '
+    </filter>
+
+    # variable status fields cause input errors. So we extracted the values we want above 
+    # and then clear out the rest of the status here:
+    <filter kube.objects.pods>
       @id remove_managed_fields
       @type record_transformer
-      remove_keys $.metadata.managedFields
+      remove_keys $.object.metadata.managedFields
     </filter>
 
     <match kube.objects.pods>
@@ -51,7 +68,7 @@ data:
       host elasticsearch-es-http
       user elastic
       password "#{ENV['ELASTIC_PASSWORD']}"
-      index_name pods
+      index_name pods2
       reload_connections true
       reload_after 100
       loglevel debug
