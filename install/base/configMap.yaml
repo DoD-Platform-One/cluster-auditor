@@ -37,6 +37,16 @@ data:
       de_dot_separator _
     </filter>
 
+     <filter kube.objects.pods>
+      @type jq_transformer
+      jq '.record.state = [ .record.object.status.containerStatuses | .[0]? | select(has("state")) |  .state | keys[]  ]| .record '
+    </filter>
+
+     <filter kube.objects.pods>
+      @type jq_transformer
+      jq '.record.reason = [ .record.object.status.containerStatuses | .[0]?.state | .. | .reason?  | select (. !=null) ] | .record '
+    </filter>
+
     <filter kube.objects.pods>
       @type jq_transformer
       jq '.record.images = [ .record.object.status.containerStatuses | .[]?.image ] | .record'
@@ -75,4 +85,5 @@ data:
       logstash_format true
       logstash_prefix pods
     </match>
+
 
