@@ -1,10 +1,15 @@
-FROM registry.access.redhat.com/ubi8/ruby-25
+ARG BASE_REGISTRY=registry1.dsop.io
+ARG BASE_IMAGE=ironbank/opensource/ruby/ruby26
+ARG BASE_TAG=2.6.6
+
+FROM ${BASE_REGISTRY}/${BASE_IMAGE}:${BASE_TAG}
+
 
 ARG VERSION
 
-LABEL name="Splunk Connect for Kubernetes Objects container" \
-      maintainer="DataEdge@splunk.com" \
-      vendor="Splunk Inc." \
+LABEL name="Cluster Audit" \
+      maintainer="DSOP Container Hardening Team" \
+      vendor="Fluentd Organization <fluentd@googlegroups.com>" \
       version=${VERSION} \
       release=${VERSION} \
       summary="Splunk Connect for Kubernetes Objects container" \
@@ -14,6 +19,9 @@ ENV VERSION=${VERSION}
 ENV FLUENT_USER fluent
 
 USER root
+
+
+RUN yum install nodejs
 
 RUN wget -O jq https://github.com/stedolan/jq/releases/download/jq-1.6/jq-linux64 && \
       chmod +x ./jq && \

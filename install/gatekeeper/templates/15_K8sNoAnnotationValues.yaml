@@ -1,0 +1,52 @@
+# Label expected on namespace
+apiVersion: templates.gatekeeper.sh/v1beta1
+kind: ConstraintTemplate
+metadata:
+  name: k8snoannotationvalues
+spec:
+  crd:
+    spec:
+      names:
+        kind: K8sNoAnnotationValues
+        listKind: K8sNoAnnotationValuesList
+        plural: k8snoannotationvalues
+        singular: k8snoannotationvalues
+      validation:
+       # Schema for the `parameters` field
+       openAPIV3Schema:
+         properties:
+           message:
+             type: string
+           annotations:
+             type: array
+             items:
+               type: object
+               properties:
+                 key:
+                   type: string
+                 disallowedRegex:
+                   type: string
+  targets:
+    - target: admission.k8s.gatekeeper.sh
+      rego: |
+        package k8srequiredlabels
+
+        get_message(parameters, _default) = msg {
+          not parameters.message
+          msg := _default
+        }
+
+        get_message(parameters, _default) = msg {
+          msg := parameters.message
+        }
+
+        violation[{"msg": msg}] {
+          value := input.review.object.metadata.annotations[key]
+          expected := input.parameters.annotations[_]
+          expected.key == key
+          # do not match if disallowedRegex is not defined, or is an empty string
+          expected.disallowedRegex != ""
+          re_match(expected.disallowedRegex, value)
+          def_msg := sprintf("Annoation <%v: %v> matches disallowed regex: %v", [key, value, expected.disallowedRegex])
+          msg := get_message(input.parameters, def_msg)
+        }

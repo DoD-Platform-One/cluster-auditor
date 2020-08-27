@@ -1,0 +1,15 @@
+#
+apiVersion: constraints.gatekeeper.sh/v1beta1
+kind: K8sNoAnnotationValues
+metadata:
+  name: pods-must-use-istio
+spec:
+  enforcementAction: dryrun
+  match:
+    kinds:
+      - apiGroups: [""]
+        kinds: ["Pod"]
+  parameters:
+    annotations:
+    - key: "sidecar.istio.io/inject"
+      disallowedRegex: "^disabled"

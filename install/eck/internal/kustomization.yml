@@ -1,0 +1,9 @@
+bases:
+- ../operator
+
+namespace: elastic
+
+resources:
+- elasticsearch.yml
+- istio.yml
+- kibana.yml

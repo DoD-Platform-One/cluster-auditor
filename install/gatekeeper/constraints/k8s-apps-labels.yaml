@@ -1,0 +1,25 @@
+---
+apiVersion: constraints.gatekeeper.sh/v1beta1
+kind: K8sRequiredLabelValues
+metadata:
+  name: pods-need-k8s-app-labels
+spec:
+  enforcementAction: dryrun
+  match:
+    kinds:
+      - apiGroups: [""]
+        kinds: ["Pod"]
+  parameters:
+    labels:
+    - key: "app.kubernetes.io/name"
+      allowedRegex: ""
+    - key: "app.kubernetes.io/instance"
+      allowedRegex: ""
+    - key: "app.kubernetes.io/version"
+      allowedRegex: ""
+    - key: "app.kubernetes.io/component"
+      allowedRegex: ""
+    - key: "app.kubernetes.io/part-of"
+      allowedRegex: ""
+    - key: "app.kubernetes.io/managed-by"
+      allowedRegex: ""

@@ -1,27 +1,19 @@
 apiVersion: kibana.k8s.elastic.co/v1
 kind: Kibana
 metadata:
-  labels:
-    app.kubernetes.io/component: visualization
   name: kibana
-  namespace: elastic
 spec:
+  version: 7.8.1
   count: 1
   elasticsearchRef:
     name: elasticsearch
   http:
-    service:
-      metadata:
-        creationTimestamp: null
-      spec: {}
-    tls:
-      certificate: {}
+    tls: 
+      selfSignedCertificate:
+        disabled: true
   podTemplate:
     metadata:
       annotations:
         sidecar.istio.io/rewriteAppHTTPProbers: "true"
-      creationTimestamp: null
     spec:
       automountServiceAccountToken: true
-      containers: null
-  version: 7.6.1

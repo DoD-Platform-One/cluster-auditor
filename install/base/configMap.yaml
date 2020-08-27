@@ -7,10 +7,56 @@ metadata:
   labels:
     app.kubernetes.io/component: collection
 data:
-  fluent.conf: |
-    <system>
-      log_level info
-    </system>
+  opa.conf: |
+    <source>
+      @type kubernetes_objects
+      tag opa.objects.*
+      api_version "status.gatekeeper.sh/v1beta1"
+      insecure_ssl false
+      <watch>
+        resource_name constraint_template_pod_statuses
+      </watch>
+      <watch>
+        resource_name constraint_pod_statuses
+      </watch>
+    </source>
+    <source>
+      @type kubernetes_objects
+      tag opa.objects.*
+      api_version "templates.gatekeeper.sh/v1alpha1"
+      insecure_ssl false
+      <watch>
+        resource_name constraint_templates
+      </watch>
+    </source>
+    <source>
+      @type kubernetes_objects
+      tag opa.objects.*
+      api_version "config.gatekeeper.sh/v1alpha1"
+      insecure_ssl false
+      <watch>
+        resource_name configs
+      </watch>
+    </source>
+    <source>
+      @type kubernetes_objects
+      tag opa.objects.*
+      api_version "constraints.gatekeeper.sh/v1alpha1"
+      insecure_ssl false
+      <watch>
+        resource_name k8s_required_probes
+      </watch>
+      <watch>
+        resource_name k8s_no_annotation_values
+      </watch>
+      <watch>
+        resource_name k8s_required_label_values
+      </watch>
+        <watch>
+        resource_name k8s_allowed_repos
+      </watch>
+    </source>
+  pods.conf: |
     <source>
       @type kubernetes_objects
       tag kube.objects.*
@@ -20,7 +66,41 @@ data:
         resource_name pods
       </watch>
     </source>
-
+  outputs.conf: |
+    <match kube.objects.pods>
+      @type elasticsearch
+      include_tag_key true
+      port 9200
+      scheme https
+      ca_file /etc/elasticsearch/certs/ca.crt
+      host elasticsearch-es-http
+      user elastic
+      password "#{ENV['ELASTIC_PASSWORD']}"
+      reload_connections true
+      reload_after 100
+      loglevel debug
+      logstash_format true
+      logstash_prefix pods
+    </match>
+    <match opa.objects.*>
+      @type stdout
+    </match>
+    <match opa.objects.**>
+      @type elasticsearch
+      include_tag_key true
+      port 9200
+      scheme https
+      ca_file /etc/elasticsearch/certs/ca.crt
+      host elasticsearch-es-http
+      user elastic
+      password "#{ENV['ELASTIC_PASSWORD']}"
+      reload_connections true
+      reload_after 100
+      loglevel debug
+      logstash_format true
+      logstash_prefix opa
+    </match>
+  filters.conf: |
     <filter kube.**>
       @type jq_transformer
       # in ruby '\\' will escape and become just '\', since we need two '\' in the `gsub` jq filter, it becomes '\\\\'.
@@ -37,16 +117,26 @@ data:
       de_dot_separator _
     </filter>
 
-     <filter kube.objects.pods>
+    # # | jq '. | select(.status.violations != null) |  {name: .metadata.name, kind: .kind, apiVersion: .apiVersion, spec: .spec, violation: .status.violations[] }'
+    # <filter kube.objects.k8s_allowed_repos>
+    #   @type jq_transformer
+    #   jq '.record.violations = ". | select(.record.object.status.violations != null)  | {name: .record.object.metadata.name, kind: .record.object.kind, apiVersion: .record.object.apiVersion, spec: .record.object.spec, totalViolations: .record.object.status.totalViolations, violation: .record.object.status.violations?[] } | .record '
+    # </filter>
+
+    # <match kube.objects.k8s_allowed_repos>
+    #   @type jq
+    #   jq .record.violations
+    #   remove_tag_prefix kube.objects
+    # </match>
+
+    <filter kube.objects.pods>
       @type jq_transformer
       jq '.record.state = [ .record.object.status.containerStatuses | .[0]? | select(has("state")) |  .state | keys[]  ]| .record '
     </filter>
-
-     <filter kube.objects.pods>
+    <filter kube.objects.pods>
       @type jq_transformer
       jq '.record.reason = [ .record.object.status.containerStatuses | .[0]?.state | .. | .reason?  | select (. !=null) ] | .record '
     </filter>
-
     <filter kube.objects.pods>
       @type jq_transformer
       jq '.record.images = [ .record.object.status.containerStatuses | .[]?.image ] | .record'
@@ -63,27 +153,23 @@ data:
 
     # variable status fields cause input errors. So we extracted the values we want above 
     # and then clear out the rest of the status here:
-    <filter kube.objects.pods>
-      @id remove_managed_fields
+    <filter kube.objects.*>
       @type record_transformer
       remove_keys $.object.metadata.managedFields
     </filter>
+    <filter opa.objects.*>
+      @type record_transformer
+      remove_keys $.object.metadata.managedFields
+    </filter>
+  fluent.conf: |
+    <system>
+      log_level info
+    </system>
+    @include pods.conf
+    @include opa.conf
+    @include filters.conf
+    @include outputs.conf
 
-    <match kube.objects.pods>
-      @type elasticsearch
-      include_tag_key true
-      port 9200
-      scheme https
-      ca_file /etc/elasticsearch/certs/ca.crt
-      host elasticsearch-es-http
-      user elastic
-      password "#{ENV['ELASTIC_PASSWORD']}"
-      index_name pods2
-      reload_connections true
-      reload_after 100
-      loglevel debug
-      logstash_format true
-      logstash_prefix pods
-    </match>
+
 
 

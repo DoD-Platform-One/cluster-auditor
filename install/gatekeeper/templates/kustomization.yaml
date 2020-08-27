@@ -1,0 +1,15 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: gatekeeper-system
+resources:
+  - 10_K8sRequiredLabels.yaml
+  - 12_K8sRequiredLabelValues.yaml
+  - 15_K8sNoAnnotationValues.yaml
+  - 20_K8sRequiredProbes.yaml
+  - 30_K8sAllowedRepos.yaml
+  - 40_K8sContainerLimits.yaml
+  - 50_K8sPvcLimits.yaml
+  - 60_K8sIstioInjection.yaml
+  - 70_K8sProtectedNamespaces.yaml
+  - 80_K8sRegulatedResources.yaml
+  - 90_K8sBannedImageTags.yaml
