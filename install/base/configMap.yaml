@@ -10,7 +10,7 @@ data:
   opa.conf: |
     <source>
       @type kubernetes_objects
-      tag opa.objects.*
+      tag kube.objects.*
       api_version "status.gatekeeper.sh/v1beta1"
       insecure_ssl false
       <watch>
@@ -22,7 +22,7 @@ data:
     </source>
     <source>
       @type kubernetes_objects
-      tag opa.objects.*
+      tag kube.objects.*
       api_version "templates.gatekeeper.sh/v1alpha1"
       insecure_ssl false
       <watch>
@@ -31,7 +31,7 @@ data:
     </source>
     <source>
       @type kubernetes_objects
-      tag opa.objects.*
+      tag kube.objects.*
       api_version "config.gatekeeper.sh/v1alpha1"
       insecure_ssl false
       <watch>
@@ -40,7 +40,7 @@ data:
     </source>
     <source>
       @type kubernetes_objects
-      tag opa.objects.*
+      tag kube.objects.*
       api_version "constraints.gatekeeper.sh/v1alpha1"
       insecure_ssl false
       <watch>
@@ -67,7 +67,7 @@ data:
       </watch>
     </source>
   outputs.conf: |
-    <match kube.objects.pods>
+    <match kube.objects.*>
       @type elasticsearch
       include_tag_key true
       port 9200
@@ -105,16 +105,6 @@ data:
       @type jq_transformer
       # in ruby '\\' will escape and become just '\', since we need two '\' in the `gsub` jq filter, it becomes '\\\\'.
       jq '.record.source = "namespace:\(env.MY_NAMESPACE)/pod:\(env.MY_POD_NAME)" | .record.sourcetype = (.tag | gsub("\\\\."; ":")) | .record'
-    </filter>
-
-    # This replaces all . with _ in labels/annotations/etc.  This causes issues when there are multiple labels in the environment:
-    # app: foo and app.kubernetes.io/something: foo since app is both a field and an object, so Elasticsearch cannot
-    # understand how to parse
-    <filter **>
-      @type dedot
-      @id test_dedot
-      de_dot_nested true
-      de_dot_separator _
     </filter>
 
     # # | jq '. | select(.status.violations != null) |  {name: .metadata.name, kind: .kind, apiVersion: .apiVersion, spec: .spec, violation: .status.violations[] }'
@@ -160,6 +150,16 @@ data:
     <filter opa.objects.*>
       @type record_transformer
       remove_keys $.object.metadata.managedFields
+    </filter>
+
+    # This replaces all . with _ in labels/annotations/etc.  This causes issues when there are multiple labels in the environment:
+    # app: foo and app.kubernetes.io/something: foo since app is both a field and an object, so Elasticsearch cannot
+    # understand how to parse
+    <filter **>
+      @type dedot
+      @id test_dedot
+      de_dot_nested true
+      de_dot_separator _
     </filter>
   fluent.conf: |
     <system>
