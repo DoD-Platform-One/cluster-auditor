@@ -44,16 +44,34 @@ data:
       api_version "constraints.gatekeeper.sh/v1alpha1"
       insecure_ssl false
       <watch>
-        resource_name k8s_required_probes
+        resource_name k8s_required_labels
+      </watch>
+      <watch>
+        resource_name k8s_required_label_values
       </watch>
       <watch>
         resource_name k8s_no_annotation_values
       </watch>
       <watch>
-        resource_name k8s_required_label_values
+        resource_name k8s_required_probes
       </watch>
-        <watch>
+      <watch>
         resource_name k8s_allowed_repos
+      </watch>
+      <watch>
+        resource_name k8s_container_limits
+      </watch>
+      <watch>
+        resource_name k8s_pvc_limits
+      </watch>
+      <watch>
+        resource_name k8s_istio_injections
+      </watch>
+      <watch>
+        resource_name k8s_protected_namespaces
+      </watch>
+      <watch>
+        resource_name k8s_regulated_resources
       </watch>
       <watch>
         resource_name k8s_banned_image_tags
@@ -65,16 +83,34 @@ data:
       api_version "constraints.gatekeeper.sh/v1alpha1"
       insecure_ssl false
       <watch>
-        resource_name k8s_required_probes
-      </watch>
-      <watch>
-        resource_name k8s_no_annotation_values
+        resource_name k8s_required_labels
       </watch>
       <watch>
         resource_name k8s_required_label_values
       </watch>
       <watch>
+        resource_name k8s_no_annotation_values
+      </watch>
+      <watch>
+        resource_name k8s_required_probes
+      </watch>
+      <watch>
         resource_name k8s_allowed_repos
+      </watch>
+      <watch>
+        resource_name k8s_container_limits
+      </watch>
+      <watch>
+        resource_name k8s_pvc_limits
+      </watch>
+      <watch>
+        resource_name k8s_istio_injections
+      </watch>
+      <watch>
+        resource_name k8s_protected_namespaces
+      </watch>
+      <watch>
+        resource_name k8s_regulated_resources
       </watch>
       <watch>
         resource_name k8s_banned_image_tags
