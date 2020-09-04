@@ -1,0 +1,11 @@
+apiVersion: kpt.dev/v1alpha1
+kind: Kptfile
+metadata:
+  name: eck-pkg
+upstream:
+  type: git
+  git:
+    commit: a85413da0acd43b33a70ce3f6cddabadc5877da6
+    repo: https://repo1.dsop.io/platform-one/apps/eck
+    directory: /deployment/manifests
+    ref: master

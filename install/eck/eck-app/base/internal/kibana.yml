@@ -13,3 +13,6 @@ spec:
         sidecar.istio.io/rewriteAppHTTPProbers: "true"
     spec:
       automountServiceAccountToken: true
+  http:
+    tls:
+      selfSignedCertificate: {}

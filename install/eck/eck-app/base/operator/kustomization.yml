@@ -1,5 +1,4 @@
 namespace: elastic
-
 resources:
 - namespace.yml
 - template.yml

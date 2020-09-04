@@ -9,6 +9,7 @@ rules:
     resources:
     - pods
     - events
+    - namespaces
     verbs: ["get", "list", "watch"]
   - apiGroups: ["templates.gatekeeper.sh", "config.gatekeeper.sh", "status.gatekeeper.sh", "constraints.gatekeeper.sh"]
     resources:

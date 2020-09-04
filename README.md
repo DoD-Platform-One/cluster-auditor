@@ -7,11 +7,21 @@ This project deploys components that can be used to track changes in a Kubernete
 
 ### Dependencies
 
-This project expects [ECK](https://repo1.dsop.io/platform-one/apps/eck) to be installed on the cluster
+This project expects [Istio](https://repo1.dsop.io/platform-one/apps/istio) and [ECK](https://repo1.dsop.io/platform-one/apps/eck) to be installed on the cluster.  Due to race conditions between creationg the CRDs in these applications and creating CRs, when installing on the cluster for the first time, multiple applies might be needed
 
-### Installation
+```bash
+kubectl apply -k install/istio
+```
 
-To install, execute:
+Wait for Istio to become healthy before installing ECK:
+
+```bash
+kubectl apply -k install/eck/internal
+```
+
+### Cluster Auditor Installation
+
+If all dependencies are installed, or working within a bootstrap that has the components:
 
 ```bash
 kubectl apply -k ./install
@@ -20,7 +30,7 @@ kubectl apply -k ./install
 
 ## Configuration
 
-Once the applications are deployed, there should be three pods running in the `cluster-auditor` namespace:
+Once the applications are deployed, there should be three pods running in the `elastic` namespace:
 
 ```bash
 $ kubectl get pods -n cluster-audit        
@@ -33,7 +43,7 @@ object-logging-68845648ff-mblhk   2/2     Running   0          154m
 In a terminal, port-forward the Kibana service:
 
 ```bash
-$ kubectl port-forward -n cluster-audit svc/kibana-kb-http 8080:5601
+$ kubectl port-forward -n elastic svc/kibana-kb-http 8080:5601
 Forwarding from 127.0.0.1:8080 -> 5601
 Forwarding from [::1]:8080 -> 5601
 ...
@@ -44,7 +54,7 @@ and open up https://localhost:8080
 log into Kibana with the username `elastic` and the password returned by:
 
 ```bash
-kubectl get secrets -n cluster-audit elasticsearch-es-elastic-user -o jsonpath="{ .data.elastic }" | base64 --decode
+kubectl get secrets -n elastic elasticsearch-es-elastic-user -o jsonpath="{ .data.elastic }" | base64 --decode
 ```
 
 
@@ -52,3 +62,41 @@ Create an Index Pattern on this page: https://localhost:8080/app/kibana#/managem
 
 Now you can start to search for events in the Discovery page: https://localhost:8080/app/kibana#/discover
 
+
+
+# Feedback
+
+
+Dashboard - need a dashboard - migrate to Grafana
+Look at signing images and see what's been approved from IronBank
+
+https://dodcio.defense.gov/Portals/0/Documents/DoD%20Enterprise%20DevSecOps%20Reference%20Design%20v1.0_Public%20Release.pdf?ver=2019-09-26-115824-583
+* pick a subset of rules
+* 
+
+https://software.af.mil/dsop/documents/
+
+* Look at Gatekeeper objects to  get logged as well.
+
+
+
+## Gatekeeper policies
+
+
+### Istio enabled
+
+#### Label `istio-inject=enabled` on each namespace
+
+[Here](install/gatekeeper/istio-labels)
+
+#### No `sidecar.istio.io/inject=false` annotation
+
+[Here]
+
+### No Latest tags
+
+### Resources defined for all pods/containers
+
+### Readiness and liveness pods
+
+### Repo1 is docker registry
