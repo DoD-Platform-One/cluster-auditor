@@ -10,5 +10,5 @@ spec:
         kinds: ["Pod"]
   parameters:
     repos: 
-    - "registry1.dsop.io"
+    - "registry.dsop.io"
     - "repo1.dsop.io"
