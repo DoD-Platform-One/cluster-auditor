@@ -1,11 +1,9 @@
----
 # Source: crds/all-crds.yaml
 apiVersion: apiextensions.k8s.io/v1beta1
 kind: CustomResourceDefinition
 metadata:
   annotations:
     controller-gen.kubebuilder.io/version: v0.2.5
-  creationTimestamp: null
   name: apmservers.apm.k8s.elastic.co
 spec:
   additionalPrinterColumns:
@@ -462,7 +460,6 @@ kind: CustomResourceDefinition
 metadata:
   annotations:
     controller-gen.kubebuilder.io/version: v0.2.5
-  creationTimestamp: null
   name: beats.beat.k8s.elastic.co
 spec:
   additionalPrinterColumns:
@@ -676,7 +673,6 @@ kind: CustomResourceDefinition
 metadata:
   annotations:
     controller-gen.kubebuilder.io/version: v0.2.5
-  creationTimestamp: null
   name: elasticsearches.elasticsearch.k8s.elastic.co
 spec:
   additionalPrinterColumns:
@@ -1722,7 +1718,6 @@ kind: CustomResourceDefinition
 metadata:
   annotations:
     controller-gen.kubebuilder.io/version: v0.2.5
-  creationTimestamp: null
   name: enterprisesearches.enterprisesearch.k8s.elastic.co
 spec:
   additionalPrinterColumns:
@@ -2124,7 +2119,6 @@ kind: CustomResourceDefinition
 metadata:
   annotations:
     controller-gen.kubebuilder.io/version: v0.2.5
-  creationTimestamp: null
   name: kibanas.kibana.k8s.elastic.co
 spec:
   additionalPrinterColumns:
@@ -2545,7 +2539,6 @@ status:
     plural: ""
   conditions: []
   storedVersions: []
-
 ---
 # Source: eck/templates/service-account.yaml
 apiVersion: v1
@@ -2714,21 +2707,21 @@ metadata:
     rbac.authorization.k8s.io/aggregate-to-edit: "true"
     rbac.authorization.k8s.io/aggregate-to-admin: "true"
 rules:
-  - apiGroups: ["elasticsearch.k8s.elastic.co"]
-    resources: ["elasticsearches"]
-    verbs: ["get", "list", "watch"]
-  - apiGroups: ["apm.k8s.elastic.co"]
-    resources: ["apmservers"]
-    verbs: ["get", "list", "watch"]
-  - apiGroups: ["kibana.k8s.elastic.co"]
-    resources: ["kibanas"]
-    verbs: ["get", "list", "watch"]
-  - apiGroups: ["enterprisesearch.k8s.elastic.co"]
-    resources: ["enterprisesearches"]
-    verbs: ["get", "list", "watch"]
-  - apiGroups: ["beat.k8s.elastic.co"]
-    resources: ["beats"]
-    verbs: ["get", "list", "watch"]
+- apiGroups: ["elasticsearch.k8s.elastic.co"]
+  resources: ["elasticsearches"]
+  verbs: ["get", "list", "watch"]
+- apiGroups: ["apm.k8s.elastic.co"]
+  resources: ["apmservers"]
+  verbs: ["get", "list", "watch"]
+- apiGroups: ["kibana.k8s.elastic.co"]
+  resources: ["kibanas"]
+  verbs: ["get", "list", "watch"]
+- apiGroups: ["enterprisesearch.k8s.elastic.co"]
+  resources: ["enterprisesearches"]
+  verbs: ["get", "list", "watch"]
+- apiGroups: ["beat.k8s.elastic.co"]
+  resources: ["beats"]
+  verbs: ["get", "list", "watch"]
 ---
 # Source: eck/templates/cluster-role.yaml
 apiVersion: rbac.authorization.k8s.io/v1
@@ -2739,21 +2732,21 @@ metadata:
     rbac.authorization.k8s.io/aggregate-to-edit: "true"
     rbac.authorization.k8s.io/aggregate-to-admin: "true"
 rules:
-  - apiGroups: ["elasticsearch.k8s.elastic.co"]
-    resources: ["elasticsearches"]
-    verbs: ["create", "delete", "deletecollection", "patch", "update"]
-  - apiGroups: ["apm.k8s.elastic.co"]
-    resources: ["apmservers"]
-    verbs: ["create", "delete", "deletecollection", "patch", "update"]
-  - apiGroups: ["kibana.k8s.elastic.co"]
-    resources: ["kibanas"]
-    verbs: ["create", "delete", "deletecollection", "patch", "update"]
-  - apiGroups: ["enterprisesearch.k8s.elastic.co"]
-    resources: ["enterprisesearches"]
-    verbs: ["create", "delete", "deletecollection", "patch", "update"]
-  - apiGroups: ["beat.k8s.elastic.co"]
-    resources: ["beats"]
-    verbs: ["create", "delete", "deletecollection", "patch", "update"]
+- apiGroups: ["elasticsearch.k8s.elastic.co"]
+  resources: ["elasticsearches"]
+  verbs: ["create", "delete", "deletecollection", "patch", "update"]
+- apiGroups: ["apm.k8s.elastic.co"]
+  resources: ["apmservers"]
+  verbs: ["create", "delete", "deletecollection", "patch", "update"]
+- apiGroups: ["kibana.k8s.elastic.co"]
+  resources: ["kibanas"]
+  verbs: ["create", "delete", "deletecollection", "patch", "update"]
+- apiGroups: ["enterprisesearch.k8s.elastic.co"]
+  resources: ["enterprisesearches"]
+  verbs: ["create", "delete", "deletecollection", "patch", "update"]
+- apiGroups: ["beat.k8s.elastic.co"]
+  resources: ["beats"]
+  verbs: ["create", "delete", "deletecollection", "patch", "update"]
 ---
 # Source: eck/templates/managed-ns-role-bindings.yaml
 apiVersion: rbac.authorization.k8s.io/v1
@@ -2792,9 +2785,9 @@ metadata:
   namespace: elastic-system
 spec:
   ports:
-    - name: https
-      port: 443
-      targetPort: 9443
+  - name: https
+    port: 443
+    targetPort: 9443
   selector:
     control-plane: elastic-operator
 ---
@@ -2827,50 +2820,50 @@ spec:
         imagePullPolicy: IfNotPresent
         name: manager
         args:
-          - "manager"
-          - "--log-verbosity=0"
-          - "--metrics-port=0"
-          - "--container-registry=docker.elastic.co"
-          - "--max-concurrent-reconciles=3"
-          - "--ca-cert-validity=8760h"
-          - "--ca-cert-rotate-before=24h"
-          - "--cert-validity=8760h"
-          - "--cert-rotate-before=24h"
-          - "--enable-webhook"
+        - "manager"
+        - "--log-verbosity=0"
+        - "--metrics-port=0"
+        - "--container-registry=docker.elastic.co"
+        - "--max-concurrent-reconciles=3"
+        - "--ca-cert-validity=8760h"
+        - "--ca-cert-rotate-before=24h"
+        - "--cert-validity=8760h"
+        - "--cert-rotate-before=24h"
+        - "--enable-webhook"
         env:
-          - name: OPERATOR_NAMESPACE
-            valueFrom:
-              fieldRef:
-                fieldPath: metadata.namespace
-          - name: OPERATOR_IMAGE
-            value: "docker.elastic.co/eck/eck-operator:1.2.0"
-          - name: WEBHOOK_SECRET
-            value: "elastic-webhook-server-cert"
-          - name: GOMAXPROCS
-            valueFrom:
-              resourceFieldRef:
-                containerName: manager
-                resource: limits.cpu #Must reference type(int) GoLang in otherwords a Whole Positive Number >= 1
+        - name: OPERATOR_NAMESPACE
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.namespace
+        - name: OPERATOR_IMAGE
+          value: "docker.elastic.co/eck/eck-operator:1.2.0"
+        - name: WEBHOOK_SECRET
+          value: "elastic-webhook-server-cert"
+        - name: GOMAXPROCS
+          valueFrom:
+            resourceFieldRef:
+              containerName: manager
+              resource: limits.cpu #Must reference type(int) GoLang in otherwords a Whole Positive Number >= 1
         resources:
-            limits:
-              cpu: 1
-              memory: 512Mi
-            requests:
-              cpu: 100m
-              memory: 150Mi
+          limits:
+            cpu: 1
+            memory: 512Mi
+          requests:
+            cpu: 100m
+            memory: 150Mi
         ports:
         - containerPort: 9443
           name: https-webhook
           protocol: TCP
         volumeMounts:
-          - mountPath: /tmp/k8s-webhook-server/serving-certs
-            name: cert
-            readOnly: true
+        - mountPath: /tmp/k8s-webhook-server/serving-certs
+          name: cert
+          readOnly: true
       volumes:
-        - name: cert
-          secret:
-            defaultMode: 420
-            secretName: "elastic-webhook-server-cert"
+      - name: cert
+        secret:
+          defaultMode: 420
+          secretName: "elastic-webhook-server-cert"
 ---
 # Source: eck/templates/webhook.yaml
 apiVersion: admissionregistration.k8s.io/v1beta1

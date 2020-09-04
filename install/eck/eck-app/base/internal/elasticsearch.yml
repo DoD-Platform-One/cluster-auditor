@@ -6,7 +6,7 @@ spec:
   version: 7.8.1
   nodeSets:
   - name: master
-    count: 1
+    count: 3
     config:
       node.master: true
       node.data: false
@@ -14,12 +14,12 @@ spec:
       node.store.allow_mmap: true
       index.store.type: mmapfs
       node.ml: false
-      xpack.ml.enabled: false      
+      xpack.ml.enabled: false
       xpack.security.authc.token.enabled: true
     podTemplate:
       metadata:
         annotations:
-          traffic.sidecar.istio.io/excludeOutboundPorts: "9300" 
+          traffic.sidecar.istio.io/excludeOutboundPorts: "9300"
           traffic.sidecar.istio.io/excludeInboundPorts: "9300"
           fluentbit.io/exclude-istio-proxy: "true"
       spec:
@@ -37,7 +37,7 @@ spec:
               memory: 3Gi
               cpu: 2
   - name: data
-    count: 1
+    count: 5
     config:
       node.master: false
       node.data: true
@@ -50,7 +50,7 @@ spec:
     podTemplate:
       metadata:
         annotations:
-          traffic.sidecar.istio.io/excludeOutboundPorts: "9300" 
+          traffic.sidecar.istio.io/excludeOutboundPorts: "9300"
           traffic.sidecar.istio.io/excludeInboundPorts: "9300"
           fluentbit.io/exclude-istio-proxy: "true"
       spec:
