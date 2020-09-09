@@ -1,0 +1,4 @@
+bases:
+- ../eck/eck-app/local
+- ../gatekeeper/app
+- ../base
