@@ -22,7 +22,7 @@ spec:
         beta.kubernetes.io/os: linux
       containers:
       - name: cluster-audit-object-logging
-        image: docker.io/runyonsolutions/kube-objects:1.1.3
+        image: docker.io/runyonsolutions/cluster-auditor:0.3
         imagePullPolicy: Always
         env:
           - name: MY_NAMESPACE

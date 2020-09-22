@@ -65,9 +65,6 @@ data:
         resource_name k8s_pvc_limits
       </watch>
       <watch>
-        resource_name k8s_istio_injections
-      </watch>
-      <watch>
         resource_name k8s_protected_namespaces
       </watch>
       <watch>
@@ -102,9 +99,6 @@ data:
       </watch>
       <watch>
         resource_name k8s_pvc_limits
-      </watch>
-      <watch>
-        resource_name k8s_istio_injections
       </watch>
       <watch>
         resource_name k8s_protected_namespaces
@@ -142,7 +136,7 @@ data:
       host elasticsearch-es-http
       user elastic
       password "#{ENV['ELASTIC_PASSWORD']}"
-      reload_connections true
+      reload_connections false
       reload_after 100
       loglevel debug
       logstash_format true
@@ -157,7 +151,7 @@ data:
       host elasticsearch-es-http
       user elastic
       password "#{ENV['ELASTIC_PASSWORD']}"
-      reload_connections true
+      reload_connections false
       reload_after 100
       loglevel debug
       logstash_format true
@@ -179,23 +173,19 @@ data:
     <filter kube.objects.pods>
       @type jq_transformer
       jq '.record.reason = [ .record.object.status.containerStatuses | .[0]?.state | .. | .reason?  | select (. !=null) ] | .record '
-      @id pod_reason
     </filter>
     <filter kube.objects.pods>
       @type jq_transformer
       jq '.record.images = [ .record.object.status.containerStatuses | .[]?.image ] | .record'
-      @id pod_image
     </filter>
     <filter kube.objects.pods>
       @type jq_transformer
       jq '.record.imageIDs = [.record.object.status.containerStatuses | .[]?.imageID ] | .record '
-      @id pod_image_id
     </filter>
 
     <filter kube.objects.pods>
       @type jq_transformer
       jq '.record.phase = [.record.object.status.phase ] | .record '
-      @id pod_phase
     </filter>
 
     # variable status fields cause input errors. So we extracted the values we want above 
@@ -203,7 +193,6 @@ data:
     <filter kube.objects.*>
       @type record_transformer
       remove_keys $.object.metadata.managedFields
-      @id remove_managed_fields
     </filter>
 
     <match opa.violations.*>
@@ -213,14 +202,12 @@ data:
       # tag violations.*
       label @VIOLATIONS
       remove_tag_prefix opa
-      @id violations_extraction
     </match>
     # This replaces all . with _ in labels/annotations/etc.  This causes issues when there are multiple labels in the environment:
     # app: foo and app.kubernetes.io/something: foo since app is both a field and an object, so Elasticsearch cannot
     # understand how to parse
     <filter kube.**>
       @type dedot
-      @id test_dedot
       de_dot_nested true
       de_dot_separator _
     </filter>
