@@ -1,0 +1,164 @@
+resources:
+  - url: "https://rubygems.org/downloads/ffi-1.13.1.gem"
+    filename: "ffi.gem"
+    validation:
+      type: "sha256"
+      value: "4e15f52ee45af7c5674d656041855448adbb5022618be252cd602d81b8e2978a"
+  - url: "https://rubygems.org/downloads/ffi-compiler-1.0.1.gem"
+    filename: "ffi-compiler.gem"
+    validation:
+      type: "sha256"
+      value: "019f389b078a2fec9de7f4f65771095f80a447e34436b4588bcb629e2a564c30"
+  - url: "https://rubygems.org/downloads/fluent-plugin-dedot_filter-1.0.0.gem" 
+    filename: "fluent-plugin-dedot_filter.gem"
+    validation:
+      type: "sha256"
+      value: "ace64a11b989e822404dbd375d5b5b07e49f40b7a2461c33e6539e1def8f646b"
+  - url: "https://rubygems.org/downloads/fluent-plugin-kubernetes-objects-1.1.4.gem"
+    filename: "fluent-plugin-kubernetes-objects.gem"
+    validation:
+      type: "sha256"
+      value: "9d43373f185b607f03b9a7206e02fa7c018278d5047849ffe927173b17822387"
+  - url: "https://rubygems.org/downloads/http_parser.rb-0.5.3.gem"
+    filename: "http_parser.rb.gem"
+    validation:
+      type: "sha256"
+      value: "d64f525eb1c580598d5bdef4fad98e948b6e016fa7803f45e13ac8714a2b8e3b"
+  - url: "https://rubygems.org/downloads/kubeclient-4.6.0.gem"
+    filename: "kubeclient.gem"
+    validation:
+      type: "sha256"
+      value: "862f1d173befab10c73958617ec289797102ca4e9393c7cfe6992a41e9274eb6" 
+  - url: "https://rubygems.org/downloads/http-4.3.0.gem"
+    filename: "http.gem"
+    validation:
+      type: "sha256"
+      value: "f1e9c846b71515b67b4d1ed570cac0e90588c23313cae860ef88e4a0210add69" 
+  - url: "https://rubygems.org/downloads/addressable-2.7.0.gem"
+    filename: "addressable.gem"
+    validation:
+      type: "sha256"
+      value: "5e9b62fe1239091ea9b2893cd00ffe1bcbdd9371f4e1d35fac595c98c5856cbb" 
+  - url: "https://rubygems.org/downloads/http-cookie-1.0.3.gem"
+    filename: "http-cookie.gem"
+    validation:
+      type: "sha256"
+      value: "2f11269d817bc52ab2af2721e89a377660a961078de2a3a55fc696d7897e8c00" 
+  - url: "https://rubygems.org/downloads/http-form_data-2.3.0.gem"
+    filename: "http-form_data.gem"
+    validation:
+      type: "sha256"
+      value: "7e76ccde57c2a31c12600e35a4ab13f02d0ffd425597b9418cac94a67e0439d1" 
+  - url: "https://rubygems.org/downloads/http-parser-1.2.1.gem"
+    filename: "http-parser.gem"
+    validation:
+      type: "sha256"
+      value: "1277ce987082736efa787dc0578fdef8872fd73dce034ad9fc05b71351409f83" 
+  - url: "https://rubygems.org/downloads/recursive-open-struct-1.1.0.gem"
+    filename: "recursive-open-struct.gem"
+    validation:
+      type: "sha256"
+      value: "6c5029e9d7d8b2b295bce33089b4530992d534890b5c737ccfbc16575ff4cc71" 
+  - url: "https://rubygems.org/downloads/multi_json-1.14.1.gem"
+    filename: "multi_json.gem"
+    validation:
+      type: "sha256"
+      value: "d971296c0eacea289d31e4a7ab7ac5eda97262c62bbc8c110de4f5e36425c577" 
+  - url: "https://rubygems.org/downloads/to_regexp-0.2.1.gem"
+    filename: "to_regexp.gem"
+    validation:
+      type: "sha256"
+      value: "3b458ccd12e850816ca54b38fc592422a9bf412bb2d604ba23d4506ca15beae5" 
+  - url: "https://rubygems.org/downloads/rest-client-2.1.0.gem"
+    filename: "rest-client.gem"
+    validation:
+      type: "sha256"
+      value: "35a6400bdb14fae28596618e312776c158f7ebbb0ccad752ff4fa142bf2747e3" 
+  - url: "https://rubygems.org/downloads/fluent-plugin-jq-0.5.1.gem"
+    filename: "fluent-plugin-jq.gem"
+    validation:
+      type: "sha256"
+      value: "82fc36334f460854bd6cace3d8ec39def3e773c0e60871457c7a69ae6bb23aa8"
+  - url: "https://github.com/stedolan/jq/releases/download/jq-1.6/jq-linux64"
+    filename: "jq"
+    validation:
+      type: "sha256"
+      value: "af986793a515d500ab2d35f8d2aecd656e764504b789b66d7e1a0b727a124c44"
+  - url: "https://rubygems.org/downloads/fluent-plugin-elasticsearch-4.1.3.gem"
+    filename: "fluent-plugin-elasticsearch.gem"
+    validation:
+      type: "sha256"
+      value: "0095595478cd8197942c1602b908fbee1efa6dd7e36b45ef7080f7a220813af4"
+  - url: "https://rubygems.org/downloads/elasticsearch-7.9.0.gem"
+    filename: "elasticsearch.gem"
+    validation:
+      type: "sha256"
+      value: "732e155ae080862465cdf80f8ee38771e9bfd1d1b40b428df3c98106875c6ae2"
+      #https://rubygems.org/downloads/elasticsearch-api-7.9.0.gem
+  - url: "https://rubygems.org/downloads/elasticsearch-api-7.9.0.gem"
+    filename: "elasticsearch-api.gem"
+    validation:
+      type: "sha256"
+      value: "fff8d1367f54a29e7757182c2c46041c85ebe05abfd2d9c364797413d04d535b"
+      # https://rubygems.org/downloads/elasticsearch-transport-7.9.0.gem
+  - url: "https://rubygems.org/downloads/elasticsearch-transport-7.9.0.gem"
+    filename: "elasticsearch-transport.gem"
+    validation:
+      type: "sha256"
+      value: "0af4230c26b18722b1fb792f59597b17faca51b35f7c832d00568973883d88c5"
+      # https://rubygems.org/downloads/faraday-1.0.1.gem
+  - url: "https://rubygems.org/downloads/faraday-1.0.1.gem"
+    filename: "faraday.gem"
+    validation:
+      type: "sha256"
+      value: "381aee04fcc9effbe5fa7cc703d8f5f20293722f987ded4f958f77514cd29373"
+  - url: "https://rubygems.org/downloads/fluent-plugin-record-modifier-2.1.0.gem"
+    filename: "fluent-plugin-record-modifier.gem"
+    validation:
+      type: "sha256"
+      value: "c7c945836b47a2e0885202d14e96f190f2411a532741c2ec925e05689d5d42a1"
+  - url: "https://rubygems.org/downloads/multipart-post-2.1.1.gem"
+    filename: "multipart-post.gem"
+    validation:
+      type: "sha256"
+      value: "d2dd7aa957650e0d99e0513cd388401b069f09528441b87d884609c8e94ffcfd"  
+  - url: "https://rubygems.org/downloads/http-accept-1.7.0.gem"
+    filename: "http-accept.gem"
+    validation:
+      type: "sha256"
+      value: "c626860682bfbb3b46462f8c39cd470fd7b0584f61b3cc9df5b2e9eb9972a126" 
+  - url: "https://rubygems.org/downloads/domain_name-0.5.20190701.gem"
+    filename: "domain_name.gem"
+    validation:
+      type: "sha256"
+      value: "000a600454cb4a344769b2f10b531765ea7bd3a304fe47ed12e5ca1eab969851" 
+  - url: "https://rubygems.org/downloads/unf-0.1.4.gem"
+    filename: "unf.gem"
+    validation:
+      type: "sha256"
+      value: "4999517a531f2a955750f8831941891f6158498ec9b6cb1c81ce89388e63022e" 
+  - url: "https://rubygems.org/downloads/unf_ext-0.0.7.7.gem"
+    filename: "unf_ext.gem"
+    validation:
+      type: "sha256"
+      value: "e4e9b1f0c48467fa271d53b180f4ace4c0ff88f01a69ae3da2c30038443e8471" 
+  - url: "https://rubygems.org/downloads/mime-types-3.3.1.gem"
+    filename: "mime-types.gem"
+    validation:
+      type: "sha256"
+      value: "708f737e28ceef48b9a1bc041aa9eec46fa36eb36acb95e6b64a9889131541fe" 
+  - url: "https://rubygems.org/downloads/mime-types-data-3.2020.0512.gem"
+    filename: "mime-types-data.gem"
+    validation:
+      type: "sha256"
+      value: "a31c1705fec7fc775749742c52964a0e012968b43939e141a74f43ffecd6e5fc" 
+  - url: "https://rubygems.org/downloads/netrc-0.8.0.gem"
+    filename: "netrc.gem"
+    validation:
+      type: "sha256"
+      value: "6bb6b2011b1f069600cc10f9a968f6dcb3cac9c23e741c3b1978a6d0765b92c8" 
+  - url: "https://rubygems.org/downloads/public_suffix-4.0.6.gem"
+    filename: "public_suffix.gem"
+    validation:
+      type: "sha256"
+      value: "a99967c7b2d1d2eb00e1142e60de06a1a6471e82af574b330e9af375e87c0cf7" 
