@@ -6,7 +6,7 @@ spec:
   version: 7.8.1
   nodeSets:
   - name: master
-    count: 3
+    count: 1
     config:
       node.master: true
       node.data: false
@@ -37,7 +37,7 @@ spec:
               memory: 3Gi
               cpu: 2
   - name: data
-    count: 5
+    count: 1
     config:
       node.master: false
       node.data: true
