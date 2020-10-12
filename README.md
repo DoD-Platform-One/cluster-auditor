@@ -9,28 +9,19 @@ This project deploys components that can be used to track changes in a Kubernete
 
 This project expects [Istio](https://repo1.dsop.io/platform-one/apps/istio) and [ECK](https://repo1.dsop.io/platform-one/apps/eck) to be installed on the cluster.  Due to race conditions between creationg the CRDs in these applications and creating CRs, when installing on the cluster for the first time, multiple applies might be needed
 
-```bash
-kubectl apply -k install/istio
-```
-
-Wait for Istio to become healthy before installing ECK:
-
-```bash
-kubectl apply -k install/eck/internal
-```
 
 ### Cluster Auditor Installation
 
 If all dependencies are installed, or working within a bootstrap that has the components:
 
 ```bash
-kubectl apply -k ./install
+kubectl apply -k ./manifests
 ```
 
 
 ## Configuration
 
-Once the applications are deployed, there should be three pods running in the `elastic` namespace:
+Once the applications are deployed, there should be three pods running in the `cluster-audit   ` namespace:
 
 ```bash
 $ kubectl get pods -n cluster-audit        
@@ -54,49 +45,23 @@ and open up https://localhost:8080
 log into Kibana with the username `elastic` and the password returned by:
 
 ```bash
-kubectl get secrets -n elastic elasticsearch-es-elastic-user -o jsonpath="{ .data.elastic }" | base64 --decode
+kubectl get secrets -n cluster-audit elasticsearch-es-elastic-user -o jsonpath="{ .data.elastic }" | base64 --decode
 ```
 
 
-Create an Index Pattern on this page: https://localhost:8080/app/kibana#/management/kibana/index_patterns That has `pods-*` as the index pattern, and `@timestamp` as the times.
+Create an Index Pattern on this page: https://localhost:8080/app/kibana#/management/kibana/index_patterns That has `violations-*` as the index pattern, and `@timestamp` as the times.
 
 Now you can start to search for events in the Discovery page: https://localhost:8080/app/kibana#/discover
 
 
 
-# Feedback
+## Outstand Issues
 
+### Signed Images
 
-Dashboard - need a dashboard - migrate to Grafana
-Look at signing images and see what's been approved from IronBank
+The Cluster Auditor looks for images coming from registry1, but does not validate they are "IronBank" images.  Need to work with Anchore API to get approvals, and look at Docker API for understanding whether they're signed or not.
 
-https://dodcio.defense.gov/Portals/0/Documents/DoD%20Enterprise%20DevSecOps%20Reference%20Design%20v1.0_Public%20Release.pdf?ver=2019-09-26-115824-583
-* pick a subset of rules
-* 
+### Mapping to Security Control
 
-https://software.af.mil/dsop/documents/
+Each violation can be tracked back to a security control that has been approved by a government official/docment.  Each violation schema needs to be mapped to a control and have the value injected into the violiations object in elastic
 
-* Look at Gatekeeper objects to  get logged as well.
-
-
-
-## Gatekeeper policies
-
-
-### Istio enabled
-
-#### Label `istio-inject=enabled` on each namespace
-
-[Here](install/gatekeeper/istio-labels)
-
-#### No `sidecar.istio.io/inject=false` annotation
-
-[Here]
-
-### No Latest tags
-
-### Resources defined for all pods/containers
-
-### Readiness and liveness pods
-
-### Repo1 is docker registry

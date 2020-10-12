@@ -1,0 +1,101 @@
+---
+# Source: splunk-connect-for-kubernetes/charts/splunk-kubernetes-objects/templates/configMap.yaml
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: cluster-audit-starboard
+  labels:
+    app.kubernetes.io/component: collection
+data:
+  aqua.conf: |
+    <source>
+      @type kubernetes_objects
+      tag aqua.violations.*
+      api_version "aquasecurity.github.io/v1alpha1"
+      insecure_ssl false
+      # <watch>
+      #   resource_name ciskubebenchreports
+      # </watch>
+      # <watch>
+      #   resource_name configauditreports
+      # </watch>
+      # <watch>
+      #   resource_name kubehunterreports
+      # </watch>
+      <watch>
+        resource_name vulnerability_reports
+      </watch>
+    </source>
+  outputs.conf: |
+    <match violations.**>
+      @type elasticsearch
+      include_tag_key true
+      port 9200
+      scheme https
+      ca_file /etc/elasticsearch/certs/ca.crt
+      host elasticsearch-es-http
+      user elastic
+      password "#{ENV['ELASTIC_PASSWORD']}"
+      reload_connections false
+      reload_after 100
+      loglevel debug
+      logstash_format true
+      logstash_prefix violations
+    </match>
+    <match>
+      @type stdout
+    </match>
+  filters.conf: |
+    # <match aqua.violations.ciskubebenchreports>
+    #   @type jq
+    #   # jq 'select( .record.object.status.totalViolations != 0 ) |  .record.object.status.violations'
+    #   jq '.record.object.status.violations'
+    #   # tag violations.*
+    #   label @VIOLATIONS
+    #   remove_tag_prefix aqua
+    # </match>
+    # <match aqua.violations.configauditreports>
+    #   @type jq
+    #   # jq 'select( .record.object.status.totalViolations != 0 ) |  .record.object.status.violations'
+    #   jq '.record.object.status.violations'
+    #   # tag violations.*
+    #   label @VIOLATIONS
+    #   remove_tag_prefix aqua
+    # </match>
+    # <match aqua.violations.kubehunterreports>
+    #   @type jq
+    #   # jq 'select( .record.object.status.totalViolations != 0 ) |  .record.object.status.violations'
+    #   jq '.record.object.status.violations'
+    #   # tag violations.*
+    #   label @VIOLATIONS
+    #   remove_tag_prefix aqua
+    # </match>
+    <match aqua.violations.vulnerability_reports>
+      @type jq
+      #  k get vuln -n istio-system 44dbb8a7-b5ed-496d-8296-47bca177b5f3 -o json | jq '.report.vulnerabilities[] | select( .severity |  contains("CRITICAL") or contains("HIGH"))'
+      
+      # k get vuln -n istio-system 44dbb8a7-b5ed-496d-8296-47bca177b5f3 -o json | jq '{name: .report.artifact.repository, vulnerabilities: .report.vulnerabilities} | {name: .name, vulnerabilites: .vulnerabilities[]|select( .severity | contains("HIGH") or contains("CRITICAL"))} | {name: .name, id: .vulnerabilites.vulnerabilityID}'
+      # 
+      jq '{image: (.record.object.report.registry.server + "/" + .record.object.report.artifact.repository), image_tag: .record.object.report.artifact.tag, kind: .record.object.metadata.labels."starboard.resource.kind", name: .record.object.metadata.labels."starboard.resource.name", namespace: .record.object.metadata.labels."starboard.resource.namespace", container: .record.object.metadata.labels."starboard.container.name", vulnerabilities: .record.object.report.vulnerabilities }| {image: .image, image_tag: .image_tag, kind: .kind, name: .name, namespace: .namespace, container: .container, vulnerabilites: .vulnerabilities[]|select( .severity | contains("HIGH") or contains("CRITICAL"))} '
+      label @VIOLATIONS
+      remove_tag_prefix aqua
+    </match>
+    # This replaces all . with _ in labels/annotations/etc.  This causes issues when there are multiple labels in the environment:
+    # app: foo and app.kubernetes.io/something: foo since app is both a field and an object, so Elasticsearch cannot
+    # understand how to parse
+    <filter kube.**>
+      @type dedot
+      de_dot_nested true
+      de_dot_separator _
+    </filter>
+  fluent.conf: |
+    <system>
+      log_level info
+    </system>
+    @include aqua.conf
+    @include filters.conf
+    @include outputs.conf
+
+
+
+

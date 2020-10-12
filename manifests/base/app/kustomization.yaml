@@ -1,9 +1,3 @@
-namespace: elastic
-commonLabels:
-  app.kubernetes.io/instance: cluster-audit
-  app.kubernetes.io/managed-by: kustomize
-  app.kubernetes.io/name: cluster-audit
-  app.kubernetes.io/version: "0.1"
 resources:
 - clusterRole.yaml
 - clusterRoleBinding.yaml

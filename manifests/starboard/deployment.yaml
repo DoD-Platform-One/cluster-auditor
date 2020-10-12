@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: opa-collector
+  name: starboard-logging
   labels:
     app.kubernetes.io/component: fluentd
 spec:
@@ -16,7 +16,7 @@ spec:
       labels:
         engine: fluentd
     spec:
-      serviceAccountName: cluster-audit-logging
+      serviceAccountName: cluster-audit-starboard
       terminationGracePeriodSeconds: 30
       nodeSelector:
         beta.kubernetes.io/os: linux
@@ -54,7 +54,7 @@ spec:
       volumes:
       - name: conf-configmap
         configMap:
-          name: cluster-audit-logging
+          name: cluster-audit-starboard
       - name: elasticsearch-certs
         secret:
           secretName: elasticsearch-es-http-certs-public

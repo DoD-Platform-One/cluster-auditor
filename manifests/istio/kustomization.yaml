@@ -1,4 +1,0 @@
-resources:
-  - namespace.yaml
-  # NOTE: This is generated from "istioctl manifest generate > generated.yaml" within the istioctl argocd plugin
-  - generate/generated.yaml
