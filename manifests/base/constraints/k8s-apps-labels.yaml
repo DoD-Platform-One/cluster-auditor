@@ -3,6 +3,9 @@ apiVersion: constraints.gatekeeper.sh/v1beta1
 kind: K8sRequiredLabelValues
 metadata:
   name: pods-need-k8s-app-labels
+  labels:
+    cluster-auditor.dsop.io/source: big-bang
+    cluster-auditor.dsop.io/control: "tbd"
 spec:
   enforcementAction: dryrun
   match:

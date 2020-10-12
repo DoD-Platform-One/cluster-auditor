@@ -3,7 +3,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: cluster-audit-logging
+  name: opa-collector
   labels:
     app.kubernetes.io/component: collection
 data:
@@ -198,7 +198,7 @@ data:
     <match opa.violations.*>
       @type jq
       # jq 'select( .record.object.status.totalViolations != 0 ) |  .record.object.status.violations'
-      jq '.record.object.status.violations'
+      jq '{source: .record.object.metadata.labels["cluster-auditor.dsop.io/source"], control: .record.object.metadata.labels["cluster-auditor.dsop.io/control"], violations: .record.object.status.violations} | { source: .source, control: .control, violation: .violations[]} | {source: .source, control: .control, kind: .violation.kind, message: .violation.message, name: .violation.name, namespace: .violation.namespace}'
       # tag violations.*
       label @VIOLATIONS
       remove_tag_prefix opa

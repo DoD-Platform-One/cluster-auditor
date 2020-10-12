@@ -54,7 +54,7 @@ spec:
       volumes:
       - name: conf-configmap
         configMap:
-          name: cluster-audit-logging
+          name: opa-collector
       - name: elasticsearch-certs
         secret:
           secretName: elasticsearch-es-http-certs-public
