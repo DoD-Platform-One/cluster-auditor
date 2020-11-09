@@ -13,6 +13,8 @@ spec:
   replicas: 1
   template:
     metadata:
+      annotations:
+        checksum/config: {{ include (print $.Template.BasePath "/configMap.yaml") . | sha256sum }}
       labels:
         engine: fluentd
     spec:
