@@ -1,4 +1,5 @@
 ---
+{{- if .Values.collect.violations.labels}}
 apiVersion: constraints.gatekeeper.sh/v1beta1
 kind: K8sRequiredLabelValues
 metadata:
@@ -26,3 +27,4 @@ spec:
       allowedRegex: ""
     - key: "app.kubernetes.io/managed-by"
       allowedRegex: ""
+{{- end }}

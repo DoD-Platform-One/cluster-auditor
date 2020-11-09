@@ -23,8 +23,8 @@ spec:
       nodeSelector:
         beta.kubernetes.io/os: linux
       containers:
-      - name: cluster-audit-object-logging
-        image: docker.io/runyonsolutions/cluster-auditor:0.3
+      - name: opa-collector
+        image: {{ .Values.image.repo }}:{{ .Values.image.tag }}
         imagePullPolicy: Always
         env:
           - name: MY_NAMESPACE
@@ -45,9 +45,7 @@ spec:
                 name: elasticsearch-es-elastic-user
                 key: elastic
         resources:
-          requests:
-            cpu: 100m
-            memory: 200Mi
+{{ toYaml .Values.resources | indent 10 }}
         volumeMounts:
         - name: conf-configmap
           mountPath: /fluentd/etc
