@@ -13,4 +13,4 @@ roleRef:
 subjects:
 - kind: ServiceAccount
   name: cluster-audit-logging
-  namespace: cluster-audit
+  namespace: {{ .Release.Namespace }}
