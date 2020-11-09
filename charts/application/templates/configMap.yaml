@@ -8,6 +8,7 @@ metadata:
     app.kubernetes.io/component: collection
 data:
   opa.conf: |
+{{ if .Values.collect.objects }}
     <source>
       @type kubernetes_objects
       tag kube.objects.*
@@ -74,6 +75,7 @@ data:
         resource_name k8s_banned_image_tags
       </watch>
     </source>
+{{ end }}
     <source>
       @type kubernetes_objects
       tag opa.violations.*
@@ -111,6 +113,7 @@ data:
       </watch>
     </source>
   pods.conf: |
+{{ if .Values.collect.objects }}
     <source>
       @type kubernetes_objects
       tag kube.objects.*
@@ -126,7 +129,9 @@ data:
         resource_name events
       </watch>
     </source>
+{{ end }}
   outputs.conf: |
+{{ if .Values.collect.objects }}
     <match kube.**>
       @type elasticsearch
       include_tag_key true
@@ -142,6 +147,7 @@ data:
       logstash_format true
       logstash_prefix objects
     </match>
+{{ end }}
     <match violations.**>
       @type elasticsearch
       include_tag_key true
@@ -161,6 +167,7 @@ data:
       @type stdout
     </match>
   filters.conf: |
+{{ if .Values.collect.objects }}
     <filter kube.objects.pods>
       @type jq_transformer
       # in ruby '\\' will escape and become just '\', since we need two '\' in the `gsub` jq filter, it becomes '\\\\'.
@@ -194,15 +201,6 @@ data:
       @type record_transformer
       remove_keys $.object.metadata.managedFields
     </filter>
-
-    <match opa.violations.*>
-      @type jq
-      jq 'select( .record.object.status.totalViolations != 0 ) |  .record.object.status.violations'
-      # jq '{source: .record.object.metadata.labels["cluster-auditor.dsop.io/source"], control: .record.object.metadata.labels["cluster-auditor.dsop.io/control"], violations: .record.object.status.violations} | { source: .source, control: .control, violation: .violations[]} | {source: .source, control: .control, kind: .violation.kind, message: .violation.message, name: .violation.name, namespace: .violation.namespace}'
-      # tag violations.*
-      label @VIOLATIONS
-      remove_tag_prefix opa
-    </match>
     # This replaces all . with _ in labels/annotations/etc.  This causes issues when there are multiple labels in the environment:
     # app: foo and app.kubernetes.io/something: foo since app is both a field and an object, so Elasticsearch cannot
     # understand how to parse
@@ -211,6 +209,21 @@ data:
       de_dot_nested true
       de_dot_separator _
     </filter>
+{{ end }}
+    <filter opa.violations.**>
+      @type dedot
+      de_dot_nested true
+      de_dot_separator _
+    </filter>
+    <match opa.violations.*>
+      @type jq
+      jq 'select( .record.object.status.totalViolations != 0 ) |  .record.object.status.violations'
+      # jq '{source: .record.object.metadata.labels["cluster-auditor.dsop.io/source"], control: .record.object.metadata.labels["cluster-auditor.dsop.io/control"], violations: .record.object.status.violations} | { source: .source, control: .control, violation: .violations[]} | {source: .source, control: .control, kind: .violation.kind, message: .violation.message, name: .violation.name, namespace: .violation.namespace}'
+      # tag violations.*
+      label @VIOLATIONS
+      remove_tag_prefix opa
+    </match>
+
   fluent.conf: |
     <system>
       log_level info
