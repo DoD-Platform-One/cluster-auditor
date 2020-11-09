@@ -3,7 +3,8 @@ kind: Kibana
 metadata:
   name: kibana
 spec:
-  version: 7.8.1
+  version: 7.9.2
+  image: registry1.dsop.io/ironbank/elastic/kibana/kibana:7.9.2
   count: 1
   elasticsearchRef:
     name: elasticsearch
