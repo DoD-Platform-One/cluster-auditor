@@ -8,6 +8,10 @@ spec:
   count: 1
   elasticsearchRef:
     name: elasticsearch
+  http:
+    tls:
+      selfSignedCertificate:
+        disabled: true
   podTemplate:
     metadata:
       annotations:
