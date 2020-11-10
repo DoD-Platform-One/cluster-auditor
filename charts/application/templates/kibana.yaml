@@ -1,3 +1,4 @@
+{{ if .Values.elasticsearch.dedicated }} 
 apiVersion: kibana.k8s.elastic.co/v1
 kind: Kibana
 metadata:
@@ -21,3 +22,22 @@ spec:
   http:
     tls:
       selfSignedCertificate: {}
+---
+{{ if .Values.istio.enabled }}
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: cluster-audit-kabana
+spec:
+  hosts:
+    - cluster-auditor.bigbang.dev
+  gateways:
+  - main.istio-system.svc.cluster.local
+  http:
+    - route:
+        - destination:
+            host: kibana-kb-http
+            port:
+              number: 5601
+{{ end }}
+{{ end }}

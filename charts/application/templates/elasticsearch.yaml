@@ -1,7 +1,8 @@
+{{ if .Values.elasticsearch.dedicated }}
 apiVersion: elasticsearch.k8s.elastic.co/v1
 kind: Elasticsearch
 metadata:
-  name: elasticsearch
+  name: {{ .Values.elasticsearch.name }}
 spec:
   version: 7.9.2
   image: registry1.dsop.io/ironbank/elastic/elasticsearch/elasticsearch:7.9.2
@@ -77,3 +78,16 @@ spec:
         resources:
           requests:
             storage: 200Gi
+---
+{{ if .Values.istio.enabled }}
+apiVersion: networking.istio.io/v1alpha3
+kind: DestinationRule
+metadata:
+  name: {{ .Values.elasticsearch.name }}
+spec:
+  host: "{{ .Values.elasticsearch.name }}-es-http.{{ .Release.Namespace}}.svc.cluster.local"
+  trafficPolicy:
+    tls:
+      mode: ISTIO_MUTUAL
+{{ end }}
+{{ end }}

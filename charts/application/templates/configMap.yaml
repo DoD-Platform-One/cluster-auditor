@@ -142,7 +142,7 @@ data:
       port 9200
       scheme https
       ca_file /etc/elasticsearch/certs/ca.crt
-      host elasticsearch-es-http
+      host {{ .Values.elasticsearch.name }}-es-http
       user elastic
       password "#{ENV['ELASTIC_PASSWORD']}"
       reload_connections false
@@ -158,7 +158,7 @@ data:
       port 9200
       scheme https
       ca_file /etc/elasticsearch/certs/ca.crt
-      host elasticsearch-es-http
+      host {{ .Values.elasticsearch.name }}-es-http
       user elastic
       password "#{ENV['ELASTIC_PASSWORD']}"
       reload_connections false
