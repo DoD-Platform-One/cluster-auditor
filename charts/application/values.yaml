@@ -3,6 +3,12 @@ collect:
   violations:
     repositories: true
 
+elasticsearch:
+  name: logging-ek
+  dedicated: false
+istio:
+  enabled: true
+  
 violations:
   allowedDockerRegistries:
   - "registry1.dsop.io"
