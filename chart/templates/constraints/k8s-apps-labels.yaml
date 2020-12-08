@@ -1,0 +1,30 @@
+---
+{{- if .Values.collect.violations.labels}}
+apiVersion: constraints.gatekeeper.sh/v1beta1
+kind: K8sRequiredLabelValues
+metadata:
+  name: pods-need-k8s-app-labels
+  labels:
+    cluster-auditor.dsop.io/source: big-bang
+    cluster-auditor.dsop.io/control: "tbd"
+spec:
+  enforcementAction: dryrun
+  match:
+    kinds:
+      - apiGroups: [""]
+        kinds: ["Pod"]
+  parameters:
+    labels:
+    - key: "app.kubernetes.io/name"
+      allowedRegex: ""
+    - key: "app.kubernetes.io/instance"
+      allowedRegex: ""
+    - key: "app.kubernetes.io/version"
+      allowedRegex: ""
+    - key: "app.kubernetes.io/component"
+      allowedRegex: ""
+    - key: "app.kubernetes.io/part-of"
+      allowedRegex: ""
+    - key: "app.kubernetes.io/managed-by"
+      allowedRegex: ""
+{{- end }}

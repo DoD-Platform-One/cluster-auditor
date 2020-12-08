@@ -1,0 +1,18 @@
+apiVersion: constraints.gatekeeper.sh/v1beta1
+kind: K8sAllowedRepos
+metadata:
+  name: images-must-come-from-repo1
+  labels:
+    cluster-auditor.dsop.io/source: kubernetes-stig
+    cluster-auditor.dsop.io/control: "20"
+spec:
+  enforcementAction: dryrun
+  match:
+    kinds:
+      - apiGroups: [""]
+        kinds: ["Pod"]
+  parameters:
+    repos: 
+{{- range .Values.violations.allowedDockerRegistries }}
+    - {{ . }}
+{{- end }}
