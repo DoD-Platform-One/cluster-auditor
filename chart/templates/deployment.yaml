@@ -51,7 +51,11 @@ spec:
           mountPath: /fluentd/etc
         - name: elasticsearch-certs
           mountPath: /etc/elasticsearch/certs/
+        - name: checkpoint
+          mountPath: /fluentd/var/checkpoint
       volumes:
+      - name: checkpoint
+        emptyDir: {}
       - name: conf-configmap
         configMap:
           name: opa-collector
