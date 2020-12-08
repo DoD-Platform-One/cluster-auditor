@@ -79,7 +79,7 @@ data:
     <source>
       @type kubernetes_objects
       <storage>
-        path /fluentd/var/checkpoints/opa-objects
+        path /fluentd/var/checkpoint/opa-objects
       </storage>
 
       tag opa.violations.*
@@ -102,24 +102,23 @@ data:
 {{- if .Values.collect.violations.repositories }}
       <watch>
         resource_name k8s_allowed_repos
-        interval 1
       </watch>
 {{- end }}
-      <watch>
-        resource_name k8s_container_limits
-      </watch>
-      <watch>
-        resource_name k8s_pvc_limits
-      </watch>
+      # <watch>
+      #   resource_name k8s_container_limits
+      # </watch>
+      # <watch>
+      #   resource_name k8s_pvc_limits
+      # </watch>
       # <watch>
       #   resource_name k8s_protected_namespaces
       # </watch>
       # <watch>
       #   resource_name k8s_regulated_resources
       # </watch>
-      <watch>
-        resource_name k8s_banned_image_tags
-      </watch>
+      # <watch>
+      #   resource_name k8s_banned_image_tags
+      # </watch>
     </source>
   pods.conf: |
 {{- if .Values.collect.objects }}
@@ -235,8 +234,7 @@ data:
 
   fluent.conf: |
     <system>
-      workers 4
-      log_level trace
+      log_level {{ .Values.loglevel }}
     </system>
     @include pods.conf
     @include opa.conf

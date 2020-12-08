@@ -1,0 +1,21 @@
+{{- if .Values.collect.violations.labels}}
+---
+apiVersion: constraints.gatekeeper.sh/v1beta1
+kind: K8sRequiredLabelValues
+metadata:
+  name: ns-must-have-istio
+spec:
+  enforcementAction: dryrun
+  match:
+    kinds:
+      - apiGroups: [""]
+        kinds: ["Namespace"]
+    namespaceSelector:
+      matchExpressions:
+      - key: admission.gatekeeper.sh/ignore
+        operator: DoesNotExist
+  parameters:
+    labels:
+    - key: "istio-injection"
+      allowedRegex: "^enabled"
+{{- end}}
