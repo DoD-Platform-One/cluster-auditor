@@ -2,6 +2,7 @@ collect:
   objects: false
   violations:
     repositories: true
+    labels: true
 
 elasticsearch:
   name: logging-ek
@@ -13,12 +14,12 @@ violations:
   allowedDockerRegistries:
   - "registry1.dsop.io"
 image:
-  repo: docker.io/runyonsolutions/cluster-auditor
-  tag: 0.3
+  repo: registry.dsop.io/platform-one/big-bang/apps/core/cluster-auditor/opa-collector
+  tag: 0.3.0-ib
 resources:
   requests:
-    cpu: 100m
-    memory: 200Mi
+    cpu: 600m
+    memory: 2Gi
   limits:
-    cpu: 300m
-    memory: 600Mi
+    cpu: 600m
+    memory: 2Gi
