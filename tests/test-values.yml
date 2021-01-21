@@ -1,0 +1,26 @@
+collect:
+  objects: false
+  violations:
+    repositories: true
+    labels: false
+
+elasticsearch:
+  name: logging-ek
+  dedicated: true
+istio:
+  enabled: true
+  
+violations:
+  allowedDockerRegistries:
+  - "registry1.dsop.io"
+image:
+  repo: registry.dsop.io/platform-one/big-bang/apps/core/cluster-auditor/opa-collector
+  tag: 0.3.0-ib
+resources:
+  requests:
+    cpu: 600m
+    memory: 2Gi
+  limits:
+    cpu: 600m
+    memory: 2Gi
+loglevel: debug
