@@ -19,6 +19,11 @@ spec:
         sidecar.istio.io/rewriteAppHTTPProbers: "true"
     spec:
       automountServiceAccountToken: true
+      {{- with .Values.elasticsearch.imagePullSecrets }}
+      imagePullSecrets:
+      {{- toYaml . | nindent 8 }}
+      {{- end }}
+
   http:
     tls:
       selfSignedCertificate: {}

@@ -38,6 +38,10 @@ spec:
             limits:
               memory: 3Gi
               cpu: 2
+        {{- with $.Values.elasticsearch.imagePullSecrets }}
+        imagePullSecrets:
+        {{- toYaml . | nindent 10 }}
+        {{- end }}
   - name: data
     count: 1
     config:
