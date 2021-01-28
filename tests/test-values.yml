@@ -7,14 +7,16 @@ collect:
 elasticsearch:
   name: logging-ek
   dedicated: true
+  imagePullSecrets:
+  - name: private-registry-mil
 istio:
   enabled: true
   
 violations:
   allowedDockerRegistries:
-  - "registry1.dsop.io"
+  - "registry1.dso.mil"
 image:
-  repo: registry.dsop.io/platform-one/big-bang/apps/core/cluster-auditor/opa-collector
+  repo: registry.dso.mil/platform-one/big-bang/apps/core/cluster-auditor/opa-collector
   tag: 0.3.0-ib
 resources:
   requests:

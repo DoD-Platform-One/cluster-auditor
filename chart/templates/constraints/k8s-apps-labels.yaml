@@ -5,8 +5,8 @@ kind: K8sRequiredLabelValues
 metadata:
   name: pods-need-k8s-app-labels
   labels:
-    cluster-auditor.dsop.io/source: big-bang
-    cluster-auditor.dsop.io/control: "tbd"
+    cluster-auditor.dso.mil/source: big-bang
+    cluster-auditor.dso.mil/control: "tbd"
 spec:
   enforcementAction: dryrun
   match:
