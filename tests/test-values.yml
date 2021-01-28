@@ -7,8 +7,7 @@ collect:
 elasticsearch:
   name: logging-ek
   dedicated: true
-  imagePullSecrets:
-    - name: private-registry-mil
+  imagePullSecrets: [ private-registry-mil ]
 istio:
   enabled: true
   
