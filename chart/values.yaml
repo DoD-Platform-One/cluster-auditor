@@ -14,8 +14,19 @@ violations:
   allowedDockerRegistries:
   - "registry1.dsop.io"
 image:
-  repo: registry.dsop.io/platform-one/big-bang/apps/core/cluster-auditor/opa-collector
-  tag: 0.3.0-ib
+  repo: registry1.dso.mil/ironbank/cluster-auditor/opa-collector
+  tag: 0.3.2
+  imagePullPolicy: Always
+
+imagePullSecrets:
+- name: private-registry
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
+
 resources:
   requests:
     cpu: 600m
