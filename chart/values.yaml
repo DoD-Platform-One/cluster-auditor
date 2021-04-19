@@ -22,11 +22,8 @@ image:
 imagePullSecrets:
 - name: private-registry
 
-nodeSelector: {}
-
 tolerations: []
 
-affinity: {}
 
 resources:
   requests:
