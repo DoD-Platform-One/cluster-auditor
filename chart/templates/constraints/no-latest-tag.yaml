@@ -3,8 +3,8 @@ kind: K8sBannedImageTags
 metadata:
   name: ban-latest-tag
   labels:
-    cluster-auditor.dsop.io/source: kubernetes-stig
-    cluster-auditor.dsop.io/control: "90"
+    cluster-auditor.dso.mil/source: kubernetes-stig
+    cluster-auditor.dso.mil/control: "90"
 spec:
   enforcementAction: dryrun  
   match:

@@ -7,12 +7,13 @@ collect:
 elasticsearch:
   name: logging-ek
   dedicated: false
+  imagePullSecrets: [ ]
 istio:
   enabled: true
   
 violations:
   allowedDockerRegistries:
-  - "registry1.dsop.io"
+  - "registry1.dso.mil"
 image:
   repo: registry1.dso.mil/ironbank/cluster-auditor/opa-collector
   tag: 0.3.2
@@ -35,3 +36,22 @@ resources:
     cpu: 600m
     memory: 2Gi
 loglevel: debug
+
+affinity: {}
+  # podAntiAffinity:
+  #   requiredDuringSchedulingIgnoredDuringExecution:
+  #     - topologyKey: "kubernetes.io/hostname"
+  #       labelSelector:
+  #         matchLabels:
+  #           dont-schedule-with: cluster-auditor
+  # nodeAffinity:
+  #   requiredDuringSchedulingIgnoredDuringExecution:
+  #     nodeSelectorTerms:
+  #     - matchExpressions:
+  #       - key: node-type
+  #         operator: In
+  #         values:
+  #         - "cluster-auditor"
+
+nodeSelector: {}
+  # node-type: cluster-auditor

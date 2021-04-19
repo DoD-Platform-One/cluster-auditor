@@ -4,8 +4,8 @@ metadata:
   name: must-have-probes
   labels:
     app.kubernetes.io/instance: opa-gatekeeper
-    cluster-auditor.dsop.io/source: kubernetes-stig
-    cluster-auditor.dsop.io/control: "00"
+    cluster-auditor.dso.mil/source: kubernetes-stig
+    cluster-auditor.dso.mil/control: "00"
 spec:
   enforcementAction: dryrun
   match:
