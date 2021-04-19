@@ -9,7 +9,7 @@ elasticsearch:
   dedicated: false
   imagePullSecrets: [ ]
 istio:
-  enabled: true
+  enabled: false
   
 violations:
   allowedDockerRegistries:
