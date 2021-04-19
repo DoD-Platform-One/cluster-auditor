@@ -5,3 +5,6 @@ elasticsearch:
 
 istio:
   enabled: true
+
+imagePullSecrets:
+- name: private-registry-mil
