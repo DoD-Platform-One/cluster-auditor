@@ -93,7 +93,6 @@ data:
         resource_name k8s_psp_allowed_privilege_escalation_container
       </watch>
       {{- end }}
-      </watch>
 {{- if .Values.collect.violations.labels}}
       <watch>
         resource_name k8s_required_labels
