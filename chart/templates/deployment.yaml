@@ -60,6 +60,8 @@ spec:
           mountPath: /etc/elasticsearch/certs/
         - name: checkpoint
           mountPath: /fluentd/var/checkpoint
+        - name: tmp
+          mountPath: /tmp
       {{- with .Values.imagePullSecrets }}
       imagePullSecrets:
         {{- toYaml . | nindent 8 }}
@@ -73,6 +75,8 @@ spec:
       - name: elasticsearch-certs
         secret:
           secretName: {{ .Values.elasticsearch.name }}-es-http-certs-public
+      - name: tmp
+        emptyDir: {}
       {{- if .Values.nodeSelector }}
       nodeSelector:
         {{ toYaml .Values.nodeSelector | nindent 8 }}
