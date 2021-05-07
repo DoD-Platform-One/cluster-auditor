@@ -75,7 +75,7 @@ data:
         resource_name k8s_banned_image_tags
       </watch>
       <watch>
-        resource_name k8s_psp_allowed_privilege_escalation_container
+        resource_name k8s_pspallowed_privilege_escalation_container
       </watch>
     </source>
 {{- end }}
@@ -90,7 +90,7 @@ data:
       insecure_ssl false
       {{ if .Values.violations.noPriviligedContainers }}
       <watch>
-        resource_name k8s_psp_allowed_privilege_escalation_container
+        resource_name k8s_pspallowed_privilege_escalation_container
       </watch>
       {{- end }}
 {{- if .Values.collect.violations.labels}}
