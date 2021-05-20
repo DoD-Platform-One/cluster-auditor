@@ -1,0 +1,19 @@
+apiVersion: constraints.gatekeeper.sh/v1beta1
+kind: K8sBlockNodePort
+metadata:
+  name:  block-nodeport-service
+  labels:
+    cluster-auditor.dso.mil/source: kubernetes-stig
+    cluster-auditor.dso.mil/control: "90"
+spec:
+  enforcementAction: dryrun  
+  match:
+    kinds:
+      - apiGroups: [""]
+        kinds: ["Pod"]
+    parameters:
+    allowedSELinuxOptions:
+      - level: s0:c123,c456
+        role: object_r
+        type: svirt_sandbox_file_t
+        user: system_u
