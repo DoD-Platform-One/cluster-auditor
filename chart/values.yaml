@@ -3,6 +3,7 @@ collect:
   violations:
     repositories: true
     labels: false
+    hostNamespace: true
 
 elasticsearch:
   name: logging-ek
