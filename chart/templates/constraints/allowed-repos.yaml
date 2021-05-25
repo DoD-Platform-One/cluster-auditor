@@ -1,4 +1,4 @@
-{{- if violations.allowedDockerRegistries.enabled }}
+{{- if .Values.violations.allowedDockerRegistries.enabled }}
 apiVersion: constraints.gatekeeper.sh/v1beta1
 kind: K8sAllowedRepos
 metadata:
