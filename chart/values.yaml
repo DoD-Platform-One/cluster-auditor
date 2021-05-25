@@ -13,7 +13,11 @@ istio:
   
 violations:
   allowedDockerRegistries:
-  - "registry1.dso.mil"
+    enabled: true
+    enforcementAction: dryrun
+    repos:
+    - "registry1.dso.mil"
+    - "registry.dso.mil"
   noBigContainers:
     enabled: true
     enforcementAction: dryrun
