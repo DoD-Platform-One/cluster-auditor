@@ -1,0 +1,16 @@
+{{- if .Values.violations.restrictedTaint.enabled }}
+apiVersion: constraints.gatekeeper.sh/v1beta1
+kind: RestrictedTaintToleration
+metadata:
+  name: privileged
+spec:
+  enforcementAction: {{ .Values.violations.restrictedTaint.enforcementAction }}
+  match:
+    kinds:
+    - apiGroups: [""]
+      kinds: ["Pod"]
+    excludedNamespaces:
+    - kube-system
+  parameters:
+    {{- toYaml .Values.violations.restrictedTaint.parameters | nindent 4}}
+{{- end }}

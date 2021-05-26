@@ -23,6 +23,19 @@ violations:
     repos:
       - "registry1.dso.mil"
       - "registry.dso.mil"
+  restrictedTaint:
+    enabled: true
+    enforcementAction: dryrun
+    match: {}
+    # namespaceSelector:
+    #   matchExpressions:
+    #   - {key: name, operator: In, values: [tenant]}
+    parameters:
+      restrictedTaint:
+        key: privileged
+        effect: NoSchedule
+        value: "true"
+      allowGlobalToleration: false
   noBigContainers:
     enabled: true
     enforcementAction: dryrun
