@@ -1,0 +1,21 @@
+---
+{{- if .Values.violations.allowedFlexVolume.enabled }}
+apiVersion: constraints.gatekeeper.sh/v1beta1
+kind: K8sPSPHostNetworkingPorts
+metadata:
+  name: psp-host-network-ports
+  labels:
+    cluster-auditor.dso.mil/source: big-bang
+    cluster-auditor.dso.mil/control: "tbd"
+spec:
+  enforcementAction: {{ .Values.violations.allowedFlexVolume.enforcementAction  }}
+  match:
+    {{- if .Values.violations.allowedFlexVolume.match  }}
+    {{- toYaml .Values.violations.allowedFlexVolume.match | nindent 4 }}
+    {{- end }}
+    kinds:
+      - apiGroups: [""]
+        kinds: ["Pod"]
+  parameters:
+    {{- toYaml .Values.violations.allowedFlexVolume.parameters | nindent 4}}
+{{- end }}
