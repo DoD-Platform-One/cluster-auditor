@@ -1,0 +1,17 @@
+{{- if .Values.violations.bannedImageTags.enabled }}
+apiVersion: constraints.gatekeeper.sh/v1beta1
+kind: K8sBannedImageTags
+metadata:
+  name: ban-image-tags
+spec:
+  enforcementAction: {{ .Values.violations.bannedImageTags.enforcementAction }}
+  match:
+    kinds:
+      - apiGroups: [""]
+        kinds: ["Pod"]
+  parameters:
+    tags:
+    {{- range .Values.violations.bannedImageTags.tags }}
+      - {{ . }}
+    {{- end }}
+{{- end }}
