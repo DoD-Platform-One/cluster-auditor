@@ -1,15 +1,15 @@
-{{- if .Values.collect.violations.hostNamespace}}
+{{ if .Values.violations.noHostNamespace }}
 apiVersion: constraints.gatekeeper.sh/v1beta1
 kind: K8sPSPHostNamespace
 metadata:
-  name: psp-host-namespace
-  labels:
-    cluster-auditor.dso.mil/source: big-bang
-    cluster-auditor.dso.mil/control: "tbd"
+  name: psp-no-host-namespace
 spec:
-  enforcementAction: dryrun
+  enforcementAction: {{ .Values.violations.noHostNamespace.enforcementAction  }}
   match:
+    {{- if .Values.violations.noHostNamespace.match  }}
+    {{- toYaml .Values.violations.noHostNamespace.match | nindent 4}}
+    {{- end }}
     kinds:
       - apiGroups: [""]
         kinds: ["Pod"]
-{{- end}}
+{{ end }}

@@ -39,6 +39,22 @@ violations:
       # namespaceSelector:
       #   matchExpressions:
       #   - {key: name, operator: In, values: [tenant]}
+  noHostNamespace:
+    enabled: true
+    enforcementAction: dryrun
+    # specify how to subset the pods
+    match: {}
+      # namespaceSelector:
+      #   matchExpressions:
+      #   - {key: name, operator: In, values: [tenant]}
+  blockNodePort:
+    enabled: true
+    enforcementAction: dryrun
+    # specify how to subset the pods
+    match: {}
+      # namespaceSelector:
+      #   matchExpressions:
+      #   - {key: name, operator: In, values: [tenant]}
   requiredLabels:
     enabled: true
     enforcementAction: dryrun
