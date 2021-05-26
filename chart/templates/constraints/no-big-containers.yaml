@@ -1,0 +1,20 @@
+{{- if .Values.violations.noBigContainers.enabled }}
+apiVersion: constraints.gatekeeper.sh/v1beta1
+kind: K8sContainerLimits
+metadata:
+  name: no-big-containers
+  labels:
+    cluster-auditor.dso.mil/source: big-bang
+    cluster-auditor.dso.mil/control: "tbd"
+spec:
+  enforcementAction: {{ .Values.violations.noBigContainers.enforcementAction  }}
+  match:
+    {{- if .Values.violations.noBigContainers.match  }}
+    {{- toYaml .Values.violations.noBigContainers.match | nindent 4 }}
+    {{- end }}
+    kinds:
+      - apiGroups: [""]
+        kinds: ["Pod"]
+  parameters:
+    {{- toYaml .Values.violations.noBigContainers.parameters | nindent 4}}
+{{- end }}    

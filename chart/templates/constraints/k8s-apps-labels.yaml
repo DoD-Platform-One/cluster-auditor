@@ -1,5 +1,5 @@
 ---
-{{- if .Values.collect.violations.labels}}
+{{- if .Values.violations.requiredLabels.enabled }}
 apiVersion: constraints.gatekeeper.sh/v1beta1
 kind: K8sRequiredLabelValues
 metadata:
@@ -8,23 +8,14 @@ metadata:
     cluster-auditor.dso.mil/source: big-bang
     cluster-auditor.dso.mil/control: "tbd"
 spec:
-  enforcementAction: dryrun
+  enforcementAction: {{ .Values.violations.requiredLabels.enforcementAction  }}
   match:
+    {{- if .Values.violations.requiredLabels.match  }}
+    {{- toYaml .Values.violations.requiredLabels.match | nindent 4 }}
+    {{- end }}
     kinds:
       - apiGroups: [""]
         kinds: ["Pod"]
   parameters:
-    labels:
-    - key: "app.kubernetes.io/name"
-      allowedRegex: ""
-    - key: "app.kubernetes.io/instance"
-      allowedRegex: ""
-    - key: "app.kubernetes.io/version"
-      allowedRegex: ""
-    - key: "app.kubernetes.io/component"
-      allowedRegex: ""
-    - key: "app.kubernetes.io/part-of"
-      allowedRegex: ""
-    - key: "app.kubernetes.io/managed-by"
-      allowedRegex: ""
+    {{- toYaml .Values.violations.requiredLabels.parameters | nindent 4}}
 {{- end }}

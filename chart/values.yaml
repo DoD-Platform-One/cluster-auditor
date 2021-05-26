@@ -13,7 +13,55 @@ istio:
   
 violations:
   allowedDockerRegistries:
-  - "registry1.dso.mil"
+    enabled: true
+    enforcementAction: dryrun
+    repos:
+    - "registry1.dso.mil"
+    - "registry.dso.mil"
+  noBigContainers:
+    enabled: true
+    enforcementAction: dryrun
+    # specify how to subset the pods
+    match: {}
+      # namespaceSelector:
+      #   matchExpressions:
+      #   - {key: name, operator: In, values: [tenant]}
+    parameters:
+      cpu: 2000m
+      memory: 4G
+      exemptContainers: [""]
+  noPriviligedContainers:
+    enabled: true
+    enforcementAction: dryrun
+    # specify how to subset the pods
+    match: {}
+      # namespaceSelector:
+      #   matchExpressions:
+      #   - {key: name, operator: In, values: [tenant]}
+  requiredLabels:
+    enabled: true
+    enforcementAction: dryrun
+    # specify how to subset the pods
+    match: {}
+      # namespaceSelector:
+      #   matchExpressions:
+      #   - {key: name, operator: In, values: [tenant]}
+    parameters:
+      labels:
+      - key: "app.kubernetes.io/name"
+        allowedRegex: ""
+      - key: "app.kubernetes.io/instance"
+        allowedRegex: ""
+      - key: "app.kubernetes.io/version"
+        allowedRegex: ""
+      - key: "app.kubernetes.io/component"
+        allowedRegex: ""
+      - key: "app.kubernetes.io/part-of"
+        allowedRegex: ""
+      - key: "app.kubernetes.io/managed-by"
+        allowedRegex: ""
+
+
 image:
   repo: registry1.dso.mil/ironbank/cluster-auditor/opa-collector
   tag: 0.3.2
