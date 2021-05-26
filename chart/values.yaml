@@ -7,22 +7,28 @@ collect:
 elasticsearch:
   name: logging-ek
   dedicated: false
-  imagePullSecrets: [ ]
+  imagePullSecrets: []
 istio:
   enabled: false
-  
+
 violations:
+  bannedImageTags:
+    enabled: true
+    enforcementAction: dryrun
+    tags:
+      - "latest"
   allowedDockerRegistries:
     enabled: true
     enforcementAction: dryrun
     repos:
-    - "registry1.dso.mil"
-    - "registry.dso.mil"
+      - "registry1.dso.mil"
+      - "registry.dso.mil"
   noBigContainers:
     enabled: true
     enforcementAction: dryrun
     # specify how to subset the pods
-    match: {}
+    match:
+      {}
       # namespaceSelector:
       #   matchExpressions:
       #   - {key: name, operator: In, values: [tenant]}
@@ -34,7 +40,8 @@ violations:
     enabled: true
     enforcementAction: dryrun
     # specify how to subset the pods
-    match: {}
+    match:
+      {}
       # namespaceSelector:
       #   matchExpressions:
       #   - {key: name, operator: In, values: [tenant]}
@@ -42,25 +49,25 @@ violations:
     enabled: true
     enforcementAction: dryrun
     # specify how to subset the pods
-    match: {}
+    match:
+      {}
       # namespaceSelector:
       #   matchExpressions:
       #   - {key: name, operator: In, values: [tenant]}
     parameters:
       labels:
-      - key: "app.kubernetes.io/name"
-        allowedRegex: ""
-      - key: "app.kubernetes.io/instance"
-        allowedRegex: ""
-      - key: "app.kubernetes.io/version"
-        allowedRegex: ""
-      - key: "app.kubernetes.io/component"
-        allowedRegex: ""
-      - key: "app.kubernetes.io/part-of"
-        allowedRegex: ""
-      - key: "app.kubernetes.io/managed-by"
-        allowedRegex: ""
-
+        - key: "app.kubernetes.io/name"
+          allowedRegex: ""
+        - key: "app.kubernetes.io/instance"
+          allowedRegex: ""
+        - key: "app.kubernetes.io/version"
+          allowedRegex: ""
+        - key: "app.kubernetes.io/component"
+          allowedRegex: ""
+        - key: "app.kubernetes.io/part-of"
+          allowedRegex: ""
+        - key: "app.kubernetes.io/managed-by"
+          allowedRegex: ""
 
 image:
   repo: registry1.dso.mil/ironbank/cluster-auditor/opa-collector
@@ -68,10 +75,9 @@ image:
   imagePullPolicy: Always
 
 imagePullSecrets:
-- name: private-registry
+  - name: private-registry
 
 tolerations: []
-
 
 resources:
   requests:
@@ -82,7 +88,8 @@ resources:
     memory: 2Gi
 loglevel: debug
 
-affinity: {}
+affinity:
+  {}
   # podAntiAffinity:
   #   requiredDuringSchedulingIgnoredDuringExecution:
   #     - topologyKey: "kubernetes.io/hostname"
@@ -98,5 +105,6 @@ affinity: {}
   #         values:
   #         - "cluster-auditor"
 
-nodeSelector: {}
+nodeSelector:
+  {}
   # node-type: cluster-auditor
