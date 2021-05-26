@@ -1,9 +1,9 @@
 ---
 {{- if .Values.violations.allowedFlexVolume.enabled }}
 apiVersion: constraints.gatekeeper.sh/v1beta1
-kind: K8sPSPHostNetworkingPorts
+kind: K8sPSPFlexVolumes
 metadata:
-  name: psp-host-network-ports
+  name: psp-flex-volume
   labels:
     cluster-auditor.dso.mil/source: big-bang
     cluster-auditor.dso.mil/control: "tbd"
