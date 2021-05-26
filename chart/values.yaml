@@ -23,7 +23,7 @@ violations:
     repos:
       - "registry1.dso.mil"
       - "registry.dso.mil"
-  allowedFexVolumes:
+  allowedFlexVolumes:
     enabled: true
     enforcementAction: dryrun
     match:
@@ -31,10 +31,10 @@ violations:
       # namespaceSelector:
       #   matchExpressions:
       #   - {key: name, operator: In, values: [tenant]}
-      parameters:
-        hostNetwork: true
-        min: 80
-        max: 9000
+    parameters:
+      hostNetwork: true
+      min: 80
+      max: 9000
   noBigContainers:
     enabled: true
     enforcementAction: dryrun
