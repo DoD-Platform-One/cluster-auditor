@@ -1,4 +1,4 @@
-{{ if .Values.violations.noHostNamespace }}
+{{ if .Values.violations.noHostNamespace.enabled }}
 apiVersion: constraints.gatekeeper.sh/v1beta1
 kind: K8sPSPHostNamespace
 metadata:
