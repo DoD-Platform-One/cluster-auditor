@@ -1,0 +1,21 @@
+---
+{{- if .Values.violations.selinuxPolicy.enabled }}
+apiVersion: constraints.gatekeeper.sh/v1beta1
+kind: K8sPSPSELinuxV2
+metadata:
+  name: policy-selinux
+  labels:
+    cluster-auditor.dso.mil/source: big-bang
+    cluster-auditor.dso.mil/control: "tbd"
+spec:
+  enforcementAction: {{ .Values.violations.selinuxPolicy.enforcementAction  }}
+  match:
+    {{- if .Values.violations.selinuxPolicy.match  }}
+    {{- toYaml .Values.violations.selinuxPolicy.match | nindent 4 }}
+    {{- end }}
+    kinds:
+      - apiGroups: [""]
+        kinds: ["Pod"]
+  parameters:
+    {{- toYaml .Values.violations.selinuxPolicy.parameters | nindent 4}}
+{{- end }}
