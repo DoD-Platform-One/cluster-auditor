@@ -1,0 +1,16 @@
+{{- if .Values.violations.pspCapabilities.enabled }}
+apiVersion: constraints.gatekeeper.sh/v1beta1
+kind: K8sPSPCapabilities
+metadata:
+  name: psp-capabilities
+spec:
+  enforcementAction: {{ .Values.violations.pspCapabilities.enforcementAction }}
+  match:
+    kinds:
+      - apiGroups: [""]
+        kinds: ["Pod"]
+    excludedNamespaces:
+      - kube-system
+  parameters:
+    {{- toYaml .Values.violations.pspCapabilities.parameters | nindent 4}}
+{{- end }}

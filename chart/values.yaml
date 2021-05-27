@@ -36,6 +36,37 @@ violations:
         effect: NoSchedule
         value: "true"
       allowGlobalToleration: false
+  pspCapabilities:
+    enabled: true
+    enforcementAction: dryrun
+    match: 
+      excludedNamespaces:
+        - kube-system
+    parameters:
+      allowedCapabilities: ["NET_BIND_SERVICE"]
+      requiredDropCapabilities: ["all"]
+  httpsOnly:
+    enabled: true
+    enforcementAction: dryrun
+    match: {}
+    parameters:
+      allowedCapabilities: ["NET_BIND_SERVICE"]
+      requiredDropCapabilities: ["all"]
+  allowedIPs:
+    enabled: true
+    enforcementAction: dryrun
+    match: {}
+    parameters:
+      allowedIPs: []
+        #- 1.2.3.4/32
+  allowedHostFilesystem:
+    enabled: true
+    enforcementAction: dryrun
+    match: {}
+    parameters: 
+      allowedHostPaths: []
+        # - readOnly: true
+        #   pathPrefix: "/foo"
   allowedFlexVolumes:
     enabled: true
     enforcementAction: dryrun

@@ -1,0 +1,15 @@
+{{- if .Values.violations.httpsOnly.enabled }}
+apiVersion: constraints.gatekeeper.sh/v1beta1
+kind: K8sHttpsOnly
+metadata:
+  name: ingress-https-only
+spec:
+  enforcementAction: {{ .Values.violations.httpsOnly.enforcementAction }}
+  match:
+    {{- if .Values.violations.httpsOnly.match  }}
+    {{- toYaml .Values.violations.httpsOnly.match | nindent 4}}
+    {{- end }}
+    kinds:
+      - apiGroups: ["extensions", "networking.k8s.io"]
+        kinds: ["Ingress"]
+{{- end }}

@@ -1,0 +1,17 @@
+{{- if .Values.violations.allowedIPs.enabled }}
+apiVersion: constraints.gatekeeper.sh/v1beta1
+kind: K8sExternalIPs
+metadata:
+  name: external-ips
+spec:
+  enforcementAction: {{ .Values.violations.allowedIPs.enforcementAction }}
+  match:
+    {{- if .Values.violations.allowedIPs.match  }}
+    {{- toYaml .Values.violations.allowedIPs.match | nindent 4}}
+    {{- end }}
+    kinds:
+      - apiGroups: [""]
+        kinds: ["Service"]
+  parameters:
+    {{- toYaml .Values.violations.allowedIPs.parameters | nindent 4}}
+{{- end }}
