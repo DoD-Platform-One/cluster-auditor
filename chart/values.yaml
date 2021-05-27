@@ -50,28 +50,12 @@ violations:
     parameters:
       allowedProfiles:
         - runtime/default
-  pspAllowedUsersGroups:
+  allowedProcMount:
     enabled: true
     enforcementAction: dryrun
     match: {}
     parameters:
-      runAsUser:
-        rule: MustRunAsNonRoot # RunAsAny # MustRunAs
-      runAsGroup:
-        rule: MustRunAs # MayRunAs # RunAsAny 
-        ranges:
-          - min: 1
-            max: 65535
-      supplementalGroups:
-        rule: MustRunAs # MayRunAs # RunAsAny 
-        ranges:
-          - min: 1
-            max: 65535
-      fsGroup:
-        rule: MustRunAs # MayRunAs # RunAsAny 
-        ranges:
-          - min: 1
-            max: 65535
+      procMount: Default
   noBigContainers:
     enabled: true
     enforcementAction: dryrun
