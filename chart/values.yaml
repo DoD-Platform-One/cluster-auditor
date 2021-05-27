@@ -44,9 +44,8 @@ violations:
       #   matchExpressions:
       #   - {key: name, operator: In, values: [tenant]}
     parameters:
-      allowedFlexVolumes: #[]
-      - driver: "example/lvm"
-      - driver: "example/cifs"
+      allowedFlexVolumes:  [ ]
+      
   allowedProfiles:
     enabled: true
     enforcementAction: dryrun
@@ -56,9 +55,8 @@ violations:
       #   matchExpressions:
       #   - {key: name, operator: In, values: [tenant]}
     parameters:
-      allowedProfiles: #[]
-      - runtime/default
-      - docker/default  
+      allowedProfiles: [ ]
+      
   readOnlyRoot:
     enabled: true
     enforcementAction: dryrun
