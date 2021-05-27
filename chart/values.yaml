@@ -81,6 +81,25 @@ violations:
           allowedRegex: ""
         - key: "app.kubernetes.io/managed-by"
           allowedRegex: ""
+  volumeTypes:
+    enabled: true
+    enforcementAction: dryrun
+    # specify how to subset the pods
+    match: {}
+      # namespaceSelector:
+      #   matchExpressions:
+      #   - {key: name, operator: In, values: [tenant]}
+    parameters:
+      volumes:
+      # - "*" # * may be used to allow all volume types
+      - configMap
+      - emptyDir
+      - projected
+      - secret
+      - downwardAPI
+      - persistentVolumeClaim
+      - hostPath #required for allowedHostPaths
+      - flexVolume #required for allowedFlexVolumes
 
 image:
   repo: registry1.dso.mil/ironbank/cluster-auditor/opa-collector
