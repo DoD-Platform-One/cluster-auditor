@@ -12,6 +12,30 @@ istio:
   enabled: false
 
 violations:
+  #Very restrictive to start, over 600 violations.
+  allowedUsers:
+    enabled: true
+    enforcementAction: dryrun
+    parameters:
+      runAsUser:
+        rule: MustRunAs # MustRunAsNonRoot # RunAsAny
+        ranges:
+          - min: 100
+            max: 200
+      runAsGroup:
+        rule: MustRunAs # MayRunAs # RunAsAny
+        ranges:
+          - min: 100
+            max: 200
+      supplementalGroups:
+        rule: MustRunAs # MayRunAs # RunAsAny
+        ranges:
+          - min: 100
+            max: 200
+      fsGroup:
+        rule: MustRunAs # MayRunAs # RunAsAny
+        ranges:
+          - min: 100
   bannedImageTags:
     enabled: true
     enforcementAction: dryrun
