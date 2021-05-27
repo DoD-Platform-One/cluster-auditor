@@ -1,0 +1,17 @@
+{{- if .Values.violations.volumeTypes.enabled }}
+apiVersion: constraints.gatekeeper.sh/v1beta1
+kind: K8sPSPVolumeTypes
+metadata:
+  name: psp-volume-types
+  labels:
+    cluster-auditor.dso.mil/source: big-bang
+    cluster-auditor.dso.mil/control: "tbd"
+spec:
+  enforcementAction: {{ .Values.violations.volumeTypes.enforcementAction | default "dryrun" }}
+  match:
+    kinds:
+      - apiGroups: [""]
+        kinds: ["Pod"]
+  parameters:
+    {{- toYaml .Values.violations.volumeTypes.parameters | nindent 4}}
+{{- end }}
