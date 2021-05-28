@@ -12,8 +12,6 @@ spec:
     kinds:
       - apiGroups: [""]
         kinds: ["Pod"]
-    excludedNamespaces:
-    - kube-system
   parameters:
     {{- toYaml .Values.violations.allowedUsers.parameters | nindent 4}}
 {{- end }}

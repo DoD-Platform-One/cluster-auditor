@@ -15,7 +15,9 @@ violations:
   allowedUsers:
     enabled: true
     enforcementAction: dryrun
-    match: {}
+    match:
+      excludedNamespaces:
+      - kube-system
     parameters:
       runAsUser:
         rule: MustRunAsNonRoot # MustRunAs # RunAsAny
