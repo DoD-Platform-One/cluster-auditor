@@ -26,10 +26,9 @@ violations:
   restrictedTaint:
     enabled: true
     enforcementAction: dryrun
-    match: {}
-    # namespaceSelector:
-    #   matchExpressions:
-    #   - {key: name, operator: In, values: [tenant]}
+    match:
+      excludedNamespaces:
+        - kube-system
     parameters:
       restrictedTaint:
         key: privileged

@@ -9,8 +9,9 @@ spec:
     kinds:
       - apiGroups: [""]
         kinds: ["Pod"]
-    excludedNamespaces:
-      - kube-system
+    {{- if .Values.violations.pspCapabilities.match  }}
+    {{- toYaml .Values.violations.pspCapabilities.match | nindent 4}}
+    {{- end }}
   parameters:
     {{- toYaml .Values.violations.pspCapabilities.parameters | nindent 4}}
 {{- end }}
