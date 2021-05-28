@@ -1,0 +1,17 @@
+{{- if .Values.violations.allowedHostFilesystem.enabled }}
+apiVersion: constraints.gatekeeper.sh/v1beta1
+kind: K8sPSPHostFilesystem
+metadata:
+  name: psp-host-filesystem
+spec:
+  enforcementAction: {{ .Values.violations.allowedHostFilesystem.enforcementAction }}
+  match:
+    {{- if .Values.violations.allowedHostFilesystem.match  }}
+    {{- toYaml .Values.violations.allowedHostFilesystem.match | nindent 4}}
+    {{- end }}
+    kinds:
+      - apiGroups: [""]
+        kinds: ["Pod"]
+  parameters:
+    {{- toYaml .Values.violations.allowedHostFilesystem.parameters | nindent 4}}
+{{- end }}

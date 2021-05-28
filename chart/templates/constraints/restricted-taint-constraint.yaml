@@ -9,8 +9,9 @@ spec:
     kinds:
     - apiGroups: [""]
       kinds: ["Pod"]
-    excludedNamespaces:
-    - kube-system
+    {{- if .Values.violations.restrictedTaint.match  }}
+    {{- toYaml .Values.violations.restrictedTaint.match | nindent 4}}
+    {{- end }}
   parameters:
     {{- toYaml .Values.violations.restrictedTaint.parameters | nindent 4}}
 {{- end }}
