@@ -144,7 +144,17 @@ violations:
       - persistentVolumeClaim
       - hostPath #required for allowedHostPaths
       - flexVolume #required for allowedFlexVolumes
-
+  # Denies all, can be configured to allow for additional access.
+  noSysctls:
+    enabled: true
+    enforcementAction: dryrun
+    match: {}
+      # namespaceSelector:
+      #   matchExpressions:
+      #   - {key: name, operator: In, values: [tenant]}
+    parameters:
+      forbiddenSysctls:
+      - "*"
 image:
   repo: registry1.dso.mil/ironbank/cluster-auditor/opa-collector
   tag: 0.3.2
