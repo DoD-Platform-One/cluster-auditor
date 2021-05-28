@@ -1,0 +1,20 @@
+---
+{{- if .Values.violations.noSysctls.enabled }}
+
+apiVersion: constraints.gatekeeper.sh/v1beta1
+kind: K8sPSPForbiddenSysctls
+metadata:
+  name: psp-forbidden-sysctls
+spec:
+  enforcementAction: {{ .Values.violations.noSysctls.enforcementAction }}
+  match:
+    {{- if .Values.violations.noSysctls.match  }}
+    {{- toYaml .Values.violations.noSysctls.match | nindent 4 }}
+    {{- end }}
+    kinds:
+      - apiGroups: [""]
+        kinds: ["Pod"]
+  parameters:
+    {{- toYaml .Values.violations.noSysctls.parameters | nindent 4}}
+
+{{- end }}
