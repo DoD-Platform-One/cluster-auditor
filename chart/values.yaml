@@ -36,6 +36,26 @@ violations:
         effect: NoSchedule
         value: "true"
       allowGlobalToleration: false
+  allowedFlexVolumes:
+    enabled: true
+    enforcementAction: dryrun
+    match: {}
+    parameters:
+      allowedFlexVolumes: []
+        # - driver: "example/lvm"
+  allowedProfiles:
+    enabled: true
+    enforcementAction: dryrun
+    match: {}
+    parameters:
+      allowedProfiles:
+        - runtime/default
+  allowedProcMount:
+    enabled: true
+    enforcementAction: dryrun
+    match: {}
+    parameters:
+      procMount: Default
   noBigContainers:
     enabled: true
     enforcementAction: dryrun
