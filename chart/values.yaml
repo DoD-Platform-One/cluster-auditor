@@ -12,25 +12,25 @@ istio:
   enabled: false
 
 violations:
-  #Very restrictive to start, over 600 violations.
   allowedUsers:
     enabled: true
     enforcementAction: dryrun
+    match: {}
     parameters:
       runAsUser:
         rule: MustRunAsNonRoot # MustRunAs # RunAsAny
       runAsGroup:
         rule: MustRunAs # MayRunAs # RunAsAny
         ranges:
-          - min: 100
+          - min: 1000
       supplementalGroups:
         rule: MustRunAs # MayRunAs # RunAsAny
         ranges:
-          - min: 100
+          - min: 1000
       fsGroup:
         rule: MustRunAs # MayRunAs # RunAsAny
         ranges:
-          - min: 100
+          - min: 1000
   bannedImageTags:
     enabled: true
     enforcementAction: dryrun
@@ -57,7 +57,7 @@ violations:
   pspCapabilities:
     enabled: true
     enforcementAction: dryrun
-    match: 
+    match:
       excludedNamespaces:
         - kube-system
     parameters:
@@ -81,7 +81,7 @@ violations:
     enabled: true
     enforcementAction: dryrun
     match: {}
-    parameters: 
+    parameters:
       allowedHostPaths: []
         # - readOnly: true
         #   pathPrefix: "/foo"

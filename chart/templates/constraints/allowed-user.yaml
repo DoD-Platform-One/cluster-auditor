@@ -6,6 +6,9 @@ metadata:
 spec:
   enforcementAction: {{ .Values.violations.allowedUsers.enforcementAction }}
   match:
+    {{- if .Values.violations.allowedUsers.match  }}
+    {{- toYaml .Values.violations.allowedUsers.match | nindent 4}}
+    {{- end }}
     kinds:
       - apiGroups: [""]
         kinds: ["Pod"]
