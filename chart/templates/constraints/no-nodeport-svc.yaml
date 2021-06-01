@@ -1,4 +1,4 @@
-{{ if .Values.violations.blockNodePort.enabled }}
+{{- if .Values.violations.blockNodePort.enabled }}
 apiVersion: constraints.gatekeeper.sh/v1beta1
 kind: K8sBlockNodePort
 metadata:
@@ -12,4 +12,4 @@ spec:
     kinds:
       - apiGroups: [""]
         kinds: ["Service"]
-{{ end }}
+{{- end }}

@@ -1,21 +1,17 @@
-{{- if .Values.collect.violations.labels}}
----
+{{- if or .Values.collect.violations.labels .Values.violations.namespacesHaveIstio.enabled }}
 apiVersion: constraints.gatekeeper.sh/v1beta1
 kind: K8sRequiredLabelValues
 metadata:
   name: ns-must-have-istio
 spec:
-  enforcementAction: dryrun
+  enforcementAction: {{ .Values.violations.namespacesHaveIstio.enforcementAction }}
   match:
+    {{- if .Values.violations.namespacesHaveIstio.match  }}
+    {{- toYaml .Values.violations.namespacesHaveIstio.match | nindent 4}}
+    {{- end }}
     kinds:
       - apiGroups: [""]
         kinds: ["Namespace"]
-    namespaceSelector:
-      matchExpressions:
-      - key: admission.gatekeeper.sh/ignore
-        operator: DoesNotExist
   parameters:
-    labels:
-    - key: "istio-injection"
-      allowedRegex: "^enabled"
-{{- end}}
+    {{- toYaml .Values.violations.namespacesHaveIstio.parameters | nindent 4}}
+{{- end }}

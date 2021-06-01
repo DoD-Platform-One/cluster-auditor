@@ -6,12 +6,12 @@ metadata:
 spec:
   enforcementAction: {{ .Values.violations.restrictedTaint.enforcementAction }}
   match:
-    kinds:
-    - apiGroups: [""]
-      kinds: ["Pod"]
     {{- if .Values.violations.restrictedTaint.match  }}
     {{- toYaml .Values.violations.restrictedTaint.match | nindent 4}}
     {{- end }}
+    kinds:
+    - apiGroups: [""]
+      kinds: ["Pod"]
   parameters:
     {{- toYaml .Values.violations.restrictedTaint.parameters | nindent 4}}
 {{- end }}

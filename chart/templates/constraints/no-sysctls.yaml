@@ -1,6 +1,4 @@
----
 {{- if .Values.violations.noSysctls.enabled }}
-
 apiVersion: constraints.gatekeeper.sh/v1beta1
 kind: K8sPSPForbiddenSysctls
 metadata:
@@ -16,5 +14,4 @@ spec:
         kinds: ["Pod"]
   parameters:
     {{- toYaml .Values.violations.noSysctls.parameters | nindent 4}}
-
 {{- end }}
