@@ -1,3 +1,4 @@
+{{- if .Values.violations.requiredProbes.enabled }}
 apiVersion: constraints.gatekeeper.sh/v1beta1
 kind: K8sRequiredProbes
 metadata:
@@ -7,11 +8,11 @@ metadata:
     cluster-auditor.dso.mil/source: kubernetes-stig
     cluster-auditor.dso.mil/control: "00"
 spec:
-  enforcementAction: dryrun
+  enforcementAction: {{ .Values.violations.requiredProbes.enforcementAction }}
   match:
     kinds:
       - apiGroups: [""]
         kinds: ["Pod"]
   parameters:
-    probes: ["readinessProbe", "livenessProbe"]
-    probeTypes: ["tcpSocket", "httpGet", "exec"]
+    {{- toYaml .Values.violations.restrictedTaint.parameters | nindent 4}}
+{{- end }}

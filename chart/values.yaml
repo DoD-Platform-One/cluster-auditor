@@ -1,7 +1,6 @@
 collect:
   objects: false
   violations:
-    repositories: true
     labels: false
 
 elasticsearch:
@@ -206,6 +205,13 @@ violations:
     parameters:
       forbiddenSysctls:
       - "*"
+  requiredProbes:
+    enabled: true
+    enforcementAction: dryrun
+    parameters:
+      probes: ["readinessProbe", "livenessProbe"]
+      probeTypes: ["tcpSocket", "httpGet", "exec"]
+
 image:
   repo: registry1.dso.mil/ironbank/cluster-auditor/opa-collector
   tag: 0.3.2
