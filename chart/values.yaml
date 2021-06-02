@@ -74,10 +74,7 @@ violations:
       #   - {key: name, operator: In, values: [tenant]}
     parameters:
       allowedSELinuxOptions:
-      - level: s0:c123,c456
-        role: object_r
-        type: svirt_sandbox_file_t
-        user: system_u
+      
 
   noBigContainers:
     enabled: true
