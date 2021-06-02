@@ -74,6 +74,7 @@ violations:
       #   - {key: name, operator: In, values: [tenant]}
     parameters:
       allowedSELinuxOptions:
+        {}
       
 
   noBigContainers:
