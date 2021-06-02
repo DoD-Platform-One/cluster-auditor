@@ -73,8 +73,8 @@ violations:
       #   matchExpressions:
       #   - {key: name, operator: In, values: [tenant]}
     parameters:
-      allowedSELinuxOptions:
-        {}
+      allowedSELinuxOptions: [ ]
+        
       
 
   noBigContainers:
