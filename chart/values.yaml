@@ -33,8 +33,7 @@ violations:
       #   - {key: name, operator: In, values: [tenant]}
     parameters:
       hostNetwork: true
-      min: 80
-      max: 9000
+      
   allowedFlexVolume:
     enabled: true
     enforcementAction: dryrun
