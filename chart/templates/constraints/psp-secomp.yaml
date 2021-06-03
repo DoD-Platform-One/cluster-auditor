@@ -1,5 +1,5 @@
 ---
-{{- if .Values.violations.allowedProfiles.enabled }}
+{{- if .Values.violations.allowedSecCompProfiles.enabled }}
 apiVersion: constraints.gatekeeper.sh/v1beta1
 kind: K8sPSPSeccomp
 metadata:
