@@ -54,7 +54,7 @@ violations:
       #   matchExpressions:
       #   - {key: name, operator: In, values: [tenant]}
     parameters:
-      allowedProfiles: [ ]
+      allowedSecCompProfiles: [ ]
       
   readOnlyRoot:
     enabled: true
