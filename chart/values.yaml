@@ -45,7 +45,7 @@ violations:
     parameters:
       allowedFlexVolumes:  [ ]
       
-  allowedProfiles:
+  allowedSecCompProfiles:
     enabled: true
     enforcementAction: dryrun
     match:
@@ -54,7 +54,7 @@ violations:
       #   matchExpressions:
       #   - {key: name, operator: In, values: [tenant]}
     parameters:
-      allowedSecCompProfiles: [ ]
+      allowedProfiles: [ ]
       
   readOnlyRoot:
     enabled: true
