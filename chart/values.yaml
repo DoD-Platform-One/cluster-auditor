@@ -97,12 +97,12 @@ violations:
     parameters:
       allowedFlexVolumes: []
         # - driver: "example/lvm"
-  allowedProfiles:
+  allowedAppArmorProfiles:
     enabled: true
     enforcementAction: dryrun
     match: {}
     parameters:
-      allowedProfiles:
+      allowedAppArmorProfiles:
         - runtime/default
   allowedProcMount:
     enabled: true

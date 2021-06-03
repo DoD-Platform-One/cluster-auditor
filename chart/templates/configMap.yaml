@@ -150,7 +150,7 @@ data:
         resource_name k8s_external_ips
       </watch>
 {{- end }}
-{{- if .Values.violations.allowedProfiles.enabled }}
+{{- if .Values.violations.allowedAppArmorProfiles.enabled }}
       <watch>
         resource_name k8s_pspapp_armor
       </watch>
