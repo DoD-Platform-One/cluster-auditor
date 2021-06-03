@@ -8,14 +8,14 @@ metadata:
     cluster-auditor.dso.mil/source: big-bang
     cluster-auditor.dso.mil/control: "tbd"
 spec:
-  enforcementAction: {{ .Values.violations.allowedProfiles.enforcementAction  }}
+  enforcementAction: {{ .Values.violations.allowedSecCompProfiles.enforcementAction  }}
   match:
-    {{- if .Values.violations.allowedProfiles.match  }}
-    {{- toYaml .Values.violations.allowedProfiles.match | nindent 4 }}
+    {{- if .Values.violations.allowedSecCompProfiles.match  }}
+    {{- toYaml .Values.violations.allowedSecCompProfiles.match | nindent 4 }}
     {{- end }}
     kinds:
       - apiGroups: [""]
         kinds: ["Pod"]
   parameters:
-    {{- toYaml .Values.violations.allowedProfiles.parameters | nindent 4}}
+    {{- toYaml .Values.violations.allowedSecCompProfiles.parameters | nindent 4}}
 {{- end }}
