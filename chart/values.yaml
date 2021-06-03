@@ -32,7 +32,7 @@ violations:
       #   matchExpressions:
       #   - {key: name, operator: In, values: [tenant]}
     parameters:
-      hostNetwork: true
+      hostNetwork: false
       
   allowedFlexVolume:
     enabled: true
