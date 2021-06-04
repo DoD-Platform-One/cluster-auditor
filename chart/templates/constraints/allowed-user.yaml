@@ -3,6 +3,13 @@ apiVersion: constraints.gatekeeper.sh/v1beta1
 kind: K8sPSPAllowedUsers
 metadata:
   name: psp-pods-allowed-user-ranges
+  labels:
+    constraints.cluster-auditor/name: "Users and Groups"
+    constraints.cluster-auditor/description: "Containers may only be run as specified users and groups."
+    constraints.cluster-auditor/scope: "Pod"
+    constraints.cluster-auditor/source: "https://github.com/open-policy-agent/gatekeeper-library/tree/master/library/pod-security-policy/users"
+    constraints.cluster-auditor/docs: "https://kubernetes.io/docs/tasks/configure-pod-container/security-context/#set-the-security-context-for-a-pod"
+    constraints.cluster-auditor/related: "https://wiki.archlinux.org/title/users_and_groups"
 spec:
   enforcementAction: {{ .Values.violations.allowedUsers.enforcementAction }}
   match:

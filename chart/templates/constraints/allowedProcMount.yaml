@@ -3,6 +3,12 @@ apiVersion: constraints.gatekeeper.sh/v1beta1
 kind: K8sPSPProcMount
 metadata:
   name: psp-proc-mount
+  labels:
+    constraints.cluster-auditor/name: "Proc Mount"
+    constraints.cluster-auditor/description: "Containers must use the specified Security Context ProcMount values for masking and mounting permissions on /proc."
+    constraints.cluster-auditor/scope: "Pod"
+    constraints.cluster-auditor/source: "https://github.com/open-policy-agent/gatekeeper-library/tree/master/library/pod-security-policy/proc-mount"
+    constraints.cluster-auditor/docs: "https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.21/#securitycontext-v1-core"
 spec:
   enforcementAction: {{ .Values.violations.allowedProcMount.enforcementAction }}
   match:

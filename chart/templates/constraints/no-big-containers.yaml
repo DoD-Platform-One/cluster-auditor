@@ -4,8 +4,11 @@ kind: K8sContainerLimits
 metadata:
   name: no-big-containers
   labels:
-    cluster-auditor.dso.mil/source: big-bang
-    cluster-auditor.dso.mil/control: "tbd"
+    constraints.cluster-auditor/name: "Resource Limits"
+    constraints.cluster-auditor/description: "Containers must have cpu / memory limits and the values must be below the specified maximum."
+    constraints.cluster-auditor/scope: "Pod"
+    constraints.cluster-auditor/source: "https://github.com/open-policy-agent/gatekeeper-library/tree/master/library/general/containerlimits"
+    constraints.cluster-auditor/docs: "https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/"
 spec:
   enforcementAction: {{ .Values.violations.noBigContainers.enforcementAction  }}
   match:

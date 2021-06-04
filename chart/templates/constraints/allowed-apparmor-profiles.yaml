@@ -3,6 +3,13 @@ apiVersion: constraints.gatekeeper.sh/v1beta1
 kind: K8sPSPAppArmor
 metadata:
   name: psp-apparmor
+  labels:
+    constraints.cluster-auditor/name: "AppArmor Profile"
+    constraints.cluster-auditor/description: "Pods may only use specific AppArmor profiles."
+    constraints.cluster-auditor/scope: "Pod"
+    constraints.cluster-auditor/source: "https://github.com/open-policy-agent/gatekeeper-library/tree/master/library/pod-security-policy/apparmor"
+    constraints.cluster-auditor/docs: "https://kubernetes.io/docs/tutorials/clusters/apparmor/#podsecuritypolicy-annotations"
+    constraints.cluster-auditor/related: "https://docs.docker.com/engine/security/apparmor/"
 spec:
   enforcementAction: {{ .Values.violations.allowedAppArmorProfiles.enforcementAction }}
   match:

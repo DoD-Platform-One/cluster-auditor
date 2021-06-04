@@ -3,6 +3,12 @@ apiVersion: constraints.gatekeeper.sh/v1beta1
 kind: K8sExternalIPs
 metadata:
   name: external-ips
+  labels:
+    constraints.cluster-auditor/name: "External IPs"
+    constraints.cluster-auditor/description: "Services may only contain specified external IPs."
+    constraints.cluster-auditor/scope: "Service"
+    constraints.cluster-auditor/source: "https://github.com/open-policy-agent/gatekeeper-library/tree/master/library/general/externalip"
+    constraints.cluster-auditor/docs: "https://kubernetes.io/docs/concepts/services-networking/service/#external-ips"
 spec:
   enforcementAction: {{ .Values.violations.allowedIPs.enforcementAction }}
   match:

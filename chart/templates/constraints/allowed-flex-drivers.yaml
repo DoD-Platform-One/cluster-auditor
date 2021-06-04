@@ -3,6 +3,13 @@ apiVersion: constraints.gatekeeper.sh/v1beta1
 kind: K8sPSPFlexVolumes
 metadata:
   name: psp-flexvolume-drivers
+  labels:
+    constraints.cluster-auditor/name: "Flex Volume Drivers"
+    constraints.cluster-auditor/description: "Containers may only use Flex Volumes with the specified drivers"
+    constraints.cluster-auditor/scope: "Pod"
+    constraints.cluster-auditor/source: "https://github.com/open-policy-agent/gatekeeper-library/tree/master/library/pod-security-policy/flexvolume-drivers"
+    constraints.cluster-auditor/docs: "https://kubernetes.io/docs/concepts/storage/volumes/#flexvolume"
+    constraints.cluster-auditor/related: "https://github.com/kubernetes/community/blob/master/contributors/devel/sig-storage/flexvolume.md"
 spec:
   enforcementAction: {{ .Values.violations.allowedFlexVolumes.enforcementAction }}
   match:

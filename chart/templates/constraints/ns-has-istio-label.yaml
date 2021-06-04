@@ -3,6 +3,13 @@ apiVersion: constraints.gatekeeper.sh/v1beta1
 kind: K8sRequiredLabelValues
 metadata:
   name: ns-must-have-istio
+  labels:
+    constraints.cluster-auditor/name: "Automatic Istio Sidecar Injection"
+    constraints.cluster-auditor/description: "Namespaces must have automatic Istio Sidecar injection enabled."
+    constraints.cluster-auditor/scope: "Namespace"
+    constraints.cluster-auditor/source: "https://github.com/open-policy-agent/gatekeeper-library/tree/master/library/general/requiredlabels"
+    constraints.cluster-auditor/docs: "https://istio.io/latest/docs/setup/additional-setup/sidecar-injection/#injection"
+    constraints.cluster-auditor/related: "https://istio.io/latest/docs/reference/config/networking/sidecar/"
 spec:
   enforcementAction: {{ .Values.violations.namespacesHaveIstio.enforcementAction }}
   match:
