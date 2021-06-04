@@ -1,0 +1,17 @@
+{{- if .Values.violations.allowedProfiles.enabled }}
+apiVersion: constraints.gatekeeper.sh/v1beta1
+kind: K8sPSPAppArmor
+metadata:
+  name: psp-apparmor
+spec:
+  enforcementAction: {{ .Values.violations.allowedProfiles.enforcementAction }}
+  match:
+    {{- if .Values.violations.allowedProfiles.match  }}
+    {{- toYaml .Values.violations.allowedProfiles.match | nindent 4}}
+    {{- end }}
+    kinds:
+      - apiGroups: [""]
+        kinds: ["Pod"]
+  parameters:
+    {{- toYaml .Values.violations.allowedProfiles.parameters | nindent 4}}
+{{- end }}

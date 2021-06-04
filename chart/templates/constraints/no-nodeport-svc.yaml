@@ -1,9 +1,15 @@
+{{ if .Values.violations.blockNodePort.enabled }}
 apiVersion: constraints.gatekeeper.sh/v1beta1
 kind: K8sBlockNodePort
 metadata:
   name: block-node-port
 spec:
+  enforcementAction: {{ .Values.violations.blockNodePort.enforcementAction  }}
   match:
+    {{- if .Values.violations.blockNodePort.match  }}
+    {{- toYaml .Values.violations.blockNodePort.match | nindent 4}}
+    {{- end }}
     kinds:
       - apiGroups: [""]
         kinds: ["Service"]
+{{ end }}

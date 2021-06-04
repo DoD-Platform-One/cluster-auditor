@@ -1,0 +1,15 @@
+{{ if .Values.violations.noHostNamespace.enabled }}
+apiVersion: constraints.gatekeeper.sh/v1beta1
+kind: K8sPSPHostNamespace
+metadata:
+  name: psp-no-host-namespace
+spec:
+  enforcementAction: {{ .Values.violations.noHostNamespace.enforcementAction  }}
+  match:
+    {{- if .Values.violations.noHostNamespace.match  }}
+    {{- toYaml .Values.violations.noHostNamespace.match | nindent 4}}
+    {{- end }}
+    kinds:
+      - apiGroups: [""]
+        kinds: ["Pod"]
+{{ end }}

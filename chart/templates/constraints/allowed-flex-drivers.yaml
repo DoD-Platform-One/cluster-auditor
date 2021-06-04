@@ -1,0 +1,17 @@
+{{- if .Values.violations.allowedFlexVolumes.enabled }}
+apiVersion: constraints.gatekeeper.sh/v1beta1
+kind: K8sPSPFlexVolumes
+metadata:
+  name: psp-flexvolume-drivers
+spec:
+  enforcementAction: {{ .Values.violations.allowedFlexVolumes.enforcementAction }}
+  match:
+    {{- if .Values.violations.allowedFlexVolumes.match  }}
+    {{- toYaml .Values.violations.allowedFlexVolumes.match | nindent 4}}
+    {{- end }}
+    kinds:
+      - apiGroups: [""]
+        kinds: ["Pod"]
+  parameters:
+    {{- toYaml .Values.violations.allowedFlexVolumes.parameters | nindent 4}}
+{{- end }}

@@ -1,0 +1,19 @@
+---
+{{- if .Values.violations.uniqueIngressHost.enabled }}
+apiVersion: constraints.gatekeeper.sh/v1beta1
+kind: K8sUniqueIngressHost
+metadata:
+  name: unique-ingress-host
+  labels:
+    cluster-auditor.dso.mil/source: big-bang
+    cluster-auditor.dso.mil/control: "tbd"
+spec:
+  enforcementAction: {{ .Values.violations.uniqueIngressHost.enforcementAction  }}
+  match:
+    {{- if .Values.violations.uniqueIngressHost.match  }}
+    {{- toYaml .Values.violations.uniqueIngressHost.match | nindent 4 }}
+    {{- end }}
+    kinds:
+      - apiGroups: ["extensions", "networking.k8s.io"]
+        kinds: ["Ingress"]
+{{- end }}

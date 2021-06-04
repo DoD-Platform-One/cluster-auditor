@@ -77,6 +77,48 @@ data:
       <watch>
         resource_name k8s_pspallow_privilege_escalation_container
       </watch>
+      <watch>
+        resource_name k8s_pspcapabilities
+      </watch>
+      <watch>
+        resource_name k8s_psphost_filesystem
+      </watch>
+      <watch>
+        resource_name k8s_external_ips
+      </watch>
+      <watch>
+        resource_name k8s_pspapp_armor
+      </watch>
+      <watch>
+        resource_name k8s_pspallowed_users
+      </watch>
+      <watch>
+        resource_name k8s_pspproc_mount
+      </watch>
+      <watch>
+        resource_name k8s_https_only
+      </watch>
+      <watch>
+        resource_name k8s_psphost_namespace
+      </watch>
+      <watch>
+        resource_name k8s_block_node_port
+      </watch>
+      <watch>
+        resource_name k8s_pspallow_privilege_escalation_container
+      </watch>
+      <watch>
+        resource_name k8s_pspforbidden_sysctls
+      </watch>
+      <watch>
+        resource_name restricted_taint_toleration
+      </watch>
+      <watch>
+        resource_name k8s_unique_ingress_host
+      </watch>
+      <watch>
+        resource_name k8s_pspvolume_types
+      </watch>
     </source>
 {{- end }}
     <source>
@@ -88,12 +130,82 @@ data:
       tag opa.violations.*
       api_version "constraints.gatekeeper.sh/v1alpha1"
       insecure_ssl false
-      {{ if .Values.violations.noPriviligedContainers }}
+{{ if .Values.violations.noPriviligedContainers.enabled }}
       <watch>
         resource_name k8s_pspallow_privilege_escalation_container
       </watch>
-      {{- end }}
-{{- if .Values.collect.violations.labels}}
+{{- end }}
+{{ if .Values.violations.pspCapabilities.enabled }}
+      <watch>
+        resource_name k8s_pspcapabilities
+      </watch>
+{{- end }}
+{{ if .Values.violations.allowedHostFilesystem.enabled }}
+      <watch>
+        resource_name k8s_psphost_filesystem
+      </watch>
+{{- end }}
+{{ if .Values.violations.allowedIPs.enabled }}
+      <watch>
+        resource_name k8s_external_ips
+      </watch>
+{{- end }}
+{{ if .Values.violations.allowedProfiles.enabled }}
+      <watch>
+        resource_name k8s_pspapp_armor
+      </watch>
+{{- end }}
+{{ if .Values.violations.allowedUsers.enabled }}
+      <watch>
+        resource_name k8s_pspallowed_users
+      </watch>
+{{- end }}
+{{ if .Values.violations.allowedProcMount.enabled }}
+      <watch>
+        resource_name k8s_pspproc_mount
+      </watch>
+{{- end }}
+{{ if .Values.violations.httpsOnly.enabled }}
+      <watch>
+        resource_name k8s_https_only
+      </watch>
+{{- end }}
+{{ if .Values.violations.noHostNamespace.enabled }}
+      <watch>
+        resource_name k8s_psphost_namespace
+      </watch>
+{{- end }}
+{{ if .Values.violations.blockNodePort.enabled }}
+      <watch>
+        resource_name k8s_block_node_port
+      </watch>
+{{- end }}
+{{ if .Values.violations.noPriviligedContainers.enabled }}
+      <watch>
+        resource_name k8s_pspallow_privilege_escalation_container
+      </watch>
+{{- end }}
+{{ if .Values.violations.noSysctls.enabled }}
+      <watch>
+        resource_name k8s_pspforbidden_sysctls
+      </watch>
+{{- end }}
+{{ if .Values.violations.restrictedTaint.enabled }}
+      <watch>
+        resource_name restricted_taint_toleration
+      </watch>
+{{- end }}
+{{ if .Values.violations.uniqueIngressHost.enabled }}
+      <watch>
+        resource_name k8s_unique_ingress_host
+      </watch>
+{{- end }}
+{{ if .Values.violations.volumeTypes.enabled }}
+      <watch>
+        resource_name k8s_pspvolume_types
+      </watch>
+{{- end }}
+{{- if .Values.collect.violations.labels }}
       <watch>
         resource_name k8s_required_labels
       </watch>
@@ -104,10 +216,12 @@ data:
       # <watch>
       #   resource_name k8s_no_annotation_values
       # </watch>
-      # <watch>
-      #   resource_name k8s_required_probes
-      # </watch>
-{{- if .Values.collect.violations.repositories }}
+{{- if .Values.violations.requiredProbes.enabled }}
+        <watch>
+          resource_name k8s_required_probes
+        </watch>
+{{- end }}
+{{- if .Values.violations.allowedDockerRegistries.enabled }}
       <watch>
         resource_name k8s_allowed_repos
       </watch>
@@ -124,9 +238,11 @@ data:
       # <watch>
       #   resource_name k8s_regulated_resources
       # </watch>
-      # <watch>
-      #   resource_name k8s_banned_image_tags
-      # </watch>
+{{- if .Values.violations.bannedImageTags.enabled }}
+        <watch>
+          resource_name k8s_banned_image_tags
+        </watch>
+{{- end }}
     </source>
   pods.conf: |
 {{- if .Values.collect.objects }}
