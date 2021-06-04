@@ -86,13 +86,7 @@ violations:
       allowedHostPaths: []
         # - readOnly: true
         #   pathPrefix: "/foo"
-  allowedFlexVolumes:
-    enabled: true
-    enforcementAction: dryrun
-    match: {}
-    parameters:
-      allowedFlexVolumes: []
-        # - driver: "example/lvm"
+  
   allowedProfiles:
     enabled: true
     enforcementAction: dryrun
