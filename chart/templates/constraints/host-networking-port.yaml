@@ -1,0 +1,21 @@
+---
+{{- if .Values.violations.hostNetworking.enabled }}
+apiVersion: constraints.gatekeeper.sh/v1beta1
+kind: K8sPSPHostNetworkingPorts
+metadata:
+  name: psp-host-network-ports
+  labels:
+    cluster-auditor.dso.mil/source: big-bang
+    cluster-auditor.dso.mil/control: "tbd"
+spec:
+  enforcementAction: {{ .Values.violations.hostNetworking.enforcementAction  }}
+  match:
+    {{- if .Values.violations.hostNetworking.match  }}
+    {{- toYaml .Values.violations.hostNetworking.match | nindent 4 }}
+    {{- end }}
+    kinds:
+      - apiGroups: [""]
+        kinds: ["Pod"]
+  parameters:
+    {{- toYaml .Values.violations.hostNetworking.parameters | nindent 4}}
+{{- end }}

@@ -1,0 +1,21 @@
+---
+{{- if .Values.violations.allowedSecCompProfiles.enabled }}
+apiVersion: constraints.gatekeeper.sh/v1beta1
+kind: K8sPSPSeccomp
+metadata:
+  name: psp-sec-comp
+  labels:
+    cluster-auditor.dso.mil/source: big-bang
+    cluster-auditor.dso.mil/control: "tbd"
+spec:
+  enforcementAction: {{ .Values.violations.allowedSecCompProfiles.enforcementAction  }}
+  match:
+    {{- if .Values.violations.allowedSecCompProfiles.match  }}
+    {{- toYaml .Values.violations.allowedSecCompProfiles.match | nindent 4 }}
+    {{- end }}
+    kinds:
+      - apiGroups: [""]
+        kinds: ["Pod"]
+  parameters:
+    {{- toYaml .Values.violations.allowedSecCompProfiles.parameters | nindent 4}}
+{{- end }}

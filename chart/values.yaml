@@ -110,6 +110,40 @@ violations:
     match: {}
     parameters:
       procMount: Default
+  hostNetworking:
+    enabled: true
+    enforcementAction: dryrun
+    match: {}
+      # namespaceSelector:
+      #   matchExpressions:
+      #   - {key: name, operator: In, values: [tenant]}
+    parameters:
+      hostNetwork: false
+  allowedSecCompProfiles:
+    enabled: true
+    enforcementAction: dryrun
+    match: {}
+      # namespaceSelector:
+      #   matchExpressions:
+      #   - {key: name, operator: In, values: [tenant]}
+    parameters:
+      allowedProfiles: [ ]
+  readOnlyRoot:
+    enabled: true
+    enforcementAction: dryrun
+    match: {}
+      # namespaceSelector:
+      #   matchExpressions:
+      #   - {key: name, operator: In, values: [tenant]}
+  selinuxPolicy:
+    enabled: true
+    enforcementAction: dryrun
+    match: {}
+      # namespaceSelector:
+      #   matchExpressions:
+      #   - {key: name, operator: In, values: [tenant]}
+    parameters:
+      allowedSELinuxOptions: [ ]
   noBigContainers:
     enabled: true
     enforcementAction: dryrun
