@@ -1,15 +1,17 @@
-#
+{{- if .Values.violations.podsHaveIstio.enabled }}
 apiVersion: constraints.gatekeeper.sh/v1beta1
 kind: K8sNoAnnotationValues
 metadata:
   name: pods-must-use-istio
 spec:
-  enforcementAction: dryrun
+  enforcementAction: {{ .Values.violations.podsHaveIstio.enforcementAction }}
   match:
+    {{- if .Values.violations.podsHaveIstio.match  }}
+    {{- toYaml .Values.violations.podsHaveIstio.match | nindent 4}}
+    {{- end }}
     kinds:
       - apiGroups: [""]
         kinds: ["Pod"]
   parameters:
-    annotations:
-    - key: "sidecar.istio.io/inject"
-      disallowedRegex: "^disabled"
+    {{- toYaml .Values.violations.podsHaveIstio.parameters | nindent 4}}
+{{- end }}

@@ -6,12 +6,12 @@ metadata:
 spec:
   enforcementAction: {{ .Values.violations.pspCapabilities.enforcementAction }}
   match:
-    kinds:
-      - apiGroups: [""]
-        kinds: ["Pod"]
     {{- if .Values.violations.pspCapabilities.match  }}
     {{- toYaml .Values.violations.pspCapabilities.match | nindent 4}}
     {{- end }}
+    kinds:
+      - apiGroups: [""]
+        kinds: ["Pod"]
   parameters:
     {{- toYaml .Values.violations.pspCapabilities.parameters | nindent 4}}
 {{- end }}

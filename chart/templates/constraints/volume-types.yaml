@@ -9,6 +9,9 @@ metadata:
 spec:
   enforcementAction: {{ .Values.violations.volumeTypes.enforcementAction | default "dryrun" }}
   match:
+    {{- if .Values.violations.volumeTypes.match  }}
+    {{- toYaml .Values.violations.volumeTypes.match | nindent 4}}
+    {{- end }}
     kinds:
       - apiGroups: [""]
         kinds: ["Pod"]

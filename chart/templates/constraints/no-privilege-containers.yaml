@@ -1,4 +1,4 @@
-{{ if .Values.violations.noPriviligedContainers }}
+{{- if .Values.violations.noPriviligedContainers }}
 apiVersion: constraints.gatekeeper.sh/v1beta1
 kind: K8sPSPAllowPrivilegeEscalationContainer
 metadata:
@@ -12,4 +12,4 @@ spec:
     kinds:
       - apiGroups: [""]
         kinds: ["Pod"]
-{{ end }}
+{{- end }}
