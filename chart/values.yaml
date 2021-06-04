@@ -152,6 +152,14 @@ violations:
       # namespaceSelector:
       #   matchExpressions:
       #   - {key: name, operator: In, values: [tenant]}
+  imageDigest:
+    enabled: true
+    enforcementAction: dryrun
+    match: {}
+  uniqueServiceSelector:
+    enabled: true
+    enforcementAction: dryrun
+    match: {}
   requiredLabels:
     enabled: true
     enforcementAction: dryrun
