@@ -1,0 +1,15 @@
+{{ if .Values.violations.noPrivilegedEscalation.enabled }}
+apiVersion: constraints.gatekeeper.sh/v1beta1
+kind: K8sPSPAllowPrivilegeEscalationContainer
+metadata:
+  name: psp-allow-privilege-escalation-container
+spec:
+  enforcementAction: {{ .Values.violations.noPrivilegedEscalation.enforcementAction  }}
+  match:
+    {{- if .Values.violations.noPrivilegedEscalation.match  }}
+    {{- toYaml .Values.violations.noPrivilegedEscalation.match | nindent 4}}
+    {{- end }}
+    kinds:
+      - apiGroups: [""]
+        kinds: ["Pod"]
+{{ end }}
