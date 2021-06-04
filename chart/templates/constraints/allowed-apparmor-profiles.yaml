@@ -4,6 +4,7 @@ kind: K8sPSPAppArmor
 metadata:
   name: psp-apparmor
   labels:
+    {{- include "clusterauditor.labels" . | nindent 4 }}
     constraints.cluster-auditor/name: "AppArmor Profile"
     constraints.cluster-auditor/description: "Pods may only use specific AppArmor profiles."
     constraints.cluster-auditor/scope: "Pod"

@@ -3,6 +3,8 @@ apiVersion: elasticsearch.k8s.elastic.co/v1
 kind: Elasticsearch
 metadata:
   name: {{ .Values.elasticsearch.name }}
+  labels:
+    {{- include "clusterauditor.labels" . | nindent 4 }}
 spec:
   version: 7.9.2
   image: registry1.dso.mil/ironbank/elastic/elasticsearch/elasticsearch:7.9.2
@@ -88,6 +90,8 @@ apiVersion: networking.istio.io/v1alpha3
 kind: DestinationRule
 metadata:
   name: {{ .Values.elasticsearch.name }}
+  labels:
+    {{- include "clusterauditor.labels" . | nindent 4 }}
 spec:
   host: "{{ .Values.elasticsearch.name }}-es-http.{{ .Release.Namespace}}.svc.cluster.local"
   trafficPolicy:

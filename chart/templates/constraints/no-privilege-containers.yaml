@@ -4,6 +4,7 @@ kind: K8sPSPAllowPrivilegeEscalationContainer
 metadata:
   name: psp-allow-privilege-escalation-container
   labels:
+    {{- include "clusterauditor.labels" . | nindent 4 }}
     constraints.cluster-auditor/name: "Privilege Escalation"
     constraints.cluster-auditor/description: "Containers must not allow escalaton of privileges."
     constraints.cluster-auditor/scope: "Pod"

@@ -4,6 +4,7 @@ kind: K8sRequiredLabelValues
 metadata:
   name: pods-need-k8s-app-labels
   labels:
+    {{- include "clusterauditor.labels" . | nindent 4 }}
     constraints.cluster-auditor/name: "Required Labels"
     constraints.cluster-auditor/description: "Containers must have the specified labels."
     constraints.cluster-auditor/scope: "Pod"

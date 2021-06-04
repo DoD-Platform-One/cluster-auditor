@@ -4,6 +4,7 @@ kind: K8sPSPFlexVolumes
 metadata:
   name: psp-flexvolume-drivers
   labels:
+    {{- include "clusterauditor.labels" . | nindent 4 }}
     constraints.cluster-auditor/name: "Flex Volume Drivers"
     constraints.cluster-auditor/description: "Containers may only use Flex Volumes with the specified drivers"
     constraints.cluster-auditor/scope: "Pod"

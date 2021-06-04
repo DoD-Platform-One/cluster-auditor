@@ -4,6 +4,7 @@ kind: K8sUniqueIngressHost
 metadata:
   name: unique-ingress-host
   labels:
+    {{- include "clusterauditor.labels" . | nindent 4 }}
     constraints.cluster-auditor/name: "Unique Ingress Hosts"
     constraints.cluster-auditor/description: "Ingress hosts must be unique."
     constraints.cluster-auditor/scope: "Ingress"

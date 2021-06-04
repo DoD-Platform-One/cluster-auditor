@@ -4,6 +4,7 @@ kind: K8sHttpsOnly
 metadata:
   name: ingress-https-only
   labels:
+    {{- include "clusterauditor.labels" . | nindent 4 }}
     constraints.cluster-auditor/name: "Ingress on HTTPS Only"
     constraints.cluster-auditor/description: "Ingress must only allow HTTPS connections."
     constraints.cluster-auditor/scope: "Ingress"

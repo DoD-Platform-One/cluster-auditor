@@ -4,6 +4,7 @@ kind: K8sBannedImageTags
 metadata:
   name: ban-image-tags
   labels:
+    {{- include "clusterauditor.labels" . | nindent 4 }}
     constraints.cluster-auditor/name: "Banned Image Tags"
     constraints.cluster-auditor/description: "Container Images cannot use specified tags"
     constraints.cluster-auditor/scope: "Pod"

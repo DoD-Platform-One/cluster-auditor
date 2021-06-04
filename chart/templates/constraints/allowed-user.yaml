@@ -4,6 +4,7 @@ kind: K8sPSPAllowedUsers
 metadata:
   name: psp-pods-allowed-user-ranges
   labels:
+    {{- include "clusterauditor.labels" . | nindent 4 }}
     constraints.cluster-auditor/name: "Users and Groups"
     constraints.cluster-auditor/description: "Containers may only be run as specified users and groups."
     constraints.cluster-auditor/scope: "Pod"

@@ -4,6 +4,7 @@ kind: K8sAllowedRepos
 metadata:
   name: images-from-approved-repo
   labels:
+    {{- include "clusterauditor.labels" . | nindent 4 }}
     constraints.cluster-auditor/name: "Image Repositories"
     constraints.cluster-auditor/description: "Container images must be pulled from the specified repositories."
     constraints.cluster-auditor/scope: "Pod"

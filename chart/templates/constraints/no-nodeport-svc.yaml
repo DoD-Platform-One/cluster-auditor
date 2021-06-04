@@ -4,6 +4,7 @@ kind: K8sBlockNodePort
 metadata:
   name: block-node-port
   labels:
+    {{- include "clusterauditor.labels" . | nindent 4 }}
     constraints.cluster-auditor/name: "Node Ports"
     constraints.cluster-auditor/description: "Services must not use node ports."
     constraints.cluster-auditor/scope: "Service"

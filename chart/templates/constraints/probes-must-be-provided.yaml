@@ -4,6 +4,7 @@ kind: K8sRequiredProbes
 metadata:
   name: must-have-probes
   labels:
+    {{- include "clusterauditor.labels" . | nindent 4 }}
     constraints.cluster-auditor/name: "Probes"
     constraints.cluster-auditor/description: "Container must have specified probes and probe types."
     constraints.cluster-auditor/scope: "Pod"

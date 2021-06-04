@@ -4,6 +4,7 @@ kind: K8sPSPProcMount
 metadata:
   name: psp-proc-mount
   labels:
+    {{- include "clusterauditor.labels" . | nindent 4 }}
     constraints.cluster-auditor/name: "Proc Mount"
     constraints.cluster-auditor/description: "Containers must use the specified Security Context ProcMount values for masking and mounting permissions on /proc."
     constraints.cluster-auditor/scope: "Pod"
