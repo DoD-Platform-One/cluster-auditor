@@ -106,7 +106,7 @@ violations:
     match: {}
     parameters:
       procMount: Default
- hostNetworking:
+  hostNetworking:
     enabled: true
     enforcementAction: dryrun
     match:
