@@ -1,0 +1,15 @@
+{{- if .Values.violations.imageDigest.enabled }}
+apiVersion: constraints.gatekeeper.sh/v1beta1
+kind: K8sImageDigests
+metadata:
+  name: container-image-must-have-digest
+spec:
+  enforcementAction: {{ .Values.violations.imageDigest.enforcementAction }}
+  match:
+    kinds:
+      - apiGroups: [""]
+        kinds: ["Pod"]
+    {{- if .Values.violations.imageDigest.match  }}
+    {{- toYaml .Values.violations.imageDigest.match | nindent 4}}
+    {{- end }}
+{{- end }}
