@@ -119,6 +119,12 @@ data:
       <watch>
         resource_name k8s_pspflex_volumes
       </watch>
+      <watch>
+        resource_name k8s_image_digests
+      </watch>
+      <watch>
+        resource_name k8s_unique_service_selector
+      </watch>
     </source>
 {{- end }}
     <source>
@@ -247,7 +253,17 @@ data:
         resource_name k8s_pspflex_volumes
       </watch>
 {{- end }}
+{{- if .Values.violations.imageDigest.enabled }}
+      <watch>
+        resource_name k8s_image_digests
+      </watch>
+{{- end }}
+{{- if .Values.violations.uniqueServiceSelector.enabled }}
+      <watch>
+        resource_name k8s_unique_service_selector
+      </watch>
     </source>
+{{- end }}
   pods.conf: |
 {{- if .Values.collect.objects }}
     <source>
