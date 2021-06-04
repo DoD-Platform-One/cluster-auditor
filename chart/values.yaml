@@ -35,14 +35,18 @@ violations:
   bannedImageTags:
     enabled: true
     enforcementAction: dryrun
-    tags:
-      - "latest"
+    match: {}
+    parameters:
+      tags:
+        - "latest"
   allowedDockerRegistries:
     enabled: true
     enforcementAction: dryrun
-    repos:
-      - "registry1.dso.mil"
-      - "registry.dso.mil"
+    match: {}
+    parameters:
+      repos:
+        - "registry1.dso.mil"
+        - "registry.dso.mil"
   restrictedTaint:
     enabled: true
     enforcementAction: dryrun
@@ -93,12 +97,12 @@ violations:
     parameters:
       allowedFlexVolumes: []
         # - driver: "example/lvm"
-  allowedProfiles:
+  allowedAppArmorProfiles:
     enabled: true
     enforcementAction: dryrun
     match: {}
     parameters:
-      allowedProfiles:
+      allowedAppArmorProfiles:
         - runtime/default
   allowedProcMount:
     enabled: true
@@ -110,8 +114,7 @@ violations:
     enabled: true
     enforcementAction: dryrun
     # specify how to subset the pods
-    match:
-      {}
+    match: {}
       # namespaceSelector:
       #   matchExpressions:
       #   - {key: name, operator: In, values: [tenant]}
@@ -123,8 +126,7 @@ violations:
     enabled: true
     enforcementAction: dryrun
     # specify how to subset the pods
-    match:
-      {}
+    match: {}
       # namespaceSelector:
       #   matchExpressions:
       #   - {key: name, operator: In, values: [tenant]}
@@ -164,8 +166,7 @@ violations:
     enabled: true
     enforcementAction: dryrun
     # specify how to subset the pods
-    match:
-      {}
+    match: {}
       # namespaceSelector:
       #   matchExpressions:
       #   - {key: name, operator: In, values: [tenant]}
@@ -216,9 +217,30 @@ violations:
   requiredProbes:
     enabled: true
     enforcementAction: dryrun
+    match: {}
     parameters:
       probes: ["readinessProbe", "livenessProbe"]
       probeTypes: ["tcpSocket", "httpGet", "exec"]
+  podsHaveIstio:
+    enabled: true
+    enforcementAction: dryrun
+    match: {}
+    parameters:
+      annotations:
+      - key: "sidecar.istio.io/inject"
+        disallowedRegex: "^disabled"
+  namespacesHaveIstio:
+    enabled: true
+    enforcementAction: dryrun
+    match:
+      namespaceSelector:
+        matchExpressions:
+        - key: admission.gatekeeper.sh/ignore
+          operator: DoesNotExist
+    parameters:
+      labels:
+      - key: "istio-injection"
+        allowedRegex: "^enabled"
 
 image:
   repo: registry1.dso.mil/ironbank/cluster-auditor/opa-collector
@@ -239,8 +261,7 @@ resources:
     memory: 2Gi
 loglevel: debug
 
-affinity:
-  {}
+affinity: {}
   # podAntiAffinity:
   #   requiredDuringSchedulingIgnoredDuringExecution:
   #     - topologyKey: "kubernetes.io/hostname"
@@ -256,6 +277,5 @@ affinity:
   #         values:
   #         - "cluster-auditor"
 
-nodeSelector:
-  {}
+nodeSelector: {}
   # node-type: cluster-auditor

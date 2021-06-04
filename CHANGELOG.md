@@ -5,7 +5,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 ---
 ## [0.2.0-bb.3]
 ### Added
-- Added constraints
+- Added constraints: K8sImageDigests and K8sUniqueServiceSelector
+### Changed
+- Standardized all constraints for `match` and `parameters` values
+### Fixed
+- Fixed minor bugs in OPA Gatekeeper configuration to watch PSPAllowPrivilegeEscalationContainer, PSPFlexVolumes, and ContainerLimits
 
 ## [0.2.0-bb.2]
 ### Added

@@ -6,10 +6,10 @@ metadata:
 spec:
   enforcementAction: {{ .Values.violations.imageDigest.enforcementAction }}
   match:
-    kinds:
-      - apiGroups: [""]
-        kinds: ["Pod"]
     {{- if .Values.violations.imageDigest.match  }}
     {{- toYaml .Values.violations.imageDigest.match | nindent 4}}
     {{- end }}
+    kinds:
+      - apiGroups: [""]
+        kinds: ["Pod"]
 {{- end }}

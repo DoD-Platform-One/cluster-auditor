@@ -17,4 +17,4 @@ spec:
         kinds: ["Pod"]
   parameters:
     {{- toYaml .Values.violations.noBigContainers.parameters | nindent 4}}
-{{- end }}    
+{{- end }}

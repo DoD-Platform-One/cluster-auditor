@@ -9,12 +9,12 @@ metadata:
 spec:
   enforcementAction: {{ .Values.violations.allowedDockerRegistries.enforcementAction | default "dryrun" }}
   match:
+    {{- if .Values.violations.allowedDockerRegistries.match  }}
+    {{- toYaml .Values.violations.allowedDockerRegistries.match | nindent 4}}
+    {{- end }}
     kinds:
       - apiGroups: [""]
         kinds: ["Pod"]
   parameters:
-    repos: 
-{{- range .Values.violations.allowedDockerRegistries.repos }}
-    - {{ . }}
-{{- end }}
+    {{- toYaml .Values.violations.allowedDockerRegistries.parameters | nindent 4}}
 {{- end }}
