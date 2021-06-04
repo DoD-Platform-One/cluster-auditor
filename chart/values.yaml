@@ -156,7 +156,7 @@ violations:
       cpu: 2000m
       memory: 4G
       exemptContainers: [""]
-  noPriviligedContainers:
+  noPrivilegedEscalation:
     enabled: true
     enforcementAction: dryrun
     # specify how to subset the pods
@@ -164,6 +164,12 @@ violations:
       # namespaceSelector:
       #   matchExpressions:
       #   - {key: name, operator: In, values: [tenant]}
+  noPrivilegedContainers:
+    enabled: true
+    enforcementAction: dryrun
+    match:
+      excludedNamespaces:
+        - kube-system
   uniqueIngressHost:
     enabled: true
     enforcementAction: dryrun

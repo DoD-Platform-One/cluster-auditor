@@ -1,0 +1,15 @@
+{{ if .Values.violations.noPrivilegedContainers.enabled }}
+apiVersion: constraints.gatekeeper.sh/v1beta1
+kind: K8sPSPPrivilegedContainer
+metadata:
+  name: psp-privileged-container
+spec:
+  enforcementAction: {{ .Values.violations.noPrivilegedContainers.enforcementAction  }}
+  match:
+    {{- if .Values.violations.noPrivilegedContainers.match  }}
+    {{- toYaml .Values.violations.noPrivilegedContainers.match | nindent 4}}
+    {{- end }}
+    kinds:
+      - apiGroups: [""]
+        kinds: ["Pod"]
+{{ end }}

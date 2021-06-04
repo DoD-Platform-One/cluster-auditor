@@ -105,6 +105,9 @@ data:
         resource_name k8s_block_node_port
       </watch>
       <watch>
+        resource_name k8s_pspprivileged_container
+      </watch>
+      <watch>
         resource_name k8s_pspforbidden_sysctls
       </watch>
       <watch>
@@ -136,9 +139,14 @@ data:
       tag opa.violations.*
       api_version "constraints.gatekeeper.sh/v1alpha1"
       insecure_ssl false
-{{- if .Values.violations.noPriviligedContainers.enabled }}
+{{- if .Values.violations.noPrivilegedEscalation.enabled }}
       <watch>
         resource_name k8s_pspallow_privilege_escalation_container
+      </watch>
+{{- end }}
+{{- if .Values.violations.noPrivilegedContainers.enabled }}
+      <watch>
+        resource_name k8s_pspprivileged_container
       </watch>
 {{- end }}
 {{- if .Values.violations.pspCapabilities.enabled }}
