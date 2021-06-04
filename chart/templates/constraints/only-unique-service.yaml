@@ -1,0 +1,15 @@
+{{ if .Values.violations.uniqueServiceSelector.enabled }}
+apiVersion: constraints.gatekeeper.sh/v1beta1
+kind: K8sUniqueServiceSelector
+metadata:
+  name: unique-service-selector
+spec:
+  enforcementAction: {{ .Values.violations.uniqueServiceSelector.enforcementAction  }}
+  match:
+    {{- if .Values.violations.uniqueServiceSelector.match  }}
+    {{- toYaml .Values.violations.uniqueServiceSelector.match | nindent 4}}
+    {{- end }}
+    kinds:
+      - apiGroups: [""]
+        kinds: ["Service"]
+{{ end }}
