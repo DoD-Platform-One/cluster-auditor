@@ -6,11 +6,11 @@ metadata:
   labels:
     {{- include "clusterauditor.labels" . | nindent 4 }}
     constraints.cluster-auditor/name: "AppArmor Profile"
-    constraints.cluster-auditor/description: "Pods may only use specific AppArmor profiles."
+    constraints.cluster-auditor/description: "Containers may only use specified AppArmor profiles."
     constraints.cluster-auditor/scope: "Pod"
     constraints.cluster-auditor/source: "https://github.com/open-policy-agent/gatekeeper-library/tree/master/library/pod-security-policy/apparmor"
-    constraints.cluster-auditor/docs: "https://kubernetes.io/docs/tutorials/clusters/apparmor/#podsecuritypolicy-annotations"
-    constraints.cluster-auditor/related: "https://docs.docker.com/engine/security/apparmor/"
+    constraints.cluster-auditor/docs: "https://kubernetes.io/docs/tutorials/clusters/apparmor/#pod-annotation"
+    constraints.cluster-auditor/related: "https://gitlab.com/apparmor/apparmor"
 spec:
   enforcementAction: {{ .Values.violations.allowedAppArmorProfiles.enforcementAction }}
   match:

@@ -6,7 +6,7 @@ metadata:
   labels:
     {{- include "clusterauditor.labels" . | nindent 4 }}
     constraints.cluster-auditor/name: "Volume Types"
-    constraints.cluster-auditor/description: "Containers must use the specified volume types in volume mounts."
+    constraints.cluster-auditor/description: "Containers may only use the specified volume types in volume mounts."
     constraints.cluster-auditor/scope: "Pod"
     constraints.cluster-auditor/source: "https://github.com/open-policy-agent/gatekeeper-library/tree/master/library/pod-security-policy/volumes"
     constraints.cluster-auditor/docs: "https://kubernetes.io/docs/concepts/storage/volumes/#volume-types"

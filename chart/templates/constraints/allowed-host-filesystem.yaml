@@ -6,7 +6,7 @@ metadata:
   labels:
     {{- include "clusterauditor.labels" . | nindent 4 }}
     constraints.cluster-auditor/name: "Host Filesystem Paths"
-    constraints.cluster-auditor/description: "Containers may not use volumes mapped to the host node, unless the path is specified."
+    constraints.cluster-auditor/description: "Containers may only map volumes to the host node at the specified paths."
     constraints.cluster-auditor/scope: "Pod"
     constraints.cluster-auditor/source: "https://github.com/open-policy-agent/gatekeeper-library/tree/master/library/pod-security-policy/host-filesystem"
     constraints.cluster-auditor/docs: "https://kubernetes.io/docs/concepts/storage/volumes/#hostpath"
