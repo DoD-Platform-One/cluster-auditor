@@ -5,6 +5,7 @@ metadata:
   name: psp-volume-types
   labels:
     {{- include "clusterauditor.labels" . | nindent 4 }}
+  annotations:
     constraints.cluster-auditor/name: "Volume Types"
     constraints.cluster-auditor/description: "Containers may only use the specified volume types in volume mounts."
     constraints.cluster-auditor/scope: "Pod"

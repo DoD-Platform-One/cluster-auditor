@@ -5,6 +5,7 @@ metadata:
   name: block-node-port
   labels:
     {{- include "clusterauditor.labels" . | nindent 4 }}
+  annotations:
     constraints.cluster-auditor/name: "Node Ports"
     constraints.cluster-auditor/description: "Services must not use node ports."
     constraints.cluster-auditor/scope: "Service"

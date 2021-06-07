@@ -5,6 +5,7 @@ metadata:
   name: psp-no-host-namespace
   labels:
     {{- include "clusterauditor.labels" . | nindent 4 }}
+  annotations:
     constraints.cluster-auditor/name: "Host Namespace"
     constraints.cluster-auditor/description: "Containers must not share the host's namespaces"
     constraints.cluster-auditor/scope: "Pod"

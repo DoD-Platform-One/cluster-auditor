@@ -5,6 +5,7 @@ metadata:
   name: unique-service-selector
   labels:
     {{- include "clusterauditor.labels" . | nindent 4 }}
+  annotations:
     constraints.cluster-auditor/name: "Unique Service Selector"
     constraints.cluster-auditor/description: "Services must have unique selectors within a namespace."
     constraints.cluster-auditor/scope: "Service"

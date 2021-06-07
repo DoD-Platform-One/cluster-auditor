@@ -5,6 +5,7 @@ metadata:
   name: ns-must-have-istio
   labels:
     {{- include "clusterauditor.labels" . | nindent 4 }}
+  annotations:
     constraints.cluster-auditor/name: "Automatic Istio Sidecar Injection"
     constraints.cluster-auditor/description: "Namespaces must have automatic Istio Sidecar injection enabled."
     constraints.cluster-auditor/scope: "Namespace"

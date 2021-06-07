@@ -5,6 +5,7 @@ metadata:
   name: privileged
   labels:
     {{- include "clusterauditor.labels" . | nindent 4 }}
+  annotations:
     constraints.cluster-auditor/name: "Taints and Tolerations"
     constraints.cluster-auditor/description: "Container must be configured according to specified taint and toleration rules."
     constraints.cluster-auditor/scope: "Pod"

@@ -5,6 +5,7 @@ metadata:
   name: psp-proc-mount
   labels:
     {{- include "clusterauditor.labels" . | nindent 4 }}
+  annotations:
     constraints.cluster-auditor/name: "Proc Mount"
     constraints.cluster-auditor/description: "Containers may only use the specified ProcMount types."
     constraints.cluster-auditor/scope: "Pod"

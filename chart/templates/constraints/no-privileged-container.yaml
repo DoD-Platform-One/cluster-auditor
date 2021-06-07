@@ -5,6 +5,7 @@ metadata:
   name: psp-privileged-container
   labels:
     {{- include "clusterauditor.labels" . | nindent 4 }}
+  annotations:
     constraints.cluster-auditor/name: "Privilged Containers"
     constraints.cluster-auditor/description: "Containers must not run as privileged."
     constraints.cluster-auditor/scope: "Pod"

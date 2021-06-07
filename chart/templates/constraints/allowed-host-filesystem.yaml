@@ -5,6 +5,7 @@ metadata:
   name: psp-host-filesystem
   labels:
     {{- include "clusterauditor.labels" . | nindent 4 }}
+  annotations:
     constraints.cluster-auditor/name: "Host Filesystem Paths"
     constraints.cluster-auditor/description: "Containers may only map volumes to the host node at the specified paths."
     constraints.cluster-auditor/scope: "Pod"

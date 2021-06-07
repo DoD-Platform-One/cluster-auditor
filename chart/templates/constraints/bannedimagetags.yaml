@@ -5,6 +5,7 @@ metadata:
   name: ban-image-tags
   labels:
     {{- include "clusterauditor.labels" . | nindent 4 }}
+  annotations:
     constraints.cluster-auditor/name: "Banned Image Tags"
     constraints.cluster-auditor/description: "Container Images cannot use specified tags"
     constraints.cluster-auditor/scope: "Pod"

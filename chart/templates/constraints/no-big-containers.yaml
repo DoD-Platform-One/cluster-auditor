@@ -5,6 +5,7 @@ metadata:
   name: no-big-containers
   labels:
     {{- include "clusterauditor.labels" . | nindent 4 }}
+  annotations:
     constraints.cluster-auditor/name: "Resource Limits"
     constraints.cluster-auditor/description: "Containers must have cpu / memory limits and the values must be below the specified maximum."
     constraints.cluster-auditor/scope: "Pod"

@@ -5,6 +5,7 @@ metadata:
   name: external-ips
   labels:
     {{- include "clusterauditor.labels" . | nindent 4 }}
+  annotations:
     constraints.cluster-auditor/name: "External IPs"
     constraints.cluster-auditor/description: "Services may only contain specified external IPs."
     constraints.cluster-auditor/scope: "Service"
