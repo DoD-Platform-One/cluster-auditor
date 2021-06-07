@@ -7,7 +7,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 ## [0.2.0-bb.3]
 ### Added
 - Added constraints: K8sImageDigests, K8sUniqueServiceSelector, K8sPSPAllowPrivilegeEscalationContainer, and K8sPSPPrvilegedContainer
-- Standard and documentation labels added to all constraints
+- Common labels added to all resources
+- Metadata for constraints added as annotations to all constrains
 ### Changed
 - Standardized all constraints for `match` and `parameters` values
 ### Fixed
