@@ -1,12 +1,16 @@
----
 {{- if .Values.violations.allowedSecCompProfiles.enabled }}
 apiVersion: constraints.gatekeeper.sh/v1beta1
 kind: K8sPSPSeccomp
 metadata:
   name: psp-sec-comp
   labels:
-    cluster-auditor.dso.mil/source: big-bang
-    cluster-auditor.dso.mil/control: "tbd"
+    {{- include "clusterauditor.labels" . | nindent 4 }}
+    constraints.cluster-auditor/name: "Seccomp"
+    constraints.cluster-auditor/description: "Containers may only use the specified seccomp profiles."
+    constraints.cluster-auditor/scope: "Pod"
+    constraints.cluster-auditor/source: "https://github.com/open-policy-agent/gatekeeper-library/tree/master/library/pod-security-policy/seccomp"
+    constraints.cluster-auditor/docs: "https://kubernetes.io/docs/tasks/configure-pod-container/security-context/#set-the-seccomp-profile-for-a-container"
+    constraints.cluster-auditor/related: "https://en.wikipedia.org/wiki/Seccomp"
 spec:
   enforcementAction: {{ .Values.violations.allowedSecCompProfiles.enforcementAction  }}
   match:
