@@ -1,5 +1,5 @@
 # Constraints
-Each constraint contains the following labels which can help users and developers identify further information about the constraint:
+Each constraint contains the following annotations which can help users and developers identify further information about the constraint:
 
 |Label|Description|
 |--|--|
