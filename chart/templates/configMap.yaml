@@ -128,6 +128,18 @@ data:
       <watch>
         resource_name k8s_unique_service_selector
       </watch>
+      <watch>
+        resource_name k8s_psphost_networking_ports
+      </watch>
+      <watch>
+        resource_name k8s_pspseccomp
+      </watch>
+      <watch>
+        resource_name k8s_pspread_only_root_filesystem
+      </watch>
+      <watch>
+        resource_name k8s_pspselinux_v2
+      </watch>
     </source>
 {{- end }}
     <source>
@@ -270,8 +282,28 @@ data:
       <watch>
         resource_name k8s_unique_service_selector
       </watch>
-    </source>
 {{- end }}
+{{- if .Values.violations.hostNetworking.enabled }}
+      <watch>
+        resource_name k8s_psphost_networking_ports
+      </watch>
+{{- end }}
+{{- if .Values.violations.allowedSecCompProfiles.enabled }}
+      <watch>
+        resource_name k8s_pspseccomp
+      </watch>
+{{- end }}
+{{- if .Values.violations.readOnlyRoot.enabled }}
+      <watch>
+        resource_name k8s_pspread_only_root_filesystem
+      </watch>
+{{- end }}
+{{- if .Values.violations.selinuxPolicy.enabled }}
+      <watch>
+        resource_name k8s_pspselinux_v2
+      </watch>
+{{- end }}
+    </source>
   pods.conf: |
 {{- if .Values.collect.objects }}
     <source>
