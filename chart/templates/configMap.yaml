@@ -140,6 +140,9 @@ data:
       <watch>
         resource_name k8s_pspselinux_v2
       </watch>
+      <watch>
+        resource_name k8s_container_ratios
+      </watch>
     </source>
 {{- end }}
     <source>
@@ -301,6 +304,11 @@ data:
 {{- if .Values.violations.selinuxPolicy.enabled }}
       <watch>
         resource_name k8s_pspselinux_v2
+      </watch>
+{{- end }}
+{{- if .Values.violations.containerRatio.enabled }}
+      <watch>
+        resource_name k8s_container_ratios
       </watch>
 {{- end }}
     </source>
