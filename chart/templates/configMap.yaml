@@ -5,7 +5,7 @@ kind: ConfigMap
 metadata:
   name: opa-collector
   labels:
-    app.kubernetes.io/component: collection
+    {{- include "clusterauditor.labels" . | nindent 4 }}
 data:
   opa.conf: |
 {{- if .Values.collect.objects }}

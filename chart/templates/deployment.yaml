@@ -3,6 +3,7 @@ kind: Deployment
 metadata:
   name: opa-collector
   labels:
+    {{- include "clusterauditor.labels" . | nindent 4 }}
     app.kubernetes.io/component: fluentd
 spec:
   strategy:

@@ -4,8 +4,13 @@ kind: K8sAllowedRepos
 metadata:
   name: images-from-approved-repo
   labels:
-    cluster-auditor.dso.mil/source: kubernetes-stig
-    cluster-auditor.dso.mil/control: "20"
+    {{- include "clusterauditor.labels" . | nindent 4 }}
+  annotations:
+    constraints.cluster-auditor/name: "Image Repositories"
+    constraints.cluster-auditor/description: "Container images must be pulled from the specified repositories."
+    constraints.cluster-auditor/scope: "Pod"
+    constraints.cluster-auditor/source: "https://github.com/open-policy-agent/gatekeeper-library/tree/master/library/general/allowedrepos"
+    constraints.cluster-auditor/docs: "https://kubernetes.io/docs/concepts/containers/images/"
 spec:
   enforcementAction: {{ .Values.violations.allowedDockerRegistries.enforcementAction | default "dryrun" }}
   match:

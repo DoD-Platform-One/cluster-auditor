@@ -1,12 +1,17 @@
----
 {{- if .Values.violations.hostNetworking.enabled }}
 apiVersion: constraints.gatekeeper.sh/v1beta1
 kind: K8sPSPHostNetworkingPorts
 metadata:
   name: psp-host-network-ports
   labels:
-    cluster-auditor.dso.mil/source: big-bang
-    cluster-auditor.dso.mil/control: "tbd"
+    {{- include "clusterauditor.labels" . | nindent 4 }}
+  annotations:
+    constraints.cluster-auditor/name: "Host Network Ports"
+    constraints.cluster-auditor/description: "Container images may only use host ports that are specified."
+    constraints.cluster-auditor/scope: "Pod"
+    constraints.cluster-auditor/source: "https://github.com/open-policy-agent/gatekeeper-library/tree/master/library/pod-security-policy/host-network-ports"
+    constraints.cluster-auditor/docs: "https://kubernetes.io/docs/reference/kubernetes-api/workload-resources/pod-v1/#hosts-namespaces"
+    constraints.cluster-auditor/related: "https://kubernetes.io/docs/concepts/policy/pod-security-policy/#host-namespaces"
 spec:
   enforcementAction: {{ .Values.violations.hostNetworking.enforcementAction  }}
   match:
