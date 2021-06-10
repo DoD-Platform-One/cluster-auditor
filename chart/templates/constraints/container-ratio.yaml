@@ -1,0 +1,25 @@
+{{- if .Values.violations.containerRatio.enabled }}
+apiVersion: constraints.gatekeeper.sh/v1beta1
+kind: K8sContainerRatios
+metadata:
+  name: container-ratio
+  labels:
+    {{- include "clusterauditor.labels" . | nindent 4 }}
+  annotations:
+    constraints.cluster-auditor/name: "Resource Ratio"
+    constraints.cluster-auditor/description: "Container resource limits to requests ratio must not be higher than specified."
+    constraints.cluster-auditor/scope: "Pod"
+    constraints.cluster-auditor/source: "https://github.com/open-policy-agent/gatekeeper-library/tree/master/library/general/containerresourceratios"
+    constraints.cluster-auditor/docs: "https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/"
+spec:
+  enforcementAction: {{ .Values.violations.containerRatio.enforcementAction  }}
+  match:
+    {{- if .Values.violations.containerRatio.match  }}
+    {{- toYaml .Values.violations.containerRatio.match | nindent 4}}
+    {{- end }}
+    kinds:
+      - apiGroups: [""]
+        kinds: ["Pod"]
+  parameters:
+    {{- toYaml .Values.violations.containerRatio.parameters | nindent 4}}
+{{- end }}

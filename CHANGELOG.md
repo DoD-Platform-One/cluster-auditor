@@ -6,7 +6,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [0.2.0-bb.3]
 ### Added
-- Added constraints: K8sImageDigests, K8sUniqueServiceSelector, K8sPSPAllowPrivilegeEscalationContainer, K8sPSPPrvilegedContainer, K8sPSPHostNetworkingPorts, K8sPSPSeccomp, K8sPSPReadOnlyRootFilesystem, and K8sPSPSELinuxV2
+- Added constraints: K8sImageDigests, K8sUniqueServiceSelector, K8sPSPAllowPrivilegeEscalationContainer, K8sPSPPrvilegedContainer, K8sPSPHostNetworkingPorts, K8sPSPSeccomp, K8sPSPReadOnlyRootFilesystem, K8sPSPSELinuxV2, and K8sContainerRatios.
 - Common labels added to all resources
 - Metadata for constraints added as annotations to all constrains
 ### Changed
