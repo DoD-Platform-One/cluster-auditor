@@ -18,6 +18,7 @@ spec:
         checksum/config: {{ include (print $.Template.BasePath "/configMap.yaml") . | sha256sum }}
       labels:
         engine: fluentd
+        {{- include "clusterauditor.labels" . | nindent 8 }}
     spec:
       serviceAccountName: cluster-audit-logging
       terminationGracePeriodSeconds: 30
