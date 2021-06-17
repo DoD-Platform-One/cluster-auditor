@@ -24,14 +24,17 @@ violations:
         rule: MustRunAs # MayRunAs # RunAsAny
         ranges:
           - min: 1000
+            max: 65535
       supplementalGroups:
         rule: MustRunAs # MayRunAs # RunAsAny
         ranges:
           - min: 1000
+            max: 65535
       fsGroup:
         rule: MustRunAs # MayRunAs # RunAsAny
         ranges:
           - min: 1000
+            max: 65535
   bannedImageTags:
     enabled: true
     enforcementAction: dryrun
@@ -102,7 +105,7 @@ violations:
     enforcementAction: dryrun
     match: {}
     parameters:
-      allowedAppArmorProfiles:
+      allowedProfiles:
         - runtime/default
   allowedProcMount:
     enabled: true
@@ -127,7 +130,7 @@ violations:
       #   matchExpressions:
       #   - {key: name, operator: In, values: [tenant]}
     parameters:
-      allowedProfiles: []
+      allowedProfiles: ["runtime/default"]
   readOnlyRoot:
     enabled: true
     enforcementAction: dryrun
