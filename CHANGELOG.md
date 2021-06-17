@@ -4,6 +4,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ---
 
+## [0.2.0-bb.5]
+### Added
+- networkPolicies.enabled toggle to chart values.
+- network policy resource templates to cover the following:
+  - allow in namespace ingress/egress (with release.name appended, otherwise will overlap with existing NP in logging Release namespace)
+  - allow egress to kube-api and kube-dns ports 443 and 53 respectively.
+  - allow ingress from opa-collector pod to elasticsearch labeled pods
+
 ## [0.2.0-bb.4]
 ### Added
 - Added CI test for constraints

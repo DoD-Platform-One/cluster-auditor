@@ -6,6 +6,9 @@ elasticsearch:
 istio:
   enabled: true
 
+networkPolicies:
+  enabled: true
+
 imagePullSecrets:
 - name: private-registry-mil
 
