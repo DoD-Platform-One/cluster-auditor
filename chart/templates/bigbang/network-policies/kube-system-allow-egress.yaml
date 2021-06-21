@@ -8,9 +8,11 @@ spec:
   - to:
     - ipBlock:
         cidr: {{ .Values.networkPolicies.controlPlaneCidr }}
+        {{- if eq .Values.networkPolicies.controlPlaneCidr "0.0.0.0/0" }}
         # ONLY Block requests to AWS metadata IP
         except:
         - 169.254.169.254/32
+        {{- end }}
   podSelector:
     matchLabels:
       {{- include "clusterauditor.labels" . | nindent 6 }}
