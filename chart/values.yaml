@@ -1,7 +1,36 @@
 collect:
   objects: false
   violations:
-    labels: false
+    allowedAppArmorProfiles: true
+    allowedCapabilities: true
+    allowedDockerRegistries: true
+    allowedFlexVolumes: true
+    allowedHostFilesystem: true
+    allowedIPs: true
+    allowedProcMount: true
+    allowedSecCompProfiles: true
+    allowedUsers: true
+    bannedImageTags: true
+    blockNodePort: true
+    containerRatio: true
+    hostNetworking: true
+    httpsOnly: true
+    imageDigest: true
+    namespacesHaveIstio: true
+    noBigContainers: true
+    noHostNamespace: true
+    noPrivilegedContainers: true
+    noPrivilegedEscalation: true
+    noSysctls: true
+    podsHaveIstio: true
+    readOnlyRoot: true
+    requiredLabels: true
+    requiredProbes: true
+    restrictedTaint: true
+    selinuxPolicy: true
+    uniqueIngressHost: true
+    uniqueServiceSelector: true
+    volumeTypes: true
 
 elasticsearch:
   name: logging-ek
@@ -9,287 +38,6 @@ elasticsearch:
   imagePullSecrets: []
 istio:
   enabled: false
-
-violations:
-  allowedUsers:
-    enabled: true
-    enforcementAction: dryrun
-    match:
-      excludedNamespaces:
-      - kube-system
-    parameters:
-      runAsUser:
-        rule: MustRunAsNonRoot # MustRunAs # RunAsAny
-      runAsGroup:
-        rule: MustRunAs # MayRunAs # RunAsAny
-        ranges:
-          - min: 1000
-            max: 65535
-      supplementalGroups:
-        rule: MustRunAs # MayRunAs # RunAsAny
-        ranges:
-          - min: 1000
-            max: 65535
-      fsGroup:
-        rule: MustRunAs # MayRunAs # RunAsAny
-        ranges:
-          - min: 1000
-            max: 65535
-  bannedImageTags:
-    enabled: true
-    enforcementAction: dryrun
-    match: {}
-    parameters:
-      tags:
-        - "latest"
-  allowedDockerRegistries:
-    enabled: true
-    enforcementAction: dryrun
-    match: {}
-    parameters:
-      repos:
-        - "registry1.dso.mil"
-        - "registry.dso.mil"
-  restrictedTaint:
-    enabled: true
-    enforcementAction: dryrun
-    match:
-      excludedNamespaces:
-        - kube-system
-    parameters:
-      restrictedTaint:
-        key: privileged
-        effect: NoSchedule
-        value: "true"
-      allowGlobalToleration: false
-  pspCapabilities:
-    enabled: true
-    enforcementAction: dryrun
-    match:
-      excludedNamespaces:
-        - kube-system
-    parameters:
-      allowedCapabilities: ["NET_BIND_SERVICE"]
-      requiredDropCapabilities: ["all"]
-  httpsOnly:
-    enabled: true
-    enforcementAction: dryrun
-    match: {}
-    parameters:
-      allowedCapabilities: ["NET_BIND_SERVICE"]
-      requiredDropCapabilities: ["all"]
-  allowedIPs:
-    enabled: true
-    enforcementAction: dryrun
-    match: {}
-    parameters:
-      allowedIPs: []
-        #- 1.2.3.4/32
-  allowedHostFilesystem:
-    enabled: true
-    enforcementAction: dryrun
-    match: {}
-    parameters:
-      allowedHostPaths: []
-        # - readOnly: true
-        #   pathPrefix: "/foo"
-  allowedFlexVolumes:
-    enabled: true
-    enforcementAction: dryrun
-    match: {}
-    parameters:
-      allowedFlexVolumes: []
-        # - driver: "example/lvm"
-  allowedAppArmorProfiles:
-    enabled: true
-    enforcementAction: dryrun
-    match: {}
-    parameters:
-      allowedProfiles:
-        - runtime/default
-  allowedProcMount:
-    enabled: true
-    enforcementAction: dryrun
-    match: {}
-    parameters:
-      procMount: Default
-  hostNetworking:
-    enabled: true
-    enforcementAction: dryrun
-    match: {}
-      # namespaceSelector:
-      #   matchExpressions:
-      #   - {key: name, operator: In, values: [tenant]}
-    parameters:
-      hostNetwork: false
-  allowedSecCompProfiles:
-    enabled: true
-    enforcementAction: dryrun
-    match: {}
-      # namespaceSelector:
-      #   matchExpressions:
-      #   - {key: name, operator: In, values: [tenant]}
-    parameters:
-      allowedProfiles: ["runtime/default"]
-  readOnlyRoot:
-    enabled: true
-    enforcementAction: dryrun
-    match: {}
-      # namespaceSelector:
-      #   matchExpressions:
-      #   - {key: name, operator: In, values: [tenant]}
-  selinuxPolicy:
-    enabled: true
-    enforcementAction: dryrun
-    match: {}
-      # namespaceSelector:
-      #   matchExpressions:
-      #   - {key: name, operator: In, values: [tenant]}
-    parameters:
-      allowedSELinuxOptions: []
-  containerRatio:
-    enabled: true
-    enforcementAction: dryrun
-    match: {}
-    parameters:
-      ratio: "2"
-  noBigContainers:
-    enabled: true
-    enforcementAction: dryrun
-    # specify how to subset the pods
-    match: {}
-      # namespaceSelector:
-      #   matchExpressions:
-      #   - {key: name, operator: In, values: [tenant]}
-    parameters:
-      cpu: 2000m
-      memory: 4G
-      exemptContainers: [""]
-  noPrivilegedEscalation:
-    enabled: true
-    enforcementAction: dryrun
-    # specify how to subset the pods
-    match: {}
-      # namespaceSelector:
-      #   matchExpressions:
-      #   - {key: name, operator: In, values: [tenant]}
-  noPrivilegedContainers:
-    enabled: true
-    enforcementAction: dryrun
-    match:
-      excludedNamespaces:
-        - kube-system
-  uniqueIngressHost:
-    enabled: true
-    enforcementAction: dryrun
-    # specify how to subset the pods
-    match: {}
-      # namespaceSelector:
-      #   matchExpressions:
-      #   - {key: name, operator: In, values: [tenant]}
-  noHostNamespace:
-    enabled: true
-    enforcementAction: dryrun
-    # specify how to subset the pods
-    match: {}
-      # namespaceSelector:
-      #   matchExpressions:
-      #   - {key: name, operator: In, values: [tenant]}
-  blockNodePort:
-    enabled: true
-    enforcementAction: dryrun
-    # specify how to subset the pods
-    match: {}
-      # namespaceSelector:
-      #   matchExpressions:
-      #   - {key: name, operator: In, values: [tenant]}
-  imageDigest:
-    enabled: true
-    enforcementAction: dryrun
-    match: {}
-  uniqueServiceSelector:
-    enabled: true
-    enforcementAction: dryrun
-    match: {}
-  requiredLabels:
-    enabled: true
-    enforcementAction: dryrun
-    # specify how to subset the pods
-    match: {}
-      # namespaceSelector:
-      #   matchExpressions:
-      #   - {key: name, operator: In, values: [tenant]}
-    parameters:
-      labels:
-        - key: "app.kubernetes.io/name"
-          allowedRegex: ""
-        - key: "app.kubernetes.io/instance"
-          allowedRegex: ""
-        - key: "app.kubernetes.io/version"
-          allowedRegex: ""
-        - key: "app.kubernetes.io/component"
-          allowedRegex: ""
-        - key: "app.kubernetes.io/part-of"
-          allowedRegex: ""
-        - key: "app.kubernetes.io/managed-by"
-          allowedRegex: ""
-  volumeTypes:
-    enabled: true
-    enforcementAction: dryrun
-    # specify how to subset the pods
-    match: {}
-      # namespaceSelector:
-      #   matchExpressions:
-      #   - {key: name, operator: In, values: [tenant]}
-    parameters:
-      volumes:
-      # - "*" # * may be used to allow all volume types
-      - configMap
-      - emptyDir
-      - projected
-      - secret
-      - downwardAPI
-      - persistentVolumeClaim
-      - hostPath #required for allowedHostPaths
-      - flexVolume #required for allowedFlexVolumes
-  # Denies all, can be configured to allow for additional access.
-  noSysctls:
-    enabled: true
-    enforcementAction: dryrun
-    match: {}
-      # namespaceSelector:
-      #   matchExpressions:
-      #   - {key: name, operator: In, values: [tenant]}
-    parameters:
-      forbiddenSysctls:
-      - "*"
-  requiredProbes:
-    enabled: true
-    enforcementAction: dryrun
-    match: {}
-    parameters:
-      probes: ["readinessProbe", "livenessProbe"]
-      probeTypes: ["tcpSocket", "httpGet", "exec"]
-  podsHaveIstio:
-    enabled: true
-    enforcementAction: dryrun
-    match: {}
-    parameters:
-      annotations:
-      - key: "sidecar.istio.io/inject"
-        disallowedRegex: "^disabled"
-  namespacesHaveIstio:
-    enabled: true
-    enforcementAction: dryrun
-    match:
-      namespaceSelector:
-        matchExpressions:
-        - key: admission.gatekeeper.sh/ignore
-          operator: DoesNotExist
-    parameters:
-      labels:
-      - key: "istio-injection"
-        allowedRegex: "^enabled"
 
 image:
   repo: registry1.dso.mil/ironbank/cluster-auditor/opa-collector

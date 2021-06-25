@@ -45,103 +45,103 @@ data:
       api_version "constraints.gatekeeper.sh/v1alpha1"
       insecure_ssl false
       <watch>
-        resource_name k8s_required_labels
-      </watch>
-      <watch>
-        resource_name k8s_required_label_values
-      </watch>
-      <watch>
-        resource_name k8s_no_annotation_values
-      </watch>
-      <watch>
-        resource_name k8s_required_probes
-      </watch>
-      <watch>
         resource_name k8s_allowed_repos
-      </watch>
-      <watch>
-        resource_name k8s_container_limits
-      </watch>
-      <watch>
-        resource_name k8s_pvc_limits
-      </watch>
-      <watch>
-        resource_name k8s_protected_namespaces
-      </watch>
-      <watch>
-        resource_name k8s_regulated_resources
       </watch>
       <watch>
         resource_name k8s_banned_image_tags
       </watch>
       <watch>
-        resource_name k8s_pspallow_privilege_escalation_container
+        resource_name k8s_block_node_port
       </watch>
       <watch>
-        resource_name k8s_pspcapabilities
+        resource_name k8s_container_limits
       </watch>
       <watch>
-        resource_name k8s_psphost_filesystem
+        resource_name k8s_container_ratios
       </watch>
       <watch>
         resource_name k8s_external_ips
       </watch>
       <watch>
-        resource_name k8s_pspapp_armor
-      </watch>
-      <watch>
-        resource_name k8s_pspallowed_users
-      </watch>
-      <watch>
-        resource_name k8s_pspproc_mount
-      </watch>
-      <watch>
         resource_name k8s_https_only
-      </watch>
-      <watch>
-        resource_name k8s_psphost_namespace
-      </watch>
-      <watch>
-        resource_name k8s_block_node_port
-      </watch>
-      <watch>
-        resource_name k8s_pspprivileged_container
-      </watch>
-      <watch>
-        resource_name k8s_pspforbidden_sysctls
-      </watch>
-      <watch>
-        resource_name restricted_taint_toleration
-      </watch>
-      <watch>
-        resource_name k8s_unique_ingress_host
-      </watch>
-      <watch>
-        resource_name k8s_pspvolume_types
-      </watch>
-      <watch>
-        resource_name k8s_pspflex_volumes
       </watch>
       <watch>
         resource_name k8s_image_digests
       </watch>
       <watch>
-        resource_name k8s_unique_service_selector
+        resource_name k8s_no_annotation_values
+      </watch>
+      <watch>
+        resource_name k8s_protected_namespaces
+      </watch>
+      <watch>
+        resource_name k8s_pspallow_privilege_escalation_container
+      </watch>
+      <watch>
+        resource_name k8s_pspallowed_users
+      </watch>
+      <watch>
+        resource_name k8s_pspapp_armor
+      </watch>
+      <watch>
+        resource_name k8s_pspcapabilities
+      </watch>
+      <watch>
+        resource_name k8s_pspflex_volumes
+      </watch>
+      <watch>
+        resource_name k8s_pspforbidden_sysctls
+      </watch>
+      <watch>
+        resource_name k8s_psphost_filesystem
+      </watch>
+      <watch>
+        resource_name k8s_psphost_namespace
       </watch>
       <watch>
         resource_name k8s_psphost_networking_ports
       </watch>
       <watch>
-        resource_name k8s_pspseccomp
+        resource_name k8s_pspprivileged_container
+      </watch>
+      <watch>
+        resource_name k8s_pspproc_mount
       </watch>
       <watch>
         resource_name k8s_pspread_only_root_filesystem
       </watch>
       <watch>
+        resource_name k8s_pspseccomp
+      </watch>
+      <watch>
         resource_name k8s_pspselinux_v2
       </watch>
       <watch>
-        resource_name k8s_container_ratios
+        resource_name k8s_pspvolume_types
+      </watch>
+      <watch>
+        resource_name k8s_pvc_limits
+      </watch>
+      <watch>
+        resource_name k8s_regulated_resources
+      </watch>
+      <watch>
+        resource_name k8s_required_label_values
+      </watch>
+      <watch>
+        resource_name k8s_required_labels
+      </watch>
+      <watch>
+        resource_name k8s_required_probes
+      </watch>
+      <watch>
+        resource_name k8s_unique_ingress_host
+      </watch>
+      <watch>
+        resource_name k8s_unique_service_selector
+      </watch>
+      <watch>
+        resource_name restricted_taint_toleration
       </watch>
     </source>
 {{- end }}
@@ -154,161 +154,164 @@ data:
       tag opa.violations.*
       api_version "constraints.gatekeeper.sh/v1alpha1"
       insecure_ssl false
-{{- if .Values.violations.noPrivilegedEscalation.enabled }}
-      <watch>
-        resource_name k8s_pspallow_privilege_escalation_container
-      </watch>
-{{- end }}
-{{- if .Values.violations.noPrivilegedContainers.enabled }}
-      <watch>
-        resource_name k8s_pspprivileged_container
-      </watch>
-{{- end }}
-{{- if .Values.violations.pspCapabilities.enabled }}
-      <watch>
-        resource_name k8s_pspcapabilities
-      </watch>
-{{- end }}
-{{- if .Values.violations.allowedHostFilesystem.enabled }}
-      <watch>
-        resource_name k8s_psphost_filesystem
-      </watch>
-{{- end }}
-{{- if .Values.violations.allowedIPs.enabled }}
-      <watch>
-        resource_name k8s_external_ips
-      </watch>
-{{- end }}
-{{- if .Values.violations.allowedAppArmorProfiles.enabled }}
-      <watch>
-        resource_name k8s_pspapp_armor
-      </watch>
-{{- end }}
-{{- if .Values.violations.allowedUsers.enabled }}
-      <watch>
-        resource_name k8s_pspallowed_users
-      </watch>
-{{- end }}
-{{- if .Values.violations.allowedProcMount.enabled }}
-      <watch>
-        resource_name k8s_pspproc_mount
-      </watch>
-{{- end }}
-{{- if .Values.violations.httpsOnly.enabled }}
-      <watch>
-        resource_name k8s_https_only
-      </watch>
-{{- end }}
-{{- if .Values.violations.noHostNamespace.enabled }}
-      <watch>
-        resource_name k8s_psphost_namespace
-      </watch>
-{{- end }}
-{{- if .Values.violations.blockNodePort.enabled }}
-      <watch>
-        resource_name k8s_block_node_port
-      </watch>
-{{- end }}
-{{- if .Values.violations.noSysctls.enabled }}
-      <watch>
-        resource_name k8s_pspforbidden_sysctls
-      </watch>
-{{- end }}
-{{- if .Values.violations.restrictedTaint.enabled }}
-      <watch>
-        resource_name restricted_taint_toleration
-      </watch>
-{{- end }}
-{{- if .Values.violations.uniqueIngressHost.enabled }}
-      <watch>
-        resource_name k8s_unique_ingress_host
-      </watch>
-{{- end }}
-{{- if .Values.violations.volumeTypes.enabled }}
-      <watch>
-        resource_name k8s_pspvolume_types
-      </watch>
-{{- end }}
-{{- if or .Values.collect.violations.labels .Values.violations.namespacesHaveIstio.enabled }}
-      <watch>
-        resource_name k8s_required_labels
-      </watch>
-      <watch>
-        resource_name k8s_required_label_values
-      </watch>
-{{- end }}
-{{- if .Values.violations.podsHaveIstio.enabled }}
-      <watch>
-        resource_name k8s_no_annotation_values
-      </watch>
-{{- end }}
-{{- if .Values.violations.requiredProbes.enabled }}
-      <watch>
-        resource_name k8s_required_probes
-      </watch>
-{{- end }}
-{{- if .Values.violations.allowedDockerRegistries.enabled }}
+{{- if .Values.collect.violations.allowedDockerRegistries }}
       <watch>
         resource_name k8s_allowed_repos
       </watch>
 {{- end }}
-{{- if .Values.violations.noBigContainers.enabled }}
+{{- if .Values.collect.violations.bannedImageTags }}
+      <watch>
+        resource_name k8s_banned_image_tags
+      </watch>
+{{- end }}
+{{- if .Values.collect.violations.blockNodePort }}
+      <watch>
+        resource_name k8s_block_node_port
+      </watch>
+{{- end }}
+{{- if .Values.collect.violations.noBigContainers }}
       <watch>
         resource_name k8s_container_limits
+      </watch>
+{{- end }}
+{{- if .Values.collect.violations.containerRatio }}
+      <watch>
+        resource_name k8s_container_ratios
+      </watch>
+{{- end }}
+{{- if .Values.collect.violations.allowedIPs }}
+      <watch>
+        resource_name k8s_external_ips
+      </watch>
+{{- end }}
+{{- if .Values.collect.violations.httpsOnly }}
+      <watch>
+        resource_name k8s_https_only
+      </watch>
+{{- end }}
+{{- if .Values.collect.violations.imageDigest }}
+      <watch>
+        resource_name k8s_image_digests
+      </watch>
+{{- end }}
+{{- if .Values.collect.violations.podsHaveIstio }}
+      <watch>
+        resource_name k8s_no_annotation_values
+      </watch>
+{{- end }}
+      # <watch>
+      #   resource_name k8s_protected_namespaces
+      # </watch>
+{{- if .Values.collect.violations.noPrivilegedEscalation }}
+      <watch>
+        resource_name k8s_pspallow_privilege_escalation_container
+      </watch>
+{{- end }}
+{{- if .Values.collect.violations.allowedUsers }}
+      <watch>
+        resource_name k8s_pspallowed_users
+      </watch>
+{{- end }}
+{{- if .Values.collect.violations.allowedAppArmorProfiles }}
+      <watch>
+        resource_name k8s_pspapp_armor
+      </watch>
+{{- end }}
+{{- if .Values.collect.violations.allowedCapabilities }}
+      <watch>
+        resource_name k8s_pspcapabilities
+      </watch>
+{{- end }}
+
+{{- if .Values.collect.violations.allowedFlexVolumes }}
+      <watch>
+        resource_name k8s_pspflex_volumes
+      </watch>
+{{- end }}
+{{- if .Values.collect.violations.noSysctls }}
+      <watch>
+        resource_name k8s_pspforbidden_sysctls
+      </watch>
+{{- end }}
+{{- if .Values.collect.violations.allowedHostFilesystem }}
+      <watch>
+        resource_name k8s_psphost_filesystem
+      </watch>
+{{- end }}
+{{- if .Values.collect.violations.noHostNamespace }}
+      <watch>
+        resource_name k8s_psphost_namespace
+      </watch>
+{{- end }}
+{{- if .Values.collect.violations.hostNetworking }}
+      <watch>
+        resource_name k8s_psphost_networking_ports
+      </watch>
+{{- end }}
+{{- if .Values.collect.violations.noPrivilegedContainers }}
+      <watch>
+        resource_name k8s_pspprivileged_container
+      </watch>
+{{- end }}
+{{- if .Values.collect.violations.allowedProcMount }}
+      <watch>
+        resource_name k8s_pspproc_mount
+      </watch>
+{{- end }}
+{{- if .Values.collect.violations.readOnlyRoot }}
+      <watch>
+        resource_name k8s_pspread_only_root_filesystem
+      </watch>
+{{- end }}
+{{- if .Values.collect.violations.allowedSecCompProfiles }}
+      <watch>
+        resource_name k8s_pspseccomp
+      </watch>
+{{- end }}
+{{- if .Values.collect.violations.selinuxPolicy }}
+      <watch>
+        resource_name k8s_pspselinux_v2
+      </watch>
+{{- end }}
+{{- if .Values.collect.violations.volumeTypes }}
+      <watch>
+        resource_name k8s_pspvolume_types
       </watch>
 {{- end }}
       # <watch>
       #   resource_name k8s_pvc_limits
       # </watch>
       # <watch>
-      #   resource_name k8s_protected_namespaces
-      # </watch>
-      # <watch>
       #   resource_name k8s_regulated_resources
       # </watch>
-{{- if .Values.violations.bannedImageTags.enabled }}
+{{- if .Values.collect.violations.namespacesHaveIstio }}
       <watch>
-        resource_name k8s_banned_image_tags
+        resource_name k8s_required_label_values
       </watch>
 {{- end }}
-{{- if .Values.violations.allowedFlexVolumes.enabled }}
+{{- if .Values.collect.violations.requiredLabels }}
       <watch>
-        resource_name k8s_pspflex_volumes
+        resource_name k8s_required_labels
       </watch>
 {{- end }}
-{{- if .Values.violations.imageDigest.enabled }}
+{{- if .Values.collect.violations.requiredProbes }}
       <watch>
-        resource_name k8s_image_digests
+        resource_name k8s_required_probes
       </watch>
 {{- end }}
-{{- if .Values.violations.uniqueServiceSelector.enabled }}
+{{- if .Values.collect.violations.uniqueIngressHost }}
+      <watch>
+        resource_name k8s_unique_ingress_host
+      </watch>
+{{- end }}
+{{- if .Values.collect.violations.uniqueServiceSelector }}
       <watch>
         resource_name k8s_unique_service_selector
       </watch>
 {{- end }}
-{{- if .Values.violations.hostNetworking.enabled }}
+{{- if .Values.collect.violations.restrictedTaint }}
       <watch>
-        resource_name k8s_psphost_networking_ports
-      </watch>
-{{- end }}
-{{- if .Values.violations.allowedSecCompProfiles.enabled }}
-      <watch>
-        resource_name k8s_pspseccomp
-      </watch>
-{{- end }}
-{{- if .Values.violations.readOnlyRoot.enabled }}
-      <watch>
-        resource_name k8s_pspread_only_root_filesystem
-      </watch>
-{{- end }}
-{{- if .Values.violations.selinuxPolicy.enabled }}
-      <watch>
-        resource_name k8s_pspselinux_v2
-      </watch>
-{{- end }}
-{{- if .Values.violations.containerRatio.enabled }}
-      <watch>
-        resource_name k8s_container_ratios
+        resource_name restricted_taint_toleration
       </watch>
 {{- end }}
     </source>

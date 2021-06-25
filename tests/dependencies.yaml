@@ -3,4 +3,3 @@ eckoperator:
 opa:
   git: "https://repo1.dso.mil/platform-one/big-bang/apps/core/policy.git"
   namespace: "gatekeeper-system"
-  
