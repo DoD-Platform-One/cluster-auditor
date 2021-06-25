@@ -117,6 +117,9 @@ data:
         resource_name k8s_pspselinux_v2
       </watch>
       <watch>
+        resource_name k8s_deny_sadefault
+      </watch>
+      <watch>
         resource_name k8s_pspvolume_types
       </watch>
       <watch>
@@ -226,6 +229,11 @@ data:
 {{- if .Values.collect.violations.allowedFlexVolumes }}
       <watch>
         resource_name k8s_pspflex_volumes
+      </watch>
+{{- end }}
+{{- if .Values.collect.violations.noDefaultServiceAccount }}
+      <watch>
+        resource_name k8s_deny_sadefault
       </watch>
 {{- end }}
 {{- if .Values.collect.violations.noSysctls }}
