@@ -31,7 +31,7 @@ collect:
     uniqueIngressHost: true
     uniqueServiceSelector: true
     volumeTypes: true
-
+    noDefaultServiceAccount: true
 elasticsearch:
   name: logging-ek
   dedicated: false
