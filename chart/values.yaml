@@ -38,6 +38,9 @@ elasticsearch:
   imagePullSecrets: []
 istio:
   enabled: false
+# Only used to toggle networkPolicy for sidecar metrics scraping
+monitoring:
+  enabled: false
 
 image:
   repo: registry1.dso.mil/ironbank/cluster-auditor/opa-collector
