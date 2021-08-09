@@ -2,6 +2,14 @@
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 ---
+
+## [0.3.0-bb.5]
+### Changed
+- Switched away from the (unmaintained and oddly behaving) jq fluentd filter.
+- Now using the exec_filter to execute jq directly.
+- Added in an additional filter to avoid getting duplicates stored to elastic--elasticsearch_genid
+
+
 ## [0.3.0-bb.4]
 ### Added
 - Updated Network Policy to allow Openshift DNS Egress
