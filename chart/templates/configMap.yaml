@@ -361,7 +361,11 @@ data:
 {{- end }}
     <match violations.**>
       @type elasticsearch
+      @log_level debug
+      suppress_type_name true
       include_tag_key true
+      id_key _hash
+      remove_keys _hash
       port 9200
       scheme https
       ca_file /etc/elasticsearch/certs/ca.crt
@@ -370,13 +374,11 @@ data:
       password "#{ENV['ELASTIC_PASSWORD']}"
       reload_connections false
       reload_after 100
-      loglevel trace
       logstash_format true
       logstash_prefix violations
-      replace_dots true
       <buffer>
-        flush_mode immediate
-        flush_thread_count 8
+        flush_interval 30s
+        flush_at_shutdown true
       </buffer>
     </match>
     <match>
@@ -426,15 +428,29 @@ data:
       de_dot_separator _
     </filter>
 {{- end }}
-    <match opa.violations.*>
-      @type jq
-      jq 'select( .record.object.status.totalViolations != 0 ) |  .record.object.status.violations'
-      # jq '{source: .record.object.metadata.labels["cluster-auditor.dso.mil/source"], control: .record.object.metadata.labels["cluster-auditor.dso.mil/control"], violations: .record.object.status.violations} | { source: .source, control: .control, violation: .violations[]} | {source: .source, control: .control, kind: .violation.kind, message: .violation.message, name: .violation.name, namespace: .violation.namespace}'
-      # tag violations.*
-      label @VIOLATIONS
-      remove_tag_prefix opa
+    <match opa.violations.**>
+      @type exec_filter
+      command jq -c --unbuffered 'select( .object.status.totalViolations != 0 ) | .auditTimestamp=.object.status.auditTimestamp | .object.status.violations[]+={"auditTimestamp":.auditTimestamp} | .object.status.violations[]'
+      <format>
+        @type json
+      </format>
+      <parse>
+        @type json
+        # force a small buffer, as the json parser doesn't flush until it's full.  0 doesn't work, 8 causes missed events, 
+        # and 1 seems to force all event immediately.
+        stream_buffer_size 1
+        time_type string
+        time_key auditTimestamp
+      </parse>
+      tag violations
     </match>
-
+    <filter violations.**>
+      @type elasticsearch_genid
+      hash_id_key _hash
+      include_time_in_seed true
+      use_record_as_seed true
+      record_keys enforcementAction,kind,message,name
+    </filter>
   fluent.conf: |
     <system>
       log_level {{ .Values.loglevel }}
