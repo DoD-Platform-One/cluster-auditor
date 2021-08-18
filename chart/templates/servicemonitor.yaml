@@ -3,6 +3,8 @@ kind: ServiceMonitor
 metadata:
   name: opa-exporter
   namespace: monitoring
+  labels:
+    release: monitoring-monitoring
 spec:
   endpoints:
   - interval: 30s
