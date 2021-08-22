@@ -1,7 +1,7 @@
 collect:
   objects: false
   violations:
-    allowedAppArmorProfiles: true
+    allowedAppArmorProfiles: false
     allowedCapabilities: true
     allowedDockerRegistries: true
     allowedFlexVolumes: true
@@ -29,7 +29,6 @@ collect:
     restrictedTaint: true
     selinuxPolicy: true
     uniqueIngressHost: true
-    uniqueServiceSelector: true
     volumeTypes: true
     noDefaultServiceAccount: true
 elasticsearch:
