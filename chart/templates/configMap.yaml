@@ -63,10 +63,10 @@ data:
         resource_name k8s_external_ips
       </watch>
       <watch>
-        resource_name k8s_https_only
+        resource_name k8s_https_only2
       </watch>
       <watch>
-        resource_name k8s_image_digests
+        resource_name k8s_image_digests2
       </watch>
       <watch>
         resource_name k8s_no_annotation_values
@@ -75,7 +75,7 @@ data:
         resource_name k8s_protected_namespaces
       </watch>
       <watch>
-        resource_name k8s_pspallow_privilege_escalation_container
+        resource_name k8s_pspallow_privilege_escalation_container2
       </watch>
       <watch>
         resource_name k8s_pspallowed_users
@@ -96,19 +96,19 @@ data:
         resource_name k8s_psphost_filesystem
       </watch>
       <watch>
-        resource_name k8s_psphost_namespace
+        resource_name k8s_psphost_namespace2
       </watch>
       <watch>
         resource_name k8s_psphost_networking_ports
       </watch>
       <watch>
-        resource_name k8s_pspprivileged_container
+        resource_name k8s_pspprivileged_container2
       </watch>
       <watch>
         resource_name k8s_pspproc_mount
       </watch>
       <watch>
-        resource_name k8s_pspread_only_root_filesystem
+        resource_name k8s_pspread_only_root_filesystem2
       </watch>
       <watch>
         resource_name k8s_pspseccomp
@@ -132,16 +132,10 @@ data:
         resource_name k8s_required_label_values
       </watch>
       <watch>
-        resource_name k8s_required_labels
-      </watch>
-      <watch>
         resource_name k8s_required_probes
       </watch>
       <watch>
         resource_name k8s_unique_ingress_host
-      </watch>
-      <watch>
-        resource_name k8s_unique_service_selector
       </watch>
       <watch>
         resource_name restricted_taint_toleration
@@ -189,12 +183,12 @@ data:
 {{- end }}
 {{- if .Values.collect.violations.httpsOnly }}
       <watch>
-        resource_name k8s_https_only
+        resource_name k8s_https_only2
       </watch>
 {{- end }}
 {{- if .Values.collect.violations.imageDigest }}
       <watch>
-        resource_name k8s_image_digests
+        resource_name k8s_image_digests2
       </watch>
 {{- end }}
 {{- if .Values.collect.violations.podsHaveIstio }}
@@ -207,7 +201,7 @@ data:
       # </watch>
 {{- if .Values.collect.violations.noPrivilegedEscalation }}
       <watch>
-        resource_name k8s_pspallow_privilege_escalation_container
+        resource_name k8s_pspallow_privilege_escalation_container2
       </watch>
 {{- end }}
 {{- if .Values.collect.violations.allowedUsers }}
@@ -248,7 +242,7 @@ data:
 {{- end }}
 {{- if .Values.collect.violations.noHostNamespace }}
       <watch>
-        resource_name k8s_psphost_namespace
+        resource_name k8s_psphost_namespace2
       </watch>
 {{- end }}
 {{- if .Values.collect.violations.hostNetworking }}
@@ -258,7 +252,7 @@ data:
 {{- end }}
 {{- if .Values.collect.violations.noPrivilegedContainers }}
       <watch>
-        resource_name k8s_pspprivileged_container
+        resource_name k8s_pspprivileged_container2
       </watch>
 {{- end }}
 {{- if .Values.collect.violations.allowedProcMount }}
@@ -268,7 +262,7 @@ data:
 {{- end }}
 {{- if .Values.collect.violations.readOnlyRoot }}
       <watch>
-        resource_name k8s_pspread_only_root_filesystem
+        resource_name k8s_pspread_only_root_filesystem2
       </watch>
 {{- end }}
 {{- if .Values.collect.violations.allowedSecCompProfiles }}
@@ -292,14 +286,9 @@ data:
       # <watch>
       #   resource_name k8s_regulated_resources
       # </watch>
-{{- if .Values.collect.violations.namespacesHaveIstio }}
+{{- if or .Values.collect.violations.requiredLabels .Values.collect.violations.namespacesHaveIstio }}
       <watch>
         resource_name k8s_required_label_values
-      </watch>
-{{- end }}
-{{- if .Values.collect.violations.requiredLabels }}
-      <watch>
-        resource_name k8s_required_labels
       </watch>
 {{- end }}
 {{- if .Values.collect.violations.requiredProbes }}
@@ -310,11 +299,6 @@ data:
 {{- if .Values.collect.violations.uniqueIngressHost }}
       <watch>
         resource_name k8s_unique_ingress_host
-      </watch>
-{{- end }}
-{{- if .Values.collect.violations.uniqueServiceSelector }}
-      <watch>
-        resource_name k8s_unique_service_selector
       </watch>
 {{- end }}
 {{- if .Values.collect.violations.restrictedTaint }}
