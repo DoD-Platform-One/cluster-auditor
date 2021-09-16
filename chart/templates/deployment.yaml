@@ -24,6 +24,9 @@ spec:
       terminationGracePeriodSeconds: 30
       nodeSelector:
         beta.kubernetes.io/os: linux
+      {{- if .Values.nodeSelector }}
+        {{ toYaml .Values.nodeSelector | nindent 8 }}
+      {{- end }}
       containers:
       - name: opa-collector
         image: {{ .Values.image.repo }}:{{ .Values.image.tag }}
@@ -79,10 +82,6 @@ spec:
           secretName: {{ .Values.elasticsearch.name }}-es-http-certs-public
       - name: tmp
         emptyDir: {}
-      {{- if .Values.nodeSelector }}
-      nodeSelector:
-        {{ toYaml .Values.nodeSelector | nindent 8 }}
-      {{- end }}
       {{- if .Values.affinity }}
       affinity:
         {{ toYaml .Values.affinity | nindent 8 }}
