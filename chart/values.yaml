@@ -43,8 +43,9 @@ monitoring:
   enabled: false
 
 image:
-  repo: registry1.dso.mil/ironbank/cluster-auditor/opa-collector
-  tag: 0.3.2
+  
+  repo: registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter
+  tag: 0.0.3
   imagePullPolicy: Always
 
 imagePullSecrets:
