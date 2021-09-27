@@ -21,19 +21,20 @@ spec:
       {{- if .Values.nodeSelector }}
         {{- toYaml .Values.nodeSelector | nindent 8 }}
       {{- end }}
-      securityContext:
+      resources:
+{{ toYaml .Values.resources | indent 10 }}
+      containers:
+      - image: registry.dso.mil/platform-one/big-bang/apps/core/cluster-auditor/opa-exporter:v0.0.3
+        name: opa-exporter
+        resources:
+          {{- toYaml .Values.resources | indent 10 }}
+        securityContext:
           allowPrivilegeEscalation: false
           capabilities:
             drop:
             - ALL
           privileged: false
           readOnlyRootFilesystem: true
-      resources:
-{{ toYaml .Values.resources | indent 10 }}
-      containers:
-      - image: registry.dso.mil/platform-one/big-bang/apps/core/cluster-auditor/opa-exporter:v0.0.3
-        name: opa-exporter
-        resources: {}
     {{- with .Values.imagePullSecrets }}
       imagePullSecrets:
         {{- toYaml . | nindent 8 }}
