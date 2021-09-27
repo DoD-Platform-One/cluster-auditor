@@ -21,8 +21,6 @@ spec:
       {{- if .Values.nodeSelector }}
         {{- toYaml .Values.nodeSelector | nindent 8 }}
       {{- end }}
-      resources:
-{{ toYaml .Values.resources | indent 10 }}
       containers:
       - image: registry.dso.mil/platform-one/big-bang/apps/core/cluster-auditor/opa-exporter:v0.0.3
         name: opa-exporter
