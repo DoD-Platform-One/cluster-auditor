@@ -2,7 +2,8 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: opa-exporter
+    {{- include "clusterauditor.labels" . | nindent 4 }}
+    app.kubernetes.io/component: opa-exporter
   name: opa-exporter
 spec:
   replicas: 1
@@ -15,7 +16,33 @@ spec:
       labels:
         app: opa-exporter
     spec:
+      nodeSelector:
+        beta.kubernetes.io/os: linux
+      {{- if .Values.nodeSelector }}
+        {{- toYaml .Values.nodeSelector | nindent 8 }}
+      {{- end }}
+      securityContext:
+          allowPrivilegeEscalation: false
+          capabilities:
+            drop:
+            - ALL
+          privileged: false
+          readOnlyRootFilesystem: true
+      resources:
+{{ toYaml .Values.resources | indent 10 }}
       containers:
       - image: registry.dso.mil/platform-one/big-bang/apps/core/cluster-auditor/opa-exporter:v0.0.3
-        name: opa-scorecard-exporter-ldscm
+        name: opa-exporter
         resources: {}
+    {{- with .Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      affinity:
+        {{ toYaml .Values.affinity | nindent 8 }}
+      {{- end }}
+      {{- with .Values.tolerations }}
+      tolerations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+
