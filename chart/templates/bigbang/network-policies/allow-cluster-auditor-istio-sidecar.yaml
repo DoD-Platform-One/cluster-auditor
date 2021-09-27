@@ -19,5 +19,7 @@ spec:
     ports:
     - port: 15020
       protocol: TCP
+    - port: 9141
+      protocol: TCP
 {{- end }}
 
