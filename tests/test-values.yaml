@@ -1,11 +1,3 @@
-collect:
-  objects: true
-
-elasticsearch:
-  dedicated: true
-  imagePullSecrets:
-  - name: private-registry-mil
-
 istio:
   enabled: true
 
@@ -14,3 +6,8 @@ networkPolicies:
 
 imagePullSecrets:
 - name: private-registry-mil
+
+bbtests:
+  enabled: true
+  cypress:
+    artifacts: true
