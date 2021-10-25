@@ -1,12 +1,10 @@
-{{- if .Values.clusterAuditor.enabled }}
 apiVersion: v1
 kind: ConfigMap
 metadata:
   name: opa-dashboard
   namespace: monitoring
   labels:
-    grafana_dashboard: "1"
+    grafana_dashboard: '1'
 data:
   grafana-opa-dashboard.json: |
     {{ .Files.Get "dashboards/grafana-opa-dashboard.json"  | nindent 4 }}
-{{- end }}

@@ -1,4 +1,3 @@
-{{- if .Values.clusterAuditor.enabled }}
 apiVersion: monitoring.coreos.com/v1
 kind: ServiceMonitor
 metadata:
@@ -8,10 +7,9 @@ metadata:
     release: monitoring-monitoring
 spec:
   endpoints:
-  - interval: 30s
-    path: /metrics
-    port: metrics
+    - interval: 30s
+      path: /metrics
+      port: metrics
   selector:
     matchLabels:
       app: opa-exporter
-{{- end }}
