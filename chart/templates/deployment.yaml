@@ -33,7 +33,6 @@ spec:
             - ALL
           privileged: false
           readOnlyRootFilesystem: true
-        serviceAccountName: default
       {{- with .Values.imagePullSecrets }}
       imagePullSecrets:
         {{- toYaml . | nindent 8 }}
