@@ -8,5 +8,5 @@ roleRef:
   name: opa-exporter
 subjects:
   - kind: ServiceAccount
-    name: opa-scorecard
-    namespace: logging
+    name: opa-exporter
+    namespace: monitoring
