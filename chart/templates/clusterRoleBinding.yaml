@@ -8,5 +8,4 @@ roleRef:
   name: opa-exporter
 subjects:
   - kind: ServiceAccount
-    name: default
-    namespace: monitoring
+    name: opa-scorecard

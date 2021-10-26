@@ -28,8 +28,12 @@ spec:
 {{ toYaml .Values.resources | indent 10 }}
         securityContext:
           allowPrivilegeEscalation: false
+          capabilities:
+            drop:
+            - ALL
           privileged: false
           readOnlyRootFilesystem: true
+      serviceAccountName: opa-scorecard 
       {{- with .Values.imagePullSecrets }}
       imagePullSecrets:
         {{- toYaml . | nindent 8 }}
