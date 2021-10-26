@@ -33,6 +33,7 @@ spec:
             - ALL
           privileged: false
           readOnlyRootFilesystem: true
+        serviceAccountName: scorecard-admin
       {{- with .Values.imagePullSecrets }}
       imagePullSecrets:
         {{- toYaml . | nindent 8 }}
