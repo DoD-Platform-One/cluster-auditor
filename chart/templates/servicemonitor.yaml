@@ -2,6 +2,7 @@ apiVersion: monitoring.coreos.com/v1
 kind: ServiceMonitor
 metadata:
   name: opa-exporter
+  namespace: monitoring
   labels:
     release: monitoring-monitoring
 spec:
