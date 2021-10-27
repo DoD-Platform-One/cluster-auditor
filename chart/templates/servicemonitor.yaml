@@ -4,7 +4,7 @@ metadata:
   name: opa-exporter
   namespace: logging
   labels:
-    release: monitoring-monitoring
+    release: opa-exporter
 spec:
   endpoints:
     - interval: 30s
