@@ -33,7 +33,7 @@ spec:
             - ALL
           privileged: false
           readOnlyRootFilesystem: true
-      serviceAccountName: opa-scorecard 
+      serviceAccountName: opa-exporter
       {{- with .Values.imagePullSecrets }}
       imagePullSecrets:
         {{- toYaml . | nindent 8 }}
