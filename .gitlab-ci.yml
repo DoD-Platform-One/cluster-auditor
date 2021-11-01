@@ -3,4 +3,4 @@ include:
     ref: master
     file: '/templates/package-tests.yml'
 variables:
-  PACKAGE_NAMESPACE: "monitoring"
+  PACKAGE_NAMESPACE: "cluster-auditor"
