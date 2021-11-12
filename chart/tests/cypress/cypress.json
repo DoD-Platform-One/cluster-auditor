@@ -3,5 +3,7 @@
   "supportFile": false,
   "fixturesFolder": false,
   "videoCompression": 35,
-  "defaultCommandTimeout": 12000
+  "defaultCommandTimeout": 12000,
+  "integrationFolder": ".",
+  "testFiles": "**.spec.js"
 }
