@@ -6,5 +6,23 @@ describe('Grafana Dashboard', function() {
               password: 'prom-operator',
           },
       })
+      cy.visit('http://monitoring-grafana/', {
+          auth: {
+              username: 'admin',
+              password: 'prom-operator',
+          },
+      })
+      cy.visit('http://monitoring-monitoring-grafana/d/YBgRZG6Mz/opa-violations?orgId=1', {
+          auth: {
+              username: 'admin',
+              password: 'prom-operator',
+          },
+      })
+      cy.visit('http://monitoring-monitoring-grafana/', {
+          auth: {
+              username: 'admin',
+              password: 'prom-operator',
+          },
+      })
   })
 })
