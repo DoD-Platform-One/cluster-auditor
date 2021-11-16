@@ -1,5 +1,5 @@
 istio:
-  enabled: true
+  enabled: false
 
 networkPolicies:
   enabled: true
