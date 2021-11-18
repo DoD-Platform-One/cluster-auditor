@@ -20,6 +20,6 @@ spec:
           app.kubernetes.io/name: cluster-auditor
       podSelector:
         matchLabels:
-          {{- include "clusterauditor.labels" . | nindent 6 }}
+          helm-test: enabled
 {{- end }}
 {{- end }}
