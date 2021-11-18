@@ -10,7 +10,7 @@ metadata:
 spec:
   podSelector:
     matchLabels:
-      happ.kubernetes.io/name: grafana
+      app.kubernetes.io/name: grafana
   policyTypes:
     - Ingress
   ingress:
