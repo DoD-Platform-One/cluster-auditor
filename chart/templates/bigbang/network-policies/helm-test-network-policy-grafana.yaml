@@ -15,9 +15,7 @@ spec:
     - Ingress
   ingress:
   - from:
-    - namespaceSelector:
-        matchLabels:
-          app.kubernetes.io/name: cluster-auditor
+    - namespaceSelector: {}
       podSelector:
         matchLabels:
           helm-test: enabled
