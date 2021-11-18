@@ -16,8 +16,7 @@ spec:
         {{- end }}
   podSelector:
     matchLabels:
-       helm-test: enabled
-       {{- include "clusterauditor.labels" . | nindent 6 }}
+      {{- include "clusterauditor.labels" . | nindent 6 }}
   policyTypes:
   - Egress
 {{- end }}
