@@ -4,11 +4,11 @@
 
 ## [1.0.0-bb.1]
 
-### Changed
+### Added
 
 - Created a new namespace cluster auditor.
 - Added opa exporter.
-- Added grafana dashboard
+- Added grafana dashboard.
 
 ## [0.3.0-bb.5]
 
