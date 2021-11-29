@@ -1,6 +1,6 @@
 describe('Grafana Dashboard', function() {
   it('Check Endoing is accessible', function() {
-      cy.visit('http://monitoring-grafana.monitoring.svc.cluster.local/d/YBgRZG6Mz/opa-violations?orgId=1', {
+      cy.visit(Cypress.env('url'), {
           auth: {
               username: 'admin',
               password: 'prom-operator',

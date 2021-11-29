@@ -43,7 +43,7 @@ nodeSelector: {}
   # node-type: cluster-auditor
 
 networkPolicies:
-  enabled: true
+  enabled: false
   # See `kubectl cluster-info` and then resolve to IP
   controlPlaneCidr: 0.0.0.0/0
 

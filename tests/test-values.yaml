@@ -14,3 +14,17 @@ networkPolicies:
 
 imagePullSecrets:
 - name: private-registry
+
+
+image:
+  repo: registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter
+  tag: 0.0.3
+  imagePullPolicy: Always
+
+
+bbtests:
+  enabled: true
+  cypress:
+    artifacts: true
+    envs:
+      cypress_url: http://monitoring-grafana.monitoring.svc.cluster.local/d/YBgRZG6Mz/opa-violations?orgId=1

@@ -2,7 +2,7 @@ apiVersion: monitoring.coreos.com/v1
 kind: ServiceMonitor
 metadata:
   name: opa-exporter
-  namespace: cluster-auditor
+  namespace: { { .Release.Namespace } }
   labels:
     release: opa-exporter
 spec:

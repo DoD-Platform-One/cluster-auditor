@@ -5,6 +5,7 @@ metadata:
     {{- include "clusterauditor.labels" . | nindent 4 }}
     app.kubernetes.io/component: opa-exporter
   name: opa-exporter
+  namespace: {{ .Release.Namespace }}
 spec:
   replicas: 1
   selector:
@@ -22,7 +23,7 @@ spec:
         {{- toYaml .Values.nodeSelector | nindent 8 }}
       {{- end }}
       containers:
-      - image: registry.dso.mil/platform-one/big-bang/apps/core/cluster-auditor/opa-exporter:v0.0.3
+      - image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
         name: opa-exporter
         resources:
 {{ toYaml .Values.resources | indent 10 }}
