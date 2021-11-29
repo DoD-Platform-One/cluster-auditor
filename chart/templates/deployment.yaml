@@ -23,7 +23,7 @@ spec:
         {{- toYaml .Values.nodeSelector | nindent 8 }}
       {{- end }}
       containers:
-      - image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
+      - image: {{ .Values.image.repo }}:{{ .Values.image.tag }}
         name: opa-exporter
         resources:
 {{ toYaml .Values.resources | indent 10 }}
