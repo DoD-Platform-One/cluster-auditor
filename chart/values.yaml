@@ -5,8 +5,8 @@ monitoring:
   enabled: false
 
 image:
-  repo: registry.dso.mil/platform-one/big-bang/apps/core/cluster-auditor/opa-exporter:v0.0.3
-  tag: 0.0.3
+  repo: registry.dso.mil/platform-one/big-bang/apps/core/cluster-auditor/opa-exporter
+  tag: v0.0.3
   imagePullPolicy: Always
 
 imagePullSecrets:
