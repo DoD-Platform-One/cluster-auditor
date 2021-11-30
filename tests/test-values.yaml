@@ -17,10 +17,9 @@ imagePullSecrets:
 
 
 image:
-  repo: registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter
-  tag: 0.0.3
+  repo: registry.dso.mil/platform-one/big-bang/apps/core/cluster-auditor/opa-exporter
+  tag: v0.0.3
   imagePullPolicy: Always
-
 
 bbtests:
   enabled: true
