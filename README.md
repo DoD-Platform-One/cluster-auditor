@@ -1,6 +1,6 @@
 # cluster-auditor
 
-![Version: 0.0.3](https://img.shields.io/badge/Version-0.0.3-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 1.16.0](https://img.shields.io/badge/AppVersion-1.16.0-informational?style=flat-square)
+![Version: 1.0.0-bb.0](https://img.shields.io/badge/Version-1.0.0--bb.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.0.3](https://img.shields.io/badge/AppVersion-0.0.3-informational?style=flat-square)
 
 A Helm chart for Kubernetes
 
@@ -32,8 +32,8 @@ helm install cluster-auditor chart/
 |-----|------|---------|-------------|
 | istio.enabled | bool | `false` |  |
 | monitoring.enabled | bool | `false` |  |
-| image.repo | string | `"registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter"` |  |
-| image.tag | string | `"0.0.3"` |  |
+| image.repo | string | `"registry.dso.mil/platform-one/big-bang/apps/core/cluster-auditor/opa-exporter"` |  |
+| image.tag | string | `"v0.0.3"` |  |
 | image.imagePullPolicy | string | `"Always"` |  |
 | imagePullSecrets[0].name | string | `"private-registry"` |  |
 | tolerations | list | `[]` |  |
