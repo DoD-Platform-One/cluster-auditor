@@ -16,11 +16,6 @@ imagePullSecrets:
 - name: private-registry
 
 
-image:
-  repo: registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter
-  tag: v0.0.3
-  imagePullPolicy: Always
-
 bbtests:
   enabled: true
   cypress:
