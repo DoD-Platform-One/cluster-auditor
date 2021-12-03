@@ -32,7 +32,7 @@ helm install cluster-auditor chart/
 |-----|------|---------|-------------|
 | istio.enabled | bool | `false` |  |
 | monitoring.enabled | bool | `false` |  |
-| image.repo | string | `"registry.dso.mil/platform-one/big-bang/apps/core/cluster-auditor/opa-exporter"` |  |
+| image.repo | string | `"registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter"` |  |
 | image.tag | string | `"v0.0.3"` |  |
 | image.imagePullPolicy | string | `"Always"` |  |
 | imagePullSecrets[0].name | string | `"private-registry"` |  |
