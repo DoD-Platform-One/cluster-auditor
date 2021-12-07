@@ -6,10 +6,10 @@ metadata:
     {{- include "clusterauditor.labels" . | nindent 4 }}
 rules:
   - apiGroups:
-  - constraints.gatekeeper.sh
-  resources:
-  - '*'
-  verbs:
-  - get
-  - list
-  - watch
+      - constraints.gatekeeper.sh
+    resources:
+      - '*'
+    verbs:
+      - get
+      - list
+      - watch
