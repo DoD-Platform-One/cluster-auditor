@@ -14,3 +14,4 @@ spec:
   selector:
     matchLabels:
       app: opa-exporter
+{{- end }}
