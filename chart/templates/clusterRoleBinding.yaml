@@ -1,6 +1,8 @@
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
 metadata:
+  labels: 
+    {{- include "clusterauditor.labels" . | nindent 4 }}
   name: opa-exporter-binding
 roleRef:
   apiGroup: rbac.authorization.k8s.io
