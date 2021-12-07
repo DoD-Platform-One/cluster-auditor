@@ -11,6 +11,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 - Created a new namespace cluster auditor.
 - Added opa exporter.
 - Added grafana dashboard.
+- Removed the old cluster auditor.
 
 ## [0.3.0-bb.7]
 

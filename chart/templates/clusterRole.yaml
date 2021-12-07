@@ -4,7 +4,7 @@ metadata:
   name: opa-exporter
 rules:
   - apiGroups:
-      - '*'
+      - constraints.gatekeeper.sh
     resources:
       - '*'
     verbs:
@@ -16,24 +16,17 @@ rules:
     resources:
       - customresourcedefinitions
     verbs:
-      - create
-      - delete
-      - get
-      - list
-      - patch
-      - update
-      - watch
+      verbs:
+        - get
+        - list
+        - watch
   - apiGroups:
       - config.gatekeeper.sh
     resources:
       - configs
     verbs:
-      - create
-      - delete
       - get
       - list
-      - patch
-      - update
       - watch
   - apiGroups:
       - config.gatekeeper.sh
@@ -48,24 +41,16 @@ rules:
     resources:
       - '*'
     verbs:
-      - create
-      - delete
       - get
       - list
-      - patch
-      - update
       - watch
   - apiGroups:
       - mutations.gatekeeper.sh
     resources:
       - '*'
     verbs:
-      - create
-      - delete
       - get
       - list
-      - patch
-      - update
       - watch
   - apiGroups:
       - policy
@@ -80,34 +65,25 @@ rules:
     resources:
       - '*'
     verbs:
-      - create
-      - delete
       - get
       - list
-      - patch
-      - update
       - watch
   - apiGroups:
       - templates.gatekeeper.sh
     resources:
       - constrainttemplates
     verbs:
-      - create
-      - delete
       - get
       - list
-      - patch
-      - update
       - watch
   - apiGroups:
       - templates.gatekeeper.sh
     resources:
       - constrainttemplates/finalizers
     verbs:
-      - delete
       - get
-      - patch
-      - update
+      - list
+      - watch
   - apiGroups:
       - templates.gatekeeper.sh
     resources:
@@ -123,12 +99,8 @@ rules:
     resources:
       - validatingwebhookconfigurations
     verbs:
-      - create
-      - delete
       - get
       - list
-      - patch
-      - update
       - watch
   - apiGroups:
       - admissionregistration.k8s.io
@@ -137,10 +109,6 @@ rules:
     resources:
       - mutatingwebhookconfigurations
     verbs:
-      - create
-      - delete
       - get
       - list
-      - patch
-      - update
       - watch

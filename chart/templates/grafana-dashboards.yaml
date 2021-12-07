@@ -3,9 +3,8 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: opa-dashboard
-  namespace: monitoring
-  labels:
-    grafana_dashboard: '1'
+  namespace: {{.Values.monitoring.dashboards.namespace }}
+  labels: {{ .Values.monitoring.dashboards.label }}
 data:
   grafana-opa-dashboard.json: |
     {{ .Files.Get "dashboards/kube-prometheus-stack/grafana-opa-dashboard.json"  | nindent 4 }}

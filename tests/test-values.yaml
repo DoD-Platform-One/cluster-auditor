@@ -15,7 +15,14 @@ networkPolicies:
 imagePullSecrets:
 - name: private-registry
 
+monitoring:
+  enabled: true
+  namespace: monitoring
+  dashboards:
+  - label: 
+    grafana_dashboard: '1'
 
+    
 bbtests:
   enabled: true
   cypress:
