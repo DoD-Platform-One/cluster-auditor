@@ -17,12 +17,11 @@ imagePullSecrets:
 
 monitoring:
   enabled: true
-  namespace: monitoring
   dashboards:
-  - label: 
-    grafana_dashboard: '1'
+    label: 
+      grafana_dashboard: '1'
+    namespace: monitoring
 
-    
 bbtests:
   enabled: true
   cypress:
