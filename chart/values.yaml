@@ -3,10 +3,10 @@ istio:
 # Only used to toggle networkPolicy for sidecar metrics scraping
 monitoring:
   enabled: true
-  namespace: monitoring
   dashboards:
-  - label: 
-    grafana_dashboard: '1'
+    label: 
+      grafana_dashboard: '1'
+    namespace: monitoring
 
 image:
   repo: registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter
