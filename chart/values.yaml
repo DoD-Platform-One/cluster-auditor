@@ -1,49 +1,16 @@
-collect:
-  objects: false
-  violations:
-    allowedAppArmorProfiles: false
-    allowedCapabilities: true
-    allowedDockerRegistries: true
-    allowedFlexVolumes: true
-    allowedHostFilesystem: true
-    allowedIPs: true
-    allowedProcMount: true
-    allowedSecCompProfiles: true
-    allowedUsers: true
-    bannedImageTags: true
-    blockNodePort: true
-    containerRatio: true
-    hostNetworking: true
-    httpsOnly: true
-    imageDigest: true
-    namespacesHaveIstio: true
-    noBigContainers: true
-    noHostNamespace: true
-    noPrivilegedContainers: true
-    noPrivilegedEscalation: true
-    noSysctls: true
-    podsHaveIstio: true
-    readOnlyRoot: true
-    requiredLabels: true
-    requiredProbes: true
-    restrictedTaint: true
-    selinuxPolicy: true
-    uniqueIngressHost: true
-    volumeTypes: true
-    noDefaultServiceAccount: true
-elasticsearch:
-  name: logging-ek
-  dedicated: false
-  imagePullSecrets: []
 istio:
   enabled: false
 # Only used to toggle networkPolicy for sidecar metrics scraping
 monitoring:
-  enabled: false
+  enabled: true
+  dashboards:
+    label: 
+      grafana_dashboard: '1'
+    namespace: monitoring
 
 image:
-  repo: registry1.dso.mil/ironbank/cluster-auditor/opa-collector
-  tag: 0.3.2
+  repo: registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter
+  tag: v0.0.3
   imagePullPolicy: Always
 
 imagePullSecrets:
@@ -53,11 +20,11 @@ tolerations: []
 
 resources:
   requests:
-    cpu: 600m
-    memory: 2Gi
+    cpu: 300m
+    memory: 300Mi
   limits:
-    cpu: 600m
-    memory: 2Gi
+    cpu: 300m
+    memory: 300Mi
 loglevel: debug
 
 affinity: {}
@@ -85,3 +52,5 @@ networkPolicies:
   controlPlaneCidr: 0.0.0.0/0
 
 openshift: false
+
+nameOverride: cluster-auditor

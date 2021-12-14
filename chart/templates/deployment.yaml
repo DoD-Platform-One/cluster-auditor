@@ -1,54 +1,32 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: opa-collector
   labels:
     {{- include "clusterauditor.labels" . | nindent 4 }}
-    app.kubernetes.io/component: fluentd
+    app.kubernetes.io/component: opa-exporter
+  name: opa-exporter
+  namespace: {{ .Release.Namespace }}
 spec:
-  strategy:
-    type: RollingUpdate
+  replicas: 1
   selector:
     matchLabels:
-      engine: fluentd
-  replicas: 1
+      app: opa-exporter
+  strategy: {}
   template:
     metadata:
-      annotations:
-        checksum/config: {{ include (print $.Template.BasePath "/configMap.yaml") . | sha256sum }}
       labels:
-        engine: fluentd
-        {{- include "clusterauditor.labels" . | nindent 8 }}
+        app: opa-exporter
     spec:
-      serviceAccountName: cluster-audit-logging
-      terminationGracePeriodSeconds: 30
       nodeSelector:
         beta.kubernetes.io/os: linux
       {{- if .Values.nodeSelector }}
         {{- toYaml .Values.nodeSelector | nindent 8 }}
       {{- end }}
       containers:
-      - name: opa-collector
-        image: {{ .Values.image.repo }}:{{ .Values.image.tag }}
-        imagePullPolicy: {{ .Values.image.imagePullPolicy }}
-        env:
-          - name: MY_NAMESPACE
-            valueFrom:
-              fieldRef:
-                fieldPath: metadata.namespace
-          - name: MY_POD_NAME
-            valueFrom:
-              fieldRef:
-                fieldPath: metadata.name
-          - name: NODE_NAME
-            valueFrom:
-              fieldRef:
-                fieldPath: spec.nodeName
-          - name: ELASTIC_PASSWORD
-            valueFrom:
-              secretKeyRef:
-                name: {{ .Values.elasticsearch.name }}-es-elastic-user
-                key: elastic
+      - image: {{ .Values.image.repo }}:{{ .Values.image.tag }}
+        name: opa-exporter
+        resources:
+{{ toYaml .Values.resources | indent 10 }}
         securityContext:
           allowPrivilegeEscalation: false
           capabilities:
@@ -56,32 +34,11 @@ spec:
             - ALL
           privileged: false
           readOnlyRootFilesystem: true
-        resources:
-{{ toYaml .Values.resources | indent 10 }}
-        volumeMounts:
-        - name: conf-configmap
-          mountPath: /fluentd/etc
-        - name: elasticsearch-certs
-          mountPath: /etc/elasticsearch/certs/
-        - name: checkpoint
-          mountPath: /fluentd/var/checkpoint
-        - name: tmp
-          mountPath: /tmp
+      serviceAccountName: opa-exporter
       {{- with .Values.imagePullSecrets }}
       imagePullSecrets:
         {{- toYaml . | nindent 8 }}
       {{- end }}
-      volumes:
-      - name: checkpoint
-        emptyDir: {}
-      - name: conf-configmap
-        configMap:
-          name: opa-collector
-      - name: elasticsearch-certs
-        secret:
-          secretName: {{ .Values.elasticsearch.name }}-es-http-certs-public
-      - name: tmp
-        emptyDir: {}
       {{- if .Values.affinity }}
       affinity:
         {{ toYaml .Values.affinity | nindent 8 }}
@@ -90,3 +47,4 @@ spec:
       tolerations:
         {{- toYaml . | nindent 8 }}
       {{- end }}
+
