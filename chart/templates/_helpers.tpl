@@ -9,7 +9,6 @@ helm.sh/chart: {{ include "clusterauditor.chart" . }}
 app.kubernetes.io/managed-by: {{ .Release.Service }}
 app.kubernetes.io/part-of: cluster-auditor
 app.kubernetes.io/component: opa-exporter
-app.kubernetes.io/version: {{   .Values.image.tag| quote }}
 {{- end -}}
 
 {{/*
