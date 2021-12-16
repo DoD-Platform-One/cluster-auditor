@@ -3,7 +3,6 @@ kind: Deployment
 metadata:
   labels:
     {{- include "clusterauditor.labels" . | nindent 4 }}
-    app.kubernetes.io/component: opa-exporter
   name: opa-exporter
   namespace: {{ .Release.Namespace }}
 spec:
