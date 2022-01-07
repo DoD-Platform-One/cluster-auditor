@@ -5,7 +5,7 @@ metadata:
   name: opa-dashboard
   namespace: {{ .Values.monitoring.dashboards.namespace }}
   labels: 
-  {{ toYaml .Values.monitoring.dashboards.label  | indent 4 }}
+    {{- toYaml .Values.monitoring.dashboards.label | nindent 4 }}
 data:
   grafana-opa-dashboard.json: |
     {{ .Files.Get "dashboards/kube-prometheus-stack/grafana-opa-dashboard.json"  | nindent 4 }}
