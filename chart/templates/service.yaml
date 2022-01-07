@@ -3,6 +3,7 @@ kind: Service
 metadata:
   labels:
     app: opa-exporter
+    {{- include "clusterauditor.labels" . | nindent 4 }}
   name: opa-exporter
   namespace: {{ .Release.Namespace }}
   annotations:
@@ -12,9 +13,8 @@ spec:
     - name: metrics
       port: 9141
       protocol: TCP
+      appProtocol: "http"
       targetPort: 9141
   selector:
     app: opa-exporter
   type: ClusterIP
-status:
-  loadBalancer: {}
