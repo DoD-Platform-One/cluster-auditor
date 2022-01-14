@@ -1,6 +1,6 @@
 # cluster-auditor
 
-![Version: 1.0.2-bb.0](https://img.shields.io/badge/Version-1.0.2--bb.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.0.3](https://img.shields.io/badge/AppVersion-0.0.3-informational?style=flat-square)
+![Version: 1.0.3-bb.0](https://img.shields.io/badge/Version-1.0.3--bb.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.0.3](https://img.shields.io/badge/AppVersion-0.0.3-informational?style=flat-square)
 
 A Helm chart for Kubernetes
 
@@ -50,6 +50,9 @@ helm install cluster-auditor chart/
 | networkPolicies.controlPlaneCidr | string | `"0.0.0.0/0"` |  |
 | openshift | bool | `false` |  |
 | nameOverride | string | `"cluster-auditor"` |  |
+| bbtests.enabled | bool | `false` |  |
+| bbtests.cypress.artifacts | bool | `true` |  |
+| bbtests.cypress.envs.cypress_url | string | `"http://monitoring-grafana.monitoring.svc.cluster.local/d/YBgRZG6Mz/opa-violations?orgId=1"` |  |
 
 ## Contributing
 
