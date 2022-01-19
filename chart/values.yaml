@@ -1,7 +1,7 @@
 istio:
   enabled: false
-# Only used to toggle networkPolicy for sidecar metrics scraping
 annotations: {}
+# Only used to toggle networkPolicy for sidecar metrics scraping
 monitoring:
   enabled: true
   dashboards:
