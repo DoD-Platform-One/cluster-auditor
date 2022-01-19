@@ -15,7 +15,7 @@ spec:
     metadata:
     {{- if .Values.annotations }}
     annotations:
-      {{- toYaml .Values.annotations | nindent 4 }}
+      {{- toYaml .Values.annotations | nindent 6 }}
     {{- end }}
       labels:
         app: opa-exporter
