@@ -7,7 +7,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ### Changed
 
-- Add Istion annotation
+- Add Istio annotation
 
 ## [1.0.3-bb.0]
 
