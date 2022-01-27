@@ -13,10 +13,10 @@ spec:
   strategy: {}
   template:
     metadata:
-    {{- if .Values.annotations }}
-    annotations:
-      {{- toYaml .Values.annotations | nindent 6 }}
-    {{- end }}
+      {{- if .Values.annotations }}
+      annotations:
+        {{- toYaml .Values.annotations | nindent 8 }}
+      {{- end }}
       labels:
         app: opa-exporter
         {{- include "clusterauditor.labels" . | nindent 8 }}

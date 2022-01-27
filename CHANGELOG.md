@@ -3,9 +3,23 @@
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ---
-## [1.1.0-bb.1]
+## [1.3.0-bb.0]
+
 ### Added
+
 - Added OSCAL component for Cluster Auditor
+
+## [1.2.0-bb.0]
+
+### Changed
+
+- Updated docs to reflect new cluster auditor architecture
+
+## [1.1.1-bb.0]
+
+### Changed
+
+- Fixed template error for Istio annotation in BigBang
 
 ## [1.1.0-bb.0]
 
