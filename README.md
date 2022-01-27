@@ -1,8 +1,8 @@
 # cluster-auditor
 
-![Version: 1.1.1-bb.0](https://img.shields.io/badge/Version-1.1.1--bb.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.0.3](https://img.shields.io/badge/AppVersion-0.0.3-informational?style=flat-square)
+![Version: 1.2.0-bb.0](https://img.shields.io/badge/Version-1.2.0--bb.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.0.3](https://img.shields.io/badge/AppVersion-0.0.3-informational?style=flat-square)
 
-A Helm chart for Kubernetes
+OPA Exporter Helm Chart providing monitoring of violations from OPA Gatekeeper
 
 ## Learn More
 * [Application Overview](docs/overview.md)
