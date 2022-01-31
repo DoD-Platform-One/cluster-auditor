@@ -27,11 +27,10 @@
             "matchStrings": [
                 "Cluster Auditor:\\s+(?<currentValue>.+)"
             ],
-                "depNameTemplate": "ironbank/bigbang/cluster-auditor/opa-exporter",
-                "datasourceTemplate": "docker",
-                "registryUrlTemplate": "https://registry1.dso.mil"
+            "depNameTemplate": "ironbank/bigbang/cluster-auditor/opa-exporter",
+            "datasourceTemplate": "docker",
+            "registryUrlTemplate": "https://registry1.dso.mil"
         }
-
     ],
     "separateMajorMinor": false
 }
