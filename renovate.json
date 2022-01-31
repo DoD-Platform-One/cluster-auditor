@@ -23,7 +23,7 @@
             "datasourceTemplate": "docker"
         },
         {
-            "fileMatch": ["^chart/values\\.yaml$"],
+            "fileMatch": ["^chart/Chart\\.yaml$"],
             "matchStrings": [
                 "Cluster Auditor:\\s*(?<depName>\\S+).*\n\\s+tag:\\s*(?<currentValue>.+)"
             ],
