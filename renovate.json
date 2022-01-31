@@ -25,9 +25,11 @@
         {
             "fileMatch": ["^chart/Chart\\.yaml$"],
             "matchStrings": [
-                "Cluster Auditor:\\s*(?<depName>\\S+).*\n\\s+tag:\\s*(?<currentValue>.+)"
+                "Cluster Auditor:\\s+(?<currentValue>.+)"
             ],
-            "datasourceTemplate": "docker"
+                "depNameTemplate": "ironbank/bigbang/cluster-auditor/opa-exporter",
+                "datasourceTemplate": "docker",
+                "registryUrlTemplate": "https://registry1.dso.mil"
         }
 
     ],
