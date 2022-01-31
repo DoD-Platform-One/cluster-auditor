@@ -21,7 +21,17 @@
                 "repo\\S*:\\s*(?<depName>\\S+).*\n\\s+tag:\\s*(?<currentValue>.+)"
             ],
             "datasourceTemplate": "docker"
+        },
+        {
+            "fileMatch": ["^chart/Chart\\.yaml$"],
+            "matchStrings": [
+                "Cluster Auditor:\\s+(?<currentValue>.+)"
+            ],
+                "depNameTemplate": "ironbank/bigbang/cluster-auditor/opa-exporter",
+                "datasourceTemplate": "docker",
+                "registryUrlTemplate": "https://registry1.dso.mil"
         }
+
     ],
     "separateMajorMinor": false
 }
