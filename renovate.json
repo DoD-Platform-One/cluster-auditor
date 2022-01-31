@@ -21,7 +21,15 @@
                 "repo\\S*:\\s*(?<depName>\\S+).*\n\\s+tag:\\s*(?<currentValue>.+)"
             ],
             "datasourceTemplate": "docker"
+        },
+        {
+            "fileMatch": ["^chart/values\\.yaml$"],
+            "matchStrings": [
+                "Cluster Auditor:\\s*(?<depName>\\S+).*\n\\s+tag:\\s*(?<currentValue>.+)"
+            ],
+            "datasourceTemplate": "docker"
         }
+
     ],
     "separateMajorMinor": false
 }
