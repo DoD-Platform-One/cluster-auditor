@@ -4,6 +4,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ---
 
+## [1.2.0-bb.2]
+
+### Added
+
+- Added OSCAL component for Cluster Auditor
+
 ## [1.2.0-bb.1]
 
 ### Changed
