@@ -1,5 +1,10 @@
 istio:
   enabled: false
+  # Default cluster auditor peer authentication
+  mtls:
+    # STRICT = Allow only mutual TLS traffic
+    # PERMISSIVE = Allow both plain text and mutual TLS traffic
+    mode: STRICT
 annotations: {}
 # Only used to toggle networkPolicy for sidecar metrics scraping
 monitoring:
