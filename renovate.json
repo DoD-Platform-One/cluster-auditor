@@ -25,7 +25,8 @@
         {
             "fileMatch": ["^chart/Chart\\.yaml$"],
             "matchStrings": [
-                "Cluster Auditor:\\s+(?<currentValue>.+)"
+                "Cluster Auditor:\\s+(?<currentValue>.+)",
+                "appVersion:\\s+(?<currentValue>.+)"
             ],
             "depNameTemplate": "ironbank/bigbang/cluster-auditor/opa-exporter",
             "datasourceTemplate": "docker",
