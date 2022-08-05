@@ -1,6 +1,6 @@
 # cluster-auditor
 
-![Version: 1.4.0-bb.4](https://img.shields.io/badge/Version-1.4.0--bb.4-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.0.4](https://img.shields.io/badge/AppVersion-0.0.4-informational?style=flat-square)
+![Version: 1.4.0-bb.5](https://img.shields.io/badge/Version-1.4.0--bb.5-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.0.4](https://img.shields.io/badge/AppVersion-0.0.4-informational?style=flat-square)
 
 OPA Exporter Helm Chart providing monitoring of violations from OPA Gatekeeper
 
@@ -46,6 +46,10 @@ helm install cluster-auditor chart/
 | resources.limits.cpu | string | `"300m"` |  |
 | resources.limits.memory | string | `"300Mi"` |  |
 | loglevel | string | `"debug"` |  |
+| securityContext.readOnlyRootFilesystem | bool | `true` |  |
+| securityContext.capabilities.drop[0] | string | `"ALL"` |  |
+| securityContext.allowPrivilegeEscalation | bool | `false` |  |
+| securityContext.privileged | bool | `false` |  |
 | affinity | object | `{}` |  |
 | nodeSelector | object | `{}` |  |
 | networkPolicies.enabled | bool | `false` |  |
