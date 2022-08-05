@@ -33,6 +33,14 @@ resources:
     memory: 300Mi
 loglevel: debug
 
+securityContext:
+  readOnlyRootFilesystem: true
+  capabilities:
+    drop:
+      - ALL
+  allowPrivilegeEscalation: false
+  privileged: false
+
 affinity: {}
   # podAntiAffinity:
   #   requiredDuringSchedulingIgnoredDuringExecution:

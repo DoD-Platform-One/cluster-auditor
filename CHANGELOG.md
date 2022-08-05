@@ -3,6 +3,11 @@
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ---
+## [1.4.0-bb.5]
+### Added
+- added securityContext: capabilities: drop: ALL
+- Updated gluon to 0.2.10
+
 ## [1.4.0-bb.4]
 ### Changed
 - Updated securityContext user and group  to nonroot
