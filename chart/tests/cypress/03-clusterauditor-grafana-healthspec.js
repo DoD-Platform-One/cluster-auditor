@@ -1,8 +1,12 @@
 // Using two one dimensional arrays to store the dashboard names and their associated threshold values for maximum 
 // allowed "No data" graphs.
 const dashnames =    ['OPA Violations']
-//const allownodatas = ['1']  //allowing 1 in the future change to 0
-const allownodatas = [`${Cypress.env('allownodatas')}`]
+// 
+// Number of instances of "No data" to allow in the list of violations table and the violations by kind bar chart. 
+// This app will have 2 at maximum.
+const table_bar_allownodata = [`${Cypress.env('table_bar_allownodata')}`]
+// The "violations over time" chart will have 1 "No data" at maximum.
+const graph_allownodata = [`${Cypress.env('graph_allownodata')}`]
 
 Cypress.on('uncaught:exception', (err, runnable) => {
   return false
@@ -16,7 +20,7 @@ function dashboard_menu () {
   cy.task('log','Dashboard menu is loaded')
 }
 
-function enter_dashboard (dashname, allownodata) {
+function enter_dashboard (dashname) {
   cy.task('log','Clicking on the ' + dashname + ' item...')
   cy.get('[data-testid="data-testid Dashboard search item ' + dashname + '"]').contains(dashname).click()
   cy.wait(500)
@@ -39,12 +43,16 @@ function enter_dashboard (dashname, allownodata) {
     //cy.wait('@dashboard1', {timeout: 10000})
     cy.wait(500)
     // Now the page should be ready to check the charts
+    cy.task('log', 'Checking the top table and violations by kind bar chart for \"No data\" messages. ' + table_bar_allownodata + ' instance(s) allowed')
+    cy.get('section:contains("No data")').should('have.length.lte', parseFloat(table_bar_allownodata))
+    cy.task('log', 'Checking the violations over time chart for a \"No data\" message...')
     cy.get('body').then($body => {
       // .datapoints-warning are instances where "No data" appears overlaid on a chart
-      cy.task('log', 'Charts with no data: ' + $body.find('.datapoints-warning').length  + ' of threshold: ' + allownodata )
       if ($body.find('.datapoints-warning').length > 0) {
-        cy.get('.datapoints-warning', {timeout: 10000}).should('have.length.lte', parseFloat(allownodata))
-      } 
+        cy.get('.datapoints-warning', {timeout: 10000}).should('have.length.lte', parseFloat(graph_allownodata))
+      } else {
+        cy.task('log', 'Violations Over Time chart is populated')
+      }
     })
   })
 }
@@ -85,9 +93,9 @@ describe( 'Check cluster-auditor dashboards', function() {
       it( 'Check cluster-auditor dashboards', function() {
         cy.task('log','Cluster-auditor dashboard check via grafana is enabled via \$cypress_check_cluster-auditor_dashboards ...')
         for (i = 0; i < dashnames.length; i++ ) {
-          cy.task('log','Starting the check for the ' + dashnames[i], 'charts with no data threshold is' + allownodatas[i] )
+          cy.task('log','Starting the check for the ' + dashnames[i], 'charts with no data threshold is' + graph_allownodata )
           dashboard_menu()
-          enter_dashboard(dashnames[i],allownodatas[i])
+          enter_dashboard(dashnames[i])
         }
     })
 })
