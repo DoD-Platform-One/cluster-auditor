@@ -3,6 +3,6 @@
   "_pluginsFile": "./plugins.js",
   "supportFile": false,
   "fixturesFolder": false,
-  "videoCompression": 35,
+  "videoCompression": 10,
   "defaultCommandTimeout": 12000
 }
