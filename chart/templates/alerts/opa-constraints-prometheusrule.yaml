@@ -1,0 +1,29 @@
+{{- if .Values.monitoring.enabled }}
+apiVersion: monitoring.coreos.com/v1
+kind: PrometheusRule
+metadata:
+  name: opa-scorecard-alerts
+  namespace: {{ .Release.Namespace }}
+spec:
+  groups:
+  - name: opa.rules
+    rules:
+    - alert: OpaConstraintDeny
+      annotations:
+        description: OPA Constraints that match the have the "deny" action set
+        summary: OPA matched constraint that doesnt have an exception and has "deny" action set
+      expr: opa_scorecard_constraint_violations{violation_enforcement="deny"} > 0
+      for: 5m
+      labels:
+        severity: critical
+    - alert: OpaUp
+      annotations:
+        description: Check to see whether OPA is up and returning info as it should
+        summary: OPA not properly getting scraped or returning information
+      expr: opa_scorecard_up{} < 1
+      for: 5m 
+      labels:
+        severity: critical
+{{- end }}
+
+
