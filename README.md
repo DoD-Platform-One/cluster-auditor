@@ -1,6 +1,6 @@
 # cluster-auditor
 
-![Version: 1.4.0-bb.6](https://img.shields.io/badge/Version-1.4.0--bb.6-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.0.4](https://img.shields.io/badge/AppVersion-0.0.4-informational?style=flat-square)
+![Version: 1.4.0-bb.7](https://img.shields.io/badge/Version-1.4.0--bb.7-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.0.4](https://img.shields.io/badge/AppVersion-0.0.4-informational?style=flat-square)
 
 OPA Exporter Helm Chart providing monitoring of violations from OPA Gatekeeper
 
@@ -66,4 +66,4 @@ helm install cluster-auditor chart/
 
 ## Contributing
 
-Please see the [contributing guide](./CONTRIBUTING.md) if you are interested in contributing. 
+Please see the [contributing guide](./CONTRIBUTING.md) if you are interested in contributing.
