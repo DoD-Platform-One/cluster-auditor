@@ -11,6 +11,14 @@ spec:
     - interval: 30s
       path: /metrics
       port: metrics
+      {{- if and .Values.istio.enabled (eq .Values.istio.mtls.mode "STRICT") }}
+      scheme: https
+      tlsConfig:
+        caFile: /etc/prom-certs/root-cert.pem
+        certFile: /etc/prom-certs/cert-chain.pem
+        keyFile: /etc/prom-certs/key.pem
+        insecureSkipVerify: true  # Prometheus does not support Istio security naming, thus skip verifying target pod certificate
+      {{- end }}
   selector:
     matchLabels:
       app: opa-exporter

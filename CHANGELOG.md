@@ -3,6 +3,10 @@
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ---
+## [1.4.0-bb.9]
+### Changed
+- Removed mTLS exception
+
 ## [1.4.0-bb.8]
 ### Updated
 - Fixed dashboard check in cypress test
@@ -13,7 +17,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [1.4.0-bb.6]
 ### Updated
-- Cypress test now checks the table with the list of violations and the "violations by kind" bar chart for a "no data" message. 
+- Cypress test now checks the table with the list of violations and the "violations by kind" bar chart for a "no data" message.
 
 ## [1.4.0-bb.5]
 ### Added
