@@ -1,6 +1,6 @@
 # cluster-auditor
 
-![Version: 1.4.0-bb.9](https://img.shields.io/badge/Version-1.4.0--bb.9-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.0.4](https://img.shields.io/badge/AppVersion-0.0.4-informational?style=flat-square)
+![Version: 1.4.0-bb.10](https://img.shields.io/badge/Version-1.4.0--bb.10-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.0.4](https://img.shields.io/badge/AppVersion-0.0.4-informational?style=flat-square)
 
 OPA Exporter Helm Chart providing monitoring of violations from OPA Gatekeeper
 
@@ -63,6 +63,7 @@ helm install cluster-auditor chart/
 | bbtests.cypress.envs.cypress_url | string | `"http://monitoring-grafana.monitoring.svc.cluster.local/d/YBgRZG6Mz/opa-violations?orgId=1"` |  |
 | bbtests.cypress.envs.cypress_table_bar_allownodata | string | `"1"` |  |
 | bbtests.cypress.envs.cypress_graph_allownodata | string | `"2"` |  |
+| bbtests.cypress.envs.cypress_reporter_ns | string | `"cluster-auditor"` |  |
 
 ## Contributing
 
