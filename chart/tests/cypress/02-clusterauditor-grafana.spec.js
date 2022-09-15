@@ -95,15 +95,14 @@ after(function () {
   cy.clearCookies()
 })
 
-var i
-describe( 'Check cluster-auditor dashboards', function() {
-      retries: {
-        runMode: 4
-      }
+describe('Check cluster-auditor dashboards', {
+  retries: {
+    runMode: 4
+  }
 }, () => {
       it( 'Check cluster-auditor dashboards', function() {
         cy.task('log','Cluster-auditor dashboard check via grafana is enabled via \$cypress_check_cluster-auditor_dashboards ...')
-        for (i = 0; i < dashnames.length; i++ ) {
+        for (var i = 0; i < dashnames.length; i++ ) {
           cy.task('log','Starting the check for the ' + dashnames[i], 'charts with no data threshold is' + graph_allownodata )
           dashboard_menu()
           enter_dashboard(dashnames[i])
