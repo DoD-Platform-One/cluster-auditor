@@ -5,7 +5,7 @@ metadata:
 upstream:
   type: git
   git:
-    commit: 5a210e54f124e790b245857736905b23b5213d4a
-    repo: https://github.com/mcelep/opa-scorecard
+    commit: b6ca4dcfb0296f203143ba0f8a10e59a73ffb590
+    repo: https://github.com/runyontr/opa-scorecard
     directory: kube-prometheus-stack
-    ref: master
+    ref: exporter-go/v0.0.7
