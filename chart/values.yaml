@@ -16,7 +16,7 @@ monitoring:
 
 image:
   repo: registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter
-  tag: v0.0.4
+  tag: v0.0.7
   imagePullPolicy: Always
 
 imagePullSecrets:
