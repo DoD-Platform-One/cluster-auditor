@@ -3,6 +3,10 @@
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ---
+## [1.5.0-bb.1] - 2022-10-26
+### Added
+- Added contributing doc
+
 ## [1.5.0-bb.0] - 2022-09-16
 ### Changed
 - ironbank/bigbang/cluster-auditor/opa-exporter updated from 0.0.4 to 0.0.7
