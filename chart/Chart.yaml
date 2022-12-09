@@ -27,4 +27,6 @@ dependencies:
 annotations:
   bigbang.dev/applicationVersions: |
     - Cluster Auditor: 0.0.7
-
+  helm.sh/images: |
+    - name: opa-exporter
+      image: registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter:v0.0.7
