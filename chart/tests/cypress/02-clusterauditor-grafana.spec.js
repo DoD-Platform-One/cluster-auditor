@@ -78,7 +78,7 @@ before (function() {
   cy.get('input[name="password"]')
     .type('prom-operator')
   cy.contains("Log in").click()
-  cy.get('.page-dashboard').contains('General', {timeout: 30000})
+  cy.get('.page-dashboard').contains('Welcome', {timeout: 30000})
 })
 
 // Save the cookies so we don't have to log in again for each test
