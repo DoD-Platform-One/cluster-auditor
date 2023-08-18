@@ -1,6 +1,12 @@
 opa:
-  git: "https://repo1.dso.mil/platform-one/big-bang/apps/core/policy.git"
+  git: 
+    repo: "https://repo1.dso.mil/big-bang/product/packages/policy.git"
   namespace: "gatekeeper-system"
 
 monitoring:
-  git: "https://repo1.dso.mil/platform-one/big-bang/apps/core/monitoring.git"
+  git: 
+    repo: "https://repo1.dso.mil/big-bang/product/packages/monitoring.git"
+
+grafana:
+  git:
+    repo: "https://repo1.dso.mil/big-bang/apps/sandbox/grafana.git"
