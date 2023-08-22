@@ -10,3 +10,4 @@ monitoring:
 grafana:
   git:
     repo: "https://repo1.dso.mil/big-bang/apps/sandbox/grafana.git"
+  namespace: "monitoring"
