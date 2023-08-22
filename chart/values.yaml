@@ -75,7 +75,7 @@ bbtests:
   cypress:
     artifacts: true
     envs:
-      cypress_grafana_url: http://grafana.grafana.svc.cluster.local
+      cypress_grafana_url: http://grafana.monitoring.svc.cluster.local
       cypress_prometheus_url: http://monitoring-kube-prometheus-prometheus.monitoring.svc.cluster.local:9090
       cypress_url: http://monitoring-grafana.monitoring.svc.cluster.local/d/YBgRZG6Mz/opa-violations?orgId=1
       # OPA violations table and violations by kind chart
