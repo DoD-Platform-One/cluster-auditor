@@ -21,22 +21,18 @@ function expandMenu() {
 }
 
 function dashboard_menu () {
-  cy.task('log','Loading the dashboard menu...')
   cy.wait(500)
   cy.visit(`${Cypress.env('grafana_url')}/dashboards`)
   cy.get('h1').contains('Dashboards')
-  cy.task('log','Dashboard menu is loaded')
   // Wait for all buttons to load
   cy.wait(1000)
   expandMenu()
 }
 
 function enter_dashboard (dashname) {
-  cy.task('log','Clicking on the ' + dashname + ' item...')
   cy.get('[data-testid="data-testid Dashboard search item ' + dashname + '"]').contains(dashname).click()
   cy.wait(500)
   cy.get('.page-dashboard').contains(dashname)
-  cy.task('log', dashname + ' has loaded')
   // This is to intercept the API requests so they can be waited on to finish a few lines down (see cy.wait).
   // It ensures that all the charts have loaded before it checks them. This is also what scrollTo does. 
   // Basically this section is preparing the page in order to count the "No data" charts.
@@ -48,21 +44,15 @@ function enter_dashboard (dashname) {
         cy.get($bar).click({force: true}) 
         cy.wait(500)
       })
-    } else {
-      cy.task('log', 'No bars to expand in ' + dashname)
-    }
+    } 
     //cy.wait('@dashboard1', {timeout: 10000})
     cy.wait(500)
     // Now the page should be ready to check the charts
-    cy.task('log', 'Checking the top table and violations by kind bar chart for \"No data\" messages. ' + table_bar_allownodata + ' instance(s) allowed')
     cy.get('section:contains("No data")').should('have.length.lte', parseFloat(table_bar_allownodata))
-    cy.task('log', 'Checking the violations over time chart for a \"No data\" message...')
     cy.get('body').then($body => {
       // .datapoints-warning are instances where "No data" appears overlaid on a chart
       if ($body.find('.datapoints-warning').length > 0) {
         cy.get('.datapoints-warning', {timeout: 10000}).should('have.length.lte', parseFloat(graph_allownodata))
-      } else {
-        cy.task('log', 'Violations Over Time chart is populated')
       }
     })
   })
@@ -71,7 +61,6 @@ function enter_dashboard (dashname) {
 // Log in once at the beginning
 before (function() {
   cy.wait(500)
-  cy.task('log','Loading the dashboard menu...')
   cy.visit(Cypress.env('grafana_url'))
   cy.get('input[name="user"]')
     .type('admin')
@@ -81,18 +70,9 @@ before (function() {
   cy.get('.page-dashboard').contains('Welcome', {timeout: 30000})
 })
 
-// Save the cookies so we don't have to log in again for each test
-beforeEach(function () {
-  cy.getCookies().then(cookies => {
-    const namesOfCookies = cookies.map(cm => cm.name)
-    Cypress.Cookies.preserveOnce(...namesOfCookies)
-  })
-})
-
-// This clears out the cookies after all tests have completed, useful for re-running the test from the top,
-// or others that expect a login.
-after(function () {
-  cy.clearCookies()
+// Clear cookies to force login again
+after(() => {
+  Cypress.session.clearCurrentSessionData
 })
 
 describe('Check cluster-auditor dashboards', {
@@ -101,9 +81,7 @@ describe('Check cluster-auditor dashboards', {
   }
 }, () => {
       it( 'Check cluster-auditor dashboards', function() {
-        cy.task('log','Cluster-auditor dashboard check via grafana is enabled via \$cypress_check_cluster-auditor_dashboards ...')
         for (var i = 0; i < dashnames.length; i++ ) {
-          cy.task('log','Starting the check for the ' + dashnames[i], 'charts with no data threshold is' + graph_allownodata )
           dashboard_menu()
           enter_dashboard(dashnames[i])
         }
