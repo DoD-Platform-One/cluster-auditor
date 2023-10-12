@@ -3,6 +3,10 @@
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ---
+## [1.5.0-bb.9] - 2023-10-06
+### Changed
+- Updated OSCAL version from 1.0.0 to 1.1.1
+
 ## [1.5.0-bb.8] - 2023-09-19
 ### Fixed
 - Updated to gluon 0.4.1 and Cypress 13.x
