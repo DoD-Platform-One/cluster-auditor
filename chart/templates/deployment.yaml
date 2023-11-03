@@ -41,6 +41,14 @@ spec:
           runAsGroup: 1001
           runAsUser: 1001
       serviceAccountName: opa-exporter
+      {{/* start BB addition 
+      This is set to true because this Pod relies on info queried from the K8s API
+      Namely, it needs to get/list/watch Gatekeeper resources ('*' in API group "constraints.gatekeeper.sh")
+      Ref (1): clusterRole.yaml and clusterRoleBinding.yaml
+      Ref (2): https://github.com/runyontr/opa-scorecard/tree/master#design
+      */}}
+      automountServiceAccountToken: true
+      {{/* end BB addition */}}
       {{- with .Values.imagePullSecrets }}
       imagePullSecrets:
         {{- toYaml . | nindent 8 }}
