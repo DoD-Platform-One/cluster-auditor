@@ -33,15 +33,18 @@ component-definition:
       - uuid: FD81FE18-FF28-4150-B05D-8001488282BC
         control-id: ac-6.9
         description: >-
-          Cluster Auditor provides a record of policy violiations identified by OPA Gatekeeper to the Monitoring stack
+          Cluster Auditor provides a record of policy violations identified by OPA Gatekeeper to the Monitoring stack.
+          
       - uuid: CDA82D9B-70DC-469A-BE63-43DDA26DE6F2
         control-id: au-2
         description: >-
           Cluster Auditor has identified policy violations as events that are recorded.
+          
       - uuid: B381423A-46E9-4E39-8B72-3ABBC46DE4B9
         control-id: ca-7
         description: >-
-          Continuous monitoring of controls/violations of the system in accordance with the Control Assessment Plan 
+          Continuous monitoring of controls/violations of the system in accordance with the Control Assessment Plan.
+
   back-matter: 
     resources:
     - uuid: 1F659336-F19E-4E3F-B6D8-9A291AF0C8D3
