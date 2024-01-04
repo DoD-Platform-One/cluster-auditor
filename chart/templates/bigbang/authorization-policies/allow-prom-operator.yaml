@@ -1,0 +1,23 @@
+{{- /* the allow-nothing policy should eventually be provided by istio itself cluster-wide */ -}}
+{{- if and .Values.istio.enabled .Values.istio.hardened.enabled -}}
+apiVersion: security.istio.io/v1
+kind: AuthorizationPolicy
+metadata:
+  name: allow-prom-operator-policy
+  namespace: {{ .Release.Namespace }}
+spec:
+  action: ALLOW
+  rules:
+  - from:
+    - source:
+        principals:
+        - cluster.local/ns/monitoring/sa/monitoring-monitoring-kube-prometheus
+  - to:
+    - operation:
+        methods: ["GET"]
+        paths: ["/metrics*"]
+        ports: ["9141"]
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: cluster-auditor
+{{- end }}

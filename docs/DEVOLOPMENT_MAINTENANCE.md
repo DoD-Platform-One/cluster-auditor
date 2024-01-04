@@ -29,6 +29,10 @@ clusterAuditor:
 # Cluster Auditor depends on opa-gatekeeper and monitoring
 gatekeeper:
   enabled: true
+monitoring:
+  enabled: true
+grafana:
+  enabled: true
 ```
 
 Testing Steps:

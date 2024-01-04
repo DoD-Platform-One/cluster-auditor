@@ -1,6 +1,6 @@
 # cluster-auditor
 
-![Version: 1.5.0-bb.11](https://img.shields.io/badge/Version-1.5.0--bb.11-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.0.7](https://img.shields.io/badge/AppVersion-0.0.7-informational?style=flat-square)
+![Version: 1.5.0-bb.12](https://img.shields.io/badge/Version-1.5.0--bb.12-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.0.7](https://img.shields.io/badge/AppVersion-0.0.7-informational?style=flat-square)
 
 OPA Exporter Helm Chart providing monitoring of violations from OPA Gatekeeper
 
@@ -32,6 +32,11 @@ helm install cluster-auditor chart/
 |-----|------|---------|-------------|
 | istio.enabled | bool | `false` |  |
 | istio.mtls.mode | string | `"STRICT"` |  |
+| istio.hardened.enabled | bool | `false` |  |
+| istio.hardened.customAuthorizationPolicies | list | `[]` |  |
+| istio.hardened.tempo.enabled | bool | `false` |  |
+| istio.hardened.tempo.namespaces[0] | string | `"tempo"` |  |
+| istio.hardened.tempo.principals[0] | string | `"cluster.local/ns/tempo/sa/tempo-tempo"` |  |
 | annotations | object | `{}` |  |
 | monitoring.enabled | bool | `true` |  |
 | monitoring.dashboards.label.grafana_dashboard | string | `"1"` |  |
