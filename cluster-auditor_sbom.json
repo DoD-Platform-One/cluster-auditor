@@ -1,0 +1,3243 @@
+{
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.5",
+  "serialNumber": "urn:uuid:eb91802e-982d-4a12-8171-d7ab4ed74057",
+  "version": 1,
+  "metadata": {
+    "tools": null,
+    "component": {
+      "type": "application",
+      "bom-ref": "cluster-auditor@0.0.1",
+      "name": "cluster-auditor",
+      "version": "0.0.1"
+    }
+  },
+  "components": [
+    {
+      "type": "container",
+      "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:3f8968dcb5b41b5f",
+      "name": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter",
+      "version": "v0.0.7",
+      "components": [
+        {
+          "type": "library",
+          "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:deb/debian/base-files@12.4\u002Bdeb12u4?arch=amd64\u0026distro=debian-12\u0026package-id=5e921e6f4562fad4",
+          "publisher": "Santiago Vila \u003Csanvila@debian.org\u003E",
+          "name": "base-files",
+          "version": "12.4\u002Bdeb12u4",
+          "licenses": [
+            {
+              "license": {
+                "name": "GPL"
+              }
+            }
+          ],
+          "cpe": "cpe:2.3:a:base-files:base-files:12.4\\\u002Bdeb12u4:*:*:*:*:*:*:*",
+          "purl": "pkg:deb/debian/base-files@12.4\u002Bdeb12u4?arch=amd64\u0026distro=debian-12",
+          "properties": [
+            {
+              "name": "syft:package:foundBy",
+              "value": "dpkg-db-cataloger"
+            },
+            {
+              "name": "syft:package:type",
+              "value": "deb"
+            },
+            {
+              "name": "syft:package:metadataType",
+              "value": "dpkg-db-entry"
+            },
+            {
+              "name": "syft:cpe23",
+              "value": "cpe:2.3:a:base-files:base_files:12.4\\\u002Bdeb12u4:*:*:*:*:*:*:*"
+            },
+            {
+              "name": "syft:cpe23",
+              "value": "cpe:2.3:a:base_files:base-files:12.4\\\u002Bdeb12u4:*:*:*:*:*:*:*"
+            },
+            {
+              "name": "syft:cpe23",
+              "value": "cpe:2.3:a:base_files:base_files:12.4\\\u002Bdeb12u4:*:*:*:*:*:*:*"
+            },
+            {
+              "name": "syft:cpe23",
+              "value": "cpe:2.3:a:base:base-files:12.4\\\u002Bdeb12u4:*:*:*:*:*:*:*"
+            },
+            {
+              "name": "syft:cpe23",
+              "value": "cpe:2.3:a:base:base_files:12.4\\\u002Bdeb12u4:*:*:*:*:*:*:*"
+            },
+            {
+              "name": "syft:location:0:layerID",
+              "value": "sha256:6f4d4102c049625bda5ffcd0e671ae65aea1d600735d3dc3585309f7d99cc083"
+            },
+            {
+              "name": "syft:location:0:path",
+              "value": "/usr/share/doc/base-files/copyright"
+            },
+            {
+              "name": "syft:location:1:layerID",
+              "value": "sha256:6f4d4102c049625bda5ffcd0e671ae65aea1d600735d3dc3585309f7d99cc083"
+            },
+            {
+              "name": "syft:location:1:path",
+              "value": "/var/lib/dpkg/status.d/base-files"
+            },
+            {
+              "name": "syft:location:2:layerID",
+              "value": "sha256:6f4d4102c049625bda5ffcd0e671ae65aea1d600735d3dc3585309f7d99cc083"
+            },
+            {
+              "name": "syft:location:2:path",
+              "value": "/var/lib/dpkg/status.d/base-files.md5sums"
+            },
+            {
+              "name": "syft:metadata:installedSize",
+              "value": "341"
+            }
+          ]
+        },
+        {
+          "type": "library",
+          "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/github.com/puerkitobio/purell@v1.1.1?package-id=fc66a2d63623bccf",
+          "name": "github.com/PuerkitoBio/purell",
+          "version": "v1.1.1",
+          "cpe": "cpe:2.3:a:PuerkitoBio:purell:v1.1.1:*:*:*:*:*:*:*",
+          "purl": "pkg:golang/github.com/PuerkitoBio/purell@v1.1.1",
+          "properties": [
+            {
+              "name": "syft:package:foundBy",
+              "value": "go-module-binary-cataloger"
+            },
+            {
+              "name": "syft:package:language",
+              "value": "go"
+            },
+            {
+              "name": "syft:package:type",
+              "value": "go-module"
+            },
+            {
+              "name": "syft:package:metadataType",
+              "value": "go-module-buildinfo-entry"
+            },
+            {
+              "name": "syft:location:0:layerID",
+              "value": "sha256:5c773288f8cc5cf423a52330685f5bc3d4036ea673f25dd86d1565ab58c210b5"
+            },
+            {
+              "name": "syft:location:0:path",
+              "value": "/app/opa_scorecard_exporter"
+            },
+            {
+              "name": "syft:metadata:architecture",
+              "value": "amd64"
+            },
+            {
+              "name": "syft:metadata:goCompiledVersion",
+              "value": "go1.18.10"
+            },
+            {
+              "name": "syft:metadata:goCryptoSettings:0",
+              "value": "standard-crypto"
+            },
+            {
+              "name": "syft:metadata:h1Digest",
+              "value": "h1:WEQqlqaGbrPkxLJWfBwQmfEAE1Z7ONdDLqrN38tNFfI="
+            },
+            {
+              "name": "syft:metadata:mainModule",
+              "value": "github.com/runyontr/opa-scorecard/exporter-go"
+            }
+          ]
+        },
+        {
+          "type": "library",
+          "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/github.com/puerkitobio/urlesc@v0.0.0-20170810143723-de5bf2ad4578?package-id=7b0308649c8db52c",
+          "name": "github.com/PuerkitoBio/urlesc",
+          "version": "v0.0.0-20170810143723-de5bf2ad4578",
+          "cpe": "cpe:2.3:a:PuerkitoBio:urlesc:v0.0.0-20170810143723-de5bf2ad4578:*:*:*:*:*:*:*",
+          "purl": "pkg:golang/github.com/PuerkitoBio/urlesc@v0.0.0-20170810143723-de5bf2ad4578",
+          "properties": [
+            {
+              "name": "syft:package:foundBy",
+              "value": "go-module-binary-cataloger"
+            },
+            {
+              "name": "syft:package:language",
+              "value": "go"
+            },
+            {
+              "name": "syft:package:type",
+              "value": "go-module"
+            },
+            {
+              "name": "syft:package:metadataType",
+              "value": "go-module-buildinfo-entry"
+            },
+            {
+              "name": "syft:location:0:layerID",
+              "value": "sha256:5c773288f8cc5cf423a52330685f5bc3d4036ea673f25dd86d1565ab58c210b5"
+            },
+            {
+              "name": "syft:location:0:path",
+              "value": "/app/opa_scorecard_exporter"
+            },
+            {
+              "name": "syft:metadata:architecture",
+              "value": "amd64"
+            },
+            {
+              "name": "syft:metadata:goCompiledVersion",
+              "value": "go1.18.10"
+            },
+            {
+              "name": "syft:metadata:goCryptoSettings:0",
+              "value": "standard-crypto"
+            },
+            {
+              "name": "syft:metadata:h1Digest",
+              "value": "h1:d\u002BBc7a5rLufV/sSk/8dngufqelfh6jnri85riMAaF/M="
+            },
+            {
+              "name": "syft:metadata:mainModule",
+              "value": "github.com/runyontr/opa-scorecard/exporter-go"
+            }
+          ]
+        },
+        {
+          "type": "library",
+          "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/github.com/beorn7/perks@v1.0.1?package-id=31d6e703ff88b39c",
+          "name": "github.com/beorn7/perks",
+          "version": "v1.0.1",
+          "cpe": "cpe:2.3:a:beorn7:perks:v1.0.1:*:*:*:*:*:*:*",
+          "purl": "pkg:golang/github.com/beorn7/perks@v1.0.1",
+          "properties": [
+            {
+              "name": "syft:package:foundBy",
+              "value": "go-module-binary-cataloger"
+            },
+            {
+              "name": "syft:package:language",
+              "value": "go"
+            },
+            {
+              "name": "syft:package:type",
+              "value": "go-module"
+            },
+            {
+              "name": "syft:package:metadataType",
+              "value": "go-module-buildinfo-entry"
+            },
+            {
+              "name": "syft:location:0:layerID",
+              "value": "sha256:5c773288f8cc5cf423a52330685f5bc3d4036ea673f25dd86d1565ab58c210b5"
+            },
+            {
+              "name": "syft:location:0:path",
+              "value": "/app/opa_scorecard_exporter"
+            },
+            {
+              "name": "syft:metadata:architecture",
+              "value": "amd64"
+            },
+            {
+              "name": "syft:metadata:goCompiledVersion",
+              "value": "go1.18.10"
+            },
+            {
+              "name": "syft:metadata:goCryptoSettings:0",
+              "value": "standard-crypto"
+            },
+            {
+              "name": "syft:metadata:h1Digest",
+              "value": "h1:VlbKKnNfV8bJzeqoa4cOKqO6bYr3WgKZxO8Z16\u002BhsOM="
+            },
+            {
+              "name": "syft:metadata:mainModule",
+              "value": "github.com/runyontr/opa-scorecard/exporter-go"
+            }
+          ]
+        },
+        {
+          "type": "library",
+          "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/github.com/cespare/xxhash@v2.1.2?package-id=a550a55196b9af34#v2",
+          "name": "github.com/cespare/xxhash/v2",
+          "version": "v2.1.2",
+          "cpe": "cpe:2.3:a:cespare:xxhash\\/v2:v2.1.2:*:*:*:*:*:*:*",
+          "purl": "pkg:golang/github.com/cespare/xxhash@v2.1.2#v2",
+          "properties": [
+            {
+              "name": "syft:package:foundBy",
+              "value": "go-module-binary-cataloger"
+            },
+            {
+              "name": "syft:package:language",
+              "value": "go"
+            },
+            {
+              "name": "syft:package:type",
+              "value": "go-module"
+            },
+            {
+              "name": "syft:package:metadataType",
+              "value": "go-module-buildinfo-entry"
+            },
+            {
+              "name": "syft:location:0:layerID",
+              "value": "sha256:5c773288f8cc5cf423a52330685f5bc3d4036ea673f25dd86d1565ab58c210b5"
+            },
+            {
+              "name": "syft:location:0:path",
+              "value": "/app/opa_scorecard_exporter"
+            },
+            {
+              "name": "syft:metadata:architecture",
+              "value": "amd64"
+            },
+            {
+              "name": "syft:metadata:goCompiledVersion",
+              "value": "go1.18.10"
+            },
+            {
+              "name": "syft:metadata:goCryptoSettings:0",
+              "value": "standard-crypto"
+            },
+            {
+              "name": "syft:metadata:h1Digest",
+              "value": "h1:YRXhKfTDauu4ajMg1TPgFO5jnlC2HCbmLXMcTG5cbYE="
+            },
+            {
+              "name": "syft:metadata:mainModule",
+              "value": "github.com/runyontr/opa-scorecard/exporter-go"
+            }
+          ]
+        },
+        {
+          "type": "library",
+          "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/github.com/davecgh/go-spew@v1.1.1?package-id=21dfdd9cfdaa76dc",
+          "name": "github.com/davecgh/go-spew",
+          "version": "v1.1.1",
+          "cpe": "cpe:2.3:a:davecgh:go-spew:v1.1.1:*:*:*:*:*:*:*",
+          "purl": "pkg:golang/github.com/davecgh/go-spew@v1.1.1",
+          "properties": [
+            {
+              "name": "syft:package:foundBy",
+              "value": "go-module-binary-cataloger"
+            },
+            {
+              "name": "syft:package:language",
+              "value": "go"
+            },
+            {
+              "name": "syft:package:type",
+              "value": "go-module"
+            },
+            {
+              "name": "syft:package:metadataType",
+              "value": "go-module-buildinfo-entry"
+            },
+            {
+              "name": "syft:cpe23",
+              "value": "cpe:2.3:a:davecgh:go_spew:v1.1.1:*:*:*:*:*:*:*"
+            },
+            {
+              "name": "syft:location:0:layerID",
+              "value": "sha256:5c773288f8cc5cf423a52330685f5bc3d4036ea673f25dd86d1565ab58c210b5"
+            },
+            {
+              "name": "syft:location:0:path",
+              "value": "/app/opa_scorecard_exporter"
+            },
+            {
+              "name": "syft:metadata:architecture",
+              "value": "amd64"
+            },
+            {
+              "name": "syft:metadata:goCompiledVersion",
+              "value": "go1.18.10"
+            },
+            {
+              "name": "syft:metadata:goCryptoSettings:0",
+              "value": "standard-crypto"
+            },
+            {
+              "name": "syft:metadata:h1Digest",
+              "value": "h1:vj9j/u1bqnvCEfJOwUhtlOARqs3\u002BrkHYY13jYWTU97c="
+            },
+            {
+              "name": "syft:metadata:mainModule",
+              "value": "github.com/runyontr/opa-scorecard/exporter-go"
+            }
+          ]
+        },
+        {
+          "type": "library",
+          "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/github.com/emicklei/go-restful@v2.9.5\u002Bincompatible?package-id=949b0a005565d5f9",
+          "name": "github.com/emicklei/go-restful",
+          "version": "v2.9.5\u002Bincompatible",
+          "cpe": "cpe:2.3:a:emicklei:go-restful:v2.9.5\\\u002Bincompatible:*:*:*:*:*:*:*",
+          "purl": "pkg:golang/github.com/emicklei/go-restful@v2.9.5\u002Bincompatible",
+          "properties": [
+            {
+              "name": "syft:package:foundBy",
+              "value": "go-module-binary-cataloger"
+            },
+            {
+              "name": "syft:package:language",
+              "value": "go"
+            },
+            {
+              "name": "syft:package:type",
+              "value": "go-module"
+            },
+            {
+              "name": "syft:package:metadataType",
+              "value": "go-module-buildinfo-entry"
+            },
+            {
+              "name": "syft:cpe23",
+              "value": "cpe:2.3:a:emicklei:go_restful:v2.9.5\\\u002Bincompatible:*:*:*:*:*:*:*"
+            },
+            {
+              "name": "syft:location:0:layerID",
+              "value": "sha256:5c773288f8cc5cf423a52330685f5bc3d4036ea673f25dd86d1565ab58c210b5"
+            },
+            {
+              "name": "syft:location:0:path",
+              "value": "/app/opa_scorecard_exporter"
+            },
+            {
+              "name": "syft:metadata:architecture",
+              "value": "amd64"
+            },
+            {
+              "name": "syft:metadata:goCompiledVersion",
+              "value": "go1.18.10"
+            },
+            {
+              "name": "syft:metadata:goCryptoSettings:0",
+              "value": "standard-crypto"
+            },
+            {
+              "name": "syft:metadata:h1Digest",
+              "value": "h1:spTtZBk5DYEvbxMVutUuTyh1Ao2r4iyvLdACqsl/Ljk="
+            },
+            {
+              "name": "syft:metadata:mainModule",
+              "value": "github.com/runyontr/opa-scorecard/exporter-go"
+            }
+          ]
+        },
+        {
+          "type": "library",
+          "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/github.com/evanphx/json-patch@v4.12.0\u002Bincompatible?package-id=868383528a1065e1",
+          "name": "github.com/evanphx/json-patch",
+          "version": "v4.12.0\u002Bincompatible",
+          "cpe": "cpe:2.3:a:evanphx:json-patch:v4.12.0\\\u002Bincompatible:*:*:*:*:*:*:*",
+          "purl": "pkg:golang/github.com/evanphx/json-patch@v4.12.0\u002Bincompatible",
+          "properties": [
+            {
+              "name": "syft:package:foundBy",
+              "value": "go-module-binary-cataloger"
+            },
+            {
+              "name": "syft:package:language",
+              "value": "go"
+            },
+            {
+              "name": "syft:package:type",
+              "value": "go-module"
+            },
+            {
+              "name": "syft:package:metadataType",
+              "value": "go-module-buildinfo-entry"
+            },
+            {
+              "name": "syft:cpe23",
+              "value": "cpe:2.3:a:evanphx:json_patch:v4.12.0\\\u002Bincompatible:*:*:*:*:*:*:*"
+            },
+            {
+              "name": "syft:location:0:layerID",
+              "value": "sha256:5c773288f8cc5cf423a52330685f5bc3d4036ea673f25dd86d1565ab58c210b5"
+            },
+            {
+              "name": "syft:location:0:path",
+              "value": "/app/opa_scorecard_exporter"
+            },
+            {
+              "name": "syft:metadata:architecture",
+              "value": "amd64"
+            },
+            {
+              "name": "syft:metadata:goCompiledVersion",
+              "value": "go1.18.10"
+            },
+            {
+              "name": "syft:metadata:goCryptoSettings:0",
+              "value": "standard-crypto"
+            },
+            {
+              "name": "syft:metadata:h1Digest",
+              "value": "h1:4onqiflcdA9EOZ4RxV643DvftH5pOlLGNtQ5lPWQu84="
+            },
+            {
+              "name": "syft:metadata:mainModule",
+              "value": "github.com/runyontr/opa-scorecard/exporter-go"
+            }
+          ]
+        },
+        {
+          "type": "library",
+          "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/github.com/go-logr/logr@v1.2.0?package-id=1c053d678a0a677d",
+          "name": "github.com/go-logr/logr",
+          "version": "v1.2.0",
+          "cpe": "cpe:2.3:a:go-logr:logr:v1.2.0:*:*:*:*:*:*:*",
+          "purl": "pkg:golang/github.com/go-logr/logr@v1.2.0",
+          "properties": [
+            {
+              "name": "syft:package:foundBy",
+              "value": "go-module-binary-cataloger"
+            },
+            {
+              "name": "syft:package:language",
+              "value": "go"
+            },
+            {
+              "name": "syft:package:type",
+              "value": "go-module"
+            },
+            {
+              "name": "syft:package:metadataType",
+              "value": "go-module-buildinfo-entry"
+            },
+            {
+              "name": "syft:cpe23",
+              "value": "cpe:2.3:a:go_logr:logr:v1.2.0:*:*:*:*:*:*:*"
+            },
+            {
+              "name": "syft:cpe23",
+              "value": "cpe:2.3:a:go:logr:v1.2.0:*:*:*:*:*:*:*"
+            },
+            {
+              "name": "syft:location:0:layerID",
+              "value": "sha256:5c773288f8cc5cf423a52330685f5bc3d4036ea673f25dd86d1565ab58c210b5"
+            },
+            {
+              "name": "syft:location:0:path",
+              "value": "/app/opa_scorecard_exporter"
+            },
+            {
+              "name": "syft:metadata:architecture",
+              "value": "amd64"
+            },
+            {
+              "name": "syft:metadata:goCompiledVersion",
+              "value": "go1.18.10"
+            },
+            {
+              "name": "syft:metadata:goCryptoSettings:0",
+              "value": "standard-crypto"
+            },
+            {
+              "name": "syft:metadata:h1Digest",
+              "value": "h1:QK40JKJyMdUDz\u002Bh\u002BxvCsru/bJhvG0UxvePV0ufL/AcE="
+            },
+            {
+              "name": "syft:metadata:mainModule",
+              "value": "github.com/runyontr/opa-scorecard/exporter-go"
+            }
+          ]
+        },
+        {
+          "type": "library",
+          "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/github.com/go-openapi/jsonpointer@v0.19.5?package-id=0d187fca98376222",
+          "name": "github.com/go-openapi/jsonpointer",
+          "version": "v0.19.5",
+          "cpe": "cpe:2.3:a:go-openapi:jsonpointer:v0.19.5:*:*:*:*:*:*:*",
+          "purl": "pkg:golang/github.com/go-openapi/jsonpointer@v0.19.5",
+          "properties": [
+            {
+              "name": "syft:package:foundBy",
+              "value": "go-module-binary-cataloger"
+            },
+            {
+              "name": "syft:package:language",
+              "value": "go"
+            },
+            {
+              "name": "syft:package:type",
+              "value": "go-module"
+            },
+            {
+              "name": "syft:package:metadataType",
+              "value": "go-module-buildinfo-entry"
+            },
+            {
+              "name": "syft:cpe23",
+              "value": "cpe:2.3:a:go_openapi:jsonpointer:v0.19.5:*:*:*:*:*:*:*"
+            },
+            {
+              "name": "syft:cpe23",
+              "value": "cpe:2.3:a:go:jsonpointer:v0.19.5:*:*:*:*:*:*:*"
+            },
+            {
+              "name": "syft:location:0:layerID",
+              "value": "sha256:5c773288f8cc5cf423a52330685f5bc3d4036ea673f25dd86d1565ab58c210b5"
+            },
+            {
+              "name": "syft:location:0:path",
+              "value": "/app/opa_scorecard_exporter"
+            },
+            {
+              "name": "syft:metadata:architecture",
+              "value": "amd64"
+            },
+            {
+              "name": "syft:metadata:goCompiledVersion",
+              "value": "go1.18.10"
+            },
+            {
+              "name": "syft:metadata:goCryptoSettings:0",
+              "value": "standard-crypto"
+            },
+            {
+              "name": "syft:metadata:h1Digest",
+              "value": "h1:gZr\u002BCIYByUqjcgeLXnQu2gHYQC9o73G2XUeOFYEICuY="
+            },
+            {
+              "name": "syft:metadata:mainModule",
+              "value": "github.com/runyontr/opa-scorecard/exporter-go"
+            }
+          ]
+        },
+        {
+          "type": "library",
+          "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/github.com/go-openapi/jsonreference@v0.19.5?package-id=921ddd9c26bc21ee",
+          "name": "github.com/go-openapi/jsonreference",
+          "version": "v0.19.5",
+          "cpe": "cpe:2.3:a:go-openapi:jsonreference:v0.19.5:*:*:*:*:*:*:*",
+          "purl": "pkg:golang/github.com/go-openapi/jsonreference@v0.19.5",
+          "properties": [
+            {
+              "name": "syft:package:foundBy",
+              "value": "go-module-binary-cataloger"
+            },
+            {
+              "name": "syft:package:language",
+              "value": "go"
+            },
+            {
+              "name": "syft:package:type",
+              "value": "go-module"
+            },
+            {
+              "name": "syft:package:metadataType",
+              "value": "go-module-buildinfo-entry"
+            },
+            {
+              "name": "syft:cpe23",
+              "value": "cpe:2.3:a:go_openapi:jsonreference:v0.19.5:*:*:*:*:*:*:*"
+            },
+            {
+              "name": "syft:cpe23",
+              "value": "cpe:2.3:a:go:jsonreference:v0.19.5:*:*:*:*:*:*:*"
+            },
+            {
+              "name": "syft:location:0:layerID",
+              "value": "sha256:5c773288f8cc5cf423a52330685f5bc3d4036ea673f25dd86d1565ab58c210b5"
+            },
+            {
+              "name": "syft:location:0:path",
+              "value": "/app/opa_scorecard_exporter"
+            },
+            {
+              "name": "syft:metadata:architecture",
+              "value": "amd64"
+            },
+            {
+              "name": "syft:metadata:goCompiledVersion",
+              "value": "go1.18.10"
+            },
+            {
+              "name": "syft:metadata:goCryptoSettings:0",
+              "value": "standard-crypto"
+            },
+            {
+              "name": "syft:metadata:h1Digest",
+              "value": "h1:1WJP/wi4OjB4iV8KVbH73rQaoialJrqv8gitZLxGLtM="
+            },
+            {
+              "name": "syft:metadata:mainModule",
+              "value": "github.com/runyontr/opa-scorecard/exporter-go"
+            }
+          ]
+        },
+        {
+          "type": "library",
+          "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/github.com/go-openapi/swag@v0.19.14?package-id=254876cf6b0bb3f7",
+          "name": "github.com/go-openapi/swag",
+          "version": "v0.19.14",
+          "cpe": "cpe:2.3:a:go-openapi:swag:v0.19.14:*:*:*:*:*:*:*",
+          "purl": "pkg:golang/github.com/go-openapi/swag@v0.19.14",
+          "properties": [
+            {
+              "name": "syft:package:foundBy",
+              "value": "go-module-binary-cataloger"
+            },
+            {
+              "name": "syft:package:language",
+              "value": "go"
+            },
+            {
+              "name": "syft:package:type",
+              "value": "go-module"
+            },
+            {
+              "name": "syft:package:metadataType",
+              "value": "go-module-buildinfo-entry"
+            },
+            {
+              "name": "syft:cpe23",
+              "value": "cpe:2.3:a:go_openapi:swag:v0.19.14:*:*:*:*:*:*:*"
+            },
+            {
+              "name": "syft:cpe23",
+              "value": "cpe:2.3:a:go:swag:v0.19.14:*:*:*:*:*:*:*"
+            },
+            {
+              "name": "syft:location:0:layerID",
+              "value": "sha256:5c773288f8cc5cf423a52330685f5bc3d4036ea673f25dd86d1565ab58c210b5"
+            },
+            {
+              "name": "syft:location:0:path",
+              "value": "/app/opa_scorecard_exporter"
+            },
+            {
+              "name": "syft:metadata:architecture",
+              "value": "amd64"
+            },
+            {
+              "name": "syft:metadata:goCompiledVersion",
+              "value": "go1.18.10"
+            },
+            {
+              "name": "syft:metadata:goCryptoSettings:0",
+              "value": "standard-crypto"
+            },
+            {
+              "name": "syft:metadata:h1Digest",
+              "value": "h1:gm3vOOXfiuw5i9p5N9xJvfjvuofpyvLA9Wr6QfK5Fng="
+            },
+            {
+              "name": "syft:metadata:mainModule",
+              "value": "github.com/runyontr/opa-scorecard/exporter-go"
+            }
+          ]
+        },
+        {
+          "type": "library",
+          "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/github.com/gogo/protobuf@v1.3.2?package-id=a92d1e4b6e0d4e57",
+          "name": "github.com/gogo/protobuf",
+          "version": "v1.3.2",
+          "cpe": "cpe:2.3:a:gogo:protobuf:v1.3.2:*:*:*:*:*:*:*",
+          "purl": "pkg:golang/github.com/gogo/protobuf@v1.3.2",
+          "properties": [
+            {
+              "name": "syft:package:foundBy",
+              "value": "go-module-binary-cataloger"
+            },
+            {
+              "name": "syft:package:language",
+              "value": "go"
+            },
+            {
+              "name": "syft:package:type",
+              "value": "go-module"
+            },
+            {
+              "name": "syft:package:metadataType",
+              "value": "go-module-buildinfo-entry"
+            },
+            {
+              "name": "syft:location:0:layerID",
+              "value": "sha256:5c773288f8cc5cf423a52330685f5bc3d4036ea673f25dd86d1565ab58c210b5"
+            },
+            {
+              "name": "syft:location:0:path",
+              "value": "/app/opa_scorecard_exporter"
+            },
+            {
+              "name": "syft:metadata:architecture",
+              "value": "amd64"
+            },
+            {
+              "name": "syft:metadata:goCompiledVersion",
+              "value": "go1.18.10"
+            },
+            {
+              "name": "syft:metadata:goCryptoSettings:0",
+              "value": "standard-crypto"
+            },
+            {
+              "name": "syft:metadata:h1Digest",
+              "value": "h1:Ov1cvc58UF3b5XjBnZv7\u002BopcTcQFZebYjWzi34vdm4Q="
+            },
+            {
+              "name": "syft:metadata:mainModule",
+              "value": "github.com/runyontr/opa-scorecard/exporter-go"
+            }
+          ]
+        },
+        {
+          "type": "library",
+          "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/github.com/golang/protobuf@v1.5.2?package-id=3e8987a0d4dc40a6",
+          "name": "github.com/golang/protobuf",
+          "version": "v1.5.2",
+          "cpe": "cpe:2.3:a:golang:protobuf:v1.5.2:*:*:*:*:*:*:*",
+          "purl": "pkg:golang/github.com/golang/protobuf@v1.5.2",
+          "properties": [
+            {
+              "name": "syft:package:foundBy",
+              "value": "go-module-binary-cataloger"
+            },
+            {
+              "name": "syft:package:language",
+              "value": "go"
+            },
+            {
+              "name": "syft:package:type",
+              "value": "go-module"
+            },
+            {
+              "name": "syft:package:metadataType",
+              "value": "go-module-buildinfo-entry"
+            },
+            {
+              "name": "syft:location:0:layerID",
+              "value": "sha256:5c773288f8cc5cf423a52330685f5bc3d4036ea673f25dd86d1565ab58c210b5"
+            },
+            {
+              "name": "syft:location:0:path",
+              "value": "/app/opa_scorecard_exporter"
+            },
+            {
+              "name": "syft:metadata:architecture",
+              "value": "amd64"
+            },
+            {
+              "name": "syft:metadata:goCompiledVersion",
+              "value": "go1.18.10"
+            },
+            {
+              "name": "syft:metadata:goCryptoSettings:0",
+              "value": "standard-crypto"
+            },
+            {
+              "name": "syft:metadata:h1Digest",
+              "value": "h1:ROPKBNFfQgOUMifHyP\u002BKYbvpjbdoFNs\u002BaK7DXlji0Tw="
+            },
+            {
+              "name": "syft:metadata:mainModule",
+              "value": "github.com/runyontr/opa-scorecard/exporter-go"
+            }
+          ]
+        },
+        {
+          "type": "library",
+          "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/github.com/google/gnostic@v0.5.7-v3refs?package-id=0ba6b5efb572b8c1",
+          "name": "github.com/google/gnostic",
+          "version": "v0.5.7-v3refs",
+          "cpe": "cpe:2.3:a:google:gnostic:v0.5.7-v3refs:*:*:*:*:*:*:*",
+          "purl": "pkg:golang/github.com/google/gnostic@v0.5.7-v3refs",
+          "properties": [
+            {
+              "name": "syft:package:foundBy",
+              "value": "go-module-binary-cataloger"
+            },
+            {
+              "name": "syft:package:language",
+              "value": "go"
+            },
+            {
+              "name": "syft:package:type",
+              "value": "go-module"
+            },
+            {
+              "name": "syft:package:metadataType",
+              "value": "go-module-buildinfo-entry"
+            },
+            {
+              "name": "syft:location:0:layerID",
+              "value": "sha256:5c773288f8cc5cf423a52330685f5bc3d4036ea673f25dd86d1565ab58c210b5"
+            },
+            {
+              "name": "syft:location:0:path",
+              "value": "/app/opa_scorecard_exporter"
+            },
+            {
+              "name": "syft:metadata:architecture",
+              "value": "amd64"
+            },
+            {
+              "name": "syft:metadata:goCompiledVersion",
+              "value": "go1.18.10"
+            },
+            {
+              "name": "syft:metadata:goCryptoSettings:0",
+              "value": "standard-crypto"
+            },
+            {
+              "name": "syft:metadata:h1Digest",
+              "value": "h1:FhTMOKj2VhjpouxvWJAV1TL304uMlb9zcDqkl6cEI54="
+            },
+            {
+              "name": "syft:metadata:mainModule",
+              "value": "github.com/runyontr/opa-scorecard/exporter-go"
+            }
+          ]
+        },
+        {
+          "type": "library",
+          "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/github.com/google/gofuzz@v1.1.0?package-id=fa66f2ea23128263",
+          "name": "github.com/google/gofuzz",
+          "version": "v1.1.0",
+          "cpe": "cpe:2.3:a:google:gofuzz:v1.1.0:*:*:*:*:*:*:*",
+          "purl": "pkg:golang/github.com/google/gofuzz@v1.1.0",
+          "properties": [
+            {
+              "name": "syft:package:foundBy",
+              "value": "go-module-binary-cataloger"
+            },
+            {
+              "name": "syft:package:language",
+              "value": "go"
+            },
+            {
+              "name": "syft:package:type",
+              "value": "go-module"
+            },
+            {
+              "name": "syft:package:metadataType",
+              "value": "go-module-buildinfo-entry"
+            },
+            {
+              "name": "syft:location:0:layerID",
+              "value": "sha256:5c773288f8cc5cf423a52330685f5bc3d4036ea673f25dd86d1565ab58c210b5"
+            },
+            {
+              "name": "syft:location:0:path",
+              "value": "/app/opa_scorecard_exporter"
+            },
+            {
+              "name": "syft:metadata:architecture",
+              "value": "amd64"
+            },
+            {
+              "name": "syft:metadata:goCompiledVersion",
+              "value": "go1.18.10"
+            },
+            {
+              "name": "syft:metadata:goCryptoSettings:0",
+              "value": "standard-crypto"
+            },
+            {
+              "name": "syft:metadata:h1Digest",
+              "value": "h1:Hsa8mG0dQ46ij8Sl2AYJDUv1oA9/d6Vk\u002B3LG99Oe02g="
+            },
+            {
+              "name": "syft:metadata:mainModule",
+              "value": "github.com/runyontr/opa-scorecard/exporter-go"
+            }
+          ]
+        },
+        {
+          "type": "library",
+          "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/github.com/imdario/mergo@v0.3.10?package-id=4c31f48acc3c1b57",
+          "name": "github.com/imdario/mergo",
+          "version": "v0.3.10",
+          "cpe": "cpe:2.3:a:imdario:mergo:v0.3.10:*:*:*:*:*:*:*",
+          "purl": "pkg:golang/github.com/imdario/mergo@v0.3.10",
+          "properties": [
+            {
+              "name": "syft:package:foundBy",
+              "value": "go-module-binary-cataloger"
+            },
+            {
+              "name": "syft:package:language",
+              "value": "go"
+            },
+            {
+              "name": "syft:package:type",
+              "value": "go-module"
+            },
+            {
+              "name": "syft:package:metadataType",
+              "value": "go-module-buildinfo-entry"
+            },
+            {
+              "name": "syft:location:0:layerID",
+              "value": "sha256:5c773288f8cc5cf423a52330685f5bc3d4036ea673f25dd86d1565ab58c210b5"
+            },
+            {
+              "name": "syft:location:0:path",
+              "value": "/app/opa_scorecard_exporter"
+            },
+            {
+              "name": "syft:metadata:architecture",
+              "value": "amd64"
+            },
+            {
+              "name": "syft:metadata:goCompiledVersion",
+              "value": "go1.18.10"
+            },
+            {
+              "name": "syft:metadata:goCryptoSettings:0",
+              "value": "standard-crypto"
+            },
+            {
+              "name": "syft:metadata:h1Digest",
+              "value": "h1:6q5mVkdH/vYmqngx7kZQTjJ5HRsx\u002BImorDIEQ\u002BbeJgc="
+            },
+            {
+              "name": "syft:metadata:mainModule",
+              "value": "github.com/runyontr/opa-scorecard/exporter-go"
+            }
+          ]
+        },
+        {
+          "type": "library",
+          "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/github.com/josharian/intern@v1.0.0?package-id=2b18d1238fadd51a",
+          "name": "github.com/josharian/intern",
+          "version": "v1.0.0",
+          "cpe": "cpe:2.3:a:josharian:intern:v1.0.0:*:*:*:*:*:*:*",
+          "purl": "pkg:golang/github.com/josharian/intern@v1.0.0",
+          "properties": [
+            {
+              "name": "syft:package:foundBy",
+              "value": "go-module-binary-cataloger"
+            },
+            {
+              "name": "syft:package:language",
+              "value": "go"
+            },
+            {
+              "name": "syft:package:type",
+              "value": "go-module"
+            },
+            {
+              "name": "syft:package:metadataType",
+              "value": "go-module-buildinfo-entry"
+            },
+            {
+              "name": "syft:location:0:layerID",
+              "value": "sha256:5c773288f8cc5cf423a52330685f5bc3d4036ea673f25dd86d1565ab58c210b5"
+            },
+            {
+              "name": "syft:location:0:path",
+              "value": "/app/opa_scorecard_exporter"
+            },
+            {
+              "name": "syft:metadata:architecture",
+              "value": "amd64"
+            },
+            {
+              "name": "syft:metadata:goCompiledVersion",
+              "value": "go1.18.10"
+            },
+            {
+              "name": "syft:metadata:goCryptoSettings:0",
+              "value": "standard-crypto"
+            },
+            {
+              "name": "syft:metadata:h1Digest",
+              "value": "h1:vlS4z54oSdjm0bgjRigI\u002BG1HpF\u002BtI\u002B9rE5LLzOg8HmY="
+            },
+            {
+              "name": "syft:metadata:mainModule",
+              "value": "github.com/runyontr/opa-scorecard/exporter-go"
+            }
+          ]
+        },
+        {
+          "type": "library",
+          "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/github.com/json-iterator/go@v1.1.12?package-id=db732495439f37f3",
+          "name": "github.com/json-iterator/go",
+          "version": "v1.1.12",
+          "cpe": "cpe:2.3:a:json-iterator:go:v1.1.12:*:*:*:*:*:*:*",
+          "purl": "pkg:golang/github.com/json-iterator/go@v1.1.12",
+          "properties": [
+            {
+              "name": "syft:package:foundBy",
+              "value": "go-module-binary-cataloger"
+            },
+            {
+              "name": "syft:package:language",
+              "value": "go"
+            },
+            {
+              "name": "syft:package:type",
+              "value": "go-module"
+            },
+            {
+              "name": "syft:package:metadataType",
+              "value": "go-module-buildinfo-entry"
+            },
+            {
+              "name": "syft:cpe23",
+              "value": "cpe:2.3:a:json_iterator:go:v1.1.12:*:*:*:*:*:*:*"
+            },
+            {
+              "name": "syft:cpe23",
+              "value": "cpe:2.3:a:json:go:v1.1.12:*:*:*:*:*:*:*"
+            },
+            {
+              "name": "syft:location:0:layerID",
+              "value": "sha256:5c773288f8cc5cf423a52330685f5bc3d4036ea673f25dd86d1565ab58c210b5"
+            },
+            {
+              "name": "syft:location:0:path",
+              "value": "/app/opa_scorecard_exporter"
+            },
+            {
+              "name": "syft:metadata:architecture",
+              "value": "amd64"
+            },
+            {
+              "name": "syft:metadata:goCompiledVersion",
+              "value": "go1.18.10"
+            },
+            {
+              "name": "syft:metadata:goCryptoSettings:0",
+              "value": "standard-crypto"
+            },
+            {
+              "name": "syft:metadata:h1Digest",
+              "value": "h1:PV8peI4a0ysnczrg\u002BLtxykD8LfKY9ML6u2jnxaEnrnM="
+            },
+            {
+              "name": "syft:metadata:mainModule",
+              "value": "github.com/runyontr/opa-scorecard/exporter-go"
+            }
+          ]
+        },
+        {
+          "type": "library",
+          "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/github.com/mailru/easyjson@v0.7.6?package-id=b203eaddf5747c0f",
+          "name": "github.com/mailru/easyjson",
+          "version": "v0.7.6",
+          "cpe": "cpe:2.3:a:mailru:easyjson:v0.7.6:*:*:*:*:*:*:*",
+          "purl": "pkg:golang/github.com/mailru/easyjson@v0.7.6",
+          "properties": [
+            {
+              "name": "syft:package:foundBy",
+              "value": "go-module-binary-cataloger"
+            },
+            {
+              "name": "syft:package:language",
+              "value": "go"
+            },
+            {
+              "name": "syft:package:type",
+              "value": "go-module"
+            },
+            {
+              "name": "syft:package:metadataType",
+              "value": "go-module-buildinfo-entry"
+            },
+            {
+              "name": "syft:location:0:layerID",
+              "value": "sha256:5c773288f8cc5cf423a52330685f5bc3d4036ea673f25dd86d1565ab58c210b5"
+            },
+            {
+              "name": "syft:location:0:path",
+              "value": "/app/opa_scorecard_exporter"
+            },
+            {
+              "name": "syft:metadata:architecture",
+              "value": "amd64"
+            },
+            {
+              "name": "syft:metadata:goCompiledVersion",
+              "value": "go1.18.10"
+            },
+            {
+              "name": "syft:metadata:goCryptoSettings:0",
+              "value": "standard-crypto"
+            },
+            {
+              "name": "syft:metadata:h1Digest",
+              "value": "h1:8yTIVnZgCoiM1TgqoeTl\u002BLfU5Jg6/xL3QhGQnimLYnA="
+            },
+            {
+              "name": "syft:metadata:mainModule",
+              "value": "github.com/runyontr/opa-scorecard/exporter-go"
+            }
+          ]
+        },
+        {
+          "type": "library",
+          "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/github.com/matttproud/golang_protobuf_extensions@v1.0.2-0.20181231171920-c182affec369?package-id=fc7ace96493738dc",
+          "name": "github.com/matttproud/golang_protobuf_extensions",
+          "version": "v1.0.2-0.20181231171920-c182affec369",
+          "cpe": "cpe:2.3:a:matttproud:golang-protobuf-extensions:v1.0.2-0.20181231171920-c182affec369:*:*:*:*:*:*:*",
+          "purl": "pkg:golang/github.com/matttproud/golang_protobuf_extensions@v1.0.2-0.20181231171920-c182affec369",
+          "properties": [
+            {
+              "name": "syft:package:foundBy",
+              "value": "go-module-binary-cataloger"
+            },
+            {
+              "name": "syft:package:language",
+              "value": "go"
+            },
+            {
+              "name": "syft:package:type",
+              "value": "go-module"
+            },
+            {
+              "name": "syft:package:metadataType",
+              "value": "go-module-buildinfo-entry"
+            },
+            {
+              "name": "syft:cpe23",
+              "value": "cpe:2.3:a:matttproud:golang_protobuf_extensions:v1.0.2-0.20181231171920-c182affec369:*:*:*:*:*:*:*"
+            },
+            {
+              "name": "syft:location:0:layerID",
+              "value": "sha256:5c773288f8cc5cf423a52330685f5bc3d4036ea673f25dd86d1565ab58c210b5"
+            },
+            {
+              "name": "syft:location:0:path",
+              "value": "/app/opa_scorecard_exporter"
+            },
+            {
+              "name": "syft:metadata:architecture",
+              "value": "amd64"
+            },
+            {
+              "name": "syft:metadata:goCompiledVersion",
+              "value": "go1.18.10"
+            },
+            {
+              "name": "syft:metadata:goCryptoSettings:0",
+              "value": "standard-crypto"
+            },
+            {
+              "name": "syft:metadata:h1Digest",
+              "value": "h1:I0XW9\u002Be1XWDxdcEniV4rQAIOPUGDq67JSCiRCgGCZLI="
+            },
+            {
+              "name": "syft:metadata:mainModule",
+              "value": "github.com/runyontr/opa-scorecard/exporter-go"
+            }
+          ]
+        },
+        {
+          "type": "library",
+          "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/github.com/modern-go/concurrent@v0.0.0-20180306012644-bacd9c7ef1dd?package-id=60c733a70a6e261c",
+          "name": "github.com/modern-go/concurrent",
+          "version": "v0.0.0-20180306012644-bacd9c7ef1dd",
+          "cpe": "cpe:2.3:a:modern-go:concurrent:v0.0.0-20180306012644-bacd9c7ef1dd:*:*:*:*:*:*:*",
+          "purl": "pkg:golang/github.com/modern-go/concurrent@v0.0.0-20180306012644-bacd9c7ef1dd",
+          "properties": [
+            {
+              "name": "syft:package:foundBy",
+              "value": "go-module-binary-cataloger"
+            },
+            {
+              "name": "syft:package:language",
+              "value": "go"
+            },
+            {
+              "name": "syft:package:type",
+              "value": "go-module"
+            },
+            {
+              "name": "syft:package:metadataType",
+              "value": "go-module-buildinfo-entry"
+            },
+            {
+              "name": "syft:cpe23",
+              "value": "cpe:2.3:a:modern_go:concurrent:v0.0.0-20180306012644-bacd9c7ef1dd:*:*:*:*:*:*:*"
+            },
+            {
+              "name": "syft:cpe23",
+              "value": "cpe:2.3:a:modern:concurrent:v0.0.0-20180306012644-bacd9c7ef1dd:*:*:*:*:*:*:*"
+            },
+            {
+              "name": "syft:location:0:layerID",
+              "value": "sha256:5c773288f8cc5cf423a52330685f5bc3d4036ea673f25dd86d1565ab58c210b5"
+            },
+            {
+              "name": "syft:location:0:path",
+              "value": "/app/opa_scorecard_exporter"
+            },
+            {
+              "name": "syft:metadata:architecture",
+              "value": "amd64"
+            },
+            {
+              "name": "syft:metadata:goCompiledVersion",
+              "value": "go1.18.10"
+            },
+            {
+              "name": "syft:metadata:goCryptoSettings:0",
+              "value": "standard-crypto"
+            },
+            {
+              "name": "syft:metadata:h1Digest",
+              "value": "h1:TRLaZ9cD/w8PVh93nsPXa1VrQ6jlwL5oN8l14QlcNfg="
+            },
+            {
+              "name": "syft:metadata:mainModule",
+              "value": "github.com/runyontr/opa-scorecard/exporter-go"
+            }
+          ]
+        },
+        {
+          "type": "library",
+          "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/github.com/modern-go/reflect2@v1.0.2?package-id=9bfe1be0482f4aeb",
+          "name": "github.com/modern-go/reflect2",
+          "version": "v1.0.2",
+          "cpe": "cpe:2.3:a:modern-go:reflect2:v1.0.2:*:*:*:*:*:*:*",
+          "purl": "pkg:golang/github.com/modern-go/reflect2@v1.0.2",
+          "properties": [
+            {
+              "name": "syft:package:foundBy",
+              "value": "go-module-binary-cataloger"
+            },
+            {
+              "name": "syft:package:language",
+              "value": "go"
+            },
+            {
+              "name": "syft:package:type",
+              "value": "go-module"
+            },
+            {
+              "name": "syft:package:metadataType",
+              "value": "go-module-buildinfo-entry"
+            },
+            {
+              "name": "syft:cpe23",
+              "value": "cpe:2.3:a:modern_go:reflect2:v1.0.2:*:*:*:*:*:*:*"
+            },
+            {
+              "name": "syft:cpe23",
+              "value": "cpe:2.3:a:modern:reflect2:v1.0.2:*:*:*:*:*:*:*"
+            },
+            {
+              "name": "syft:location:0:layerID",
+              "value": "sha256:5c773288f8cc5cf423a52330685f5bc3d4036ea673f25dd86d1565ab58c210b5"
+            },
+            {
+              "name": "syft:location:0:path",
+              "value": "/app/opa_scorecard_exporter"
+            },
+            {
+              "name": "syft:metadata:architecture",
+              "value": "amd64"
+            },
+            {
+              "name": "syft:metadata:goCompiledVersion",
+              "value": "go1.18.10"
+            },
+            {
+              "name": "syft:metadata:goCryptoSettings:0",
+              "value": "standard-crypto"
+            },
+            {
+              "name": "syft:metadata:h1Digest",
+              "value": "h1:xBagoLtFs94CBntxluKeaWgTMpvLxC4ur3nMaC9Gz0M="
+            },
+            {
+              "name": "syft:metadata:mainModule",
+              "value": "github.com/runyontr/opa-scorecard/exporter-go"
+            }
+          ]
+        },
+        {
+          "type": "library",
+          "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/github.com/munnerz/goautoneg@v0.0.0-20191010083416-a7dc8b61c822?package-id=9b03053d7a7db7e8",
+          "name": "github.com/munnerz/goautoneg",
+          "version": "v0.0.0-20191010083416-a7dc8b61c822",
+          "cpe": "cpe:2.3:a:munnerz:goautoneg:v0.0.0-20191010083416-a7dc8b61c822:*:*:*:*:*:*:*",
+          "purl": "pkg:golang/github.com/munnerz/goautoneg@v0.0.0-20191010083416-a7dc8b61c822",
+          "properties": [
+            {
+              "name": "syft:package:foundBy",
+              "value": "go-module-binary-cataloger"
+            },
+            {
+              "name": "syft:package:language",
+              "value": "go"
+            },
+            {
+              "name": "syft:package:type",
+              "value": "go-module"
+            },
+            {
+              "name": "syft:package:metadataType",
+              "value": "go-module-buildinfo-entry"
+            },
+            {
+              "name": "syft:location:0:layerID",
+              "value": "sha256:5c773288f8cc5cf423a52330685f5bc3d4036ea673f25dd86d1565ab58c210b5"
+            },
+            {
+              "name": "syft:location:0:path",
+              "value": "/app/opa_scorecard_exporter"
+            },
+            {
+              "name": "syft:metadata:architecture",
+              "value": "amd64"
+            },
+            {
+              "name": "syft:metadata:goCompiledVersion",
+              "value": "go1.18.10"
+            },
+            {
+              "name": "syft:metadata:goCryptoSettings:0",
+              "value": "standard-crypto"
+            },
+            {
+              "name": "syft:metadata:h1Digest",
+              "value": "h1:C3w9PqII01/Oq1c1nUAm88MOHcQC9l5mIlSMApZMrHA="
+            },
+            {
+              "name": "syft:metadata:mainModule",
+              "value": "github.com/runyontr/opa-scorecard/exporter-go"
+            }
+          ]
+        },
+        {
+          "type": "library",
+          "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/github.com/pkg/errors@v0.9.1?package-id=e3478d6091d06038",
+          "name": "github.com/pkg/errors",
+          "version": "v0.9.1",
+          "cpe": "cpe:2.3:a:pkg:errors:v0.9.1:*:*:*:*:*:*:*",
+          "purl": "pkg:golang/github.com/pkg/errors@v0.9.1",
+          "properties": [
+            {
+              "name": "syft:package:foundBy",
+              "value": "go-module-binary-cataloger"
+            },
+            {
+              "name": "syft:package:language",
+              "value": "go"
+            },
+            {
+              "name": "syft:package:type",
+              "value": "go-module"
+            },
+            {
+              "name": "syft:package:metadataType",
+              "value": "go-module-buildinfo-entry"
+            },
+            {
+              "name": "syft:location:0:layerID",
+              "value": "sha256:5c773288f8cc5cf423a52330685f5bc3d4036ea673f25dd86d1565ab58c210b5"
+            },
+            {
+              "name": "syft:location:0:path",
+              "value": "/app/opa_scorecard_exporter"
+            },
+            {
+              "name": "syft:metadata:architecture",
+              "value": "amd64"
+            },
+            {
+              "name": "syft:metadata:goCompiledVersion",
+              "value": "go1.18.10"
+            },
+            {
+              "name": "syft:metadata:goCryptoSettings:0",
+              "value": "standard-crypto"
+            },
+            {
+              "name": "syft:metadata:h1Digest",
+              "value": "h1:FEBLx1zS214owpjy7qsBeixbURkuhQAwrK5UwLGTwt4="
+            },
+            {
+              "name": "syft:metadata:mainModule",
+              "value": "github.com/runyontr/opa-scorecard/exporter-go"
+            }
+          ]
+        },
+        {
+          "type": "library",
+          "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/github.com/prometheus/client_golang@v1.12.2?package-id=377132c21389726b",
+          "name": "github.com/prometheus/client_golang",
+          "version": "v1.12.2",
+          "cpe": "cpe:2.3:a:prometheus:client-golang:v1.12.2:*:*:*:*:*:*:*",
+          "purl": "pkg:golang/github.com/prometheus/client_golang@v1.12.2",
+          "properties": [
+            {
+              "name": "syft:package:foundBy",
+              "value": "go-module-binary-cataloger"
+            },
+            {
+              "name": "syft:package:language",
+              "value": "go"
+            },
+            {
+              "name": "syft:package:type",
+              "value": "go-module"
+            },
+            {
+              "name": "syft:package:metadataType",
+              "value": "go-module-buildinfo-entry"
+            },
+            {
+              "name": "syft:cpe23",
+              "value": "cpe:2.3:a:prometheus:client_golang:v1.12.2:*:*:*:*:*:*:*"
+            },
+            {
+              "name": "syft:location:0:layerID",
+              "value": "sha256:5c773288f8cc5cf423a52330685f5bc3d4036ea673f25dd86d1565ab58c210b5"
+            },
+            {
+              "name": "syft:location:0:path",
+              "value": "/app/opa_scorecard_exporter"
+            },
+            {
+              "name": "syft:metadata:architecture",
+              "value": "amd64"
+            },
+            {
+              "name": "syft:metadata:goCompiledVersion",
+              "value": "go1.18.10"
+            },
+            {
+              "name": "syft:metadata:goCryptoSettings:0",
+              "value": "standard-crypto"
+            },
+            {
+              "name": "syft:metadata:h1Digest",
+              "value": "h1:51L9cDoUHVrXx4zWYlcLQIZ\u002Bd\u002BVXHgqnYKkIuq4g/34="
+            },
+            {
+              "name": "syft:metadata:mainModule",
+              "value": "github.com/runyontr/opa-scorecard/exporter-go"
+            }
+          ]
+        },
+        {
+          "type": "library",
+          "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/github.com/prometheus/client_model@v0.2.0?package-id=c43cfbeaea5aad8a",
+          "name": "github.com/prometheus/client_model",
+          "version": "v0.2.0",
+          "cpe": "cpe:2.3:a:prometheus:client-model:v0.2.0:*:*:*:*:*:*:*",
+          "purl": "pkg:golang/github.com/prometheus/client_model@v0.2.0",
+          "properties": [
+            {
+              "name": "syft:package:foundBy",
+              "value": "go-module-binary-cataloger"
+            },
+            {
+              "name": "syft:package:language",
+              "value": "go"
+            },
+            {
+              "name": "syft:package:type",
+              "value": "go-module"
+            },
+            {
+              "name": "syft:package:metadataType",
+              "value": "go-module-buildinfo-entry"
+            },
+            {
+              "name": "syft:cpe23",
+              "value": "cpe:2.3:a:prometheus:client_model:v0.2.0:*:*:*:*:*:*:*"
+            },
+            {
+              "name": "syft:location:0:layerID",
+              "value": "sha256:5c773288f8cc5cf423a52330685f5bc3d4036ea673f25dd86d1565ab58c210b5"
+            },
+            {
+              "name": "syft:location:0:path",
+              "value": "/app/opa_scorecard_exporter"
+            },
+            {
+              "name": "syft:metadata:architecture",
+              "value": "amd64"
+            },
+            {
+              "name": "syft:metadata:goCompiledVersion",
+              "value": "go1.18.10"
+            },
+            {
+              "name": "syft:metadata:goCryptoSettings:0",
+              "value": "standard-crypto"
+            },
+            {
+              "name": "syft:metadata:h1Digest",
+              "value": "h1:uq5h0d\u002BGuxiXLJLNABMgp2qUWDPiLvgCzz2dUR\u002B/W/M="
+            },
+            {
+              "name": "syft:metadata:mainModule",
+              "value": "github.com/runyontr/opa-scorecard/exporter-go"
+            }
+          ]
+        },
+        {
+          "type": "library",
+          "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/github.com/prometheus/common@v0.32.1?package-id=7fe2eeabceaff4f8",
+          "name": "github.com/prometheus/common",
+          "version": "v0.32.1",
+          "cpe": "cpe:2.3:a:prometheus:common:v0.32.1:*:*:*:*:*:*:*",
+          "purl": "pkg:golang/github.com/prometheus/common@v0.32.1",
+          "properties": [
+            {
+              "name": "syft:package:foundBy",
+              "value": "go-module-binary-cataloger"
+            },
+            {
+              "name": "syft:package:language",
+              "value": "go"
+            },
+            {
+              "name": "syft:package:type",
+              "value": "go-module"
+            },
+            {
+              "name": "syft:package:metadataType",
+              "value": "go-module-buildinfo-entry"
+            },
+            {
+              "name": "syft:location:0:layerID",
+              "value": "sha256:5c773288f8cc5cf423a52330685f5bc3d4036ea673f25dd86d1565ab58c210b5"
+            },
+            {
+              "name": "syft:location:0:path",
+              "value": "/app/opa_scorecard_exporter"
+            },
+            {
+              "name": "syft:metadata:architecture",
+              "value": "amd64"
+            },
+            {
+              "name": "syft:metadata:goCompiledVersion",
+              "value": "go1.18.10"
+            },
+            {
+              "name": "syft:metadata:goCryptoSettings:0",
+              "value": "standard-crypto"
+            },
+            {
+              "name": "syft:metadata:h1Digest",
+              "value": "h1:hWIdL3N2HoUx3B8j3YN9mWor0qhY/NlEKZEaXxuIRh4="
+            },
+            {
+              "name": "syft:metadata:mainModule",
+              "value": "github.com/runyontr/opa-scorecard/exporter-go"
+            }
+          ]
+        },
+        {
+          "type": "library",
+          "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/github.com/prometheus/procfs@v0.7.3?package-id=7eb3d1424d3f88bc",
+          "name": "github.com/prometheus/procfs",
+          "version": "v0.7.3",
+          "cpe": "cpe:2.3:a:prometheus:procfs:v0.7.3:*:*:*:*:*:*:*",
+          "purl": "pkg:golang/github.com/prometheus/procfs@v0.7.3",
+          "properties": [
+            {
+              "name": "syft:package:foundBy",
+              "value": "go-module-binary-cataloger"
+            },
+            {
+              "name": "syft:package:language",
+              "value": "go"
+            },
+            {
+              "name": "syft:package:type",
+              "value": "go-module"
+            },
+            {
+              "name": "syft:package:metadataType",
+              "value": "go-module-buildinfo-entry"
+            },
+            {
+              "name": "syft:location:0:layerID",
+              "value": "sha256:5c773288f8cc5cf423a52330685f5bc3d4036ea673f25dd86d1565ab58c210b5"
+            },
+            {
+              "name": "syft:location:0:path",
+              "value": "/app/opa_scorecard_exporter"
+            },
+            {
+              "name": "syft:metadata:architecture",
+              "value": "amd64"
+            },
+            {
+              "name": "syft:metadata:goCompiledVersion",
+              "value": "go1.18.10"
+            },
+            {
+              "name": "syft:metadata:goCryptoSettings:0",
+              "value": "standard-crypto"
+            },
+            {
+              "name": "syft:metadata:h1Digest",
+              "value": "h1:4jVXhlkAyzOScmCkXBTOLRLTz8EeU\u002BeyjrwB/EPq0VU="
+            },
+            {
+              "name": "syft:metadata:mainModule",
+              "value": "github.com/runyontr/opa-scorecard/exporter-go"
+            }
+          ]
+        },
+        {
+          "type": "library",
+          "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/github.com/runyontr/opa-scorecard@v0.0.7?package-id=07b947ee7073496f#exporter-go",
+          "name": "github.com/runyontr/opa-scorecard/exporter-go",
+          "version": "v0.0.7",
+          "cpe": "cpe:2.3:a:runyontr:opa-scorecard\\/exporter-go:v0.0.7:*:*:*:*:*:*:*",
+          "purl": "pkg:golang/github.com/runyontr/opa-scorecard@v0.0.7#exporter-go",
+          "properties": [
+            {
+              "name": "syft:package:foundBy",
+              "value": "go-module-binary-cataloger"
+            },
+            {
+              "name": "syft:package:language",
+              "value": "go"
+            },
+            {
+              "name": "syft:package:type",
+              "value": "go-module"
+            },
+            {
+              "name": "syft:package:metadataType",
+              "value": "go-module-buildinfo-entry"
+            },
+            {
+              "name": "syft:cpe23",
+              "value": "cpe:2.3:a:runyontr:opa_scorecard\\/exporter_go:v0.0.7:*:*:*:*:*:*:*"
+            },
+            {
+              "name": "syft:location:0:layerID",
+              "value": "sha256:5c773288f8cc5cf423a52330685f5bc3d4036ea673f25dd86d1565ab58c210b5"
+            },
+            {
+              "name": "syft:location:0:path",
+              "value": "/app/opa_scorecard_exporter"
+            },
+            {
+              "name": "syft:metadata:architecture",
+              "value": "amd64"
+            },
+            {
+              "name": "syft:metadata:goCompiledVersion",
+              "value": "go1.18.10"
+            },
+            {
+              "name": "syft:metadata:goCryptoSettings:0",
+              "value": "standard-crypto"
+            },
+            {
+              "name": "syft:metadata:h1Digest",
+              "value": "h1:caZkfgdhWrvaALOtIaN1/5xkLr20YXA8hrNzAqo8w5Y="
+            },
+            {
+              "name": "syft:metadata:mainModule",
+              "value": "github.com/runyontr/opa-scorecard/exporter-go"
+            }
+          ]
+        },
+        {
+          "type": "library",
+          "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/github.com/spf13/pflag@v1.0.5?package-id=cd5b457a1a1fc221",
+          "name": "github.com/spf13/pflag",
+          "version": "v1.0.5",
+          "cpe": "cpe:2.3:a:spf13:pflag:v1.0.5:*:*:*:*:*:*:*",
+          "purl": "pkg:golang/github.com/spf13/pflag@v1.0.5",
+          "properties": [
+            {
+              "name": "syft:package:foundBy",
+              "value": "go-module-binary-cataloger"
+            },
+            {
+              "name": "syft:package:language",
+              "value": "go"
+            },
+            {
+              "name": "syft:package:type",
+              "value": "go-module"
+            },
+            {
+              "name": "syft:package:metadataType",
+              "value": "go-module-buildinfo-entry"
+            },
+            {
+              "name": "syft:location:0:layerID",
+              "value": "sha256:5c773288f8cc5cf423a52330685f5bc3d4036ea673f25dd86d1565ab58c210b5"
+            },
+            {
+              "name": "syft:location:0:path",
+              "value": "/app/opa_scorecard_exporter"
+            },
+            {
+              "name": "syft:metadata:architecture",
+              "value": "amd64"
+            },
+            {
+              "name": "syft:metadata:goCompiledVersion",
+              "value": "go1.18.10"
+            },
+            {
+              "name": "syft:metadata:goCryptoSettings:0",
+              "value": "standard-crypto"
+            },
+            {
+              "name": "syft:metadata:h1Digest",
+              "value": "h1:iy\u002BVFUOCP1a\u002B8yFto/drg2CJ5u0yRoB7fZw3DKv/JXA="
+            },
+            {
+              "name": "syft:metadata:mainModule",
+              "value": "github.com/runyontr/opa-scorecard/exporter-go"
+            }
+          ]
+        },
+        {
+          "type": "library",
+          "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/golang.org/x/net@v0.0.0-20220127200216-cd36cc0744dd?package-id=e6196dd493a0ffde",
+          "name": "golang.org/x/net",
+          "version": "v0.0.0-20220127200216-cd36cc0744dd",
+          "cpe": "cpe:2.3:a:golang:x\\/net:v0.0.0-20220127200216-cd36cc0744dd:*:*:*:*:*:*:*",
+          "purl": "pkg:golang/golang.org/x/net@v0.0.0-20220127200216-cd36cc0744dd",
+          "properties": [
+            {
+              "name": "syft:package:foundBy",
+              "value": "go-module-binary-cataloger"
+            },
+            {
+              "name": "syft:package:language",
+              "value": "go"
+            },
+            {
+              "name": "syft:package:type",
+              "value": "go-module"
+            },
+            {
+              "name": "syft:package:metadataType",
+              "value": "go-module-buildinfo-entry"
+            },
+            {
+              "name": "syft:location:0:layerID",
+              "value": "sha256:5c773288f8cc5cf423a52330685f5bc3d4036ea673f25dd86d1565ab58c210b5"
+            },
+            {
+              "name": "syft:location:0:path",
+              "value": "/app/opa_scorecard_exporter"
+            },
+            {
+              "name": "syft:metadata:architecture",
+              "value": "amd64"
+            },
+            {
+              "name": "syft:metadata:goCompiledVersion",
+              "value": "go1.18.10"
+            },
+            {
+              "name": "syft:metadata:goCryptoSettings:0",
+              "value": "standard-crypto"
+            },
+            {
+              "name": "syft:metadata:h1Digest",
+              "value": "h1:O7DYs\u002BzxREGLKzKoMQrtrEacpb0ZVXA5rIwylE2Xchk="
+            },
+            {
+              "name": "syft:metadata:mainModule",
+              "value": "github.com/runyontr/opa-scorecard/exporter-go"
+            }
+          ]
+        },
+        {
+          "type": "library",
+          "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/golang.org/x/oauth2@v0.0.0-20211104180415-d3ed0bb246c8?package-id=630aad1cb93a0617",
+          "name": "golang.org/x/oauth2",
+          "version": "v0.0.0-20211104180415-d3ed0bb246c8",
+          "cpe": "cpe:2.3:a:golang:x\\/oauth2:v0.0.0-20211104180415-d3ed0bb246c8:*:*:*:*:*:*:*",
+          "purl": "pkg:golang/golang.org/x/oauth2@v0.0.0-20211104180415-d3ed0bb246c8",
+          "properties": [
+            {
+              "name": "syft:package:foundBy",
+              "value": "go-module-binary-cataloger"
+            },
+            {
+              "name": "syft:package:language",
+              "value": "go"
+            },
+            {
+              "name": "syft:package:type",
+              "value": "go-module"
+            },
+            {
+              "name": "syft:package:metadataType",
+              "value": "go-module-buildinfo-entry"
+            },
+            {
+              "name": "syft:location:0:layerID",
+              "value": "sha256:5c773288f8cc5cf423a52330685f5bc3d4036ea673f25dd86d1565ab58c210b5"
+            },
+            {
+              "name": "syft:location:0:path",
+              "value": "/app/opa_scorecard_exporter"
+            },
+            {
+              "name": "syft:metadata:architecture",
+              "value": "amd64"
+            },
+            {
+              "name": "syft:metadata:goCompiledVersion",
+              "value": "go1.18.10"
+            },
+            {
+              "name": "syft:metadata:goCryptoSettings:0",
+              "value": "standard-crypto"
+            },
+            {
+              "name": "syft:metadata:h1Digest",
+              "value": "h1:RerP\u002BnoqYHUQ8CMRcPlC2nvTa4dcBIjegkuWdcUDuqg="
+            },
+            {
+              "name": "syft:metadata:mainModule",
+              "value": "github.com/runyontr/opa-scorecard/exporter-go"
+            }
+          ]
+        },
+        {
+          "type": "library",
+          "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/golang.org/x/sys@v0.0.0-20220209214540-3681064d5158?package-id=6164c6f620323ac0",
+          "name": "golang.org/x/sys",
+          "version": "v0.0.0-20220209214540-3681064d5158",
+          "cpe": "cpe:2.3:a:golang:x\\/sys:v0.0.0-20220209214540-3681064d5158:*:*:*:*:*:*:*",
+          "purl": "pkg:golang/golang.org/x/sys@v0.0.0-20220209214540-3681064d5158",
+          "properties": [
+            {
+              "name": "syft:package:foundBy",
+              "value": "go-module-binary-cataloger"
+            },
+            {
+              "name": "syft:package:language",
+              "value": "go"
+            },
+            {
+              "name": "syft:package:type",
+              "value": "go-module"
+            },
+            {
+              "name": "syft:package:metadataType",
+              "value": "go-module-buildinfo-entry"
+            },
+            {
+              "name": "syft:location:0:layerID",
+              "value": "sha256:5c773288f8cc5cf423a52330685f5bc3d4036ea673f25dd86d1565ab58c210b5"
+            },
+            {
+              "name": "syft:location:0:path",
+              "value": "/app/opa_scorecard_exporter"
+            },
+            {
+              "name": "syft:metadata:architecture",
+              "value": "amd64"
+            },
+            {
+              "name": "syft:metadata:goCompiledVersion",
+              "value": "go1.18.10"
+            },
+            {
+              "name": "syft:metadata:goCryptoSettings:0",
+              "value": "standard-crypto"
+            },
+            {
+              "name": "syft:metadata:h1Digest",
+              "value": "h1:rm\u002BCHSpPEEW2IsXUib1ThaHIjuBVZjxNgSKmBLFfD4c="
+            },
+            {
+              "name": "syft:metadata:mainModule",
+              "value": "github.com/runyontr/opa-scorecard/exporter-go"
+            }
+          ]
+        },
+        {
+          "type": "library",
+          "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/golang.org/x/term@v0.0.0-20210927222741-03fcf44c2211?package-id=fc0cb16a76b40940",
+          "name": "golang.org/x/term",
+          "version": "v0.0.0-20210927222741-03fcf44c2211",
+          "cpe": "cpe:2.3:a:golang:x\\/term:v0.0.0-20210927222741-03fcf44c2211:*:*:*:*:*:*:*",
+          "purl": "pkg:golang/golang.org/x/term@v0.0.0-20210927222741-03fcf44c2211",
+          "properties": [
+            {
+              "name": "syft:package:foundBy",
+              "value": "go-module-binary-cataloger"
+            },
+            {
+              "name": "syft:package:language",
+              "value": "go"
+            },
+            {
+              "name": "syft:package:type",
+              "value": "go-module"
+            },
+            {
+              "name": "syft:package:metadataType",
+              "value": "go-module-buildinfo-entry"
+            },
+            {
+              "name": "syft:location:0:layerID",
+              "value": "sha256:5c773288f8cc5cf423a52330685f5bc3d4036ea673f25dd86d1565ab58c210b5"
+            },
+            {
+              "name": "syft:location:0:path",
+              "value": "/app/opa_scorecard_exporter"
+            },
+            {
+              "name": "syft:metadata:architecture",
+              "value": "amd64"
+            },
+            {
+              "name": "syft:metadata:goCompiledVersion",
+              "value": "go1.18.10"
+            },
+            {
+              "name": "syft:metadata:goCryptoSettings:0",
+              "value": "standard-crypto"
+            },
+            {
+              "name": "syft:metadata:h1Digest",
+              "value": "h1:JGgROgKl9N8DuW20oFS5gxc\u002BlE67/N3FcwmBPMe7ArY="
+            },
+            {
+              "name": "syft:metadata:mainModule",
+              "value": "github.com/runyontr/opa-scorecard/exporter-go"
+            }
+          ]
+        },
+        {
+          "type": "library",
+          "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/golang.org/x/text@v0.3.7?package-id=945f65b47614afc1",
+          "name": "golang.org/x/text",
+          "version": "v0.3.7",
+          "cpe": "cpe:2.3:a:golang:x\\/text:v0.3.7:*:*:*:*:*:*:*",
+          "purl": "pkg:golang/golang.org/x/text@v0.3.7",
+          "properties": [
+            {
+              "name": "syft:package:foundBy",
+              "value": "go-module-binary-cataloger"
+            },
+            {
+              "name": "syft:package:language",
+              "value": "go"
+            },
+            {
+              "name": "syft:package:type",
+              "value": "go-module"
+            },
+            {
+              "name": "syft:package:metadataType",
+              "value": "go-module-buildinfo-entry"
+            },
+            {
+              "name": "syft:location:0:layerID",
+              "value": "sha256:5c773288f8cc5cf423a52330685f5bc3d4036ea673f25dd86d1565ab58c210b5"
+            },
+            {
+              "name": "syft:location:0:path",
+              "value": "/app/opa_scorecard_exporter"
+            },
+            {
+              "name": "syft:metadata:architecture",
+              "value": "amd64"
+            },
+            {
+              "name": "syft:metadata:goCompiledVersion",
+              "value": "go1.18.10"
+            },
+            {
+              "name": "syft:metadata:goCryptoSettings:0",
+              "value": "standard-crypto"
+            },
+            {
+              "name": "syft:metadata:h1Digest",
+              "value": "h1:olpwvP2KacW1ZWvsR7uQhoyTYvKAupfQrRGBFM352Gk="
+            },
+            {
+              "name": "syft:metadata:mainModule",
+              "value": "github.com/runyontr/opa-scorecard/exporter-go"
+            }
+          ]
+        },
+        {
+          "type": "library",
+          "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/golang.org/x/time@v0.0.0-20220210224613-90d013bbcef8?package-id=38f6feb1c99285aa",
+          "name": "golang.org/x/time",
+          "version": "v0.0.0-20220210224613-90d013bbcef8",
+          "cpe": "cpe:2.3:a:golang:x\\/time:v0.0.0-20220210224613-90d013bbcef8:*:*:*:*:*:*:*",
+          "purl": "pkg:golang/golang.org/x/time@v0.0.0-20220210224613-90d013bbcef8",
+          "properties": [
+            {
+              "name": "syft:package:foundBy",
+              "value": "go-module-binary-cataloger"
+            },
+            {
+              "name": "syft:package:language",
+              "value": "go"
+            },
+            {
+              "name": "syft:package:type",
+              "value": "go-module"
+            },
+            {
+              "name": "syft:package:metadataType",
+              "value": "go-module-buildinfo-entry"
+            },
+            {
+              "name": "syft:location:0:layerID",
+              "value": "sha256:5c773288f8cc5cf423a52330685f5bc3d4036ea673f25dd86d1565ab58c210b5"
+            },
+            {
+              "name": "syft:location:0:path",
+              "value": "/app/opa_scorecard_exporter"
+            },
+            {
+              "name": "syft:metadata:architecture",
+              "value": "amd64"
+            },
+            {
+              "name": "syft:metadata:goCompiledVersion",
+              "value": "go1.18.10"
+            },
+            {
+              "name": "syft:metadata:goCryptoSettings:0",
+              "value": "standard-crypto"
+            },
+            {
+              "name": "syft:metadata:h1Digest",
+              "value": "h1:vVKdlvoWBphwdxWKrFZEuM0kGgGLxUOYcY4U/2Vjg44="
+            },
+            {
+              "name": "syft:metadata:mainModule",
+              "value": "github.com/runyontr/opa-scorecard/exporter-go"
+            }
+          ]
+        },
+        {
+          "type": "library",
+          "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/google.golang.org/protobuf@v1.28.0?package-id=5b4aa5aa3ddf6b0a",
+          "name": "google.golang.org/protobuf",
+          "version": "v1.28.0",
+          "cpe": "cpe:2.3:a:google:protobuf:v1.28.0:*:*:*:*:*:*:*",
+          "purl": "pkg:golang/google.golang.org/protobuf@v1.28.0",
+          "properties": [
+            {
+              "name": "syft:package:foundBy",
+              "value": "go-module-binary-cataloger"
+            },
+            {
+              "name": "syft:package:language",
+              "value": "go"
+            },
+            {
+              "name": "syft:package:type",
+              "value": "go-module"
+            },
+            {
+              "name": "syft:package:metadataType",
+              "value": "go-module-buildinfo-entry"
+            },
+            {
+              "name": "syft:location:0:layerID",
+              "value": "sha256:5c773288f8cc5cf423a52330685f5bc3d4036ea673f25dd86d1565ab58c210b5"
+            },
+            {
+              "name": "syft:location:0:path",
+              "value": "/app/opa_scorecard_exporter"
+            },
+            {
+              "name": "syft:metadata:architecture",
+              "value": "amd64"
+            },
+            {
+              "name": "syft:metadata:goCompiledVersion",
+              "value": "go1.18.10"
+            },
+            {
+              "name": "syft:metadata:goCryptoSettings:0",
+              "value": "standard-crypto"
+            },
+            {
+              "name": "syft:metadata:h1Digest",
+              "value": "h1:w43yiav\u002B6bVFTBQFZX0r7ipe9JQ1QsbMgHwbBziscLw="
+            },
+            {
+              "name": "syft:metadata:mainModule",
+              "value": "github.com/runyontr/opa-scorecard/exporter-go"
+            }
+          ]
+        },
+        {
+          "type": "library",
+          "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/gopkg.in/inf.v0@v0.9.1?package-id=5b66a2d25bd7eed0",
+          "name": "gopkg.in/inf.v0",
+          "version": "v0.9.1",
+          "purl": "pkg:golang/gopkg.in/inf.v0@v0.9.1",
+          "properties": [
+            {
+              "name": "syft:package:foundBy",
+              "value": "go-module-binary-cataloger"
+            },
+            {
+              "name": "syft:package:language",
+              "value": "go"
+            },
+            {
+              "name": "syft:package:type",
+              "value": "go-module"
+            },
+            {
+              "name": "syft:package:metadataType",
+              "value": "go-module-buildinfo-entry"
+            },
+            {
+              "name": "syft:location:0:layerID",
+              "value": "sha256:5c773288f8cc5cf423a52330685f5bc3d4036ea673f25dd86d1565ab58c210b5"
+            },
+            {
+              "name": "syft:location:0:path",
+              "value": "/app/opa_scorecard_exporter"
+            },
+            {
+              "name": "syft:metadata:architecture",
+              "value": "amd64"
+            },
+            {
+              "name": "syft:metadata:goCompiledVersion",
+              "value": "go1.18.10"
+            },
+            {
+              "name": "syft:metadata:goCryptoSettings:0",
+              "value": "standard-crypto"
+            },
+            {
+              "name": "syft:metadata:h1Digest",
+              "value": "h1:73M5CoZyi3ZLMOyDlQh031Cx6N9NDJ2Vvfl76EDAgDc="
+            },
+            {
+              "name": "syft:metadata:mainModule",
+              "value": "github.com/runyontr/opa-scorecard/exporter-go"
+            }
+          ]
+        },
+        {
+          "type": "library",
+          "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/gopkg.in/yaml.v2@v2.4.0?package-id=c4ba077222d7b626",
+          "name": "gopkg.in/yaml.v2",
+          "version": "v2.4.0",
+          "purl": "pkg:golang/gopkg.in/yaml.v2@v2.4.0",
+          "properties": [
+            {
+              "name": "syft:package:foundBy",
+              "value": "go-module-binary-cataloger"
+            },
+            {
+              "name": "syft:package:language",
+              "value": "go"
+            },
+            {
+              "name": "syft:package:type",
+              "value": "go-module"
+            },
+            {
+              "name": "syft:package:metadataType",
+              "value": "go-module-buildinfo-entry"
+            },
+            {
+              "name": "syft:location:0:layerID",
+              "value": "sha256:5c773288f8cc5cf423a52330685f5bc3d4036ea673f25dd86d1565ab58c210b5"
+            },
+            {
+              "name": "syft:location:0:path",
+              "value": "/app/opa_scorecard_exporter"
+            },
+            {
+              "name": "syft:metadata:architecture",
+              "value": "amd64"
+            },
+            {
+              "name": "syft:metadata:goCompiledVersion",
+              "value": "go1.18.10"
+            },
+            {
+              "name": "syft:metadata:goCryptoSettings:0",
+              "value": "standard-crypto"
+            },
+            {
+              "name": "syft:metadata:h1Digest",
+              "value": "h1:D8xgwECY7CYvx\u002BY2n4sBz93Jn9JRvxdiyyo8CTfuKaY="
+            },
+            {
+              "name": "syft:metadata:mainModule",
+              "value": "github.com/runyontr/opa-scorecard/exporter-go"
+            }
+          ]
+        },
+        {
+          "type": "library",
+          "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/gopkg.in/yaml.v3@v3.0.0-20210107192922-496545a6307b?package-id=018009028f59781f",
+          "name": "gopkg.in/yaml.v3",
+          "version": "v3.0.0-20210107192922-496545a6307b",
+          "purl": "pkg:golang/gopkg.in/yaml.v3@v3.0.0-20210107192922-496545a6307b",
+          "properties": [
+            {
+              "name": "syft:package:foundBy",
+              "value": "go-module-binary-cataloger"
+            },
+            {
+              "name": "syft:package:language",
+              "value": "go"
+            },
+            {
+              "name": "syft:package:type",
+              "value": "go-module"
+            },
+            {
+              "name": "syft:package:metadataType",
+              "value": "go-module-buildinfo-entry"
+            },
+            {
+              "name": "syft:location:0:layerID",
+              "value": "sha256:5c773288f8cc5cf423a52330685f5bc3d4036ea673f25dd86d1565ab58c210b5"
+            },
+            {
+              "name": "syft:location:0:path",
+              "value": "/app/opa_scorecard_exporter"
+            },
+            {
+              "name": "syft:metadata:architecture",
+              "value": "amd64"
+            },
+            {
+              "name": "syft:metadata:goCompiledVersion",
+              "value": "go1.18.10"
+            },
+            {
+              "name": "syft:metadata:goCryptoSettings:0",
+              "value": "standard-crypto"
+            },
+            {
+              "name": "syft:metadata:h1Digest",
+              "value": "h1:h8qDotaEPuJATrMmW04NCwg7v22aHH28wwpauUhK9Oo="
+            },
+            {
+              "name": "syft:metadata:mainModule",
+              "value": "github.com/runyontr/opa-scorecard/exporter-go"
+            }
+          ]
+        },
+        {
+          "type": "library",
+          "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/k8s.io/api@v0.24.0?package-id=5195fabc821b8c85",
+          "name": "k8s.io/api",
+          "version": "v0.24.0",
+          "purl": "pkg:golang/k8s.io/api@v0.24.0",
+          "properties": [
+            {
+              "name": "syft:package:foundBy",
+              "value": "go-module-binary-cataloger"
+            },
+            {
+              "name": "syft:package:language",
+              "value": "go"
+            },
+            {
+              "name": "syft:package:type",
+              "value": "go-module"
+            },
+            {
+              "name": "syft:package:metadataType",
+              "value": "go-module-buildinfo-entry"
+            },
+            {
+              "name": "syft:location:0:layerID",
+              "value": "sha256:5c773288f8cc5cf423a52330685f5bc3d4036ea673f25dd86d1565ab58c210b5"
+            },
+            {
+              "name": "syft:location:0:path",
+              "value": "/app/opa_scorecard_exporter"
+            },
+            {
+              "name": "syft:metadata:architecture",
+              "value": "amd64"
+            },
+            {
+              "name": "syft:metadata:goCompiledVersion",
+              "value": "go1.18.10"
+            },
+            {
+              "name": "syft:metadata:goCryptoSettings:0",
+              "value": "standard-crypto"
+            },
+            {
+              "name": "syft:metadata:h1Digest",
+              "value": "h1:J0hann2hfxWr1hinZIDefw7Q96wmCBx6SSB8IY0MdDg="
+            },
+            {
+              "name": "syft:metadata:mainModule",
+              "value": "github.com/runyontr/opa-scorecard/exporter-go"
+            }
+          ]
+        },
+        {
+          "type": "library",
+          "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/k8s.io/apimachinery@v0.24.0?package-id=dcd3d3d77771bdf0",
+          "name": "k8s.io/apimachinery",
+          "version": "v0.24.0",
+          "purl": "pkg:golang/k8s.io/apimachinery@v0.24.0",
+          "properties": [
+            {
+              "name": "syft:package:foundBy",
+              "value": "go-module-binary-cataloger"
+            },
+            {
+              "name": "syft:package:language",
+              "value": "go"
+            },
+            {
+              "name": "syft:package:type",
+              "value": "go-module"
+            },
+            {
+              "name": "syft:package:metadataType",
+              "value": "go-module-buildinfo-entry"
+            },
+            {
+              "name": "syft:location:0:layerID",
+              "value": "sha256:5c773288f8cc5cf423a52330685f5bc3d4036ea673f25dd86d1565ab58c210b5"
+            },
+            {
+              "name": "syft:location:0:path",
+              "value": "/app/opa_scorecard_exporter"
+            },
+            {
+              "name": "syft:metadata:architecture",
+              "value": "amd64"
+            },
+            {
+              "name": "syft:metadata:goCompiledVersion",
+              "value": "go1.18.10"
+            },
+            {
+              "name": "syft:metadata:goCryptoSettings:0",
+              "value": "standard-crypto"
+            },
+            {
+              "name": "syft:metadata:h1Digest",
+              "value": "h1:ydFCyC/DjCvFCHK5OPMKBlxayQytB8pxy8YQInd5UyQ="
+            },
+            {
+              "name": "syft:metadata:mainModule",
+              "value": "github.com/runyontr/opa-scorecard/exporter-go"
+            }
+          ]
+        },
+        {
+          "type": "library",
+          "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/k8s.io/client-go@v0.24.0?package-id=b510368d086aa645",
+          "name": "k8s.io/client-go",
+          "version": "v0.24.0",
+          "purl": "pkg:golang/k8s.io/client-go@v0.24.0",
+          "properties": [
+            {
+              "name": "syft:package:foundBy",
+              "value": "go-module-binary-cataloger"
+            },
+            {
+              "name": "syft:package:language",
+              "value": "go"
+            },
+            {
+              "name": "syft:package:type",
+              "value": "go-module"
+            },
+            {
+              "name": "syft:package:metadataType",
+              "value": "go-module-buildinfo-entry"
+            },
+            {
+              "name": "syft:location:0:layerID",
+              "value": "sha256:5c773288f8cc5cf423a52330685f5bc3d4036ea673f25dd86d1565ab58c210b5"
+            },
+            {
+              "name": "syft:location:0:path",
+              "value": "/app/opa_scorecard_exporter"
+            },
+            {
+              "name": "syft:metadata:architecture",
+              "value": "amd64"
+            },
+            {
+              "name": "syft:metadata:goCompiledVersion",
+              "value": "go1.18.10"
+            },
+            {
+              "name": "syft:metadata:goCryptoSettings:0",
+              "value": "standard-crypto"
+            },
+            {
+              "name": "syft:metadata:h1Digest",
+              "value": "h1:lbE4aB1gTHvYFSwm6eD3OF14NhFDKCejlnsGYlSJe5U="
+            },
+            {
+              "name": "syft:metadata:mainModule",
+              "value": "github.com/runyontr/opa-scorecard/exporter-go"
+            }
+          ]
+        },
+        {
+          "type": "library",
+          "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/k8s.io/klog/v2@v2.60.1?package-id=54fa3308b554323b",
+          "name": "k8s.io/klog/v2",
+          "version": "v2.60.1",
+          "cpe": "cpe:2.3:a:klog:v2:v2.60.1:*:*:*:*:*:*:*",
+          "purl": "pkg:golang/k8s.io/klog/v2@v2.60.1",
+          "properties": [
+            {
+              "name": "syft:package:foundBy",
+              "value": "go-module-binary-cataloger"
+            },
+            {
+              "name": "syft:package:language",
+              "value": "go"
+            },
+            {
+              "name": "syft:package:type",
+              "value": "go-module"
+            },
+            {
+              "name": "syft:package:metadataType",
+              "value": "go-module-buildinfo-entry"
+            },
+            {
+              "name": "syft:location:0:layerID",
+              "value": "sha256:5c773288f8cc5cf423a52330685f5bc3d4036ea673f25dd86d1565ab58c210b5"
+            },
+            {
+              "name": "syft:location:0:path",
+              "value": "/app/opa_scorecard_exporter"
+            },
+            {
+              "name": "syft:metadata:architecture",
+              "value": "amd64"
+            },
+            {
+              "name": "syft:metadata:goCompiledVersion",
+              "value": "go1.18.10"
+            },
+            {
+              "name": "syft:metadata:goCryptoSettings:0",
+              "value": "standard-crypto"
+            },
+            {
+              "name": "syft:metadata:h1Digest",
+              "value": "h1:VW25q3bZx9uE3vvdL6M8ezOX79vA2Aq1nEWLqNQclHc="
+            },
+            {
+              "name": "syft:metadata:mainModule",
+              "value": "github.com/runyontr/opa-scorecard/exporter-go"
+            }
+          ]
+        },
+        {
+          "type": "library",
+          "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/k8s.io/kube-openapi@v0.0.0-20220328201542-3ee0da9b0b42?package-id=0fe93ec064e1bb60",
+          "name": "k8s.io/kube-openapi",
+          "version": "v0.0.0-20220328201542-3ee0da9b0b42",
+          "purl": "pkg:golang/k8s.io/kube-openapi@v0.0.0-20220328201542-3ee0da9b0b42",
+          "properties": [
+            {
+              "name": "syft:package:foundBy",
+              "value": "go-module-binary-cataloger"
+            },
+            {
+              "name": "syft:package:language",
+              "value": "go"
+            },
+            {
+              "name": "syft:package:type",
+              "value": "go-module"
+            },
+            {
+              "name": "syft:package:metadataType",
+              "value": "go-module-buildinfo-entry"
+            },
+            {
+              "name": "syft:location:0:layerID",
+              "value": "sha256:5c773288f8cc5cf423a52330685f5bc3d4036ea673f25dd86d1565ab58c210b5"
+            },
+            {
+              "name": "syft:location:0:path",
+              "value": "/app/opa_scorecard_exporter"
+            },
+            {
+              "name": "syft:metadata:architecture",
+              "value": "amd64"
+            },
+            {
+              "name": "syft:metadata:goCompiledVersion",
+              "value": "go1.18.10"
+            },
+            {
+              "name": "syft:metadata:goCryptoSettings:0",
+              "value": "standard-crypto"
+            },
+            {
+              "name": "syft:metadata:h1Digest",
+              "value": "h1:Gii5eqf\u002BGmIEwGNKQYQClCayuJCe2/4fZUvF7VG99sU="
+            },
+            {
+              "name": "syft:metadata:mainModule",
+              "value": "github.com/runyontr/opa-scorecard/exporter-go"
+            }
+          ]
+        },
+        {
+          "type": "library",
+          "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/k8s.io/utils@v0.0.0-20220210201930-3a6ce19ff2f9?package-id=0218df570f1fba31",
+          "name": "k8s.io/utils",
+          "version": "v0.0.0-20220210201930-3a6ce19ff2f9",
+          "purl": "pkg:golang/k8s.io/utils@v0.0.0-20220210201930-3a6ce19ff2f9",
+          "properties": [
+            {
+              "name": "syft:package:foundBy",
+              "value": "go-module-binary-cataloger"
+            },
+            {
+              "name": "syft:package:language",
+              "value": "go"
+            },
+            {
+              "name": "syft:package:type",
+              "value": "go-module"
+            },
+            {
+              "name": "syft:package:metadataType",
+              "value": "go-module-buildinfo-entry"
+            },
+            {
+              "name": "syft:location:0:layerID",
+              "value": "sha256:5c773288f8cc5cf423a52330685f5bc3d4036ea673f25dd86d1565ab58c210b5"
+            },
+            {
+              "name": "syft:location:0:path",
+              "value": "/app/opa_scorecard_exporter"
+            },
+            {
+              "name": "syft:metadata:architecture",
+              "value": "amd64"
+            },
+            {
+              "name": "syft:metadata:goCompiledVersion",
+              "value": "go1.18.10"
+            },
+            {
+              "name": "syft:metadata:goCryptoSettings:0",
+              "value": "standard-crypto"
+            },
+            {
+              "name": "syft:metadata:h1Digest",
+              "value": "h1:HNSDgDCrr/6Ly3WEGKZftiE7IY19Vz2GdbOCyI4qqhc="
+            },
+            {
+              "name": "syft:metadata:mainModule",
+              "value": "github.com/runyontr/opa-scorecard/exporter-go"
+            }
+          ]
+        },
+        {
+          "type": "library",
+          "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:deb/debian/libc6@2.36-9\u002Bdeb12u4?arch=amd64\u0026upstream=glibc\u0026distro=debian-12\u0026package-id=9bbee5a9c682c997",
+          "publisher": "GNU Libc Maintainers \u003Cdebian-glibc@lists.debian.org\u003E",
+          "name": "libc6",
+          "version": "2.36-9\u002Bdeb12u4",
+          "licenses": [
+            {
+              "license": {
+                "id": "GPL-2.0-only"
+              }
+            },
+            {
+              "license": {
+                "id": "LGPL-2.1-only"
+              }
+            }
+          ],
+          "cpe": "cpe:2.3:a:libc6:libc6:2.36-9\\\u002Bdeb12u4:*:*:*:*:*:*:*",
+          "purl": "pkg:deb/debian/libc6@2.36-9\u002Bdeb12u4?arch=amd64\u0026upstream=glibc\u0026distro=debian-12",
+          "properties": [
+            {
+              "name": "syft:package:foundBy",
+              "value": "dpkg-db-cataloger"
+            },
+            {
+              "name": "syft:package:type",
+              "value": "deb"
+            },
+            {
+              "name": "syft:package:metadataType",
+              "value": "dpkg-db-entry"
+            },
+            {
+              "name": "syft:location:0:layerID",
+              "value": "sha256:54a7f7f831d9141c04609a2aeb4550f4e021a7de13af6663c66da30ac52c72ac"
+            },
+            {
+              "name": "syft:location:0:path",
+              "value": "/usr/share/doc/libc6/copyright"
+            },
+            {
+              "name": "syft:location:1:layerID",
+              "value": "sha256:54a7f7f831d9141c04609a2aeb4550f4e021a7de13af6663c66da30ac52c72ac"
+            },
+            {
+              "name": "syft:location:1:path",
+              "value": "/var/lib/dpkg/status.d/libc6"
+            },
+            {
+              "name": "syft:location:2:layerID",
+              "value": "sha256:54a7f7f831d9141c04609a2aeb4550f4e021a7de13af6663c66da30ac52c72ac"
+            },
+            {
+              "name": "syft:location:2:path",
+              "value": "/var/lib/dpkg/status.d/libc6.md5sums"
+            },
+            {
+              "name": "syft:metadata:installedSize",
+              "value": "12986"
+            },
+            {
+              "name": "syft:metadata:source",
+              "value": "glibc"
+            }
+          ]
+        },
+        {
+          "type": "library",
+          "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:deb/debian/libssl3@3.0.11-1~deb12u2?arch=amd64\u0026upstream=openssl\u0026distro=debian-12\u0026package-id=493d152080fcee4e",
+          "publisher": "Debian OpenSSL Team \u003Cpkg-openssl-devel@alioth-lists.debian.net\u003E",
+          "name": "libssl3",
+          "version": "3.0.11-1~deb12u2",
+          "licenses": [
+            {
+              "license": {
+                "id": "Apache-2.0"
+              }
+            },
+            {
+              "license": {
+                "id": "GPL-1.0-only"
+              }
+            },
+            {
+              "license": {
+                "id": "GPL-1.0-or-later"
+              }
+            },
+            {
+              "license": {
+                "name": "Artistic"
+              }
+            }
+          ],
+          "cpe": "cpe:2.3:a:libssl3:libssl3:3.0.11-1\\~deb12u2:*:*:*:*:*:*:*",
+          "purl": "pkg:deb/debian/libssl3@3.0.11-1~deb12u2?arch=amd64\u0026upstream=openssl\u0026distro=debian-12",
+          "properties": [
+            {
+              "name": "syft:package:foundBy",
+              "value": "dpkg-db-cataloger"
+            },
+            {
+              "name": "syft:package:type",
+              "value": "deb"
+            },
+            {
+              "name": "syft:package:metadataType",
+              "value": "dpkg-db-entry"
+            },
+            {
+              "name": "syft:location:0:layerID",
+              "value": "sha256:4abacc923ad4b46c14853c6b384ac384fbf178b7f23a15dfc1dbfb20308d4bc0"
+            },
+            {
+              "name": "syft:location:0:path",
+              "value": "/usr/share/doc/libssl3/copyright"
+            },
+            {
+              "name": "syft:location:1:layerID",
+              "value": "sha256:4abacc923ad4b46c14853c6b384ac384fbf178b7f23a15dfc1dbfb20308d4bc0"
+            },
+            {
+              "name": "syft:location:1:path",
+              "value": "/var/lib/dpkg/status.d/libssl3"
+            },
+            {
+              "name": "syft:location:2:layerID",
+              "value": "sha256:4abacc923ad4b46c14853c6b384ac384fbf178b7f23a15dfc1dbfb20308d4bc0"
+            },
+            {
+              "name": "syft:location:2:path",
+              "value": "/var/lib/dpkg/status.d/libssl3.md5sums"
+            },
+            {
+              "name": "syft:metadata:installedSize",
+              "value": "6010"
+            },
+            {
+              "name": "syft:metadata:source",
+              "value": "openssl"
+            }
+          ]
+        },
+        {
+          "type": "library",
+          "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:deb/debian/netbase@6.4?arch=all\u0026distro=debian-12\u0026package-id=4939fc774fcd360e",
+          "publisher": "Marco d\u0027Itri \u003Cmd@linux.it\u003E",
+          "name": "netbase",
+          "version": "6.4",
+          "licenses": [
+            {
+              "license": {
+                "id": "GPL-2.0-only"
+              }
+            }
+          ],
+          "cpe": "cpe:2.3:a:netbase:netbase:6.4:*:*:*:*:*:*:*",
+          "purl": "pkg:deb/debian/netbase@6.4?arch=all\u0026distro=debian-12",
+          "properties": [
+            {
+              "name": "syft:package:foundBy",
+              "value": "dpkg-db-cataloger"
+            },
+            {
+              "name": "syft:package:type",
+              "value": "deb"
+            },
+            {
+              "name": "syft:package:metadataType",
+              "value": "dpkg-db-entry"
+            },
+            {
+              "name": "syft:location:0:layerID",
+              "value": "sha256:10e9b9e72178b3e5fe8ff566a61eefb03ad585f5eae5cc0f2b08dbe3c874cecb"
+            },
+            {
+              "name": "syft:location:0:path",
+              "value": "/usr/share/doc/netbase/copyright"
+            },
+            {
+              "name": "syft:location:1:layerID",
+              "value": "sha256:10e9b9e72178b3e5fe8ff566a61eefb03ad585f5eae5cc0f2b08dbe3c874cecb"
+            },
+            {
+              "name": "syft:location:1:path",
+              "value": "/var/lib/dpkg/status.d/netbase"
+            },
+            {
+              "name": "syft:location:2:layerID",
+              "value": "sha256:10e9b9e72178b3e5fe8ff566a61eefb03ad585f5eae5cc0f2b08dbe3c874cecb"
+            },
+            {
+              "name": "syft:location:2:path",
+              "value": "/var/lib/dpkg/status.d/netbase.md5sums"
+            },
+            {
+              "name": "syft:metadata:installedSize",
+              "value": "36"
+            }
+          ]
+        },
+        {
+          "type": "library",
+          "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/sigs.k8s.io/controller-runtime@v0.8.3?package-id=0cfc6d3b4d5e252b",
+          "name": "sigs.k8s.io/controller-runtime",
+          "version": "v0.8.3",
+          "purl": "pkg:golang/sigs.k8s.io/controller-runtime@v0.8.3",
+          "properties": [
+            {
+              "name": "syft:package:foundBy",
+              "value": "go-module-binary-cataloger"
+            },
+            {
+              "name": "syft:package:language",
+              "value": "go"
+            },
+            {
+              "name": "syft:package:type",
+              "value": "go-module"
+            },
+            {
+              "name": "syft:package:metadataType",
+              "value": "go-module-buildinfo-entry"
+            },
+            {
+              "name": "syft:location:0:layerID",
+              "value": "sha256:5c773288f8cc5cf423a52330685f5bc3d4036ea673f25dd86d1565ab58c210b5"
+            },
+            {
+              "name": "syft:location:0:path",
+              "value": "/app/opa_scorecard_exporter"
+            },
+            {
+              "name": "syft:metadata:architecture",
+              "value": "amd64"
+            },
+            {
+              "name": "syft:metadata:goCompiledVersion",
+              "value": "go1.18.10"
+            },
+            {
+              "name": "syft:metadata:goCryptoSettings:0",
+              "value": "standard-crypto"
+            },
+            {
+              "name": "syft:metadata:h1Digest",
+              "value": "h1:GMHvzjTmaWHQB8HadW\u002BdIvBoJuLvZObYJ5YoZruPRao="
+            },
+            {
+              "name": "syft:metadata:mainModule",
+              "value": "github.com/runyontr/opa-scorecard/exporter-go"
+            }
+          ]
+        },
+        {
+          "type": "library",
+          "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/sigs.k8s.io/json@v0.0.0-20211208200746-9f7c6b3444d2?package-id=4527b967d3c2f58c",
+          "name": "sigs.k8s.io/json",
+          "version": "v0.0.0-20211208200746-9f7c6b3444d2",
+          "purl": "pkg:golang/sigs.k8s.io/json@v0.0.0-20211208200746-9f7c6b3444d2",
+          "properties": [
+            {
+              "name": "syft:package:foundBy",
+              "value": "go-module-binary-cataloger"
+            },
+            {
+              "name": "syft:package:language",
+              "value": "go"
+            },
+            {
+              "name": "syft:package:type",
+              "value": "go-module"
+            },
+            {
+              "name": "syft:package:metadataType",
+              "value": "go-module-buildinfo-entry"
+            },
+            {
+              "name": "syft:location:0:layerID",
+              "value": "sha256:5c773288f8cc5cf423a52330685f5bc3d4036ea673f25dd86d1565ab58c210b5"
+            },
+            {
+              "name": "syft:location:0:path",
+              "value": "/app/opa_scorecard_exporter"
+            },
+            {
+              "name": "syft:metadata:architecture",
+              "value": "amd64"
+            },
+            {
+              "name": "syft:metadata:goCompiledVersion",
+              "value": "go1.18.10"
+            },
+            {
+              "name": "syft:metadata:goCryptoSettings:0",
+              "value": "standard-crypto"
+            },
+            {
+              "name": "syft:metadata:h1Digest",
+              "value": "h1:kDi4JBNAsJWfz1aEXhO8Jg87JJaPNLh5tIzYHgStQ9Y="
+            },
+            {
+              "name": "syft:metadata:mainModule",
+              "value": "github.com/runyontr/opa-scorecard/exporter-go"
+            }
+          ]
+        },
+        {
+          "type": "library",
+          "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/sigs.k8s.io/structured-merge-diff/v4@v4.2.1?package-id=1abc2017f7f92bda",
+          "name": "sigs.k8s.io/structured-merge-diff/v4",
+          "version": "v4.2.1",
+          "cpe": "cpe:2.3:a:structured-merge-diff:v4:v4.2.1:*:*:*:*:*:*:*",
+          "purl": "pkg:golang/sigs.k8s.io/structured-merge-diff/v4@v4.2.1",
+          "properties": [
+            {
+              "name": "syft:package:foundBy",
+              "value": "go-module-binary-cataloger"
+            },
+            {
+              "name": "syft:package:language",
+              "value": "go"
+            },
+            {
+              "name": "syft:package:type",
+              "value": "go-module"
+            },
+            {
+              "name": "syft:package:metadataType",
+              "value": "go-module-buildinfo-entry"
+            },
+            {
+              "name": "syft:cpe23",
+              "value": "cpe:2.3:a:structured_merge_diff:v4:v4.2.1:*:*:*:*:*:*:*"
+            },
+            {
+              "name": "syft:cpe23",
+              "value": "cpe:2.3:a:structured-merge:v4:v4.2.1:*:*:*:*:*:*:*"
+            },
+            {
+              "name": "syft:cpe23",
+              "value": "cpe:2.3:a:structured_merge:v4:v4.2.1:*:*:*:*:*:*:*"
+            },
+            {
+              "name": "syft:cpe23",
+              "value": "cpe:2.3:a:structured:v4:v4.2.1:*:*:*:*:*:*:*"
+            },
+            {
+              "name": "syft:location:0:layerID",
+              "value": "sha256:5c773288f8cc5cf423a52330685f5bc3d4036ea673f25dd86d1565ab58c210b5"
+            },
+            {
+              "name": "syft:location:0:path",
+              "value": "/app/opa_scorecard_exporter"
+            },
+            {
+              "name": "syft:metadata:architecture",
+              "value": "amd64"
+            },
+            {
+              "name": "syft:metadata:goCompiledVersion",
+              "value": "go1.18.10"
+            },
+            {
+              "name": "syft:metadata:goCryptoSettings:0",
+              "value": "standard-crypto"
+            },
+            {
+              "name": "syft:metadata:h1Digest",
+              "value": "h1:bKCqE9GvQ5tiVHn5rfn1r\u002Byao3aLQEaLzkkmAkf\u002BA6Y="
+            },
+            {
+              "name": "syft:metadata:mainModule",
+              "value": "github.com/runyontr/opa-scorecard/exporter-go"
+            }
+          ]
+        },
+        {
+          "type": "library",
+          "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/sigs.k8s.io/yaml@v1.2.0?package-id=d5fb98f866d8644e",
+          "name": "sigs.k8s.io/yaml",
+          "version": "v1.2.0",
+          "purl": "pkg:golang/sigs.k8s.io/yaml@v1.2.0",
+          "properties": [
+            {
+              "name": "syft:package:foundBy",
+              "value": "go-module-binary-cataloger"
+            },
+            {
+              "name": "syft:package:language",
+              "value": "go"
+            },
+            {
+              "name": "syft:package:type",
+              "value": "go-module"
+            },
+            {
+              "name": "syft:package:metadataType",
+              "value": "go-module-buildinfo-entry"
+            },
+            {
+              "name": "syft:location:0:layerID",
+              "value": "sha256:5c773288f8cc5cf423a52330685f5bc3d4036ea673f25dd86d1565ab58c210b5"
+            },
+            {
+              "name": "syft:location:0:path",
+              "value": "/app/opa_scorecard_exporter"
+            },
+            {
+              "name": "syft:metadata:architecture",
+              "value": "amd64"
+            },
+            {
+              "name": "syft:metadata:goCompiledVersion",
+              "value": "go1.18.10"
+            },
+            {
+              "name": "syft:metadata:goCryptoSettings:0",
+              "value": "standard-crypto"
+            },
+            {
+              "name": "syft:metadata:h1Digest",
+              "value": "h1:kr/MCeFWJWTwyaHoR9c8EjH9OumOmoF9YGiZd7lFm/Q="
+            },
+            {
+              "name": "syft:metadata:mainModule",
+              "value": "github.com/runyontr/opa-scorecard/exporter-go"
+            }
+          ]
+        },
+        {
+          "type": "library",
+          "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/stdlib@1.18.10?package-id=48382da774f35ecf",
+          "name": "stdlib",
+          "version": "go1.18.10",
+          "licenses": [
+            {
+              "license": {
+                "id": "BSD-3-Clause"
+              }
+            }
+          ],
+          "cpe": "cpe:2.3:a:golang:go:1.18.10:-:*:*:*:*:*:*",
+          "purl": "pkg:golang/stdlib@1.18.10",
+          "properties": [
+            {
+              "name": "syft:package:language",
+              "value": "go"
+            },
+            {
+              "name": "syft:package:type",
+              "value": "go-module"
+            },
+            {
+              "name": "syft:package:metadataType",
+              "value": "go-module-buildinfo-entry"
+            },
+            {
+              "name": "syft:location:0:layerID",
+              "value": "sha256:5c773288f8cc5cf423a52330685f5bc3d4036ea673f25dd86d1565ab58c210b5"
+            },
+            {
+              "name": "syft:location:0:path",
+              "value": "/app/opa_scorecard_exporter"
+            },
+            {
+              "name": "syft:metadata:goCompiledVersion",
+              "value": "go1.18.10"
+            }
+          ]
+        },
+        {
+          "type": "library",
+          "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:deb/debian/tzdata@2023c-5\u002Bdeb12u1?arch=all\u0026distro=debian-12\u0026package-id=0e58094e2b51ea52",
+          "publisher": "GNU Libc Maintainers \u003Cdebian-glibc@lists.debian.org\u003E",
+          "name": "tzdata",
+          "version": "2023c-5\u002Bdeb12u1",
+          "licenses": [
+            {
+              "license": {
+                "name": "public-domain"
+              }
+            }
+          ],
+          "cpe": "cpe:2.3:a:tzdata:tzdata:2023c-5\\\u002Bdeb12u1:*:*:*:*:*:*:*",
+          "purl": "pkg:deb/debian/tzdata@2023c-5\u002Bdeb12u1?arch=all\u0026distro=debian-12",
+          "properties": [
+            {
+              "name": "syft:package:foundBy",
+              "value": "dpkg-db-cataloger"
+            },
+            {
+              "name": "syft:package:type",
+              "value": "deb"
+            },
+            {
+              "name": "syft:package:metadataType",
+              "value": "dpkg-db-entry"
+            },
+            {
+              "name": "syft:location:0:layerID",
+              "value": "sha256:6f1e3682d66abd0d92095699687c4c9a03b87f68a65b5dd9b79a4c1e87309936"
+            },
+            {
+              "name": "syft:location:0:path",
+              "value": "/usr/share/doc/tzdata/copyright"
+            },
+            {
+              "name": "syft:location:1:layerID",
+              "value": "sha256:6f1e3682d66abd0d92095699687c4c9a03b87f68a65b5dd9b79a4c1e87309936"
+            },
+            {
+              "name": "syft:location:1:path",
+              "value": "/var/lib/dpkg/status.d/tzdata"
+            },
+            {
+              "name": "syft:location:2:layerID",
+              "value": "sha256:6f1e3682d66abd0d92095699687c4c9a03b87f68a65b5dd9b79a4c1e87309936"
+            },
+            {
+              "name": "syft:location:2:path",
+              "value": "/var/lib/dpkg/status.d/tzdata.md5sums"
+            },
+            {
+              "name": "syft:metadata:installedSize",
+              "value": "2550"
+            }
+          ]
+        },
+        {
+          "type": "operating-system",
+          "name": "debian",
+          "version": "12",
+          "description": "Distroless",
+          "swid": {
+            "tagId": "debian",
+            "name": "debian",
+            "version": "12",
+            "tagVersion": 0,
+            "patch": false
+          },
+          "externalReferences": [
+            {
+              "url": "https://github.com/GoogleContainerTools/distroless/issues/new",
+              "type": "issue-tracker"
+            },
+            {
+              "url": "https://github.com/GoogleContainerTools/distroless",
+              "type": "website"
+            },
+            {
+              "url": "https://github.com/GoogleContainerTools/distroless/blob/master/README.md",
+              "type": "other",
+              "comment": "support"
+            }
+          ],
+          "properties": [
+            {
+              "name": "syft:distro:id",
+              "value": "debian"
+            },
+            {
+              "name": "syft:distro:prettyName",
+              "value": "Distroless"
+            },
+            {
+              "name": "syft:distro:versionID",
+              "value": "12"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "dependencies": [
+    {
+      "ref": "cluster-auditor@0.0.1",
+      "dependsOn": [
+        "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:3f8968dcb5b41b5f"
+      ]
+    }
+  ]
+}
