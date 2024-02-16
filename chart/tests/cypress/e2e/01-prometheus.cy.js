@@ -6,10 +6,6 @@ describe('Prometheus Targets', {
 }, () => {
     it('Validate opa exporter metrics are scraped', function() {
       cy.visit(`${Cypress.env('prometheus_url')}/targets`)
-      cy.get('button:contains("cluster-auditor\/opa-exporter\/0")')
-        .click({force: true})
-      cy.get('a[href*="cluster-auditor\/opa-exporter\/0"]')
-        .should('be.visible')
-        .and('contain', '(1/1 up)')
+      cy.validatePromTarget('cluster-auditor\/opa-exporter\/0', '(1/1 up)' )
     })
 })

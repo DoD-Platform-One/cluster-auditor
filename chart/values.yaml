@@ -96,3 +96,4 @@ bbtests:
       # violations over time graph
       cypress_graph_allownodata: '2'
       cypress_reporter_ns: cluster-auditor
+      cypress_check_datasource: "false"
