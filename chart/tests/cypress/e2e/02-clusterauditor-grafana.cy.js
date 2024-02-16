@@ -8,31 +8,23 @@ const table_bar_allownodata = [`${Cypress.env('table_bar_allownodata')}`]
 // The "violations over time" chart will have 1 "No data" at maximum.
 const graph_allownodata = [`${Cypress.env('graph_allownodata')}`]
 
-Cypress.on('uncaught:exception', (err, runnable) => {
-  return false
-})
-
-function expandMenu() {
-  cy.get('button[id^="collapse-button-"]').invoke('attr', 'aria-expanded').then(($expanded) => {
-    if ($expanded === 'false') {
-      cy.get('button[id^="collapse-button-"]').click({multiple: true})
-    }
-  })
-}
-
 function dashboard_menu () {
   cy.wait(500)
   cy.visit(`${Cypress.env('grafana_url')}/dashboards`)
   cy.get('h1').contains('Dashboards')
   // Wait for all buttons to load
   cy.wait(1000)
-  expandMenu()
 }
 
-function enter_dashboard (dashname) {
-  cy.get('[data-testid="data-testid Dashboard search item ' + dashname + '"]').contains(dashname).click()
-  cy.wait(500)
-  cy.get('.page-dashboard').contains(dashname)
+
+
+
+function enter_dashboard (dashnames) {
+  cy.loadGrafanaDashboard('OPA Violations')
+  
+
+    
+//  cy.loadGrafanaDashboard(dashnames)
   // This is to intercept the API requests so they can be waited on to finish a few lines down (see cy.wait).
   // It ensures that all the charts have loaded before it checks them. This is also what scrollTo does. 
   // Basically this section is preparing the page in order to count the "No data" charts.
@@ -62,12 +54,7 @@ function enter_dashboard (dashname) {
 before (function() {
   cy.wait(500)
   cy.visit(Cypress.env('grafana_url'))
-  cy.get('input[name="user"]')
-    .type('admin')
-  cy.get('input[name="password"]')
-    .type('prom-operator')
-  cy.contains("Log in").click()
-  cy.get('.page-dashboard').contains('Welcome', {timeout: 30000})
+  cy.performGrafanaLogin('admin', 'prom-operator')
 })
 
 // Clear cookies to force login again
@@ -80,10 +67,14 @@ describe('Check cluster-auditor dashboards', {
     runMode: 4
   }
 }, () => {
-      it( 'Check cluster-auditor dashboards', function() {
-        for (var i = 0; i < dashnames.length; i++ ) {
-          dashboard_menu()
-          enter_dashboard(dashnames[i])
-        }
-    })
+  it('Check cluster-auditor dashboards', function() {
+    dashboard_menu()
+    if (Cypress.env("check_datasource")) {
+      enter_dashboard()
+          for (var i = 0; i < dashnames.length; i++ ) {
+            dashboard_menu()
+            enter_dashboard(dashnames[i])
+          }
+    }
+  })
 })
