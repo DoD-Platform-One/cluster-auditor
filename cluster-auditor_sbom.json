@@ -1,7 +1,7 @@
 {
   "bomFormat": "CycloneDX",
   "specVersion": "1.5",
-  "serialNumber": "urn:uuid:ce276926-8b9c-492c-ab45-a1c9da15fdfe",
+  "serialNumber": "urn:uuid:613048b7-ba88-4f12-8afd-298f27ed2c83",
   "version": 1,
   "metadata": {
     "tools": null,
@@ -15,7 +15,7 @@
   "components": [
     {
       "type": "container",
-      "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:4c18fd5df5b292c9",
+      "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:a6f81a77d4dce5cf",
       "name": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter",
       "version": "v0.0.7",
       "components": [
@@ -99,7 +99,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/github.com/puerkitobio/purell@v1.1.1?package-id=fc66a2d63623bccf",
+          "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/github.com/puerkitobio/purell@v1.1.1?package-id=c234e71c6db51dd9",
           "name": "github.com/PuerkitoBio/purell",
           "version": "v1.1.1",
           "cpe": "cpe:2.3:a:PuerkitoBio:purell:v1.1.1:*:*:*:*:*:*:*",
@@ -123,7 +123,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:44e2451d0fbc1b832a847cadd67b2660b140838a6291375425ef7f1de829ea40"
+              "value": "sha256:3e8d3c76657e32a1e8339028c7d35301d4cb5c69ffd349590d90ada4fec3ea39"
             },
             {
               "name": "syft:location:0:path",
@@ -153,7 +153,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/github.com/puerkitobio/urlesc@v0.0.0-20170810143723-de5bf2ad4578?package-id=7b0308649c8db52c",
+          "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/github.com/puerkitobio/urlesc@v0.0.0-20170810143723-de5bf2ad4578?package-id=8a5df594d69d2ded",
           "name": "github.com/PuerkitoBio/urlesc",
           "version": "v0.0.0-20170810143723-de5bf2ad4578",
           "cpe": "cpe:2.3:a:PuerkitoBio:urlesc:v0.0.0-20170810143723-de5bf2ad4578:*:*:*:*:*:*:*",
@@ -177,7 +177,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:44e2451d0fbc1b832a847cadd67b2660b140838a6291375425ef7f1de829ea40"
+              "value": "sha256:3e8d3c76657e32a1e8339028c7d35301d4cb5c69ffd349590d90ada4fec3ea39"
             },
             {
               "name": "syft:location:0:path",
@@ -207,7 +207,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/github.com/beorn7/perks@v1.0.1?package-id=31d6e703ff88b39c",
+          "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/github.com/beorn7/perks@v1.0.1?package-id=a2c3fa9be96fd1ba",
           "name": "github.com/beorn7/perks",
           "version": "v1.0.1",
           "cpe": "cpe:2.3:a:beorn7:perks:v1.0.1:*:*:*:*:*:*:*",
@@ -231,7 +231,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:44e2451d0fbc1b832a847cadd67b2660b140838a6291375425ef7f1de829ea40"
+              "value": "sha256:3e8d3c76657e32a1e8339028c7d35301d4cb5c69ffd349590d90ada4fec3ea39"
             },
             {
               "name": "syft:location:0:path",
@@ -261,7 +261,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/github.com/cespare/xxhash@v2.1.2?package-id=a550a55196b9af34#v2",
+          "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/github.com/cespare/xxhash@v2.1.2?package-id=734bee1e0ede4a1d#v2",
           "name": "github.com/cespare/xxhash/v2",
           "version": "v2.1.2",
           "cpe": "cpe:2.3:a:cespare:xxhash\\/v2:v2.1.2:*:*:*:*:*:*:*",
@@ -285,7 +285,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:44e2451d0fbc1b832a847cadd67b2660b140838a6291375425ef7f1de829ea40"
+              "value": "sha256:3e8d3c76657e32a1e8339028c7d35301d4cb5c69ffd349590d90ada4fec3ea39"
             },
             {
               "name": "syft:location:0:path",
@@ -315,7 +315,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/github.com/davecgh/go-spew@v1.1.1?package-id=21dfdd9cfdaa76dc",
+          "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/github.com/davecgh/go-spew@v1.1.1?package-id=eb5b52bcd8d4a5b6",
           "name": "github.com/davecgh/go-spew",
           "version": "v1.1.1",
           "cpe": "cpe:2.3:a:davecgh:go-spew:v1.1.1:*:*:*:*:*:*:*",
@@ -343,7 +343,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:44e2451d0fbc1b832a847cadd67b2660b140838a6291375425ef7f1de829ea40"
+              "value": "sha256:3e8d3c76657e32a1e8339028c7d35301d4cb5c69ffd349590d90ada4fec3ea39"
             },
             {
               "name": "syft:location:0:path",
@@ -373,7 +373,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/github.com/emicklei/go-restful@v2.9.5%2Bincompatible?package-id=949b0a005565d5f9",
+          "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/github.com/emicklei/go-restful@v2.9.5%2Bincompatible?package-id=e79794521ecae047",
           "name": "github.com/emicklei/go-restful",
           "version": "v2.9.5\u002Bincompatible",
           "cpe": "cpe:2.3:a:emicklei:go-restful:v2.9.5\\\u002Bincompatible:*:*:*:*:*:*:*",
@@ -401,7 +401,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:44e2451d0fbc1b832a847cadd67b2660b140838a6291375425ef7f1de829ea40"
+              "value": "sha256:3e8d3c76657e32a1e8339028c7d35301d4cb5c69ffd349590d90ada4fec3ea39"
             },
             {
               "name": "syft:location:0:path",
@@ -431,7 +431,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/github.com/evanphx/json-patch@v4.12.0%2Bincompatible?package-id=868383528a1065e1",
+          "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/github.com/evanphx/json-patch@v4.12.0%2Bincompatible?package-id=deaac2251db67e00",
           "name": "github.com/evanphx/json-patch",
           "version": "v4.12.0\u002Bincompatible",
           "cpe": "cpe:2.3:a:evanphx:json-patch:v4.12.0\\\u002Bincompatible:*:*:*:*:*:*:*",
@@ -459,7 +459,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:44e2451d0fbc1b832a847cadd67b2660b140838a6291375425ef7f1de829ea40"
+              "value": "sha256:3e8d3c76657e32a1e8339028c7d35301d4cb5c69ffd349590d90ada4fec3ea39"
             },
             {
               "name": "syft:location:0:path",
@@ -489,7 +489,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/github.com/go-logr/logr@v1.2.0?package-id=1c053d678a0a677d",
+          "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/github.com/go-logr/logr@v1.2.0?package-id=97585d8d899fe6cd",
           "name": "github.com/go-logr/logr",
           "version": "v1.2.0",
           "cpe": "cpe:2.3:a:go-logr:logr:v1.2.0:*:*:*:*:*:*:*",
@@ -521,7 +521,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:44e2451d0fbc1b832a847cadd67b2660b140838a6291375425ef7f1de829ea40"
+              "value": "sha256:3e8d3c76657e32a1e8339028c7d35301d4cb5c69ffd349590d90ada4fec3ea39"
             },
             {
               "name": "syft:location:0:path",
@@ -551,7 +551,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/github.com/go-openapi/jsonpointer@v0.19.5?package-id=0d187fca98376222",
+          "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/github.com/go-openapi/jsonpointer@v0.19.5?package-id=81a9aeaad2089ca2",
           "name": "github.com/go-openapi/jsonpointer",
           "version": "v0.19.5",
           "cpe": "cpe:2.3:a:go-openapi:jsonpointer:v0.19.5:*:*:*:*:*:*:*",
@@ -583,7 +583,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:44e2451d0fbc1b832a847cadd67b2660b140838a6291375425ef7f1de829ea40"
+              "value": "sha256:3e8d3c76657e32a1e8339028c7d35301d4cb5c69ffd349590d90ada4fec3ea39"
             },
             {
               "name": "syft:location:0:path",
@@ -613,7 +613,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/github.com/go-openapi/jsonreference@v0.19.5?package-id=921ddd9c26bc21ee",
+          "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/github.com/go-openapi/jsonreference@v0.19.5?package-id=7305f4270d664ce6",
           "name": "github.com/go-openapi/jsonreference",
           "version": "v0.19.5",
           "cpe": "cpe:2.3:a:go-openapi:jsonreference:v0.19.5:*:*:*:*:*:*:*",
@@ -645,7 +645,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:44e2451d0fbc1b832a847cadd67b2660b140838a6291375425ef7f1de829ea40"
+              "value": "sha256:3e8d3c76657e32a1e8339028c7d35301d4cb5c69ffd349590d90ada4fec3ea39"
             },
             {
               "name": "syft:location:0:path",
@@ -675,7 +675,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/github.com/go-openapi/swag@v0.19.14?package-id=254876cf6b0bb3f7",
+          "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/github.com/go-openapi/swag@v0.19.14?package-id=88fd6c2f01f76086",
           "name": "github.com/go-openapi/swag",
           "version": "v0.19.14",
           "cpe": "cpe:2.3:a:go-openapi:swag:v0.19.14:*:*:*:*:*:*:*",
@@ -707,7 +707,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:44e2451d0fbc1b832a847cadd67b2660b140838a6291375425ef7f1de829ea40"
+              "value": "sha256:3e8d3c76657e32a1e8339028c7d35301d4cb5c69ffd349590d90ada4fec3ea39"
             },
             {
               "name": "syft:location:0:path",
@@ -737,7 +737,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/github.com/gogo/protobuf@v1.3.2?package-id=a92d1e4b6e0d4e57",
+          "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/github.com/gogo/protobuf@v1.3.2?package-id=53b48c1f144843fd",
           "name": "github.com/gogo/protobuf",
           "version": "v1.3.2",
           "cpe": "cpe:2.3:a:gogo:protobuf:v1.3.2:*:*:*:*:*:*:*",
@@ -761,7 +761,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:44e2451d0fbc1b832a847cadd67b2660b140838a6291375425ef7f1de829ea40"
+              "value": "sha256:3e8d3c76657e32a1e8339028c7d35301d4cb5c69ffd349590d90ada4fec3ea39"
             },
             {
               "name": "syft:location:0:path",
@@ -791,7 +791,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/github.com/golang/protobuf@v1.5.2?package-id=3e8987a0d4dc40a6",
+          "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/github.com/golang/protobuf@v1.5.2?package-id=d9483673009e3d14",
           "name": "github.com/golang/protobuf",
           "version": "v1.5.2",
           "cpe": "cpe:2.3:a:golang:protobuf:v1.5.2:*:*:*:*:*:*:*",
@@ -815,7 +815,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:44e2451d0fbc1b832a847cadd67b2660b140838a6291375425ef7f1de829ea40"
+              "value": "sha256:3e8d3c76657e32a1e8339028c7d35301d4cb5c69ffd349590d90ada4fec3ea39"
             },
             {
               "name": "syft:location:0:path",
@@ -845,7 +845,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/github.com/google/gnostic@v0.5.7-v3refs?package-id=0ba6b5efb572b8c1",
+          "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/github.com/google/gnostic@v0.5.7-v3refs?package-id=9fb865e1b28066fa",
           "name": "github.com/google/gnostic",
           "version": "v0.5.7-v3refs",
           "cpe": "cpe:2.3:a:google:gnostic:v0.5.7-v3refs:*:*:*:*:*:*:*",
@@ -869,7 +869,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:44e2451d0fbc1b832a847cadd67b2660b140838a6291375425ef7f1de829ea40"
+              "value": "sha256:3e8d3c76657e32a1e8339028c7d35301d4cb5c69ffd349590d90ada4fec3ea39"
             },
             {
               "name": "syft:location:0:path",
@@ -899,7 +899,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/github.com/google/gofuzz@v1.1.0?package-id=fa66f2ea23128263",
+          "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/github.com/google/gofuzz@v1.1.0?package-id=bd1b963cbd41de8c",
           "name": "github.com/google/gofuzz",
           "version": "v1.1.0",
           "cpe": "cpe:2.3:a:google:gofuzz:v1.1.0:*:*:*:*:*:*:*",
@@ -923,7 +923,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:44e2451d0fbc1b832a847cadd67b2660b140838a6291375425ef7f1de829ea40"
+              "value": "sha256:3e8d3c76657e32a1e8339028c7d35301d4cb5c69ffd349590d90ada4fec3ea39"
             },
             {
               "name": "syft:location:0:path",
@@ -953,7 +953,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/github.com/imdario/mergo@v0.3.10?package-id=4c31f48acc3c1b57",
+          "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/github.com/imdario/mergo@v0.3.10?package-id=edd4b4dee3edf596",
           "name": "github.com/imdario/mergo",
           "version": "v0.3.10",
           "cpe": "cpe:2.3:a:imdario:mergo:v0.3.10:*:*:*:*:*:*:*",
@@ -977,7 +977,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:44e2451d0fbc1b832a847cadd67b2660b140838a6291375425ef7f1de829ea40"
+              "value": "sha256:3e8d3c76657e32a1e8339028c7d35301d4cb5c69ffd349590d90ada4fec3ea39"
             },
             {
               "name": "syft:location:0:path",
@@ -1007,7 +1007,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/github.com/josharian/intern@v1.0.0?package-id=2b18d1238fadd51a",
+          "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/github.com/josharian/intern@v1.0.0?package-id=359cc8a819692a5d",
           "name": "github.com/josharian/intern",
           "version": "v1.0.0",
           "cpe": "cpe:2.3:a:josharian:intern:v1.0.0:*:*:*:*:*:*:*",
@@ -1031,7 +1031,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:44e2451d0fbc1b832a847cadd67b2660b140838a6291375425ef7f1de829ea40"
+              "value": "sha256:3e8d3c76657e32a1e8339028c7d35301d4cb5c69ffd349590d90ada4fec3ea39"
             },
             {
               "name": "syft:location:0:path",
@@ -1061,7 +1061,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/github.com/json-iterator/go@v1.1.12?package-id=db732495439f37f3",
+          "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/github.com/json-iterator/go@v1.1.12?package-id=a2d6450d003e8e25",
           "name": "github.com/json-iterator/go",
           "version": "v1.1.12",
           "cpe": "cpe:2.3:a:json-iterator:go:v1.1.12:*:*:*:*:*:*:*",
@@ -1093,7 +1093,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:44e2451d0fbc1b832a847cadd67b2660b140838a6291375425ef7f1de829ea40"
+              "value": "sha256:3e8d3c76657e32a1e8339028c7d35301d4cb5c69ffd349590d90ada4fec3ea39"
             },
             {
               "name": "syft:location:0:path",
@@ -1123,7 +1123,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/github.com/mailru/easyjson@v0.7.6?package-id=b203eaddf5747c0f",
+          "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/github.com/mailru/easyjson@v0.7.6?package-id=6407ffdc36c7d8a1",
           "name": "github.com/mailru/easyjson",
           "version": "v0.7.6",
           "cpe": "cpe:2.3:a:mailru:easyjson:v0.7.6:*:*:*:*:*:*:*",
@@ -1147,7 +1147,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:44e2451d0fbc1b832a847cadd67b2660b140838a6291375425ef7f1de829ea40"
+              "value": "sha256:3e8d3c76657e32a1e8339028c7d35301d4cb5c69ffd349590d90ada4fec3ea39"
             },
             {
               "name": "syft:location:0:path",
@@ -1177,7 +1177,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/github.com/matttproud/golang_protobuf_extensions@v1.0.2-0.20181231171920-c182affec369?package-id=fc7ace96493738dc",
+          "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/github.com/matttproud/golang_protobuf_extensions@v1.0.2-0.20181231171920-c182affec369?package-id=78bb435d8ec53117",
           "name": "github.com/matttproud/golang_protobuf_extensions",
           "version": "v1.0.2-0.20181231171920-c182affec369",
           "cpe": "cpe:2.3:a:matttproud:golang-protobuf-extensions:v1.0.2-0.20181231171920-c182affec369:*:*:*:*:*:*:*",
@@ -1205,7 +1205,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:44e2451d0fbc1b832a847cadd67b2660b140838a6291375425ef7f1de829ea40"
+              "value": "sha256:3e8d3c76657e32a1e8339028c7d35301d4cb5c69ffd349590d90ada4fec3ea39"
             },
             {
               "name": "syft:location:0:path",
@@ -1235,7 +1235,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/github.com/modern-go/concurrent@v0.0.0-20180306012644-bacd9c7ef1dd?package-id=60c733a70a6e261c",
+          "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/github.com/modern-go/concurrent@v0.0.0-20180306012644-bacd9c7ef1dd?package-id=171bc37cc85dab35",
           "name": "github.com/modern-go/concurrent",
           "version": "v0.0.0-20180306012644-bacd9c7ef1dd",
           "cpe": "cpe:2.3:a:modern-go:concurrent:v0.0.0-20180306012644-bacd9c7ef1dd:*:*:*:*:*:*:*",
@@ -1267,7 +1267,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:44e2451d0fbc1b832a847cadd67b2660b140838a6291375425ef7f1de829ea40"
+              "value": "sha256:3e8d3c76657e32a1e8339028c7d35301d4cb5c69ffd349590d90ada4fec3ea39"
             },
             {
               "name": "syft:location:0:path",
@@ -1297,7 +1297,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/github.com/modern-go/reflect2@v1.0.2?package-id=9bfe1be0482f4aeb",
+          "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/github.com/modern-go/reflect2@v1.0.2?package-id=ccfc9c7293e98c92",
           "name": "github.com/modern-go/reflect2",
           "version": "v1.0.2",
           "cpe": "cpe:2.3:a:modern-go:reflect2:v1.0.2:*:*:*:*:*:*:*",
@@ -1329,7 +1329,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:44e2451d0fbc1b832a847cadd67b2660b140838a6291375425ef7f1de829ea40"
+              "value": "sha256:3e8d3c76657e32a1e8339028c7d35301d4cb5c69ffd349590d90ada4fec3ea39"
             },
             {
               "name": "syft:location:0:path",
@@ -1359,7 +1359,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/github.com/munnerz/goautoneg@v0.0.0-20191010083416-a7dc8b61c822?package-id=9b03053d7a7db7e8",
+          "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/github.com/munnerz/goautoneg@v0.0.0-20191010083416-a7dc8b61c822?package-id=1b35ba9b63a1d466",
           "name": "github.com/munnerz/goautoneg",
           "version": "v0.0.0-20191010083416-a7dc8b61c822",
           "cpe": "cpe:2.3:a:munnerz:goautoneg:v0.0.0-20191010083416-a7dc8b61c822:*:*:*:*:*:*:*",
@@ -1383,7 +1383,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:44e2451d0fbc1b832a847cadd67b2660b140838a6291375425ef7f1de829ea40"
+              "value": "sha256:3e8d3c76657e32a1e8339028c7d35301d4cb5c69ffd349590d90ada4fec3ea39"
             },
             {
               "name": "syft:location:0:path",
@@ -1413,7 +1413,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/github.com/pkg/errors@v0.9.1?package-id=e3478d6091d06038",
+          "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/github.com/pkg/errors@v0.9.1?package-id=82aa8ea458418393",
           "name": "github.com/pkg/errors",
           "version": "v0.9.1",
           "cpe": "cpe:2.3:a:pkg:errors:v0.9.1:*:*:*:*:*:*:*",
@@ -1437,7 +1437,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:44e2451d0fbc1b832a847cadd67b2660b140838a6291375425ef7f1de829ea40"
+              "value": "sha256:3e8d3c76657e32a1e8339028c7d35301d4cb5c69ffd349590d90ada4fec3ea39"
             },
             {
               "name": "syft:location:0:path",
@@ -1467,7 +1467,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/github.com/prometheus/client_golang@v1.12.2?package-id=377132c21389726b",
+          "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/github.com/prometheus/client_golang@v1.12.2?package-id=d5d51f0433272b97",
           "name": "github.com/prometheus/client_golang",
           "version": "v1.12.2",
           "cpe": "cpe:2.3:a:prometheus:client-golang:v1.12.2:*:*:*:*:*:*:*",
@@ -1495,7 +1495,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:44e2451d0fbc1b832a847cadd67b2660b140838a6291375425ef7f1de829ea40"
+              "value": "sha256:3e8d3c76657e32a1e8339028c7d35301d4cb5c69ffd349590d90ada4fec3ea39"
             },
             {
               "name": "syft:location:0:path",
@@ -1525,7 +1525,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/github.com/prometheus/client_model@v0.2.0?package-id=c43cfbeaea5aad8a",
+          "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/github.com/prometheus/client_model@v0.2.0?package-id=9b90b6b362854038",
           "name": "github.com/prometheus/client_model",
           "version": "v0.2.0",
           "cpe": "cpe:2.3:a:prometheus:client-model:v0.2.0:*:*:*:*:*:*:*",
@@ -1553,7 +1553,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:44e2451d0fbc1b832a847cadd67b2660b140838a6291375425ef7f1de829ea40"
+              "value": "sha256:3e8d3c76657e32a1e8339028c7d35301d4cb5c69ffd349590d90ada4fec3ea39"
             },
             {
               "name": "syft:location:0:path",
@@ -1583,7 +1583,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/github.com/prometheus/common@v0.32.1?package-id=7fe2eeabceaff4f8",
+          "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/github.com/prometheus/common@v0.32.1?package-id=81e2bd2592ab13cf",
           "name": "github.com/prometheus/common",
           "version": "v0.32.1",
           "cpe": "cpe:2.3:a:prometheus:common:v0.32.1:*:*:*:*:*:*:*",
@@ -1607,7 +1607,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:44e2451d0fbc1b832a847cadd67b2660b140838a6291375425ef7f1de829ea40"
+              "value": "sha256:3e8d3c76657e32a1e8339028c7d35301d4cb5c69ffd349590d90ada4fec3ea39"
             },
             {
               "name": "syft:location:0:path",
@@ -1637,7 +1637,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/github.com/prometheus/procfs@v0.7.3?package-id=7eb3d1424d3f88bc",
+          "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/github.com/prometheus/procfs@v0.7.3?package-id=3433819a7693ef49",
           "name": "github.com/prometheus/procfs",
           "version": "v0.7.3",
           "cpe": "cpe:2.3:a:prometheus:procfs:v0.7.3:*:*:*:*:*:*:*",
@@ -1661,7 +1661,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:44e2451d0fbc1b832a847cadd67b2660b140838a6291375425ef7f1de829ea40"
+              "value": "sha256:3e8d3c76657e32a1e8339028c7d35301d4cb5c69ffd349590d90ada4fec3ea39"
             },
             {
               "name": "syft:location:0:path",
@@ -1691,7 +1691,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/github.com/runyontr/opa-scorecard@v0.0.7?package-id=07b947ee7073496f#exporter-go",
+          "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/github.com/runyontr/opa-scorecard@v0.0.7?package-id=b2fa30c536012d56#exporter-go",
           "name": "github.com/runyontr/opa-scorecard/exporter-go",
           "version": "v0.0.7",
           "cpe": "cpe:2.3:a:runyontr:opa-scorecard\\/exporter-go:v0.0.7:*:*:*:*:*:*:*",
@@ -1719,7 +1719,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:44e2451d0fbc1b832a847cadd67b2660b140838a6291375425ef7f1de829ea40"
+              "value": "sha256:3e8d3c76657e32a1e8339028c7d35301d4cb5c69ffd349590d90ada4fec3ea39"
             },
             {
               "name": "syft:location:0:path",
@@ -1749,7 +1749,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/github.com/spf13/pflag@v1.0.5?package-id=cd5b457a1a1fc221",
+          "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/github.com/spf13/pflag@v1.0.5?package-id=baa8d8edbd0ea136",
           "name": "github.com/spf13/pflag",
           "version": "v1.0.5",
           "cpe": "cpe:2.3:a:spf13:pflag:v1.0.5:*:*:*:*:*:*:*",
@@ -1773,7 +1773,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:44e2451d0fbc1b832a847cadd67b2660b140838a6291375425ef7f1de829ea40"
+              "value": "sha256:3e8d3c76657e32a1e8339028c7d35301d4cb5c69ffd349590d90ada4fec3ea39"
             },
             {
               "name": "syft:location:0:path",
@@ -1803,7 +1803,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/golang.org/x/net@v0.0.0-20220127200216-cd36cc0744dd?package-id=e6196dd493a0ffde",
+          "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/golang.org/x/net@v0.0.0-20220127200216-cd36cc0744dd?package-id=2b1b88fe248e52c6",
           "name": "golang.org/x/net",
           "version": "v0.0.0-20220127200216-cd36cc0744dd",
           "cpe": "cpe:2.3:a:golang:networking:v0.0.0-20220127200216-cd36cc0744dd:*:*:*:*:go:*:*",
@@ -1827,7 +1827,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:44e2451d0fbc1b832a847cadd67b2660b140838a6291375425ef7f1de829ea40"
+              "value": "sha256:3e8d3c76657e32a1e8339028c7d35301d4cb5c69ffd349590d90ada4fec3ea39"
             },
             {
               "name": "syft:location:0:path",
@@ -1857,7 +1857,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/golang.org/x/oauth2@v0.0.0-20211104180415-d3ed0bb246c8?package-id=630aad1cb93a0617",
+          "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/golang.org/x/oauth2@v0.0.0-20211104180415-d3ed0bb246c8?package-id=4ce2225f019b0396",
           "name": "golang.org/x/oauth2",
           "version": "v0.0.0-20211104180415-d3ed0bb246c8",
           "cpe": "cpe:2.3:a:golang:x\\/oauth2:v0.0.0-20211104180415-d3ed0bb246c8:*:*:*:*:*:*:*",
@@ -1881,7 +1881,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:44e2451d0fbc1b832a847cadd67b2660b140838a6291375425ef7f1de829ea40"
+              "value": "sha256:3e8d3c76657e32a1e8339028c7d35301d4cb5c69ffd349590d90ada4fec3ea39"
             },
             {
               "name": "syft:location:0:path",
@@ -1911,7 +1911,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/golang.org/x/sys@v0.0.0-20220209214540-3681064d5158?package-id=6164c6f620323ac0",
+          "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/golang.org/x/sys@v0.0.0-20220209214540-3681064d5158?package-id=fe9de917d6f58abb",
           "name": "golang.org/x/sys",
           "version": "v0.0.0-20220209214540-3681064d5158",
           "cpe": "cpe:2.3:a:golang:x\\/sys:v0.0.0-20220209214540-3681064d5158:*:*:*:*:*:*:*",
@@ -1935,7 +1935,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:44e2451d0fbc1b832a847cadd67b2660b140838a6291375425ef7f1de829ea40"
+              "value": "sha256:3e8d3c76657e32a1e8339028c7d35301d4cb5c69ffd349590d90ada4fec3ea39"
             },
             {
               "name": "syft:location:0:path",
@@ -1965,7 +1965,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/golang.org/x/term@v0.0.0-20210927222741-03fcf44c2211?package-id=fc0cb16a76b40940",
+          "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/golang.org/x/term@v0.0.0-20210927222741-03fcf44c2211?package-id=eaa4ccd480bbbc1b",
           "name": "golang.org/x/term",
           "version": "v0.0.0-20210927222741-03fcf44c2211",
           "cpe": "cpe:2.3:a:golang:x\\/term:v0.0.0-20210927222741-03fcf44c2211:*:*:*:*:*:*:*",
@@ -1989,7 +1989,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:44e2451d0fbc1b832a847cadd67b2660b140838a6291375425ef7f1de829ea40"
+              "value": "sha256:3e8d3c76657e32a1e8339028c7d35301d4cb5c69ffd349590d90ada4fec3ea39"
             },
             {
               "name": "syft:location:0:path",
@@ -2019,7 +2019,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/golang.org/x/text@v0.3.7?package-id=945f65b47614afc1",
+          "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/golang.org/x/text@v0.3.7?package-id=4c0363b8cc6b8e0c",
           "name": "golang.org/x/text",
           "version": "v0.3.7",
           "cpe": "cpe:2.3:a:golang:text:v0.3.7:*:*:*:*:*:*:*",
@@ -2043,7 +2043,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:44e2451d0fbc1b832a847cadd67b2660b140838a6291375425ef7f1de829ea40"
+              "value": "sha256:3e8d3c76657e32a1e8339028c7d35301d4cb5c69ffd349590d90ada4fec3ea39"
             },
             {
               "name": "syft:location:0:path",
@@ -2073,7 +2073,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/golang.org/x/time@v0.0.0-20220210224613-90d013bbcef8?package-id=38f6feb1c99285aa",
+          "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/golang.org/x/time@v0.0.0-20220210224613-90d013bbcef8?package-id=b13431a7c0ae0c4c",
           "name": "golang.org/x/time",
           "version": "v0.0.0-20220210224613-90d013bbcef8",
           "cpe": "cpe:2.3:a:golang:x\\/time:v0.0.0-20220210224613-90d013bbcef8:*:*:*:*:*:*:*",
@@ -2097,7 +2097,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:44e2451d0fbc1b832a847cadd67b2660b140838a6291375425ef7f1de829ea40"
+              "value": "sha256:3e8d3c76657e32a1e8339028c7d35301d4cb5c69ffd349590d90ada4fec3ea39"
             },
             {
               "name": "syft:location:0:path",
@@ -2127,7 +2127,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/google.golang.org/protobuf@v1.28.0?package-id=5b4aa5aa3ddf6b0a",
+          "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/google.golang.org/protobuf@v1.28.0?package-id=efb83e903ad2ce67",
           "name": "google.golang.org/protobuf",
           "version": "v1.28.0",
           "cpe": "cpe:2.3:a:google:protobuf:v1.28.0:*:*:*:*:*:*:*",
@@ -2151,7 +2151,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:44e2451d0fbc1b832a847cadd67b2660b140838a6291375425ef7f1de829ea40"
+              "value": "sha256:3e8d3c76657e32a1e8339028c7d35301d4cb5c69ffd349590d90ada4fec3ea39"
             },
             {
               "name": "syft:location:0:path",
@@ -2181,7 +2181,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/gopkg.in/inf.v0@v0.9.1?package-id=5b66a2d25bd7eed0",
+          "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/gopkg.in/inf.v0@v0.9.1?package-id=7282444f2737ca21",
           "name": "gopkg.in/inf.v0",
           "version": "v0.9.1",
           "purl": "pkg:golang/gopkg.in/inf.v0@v0.9.1",
@@ -2204,7 +2204,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:44e2451d0fbc1b832a847cadd67b2660b140838a6291375425ef7f1de829ea40"
+              "value": "sha256:3e8d3c76657e32a1e8339028c7d35301d4cb5c69ffd349590d90ada4fec3ea39"
             },
             {
               "name": "syft:location:0:path",
@@ -2234,7 +2234,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/gopkg.in/yaml.v2@v2.4.0?package-id=c4ba077222d7b626",
+          "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/gopkg.in/yaml.v2@v2.4.0?package-id=210fb0fbd8127682",
           "name": "gopkg.in/yaml.v2",
           "version": "v2.4.0",
           "purl": "pkg:golang/gopkg.in/yaml.v2@v2.4.0",
@@ -2257,7 +2257,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:44e2451d0fbc1b832a847cadd67b2660b140838a6291375425ef7f1de829ea40"
+              "value": "sha256:3e8d3c76657e32a1e8339028c7d35301d4cb5c69ffd349590d90ada4fec3ea39"
             },
             {
               "name": "syft:location:0:path",
@@ -2287,7 +2287,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/gopkg.in/yaml.v3@v3.0.0-20210107192922-496545a6307b?package-id=018009028f59781f",
+          "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/gopkg.in/yaml.v3@v3.0.0-20210107192922-496545a6307b?package-id=ac9af3e191f38fca",
           "name": "gopkg.in/yaml.v3",
           "version": "v3.0.0-20210107192922-496545a6307b",
           "cpe": "cpe:2.3:a:yaml_project:yaml:v3.0.0-20210107192922-496545a6307b:*:*:*:*:go:*:*",
@@ -2311,7 +2311,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:44e2451d0fbc1b832a847cadd67b2660b140838a6291375425ef7f1de829ea40"
+              "value": "sha256:3e8d3c76657e32a1e8339028c7d35301d4cb5c69ffd349590d90ada4fec3ea39"
             },
             {
               "name": "syft:location:0:path",
@@ -2341,7 +2341,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/k8s.io/api@v0.24.0?package-id=5195fabc821b8c85",
+          "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/k8s.io/api@v0.24.0?package-id=25fe20982784c583",
           "name": "k8s.io/api",
           "version": "v0.24.0",
           "purl": "pkg:golang/k8s.io/api@v0.24.0",
@@ -2364,7 +2364,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:44e2451d0fbc1b832a847cadd67b2660b140838a6291375425ef7f1de829ea40"
+              "value": "sha256:3e8d3c76657e32a1e8339028c7d35301d4cb5c69ffd349590d90ada4fec3ea39"
             },
             {
               "name": "syft:location:0:path",
@@ -2394,7 +2394,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/k8s.io/apimachinery@v0.24.0?package-id=dcd3d3d77771bdf0",
+          "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/k8s.io/apimachinery@v0.24.0?package-id=4dd36c36f1ee5407",
           "name": "k8s.io/apimachinery",
           "version": "v0.24.0",
           "purl": "pkg:golang/k8s.io/apimachinery@v0.24.0",
@@ -2417,7 +2417,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:44e2451d0fbc1b832a847cadd67b2660b140838a6291375425ef7f1de829ea40"
+              "value": "sha256:3e8d3c76657e32a1e8339028c7d35301d4cb5c69ffd349590d90ada4fec3ea39"
             },
             {
               "name": "syft:location:0:path",
@@ -2447,7 +2447,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/k8s.io/client-go@v0.24.0?package-id=b510368d086aa645",
+          "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/k8s.io/client-go@v0.24.0?package-id=a96373e480400b16",
           "name": "k8s.io/client-go",
           "version": "v0.24.0",
           "purl": "pkg:golang/k8s.io/client-go@v0.24.0",
@@ -2470,7 +2470,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:44e2451d0fbc1b832a847cadd67b2660b140838a6291375425ef7f1de829ea40"
+              "value": "sha256:3e8d3c76657e32a1e8339028c7d35301d4cb5c69ffd349590d90ada4fec3ea39"
             },
             {
               "name": "syft:location:0:path",
@@ -2500,7 +2500,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/k8s.io/klog/v2@v2.60.1?package-id=54fa3308b554323b",
+          "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/k8s.io/klog/v2@v2.60.1?package-id=9fef9f5ff46e96c4",
           "name": "k8s.io/klog/v2",
           "version": "v2.60.1",
           "cpe": "cpe:2.3:a:klog:v2:v2.60.1:*:*:*:*:*:*:*",
@@ -2524,7 +2524,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:44e2451d0fbc1b832a847cadd67b2660b140838a6291375425ef7f1de829ea40"
+              "value": "sha256:3e8d3c76657e32a1e8339028c7d35301d4cb5c69ffd349590d90ada4fec3ea39"
             },
             {
               "name": "syft:location:0:path",
@@ -2554,7 +2554,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/k8s.io/kube-openapi@v0.0.0-20220328201542-3ee0da9b0b42?package-id=0fe93ec064e1bb60",
+          "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/k8s.io/kube-openapi@v0.0.0-20220328201542-3ee0da9b0b42?package-id=b323f83c2e334bfb",
           "name": "k8s.io/kube-openapi",
           "version": "v0.0.0-20220328201542-3ee0da9b0b42",
           "purl": "pkg:golang/k8s.io/kube-openapi@v0.0.0-20220328201542-3ee0da9b0b42",
@@ -2577,7 +2577,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:44e2451d0fbc1b832a847cadd67b2660b140838a6291375425ef7f1de829ea40"
+              "value": "sha256:3e8d3c76657e32a1e8339028c7d35301d4cb5c69ffd349590d90ada4fec3ea39"
             },
             {
               "name": "syft:location:0:path",
@@ -2607,7 +2607,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/k8s.io/utils@v0.0.0-20220210201930-3a6ce19ff2f9?package-id=0218df570f1fba31",
+          "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/k8s.io/utils@v0.0.0-20220210201930-3a6ce19ff2f9?package-id=99824d84d7bb3918",
           "name": "k8s.io/utils",
           "version": "v0.0.0-20220210201930-3a6ce19ff2f9",
           "purl": "pkg:golang/k8s.io/utils@v0.0.0-20220210201930-3a6ce19ff2f9",
@@ -2630,7 +2630,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:44e2451d0fbc1b832a847cadd67b2660b140838a6291375425ef7f1de829ea40"
+              "value": "sha256:3e8d3c76657e32a1e8339028c7d35301d4cb5c69ffd349590d90ada4fec3ea39"
             },
             {
               "name": "syft:location:0:path",
@@ -2862,7 +2862,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/sigs.k8s.io/controller-runtime@v0.8.3?package-id=0cfc6d3b4d5e252b",
+          "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/sigs.k8s.io/controller-runtime@v0.8.3?package-id=918e43df511a2194",
           "name": "sigs.k8s.io/controller-runtime",
           "version": "v0.8.3",
           "purl": "pkg:golang/sigs.k8s.io/controller-runtime@v0.8.3",
@@ -2885,7 +2885,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:44e2451d0fbc1b832a847cadd67b2660b140838a6291375425ef7f1de829ea40"
+              "value": "sha256:3e8d3c76657e32a1e8339028c7d35301d4cb5c69ffd349590d90ada4fec3ea39"
             },
             {
               "name": "syft:location:0:path",
@@ -2915,7 +2915,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/sigs.k8s.io/json@v0.0.0-20211208200746-9f7c6b3444d2?package-id=4527b967d3c2f58c",
+          "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/sigs.k8s.io/json@v0.0.0-20211208200746-9f7c6b3444d2?package-id=2a06883d51ff58c6",
           "name": "sigs.k8s.io/json",
           "version": "v0.0.0-20211208200746-9f7c6b3444d2",
           "purl": "pkg:golang/sigs.k8s.io/json@v0.0.0-20211208200746-9f7c6b3444d2",
@@ -2938,7 +2938,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:44e2451d0fbc1b832a847cadd67b2660b140838a6291375425ef7f1de829ea40"
+              "value": "sha256:3e8d3c76657e32a1e8339028c7d35301d4cb5c69ffd349590d90ada4fec3ea39"
             },
             {
               "name": "syft:location:0:path",
@@ -2968,7 +2968,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/sigs.k8s.io/structured-merge-diff/v4@v4.2.1?package-id=1abc2017f7f92bda",
+          "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/sigs.k8s.io/structured-merge-diff/v4@v4.2.1?package-id=7c89fd46a8234cf5",
           "name": "sigs.k8s.io/structured-merge-diff/v4",
           "version": "v4.2.1",
           "cpe": "cpe:2.3:a:structured-merge-diff:v4:v4.2.1:*:*:*:*:*:*:*",
@@ -3008,7 +3008,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:44e2451d0fbc1b832a847cadd67b2660b140838a6291375425ef7f1de829ea40"
+              "value": "sha256:3e8d3c76657e32a1e8339028c7d35301d4cb5c69ffd349590d90ada4fec3ea39"
             },
             {
               "name": "syft:location:0:path",
@@ -3038,7 +3038,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/sigs.k8s.io/yaml@v1.2.0?package-id=d5fb98f866d8644e",
+          "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/sigs.k8s.io/yaml@v1.2.0?package-id=f57e33d421ff6dd8",
           "name": "sigs.k8s.io/yaml",
           "version": "v1.2.0",
           "purl": "pkg:golang/sigs.k8s.io/yaml@v1.2.0",
@@ -3061,7 +3061,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:44e2451d0fbc1b832a847cadd67b2660b140838a6291375425ef7f1de829ea40"
+              "value": "sha256:3e8d3c76657e32a1e8339028c7d35301d4cb5c69ffd349590d90ada4fec3ea39"
             },
             {
               "name": "syft:location:0:path",
@@ -3091,7 +3091,7 @@
         },
         {
           "type": "library",
-          "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/stdlib@1.18.10?package-id=48382da774f35ecf",
+          "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/stdlib@1.18.10?package-id=979f320afddca7c0",
           "name": "stdlib",
           "version": "go1.18.10",
           "licenses": [
@@ -3118,7 +3118,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:44e2451d0fbc1b832a847cadd67b2660b140838a6291375425ef7f1de829ea40"
+              "value": "sha256:3e8d3c76657e32a1e8339028c7d35301d4cb5c69ffd349590d90ada4fec3ea39"
             },
             {
               "name": "syft:location:0:path",
@@ -3236,9 +3236,15 @@
   ],
   "dependencies": [
     {
+      "ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:deb/debian/libssl3@3.0.11-1~deb12u2?arch=amd64\u0026upstream=openssl\u0026distro=debian-12\u0026package-id=493d152080fcee4e",
+      "dependsOn": [
+        "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:deb/debian/libc6@2.36-9%2Bdeb12u7?arch=amd64\u0026upstream=glibc\u0026distro=debian-12\u0026package-id=0af09cd7d011faf5"
+      ]
+    },
+    {
       "ref": "cluster-auditor@0.0.1",
       "dependsOn": [
-        "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:4c18fd5df5b292c9"
+        "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:a6f81a77d4dce5cf"
       ]
     }
   ]
