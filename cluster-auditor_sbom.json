@@ -1,7 +1,7 @@
 {
   "bomFormat": "CycloneDX",
   "specVersion": "1.5",
-  "serialNumber": "urn:uuid:08e652cc-5e40-4d48-9287-30c48301cc70",
+  "serialNumber": "urn:uuid:3db0fc2d-16c4-4c7e-b751-aa1688262b5b",
   "version": 1,
   "metadata": {
     "tools": null,
@@ -15,7 +15,7 @@
   "components": [
     {
       "type": "container",
-      "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:c06f14735f17dc54",
+      "bom-ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:601bff1e4d6351ef",
       "name": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter",
       "version": "v0.0.7",
       "components": [
@@ -123,7 +123,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:c3c83dda73e373031fd376642f4b6a130a2d593f96dd039b77ae6023086d1d15"
+              "value": "sha256:810079ae7b9add59b1ddc1b660639ef500b6d081ec7580e3604b2b8db73f811f"
             },
             {
               "name": "syft:location:0:path",
@@ -177,7 +177,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:c3c83dda73e373031fd376642f4b6a130a2d593f96dd039b77ae6023086d1d15"
+              "value": "sha256:810079ae7b9add59b1ddc1b660639ef500b6d081ec7580e3604b2b8db73f811f"
             },
             {
               "name": "syft:location:0:path",
@@ -231,7 +231,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:c3c83dda73e373031fd376642f4b6a130a2d593f96dd039b77ae6023086d1d15"
+              "value": "sha256:810079ae7b9add59b1ddc1b660639ef500b6d081ec7580e3604b2b8db73f811f"
             },
             {
               "name": "syft:location:0:path",
@@ -285,7 +285,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:c3c83dda73e373031fd376642f4b6a130a2d593f96dd039b77ae6023086d1d15"
+              "value": "sha256:810079ae7b9add59b1ddc1b660639ef500b6d081ec7580e3604b2b8db73f811f"
             },
             {
               "name": "syft:location:0:path",
@@ -343,7 +343,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:c3c83dda73e373031fd376642f4b6a130a2d593f96dd039b77ae6023086d1d15"
+              "value": "sha256:810079ae7b9add59b1ddc1b660639ef500b6d081ec7580e3604b2b8db73f811f"
             },
             {
               "name": "syft:location:0:path",
@@ -401,7 +401,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:c3c83dda73e373031fd376642f4b6a130a2d593f96dd039b77ae6023086d1d15"
+              "value": "sha256:810079ae7b9add59b1ddc1b660639ef500b6d081ec7580e3604b2b8db73f811f"
             },
             {
               "name": "syft:location:0:path",
@@ -459,7 +459,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:c3c83dda73e373031fd376642f4b6a130a2d593f96dd039b77ae6023086d1d15"
+              "value": "sha256:810079ae7b9add59b1ddc1b660639ef500b6d081ec7580e3604b2b8db73f811f"
             },
             {
               "name": "syft:location:0:path",
@@ -521,7 +521,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:c3c83dda73e373031fd376642f4b6a130a2d593f96dd039b77ae6023086d1d15"
+              "value": "sha256:810079ae7b9add59b1ddc1b660639ef500b6d081ec7580e3604b2b8db73f811f"
             },
             {
               "name": "syft:location:0:path",
@@ -583,7 +583,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:c3c83dda73e373031fd376642f4b6a130a2d593f96dd039b77ae6023086d1d15"
+              "value": "sha256:810079ae7b9add59b1ddc1b660639ef500b6d081ec7580e3604b2b8db73f811f"
             },
             {
               "name": "syft:location:0:path",
@@ -645,7 +645,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:c3c83dda73e373031fd376642f4b6a130a2d593f96dd039b77ae6023086d1d15"
+              "value": "sha256:810079ae7b9add59b1ddc1b660639ef500b6d081ec7580e3604b2b8db73f811f"
             },
             {
               "name": "syft:location:0:path",
@@ -707,7 +707,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:c3c83dda73e373031fd376642f4b6a130a2d593f96dd039b77ae6023086d1d15"
+              "value": "sha256:810079ae7b9add59b1ddc1b660639ef500b6d081ec7580e3604b2b8db73f811f"
             },
             {
               "name": "syft:location:0:path",
@@ -761,7 +761,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:c3c83dda73e373031fd376642f4b6a130a2d593f96dd039b77ae6023086d1d15"
+              "value": "sha256:810079ae7b9add59b1ddc1b660639ef500b6d081ec7580e3604b2b8db73f811f"
             },
             {
               "name": "syft:location:0:path",
@@ -815,7 +815,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:c3c83dda73e373031fd376642f4b6a130a2d593f96dd039b77ae6023086d1d15"
+              "value": "sha256:810079ae7b9add59b1ddc1b660639ef500b6d081ec7580e3604b2b8db73f811f"
             },
             {
               "name": "syft:location:0:path",
@@ -869,7 +869,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:c3c83dda73e373031fd376642f4b6a130a2d593f96dd039b77ae6023086d1d15"
+              "value": "sha256:810079ae7b9add59b1ddc1b660639ef500b6d081ec7580e3604b2b8db73f811f"
             },
             {
               "name": "syft:location:0:path",
@@ -923,7 +923,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:c3c83dda73e373031fd376642f4b6a130a2d593f96dd039b77ae6023086d1d15"
+              "value": "sha256:810079ae7b9add59b1ddc1b660639ef500b6d081ec7580e3604b2b8db73f811f"
             },
             {
               "name": "syft:location:0:path",
@@ -977,7 +977,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:c3c83dda73e373031fd376642f4b6a130a2d593f96dd039b77ae6023086d1d15"
+              "value": "sha256:810079ae7b9add59b1ddc1b660639ef500b6d081ec7580e3604b2b8db73f811f"
             },
             {
               "name": "syft:location:0:path",
@@ -1031,7 +1031,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:c3c83dda73e373031fd376642f4b6a130a2d593f96dd039b77ae6023086d1d15"
+              "value": "sha256:810079ae7b9add59b1ddc1b660639ef500b6d081ec7580e3604b2b8db73f811f"
             },
             {
               "name": "syft:location:0:path",
@@ -1093,7 +1093,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:c3c83dda73e373031fd376642f4b6a130a2d593f96dd039b77ae6023086d1d15"
+              "value": "sha256:810079ae7b9add59b1ddc1b660639ef500b6d081ec7580e3604b2b8db73f811f"
             },
             {
               "name": "syft:location:0:path",
@@ -1147,7 +1147,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:c3c83dda73e373031fd376642f4b6a130a2d593f96dd039b77ae6023086d1d15"
+              "value": "sha256:810079ae7b9add59b1ddc1b660639ef500b6d081ec7580e3604b2b8db73f811f"
             },
             {
               "name": "syft:location:0:path",
@@ -1205,7 +1205,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:c3c83dda73e373031fd376642f4b6a130a2d593f96dd039b77ae6023086d1d15"
+              "value": "sha256:810079ae7b9add59b1ddc1b660639ef500b6d081ec7580e3604b2b8db73f811f"
             },
             {
               "name": "syft:location:0:path",
@@ -1267,7 +1267,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:c3c83dda73e373031fd376642f4b6a130a2d593f96dd039b77ae6023086d1d15"
+              "value": "sha256:810079ae7b9add59b1ddc1b660639ef500b6d081ec7580e3604b2b8db73f811f"
             },
             {
               "name": "syft:location:0:path",
@@ -1329,7 +1329,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:c3c83dda73e373031fd376642f4b6a130a2d593f96dd039b77ae6023086d1d15"
+              "value": "sha256:810079ae7b9add59b1ddc1b660639ef500b6d081ec7580e3604b2b8db73f811f"
             },
             {
               "name": "syft:location:0:path",
@@ -1383,7 +1383,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:c3c83dda73e373031fd376642f4b6a130a2d593f96dd039b77ae6023086d1d15"
+              "value": "sha256:810079ae7b9add59b1ddc1b660639ef500b6d081ec7580e3604b2b8db73f811f"
             },
             {
               "name": "syft:location:0:path",
@@ -1437,7 +1437,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:c3c83dda73e373031fd376642f4b6a130a2d593f96dd039b77ae6023086d1d15"
+              "value": "sha256:810079ae7b9add59b1ddc1b660639ef500b6d081ec7580e3604b2b8db73f811f"
             },
             {
               "name": "syft:location:0:path",
@@ -1495,7 +1495,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:c3c83dda73e373031fd376642f4b6a130a2d593f96dd039b77ae6023086d1d15"
+              "value": "sha256:810079ae7b9add59b1ddc1b660639ef500b6d081ec7580e3604b2b8db73f811f"
             },
             {
               "name": "syft:location:0:path",
@@ -1553,7 +1553,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:c3c83dda73e373031fd376642f4b6a130a2d593f96dd039b77ae6023086d1d15"
+              "value": "sha256:810079ae7b9add59b1ddc1b660639ef500b6d081ec7580e3604b2b8db73f811f"
             },
             {
               "name": "syft:location:0:path",
@@ -1607,7 +1607,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:c3c83dda73e373031fd376642f4b6a130a2d593f96dd039b77ae6023086d1d15"
+              "value": "sha256:810079ae7b9add59b1ddc1b660639ef500b6d081ec7580e3604b2b8db73f811f"
             },
             {
               "name": "syft:location:0:path",
@@ -1661,7 +1661,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:c3c83dda73e373031fd376642f4b6a130a2d593f96dd039b77ae6023086d1d15"
+              "value": "sha256:810079ae7b9add59b1ddc1b660639ef500b6d081ec7580e3604b2b8db73f811f"
             },
             {
               "name": "syft:location:0:path",
@@ -1719,7 +1719,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:c3c83dda73e373031fd376642f4b6a130a2d593f96dd039b77ae6023086d1d15"
+              "value": "sha256:810079ae7b9add59b1ddc1b660639ef500b6d081ec7580e3604b2b8db73f811f"
             },
             {
               "name": "syft:location:0:path",
@@ -1773,7 +1773,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:c3c83dda73e373031fd376642f4b6a130a2d593f96dd039b77ae6023086d1d15"
+              "value": "sha256:810079ae7b9add59b1ddc1b660639ef500b6d081ec7580e3604b2b8db73f811f"
             },
             {
               "name": "syft:location:0:path",
@@ -1827,7 +1827,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:c3c83dda73e373031fd376642f4b6a130a2d593f96dd039b77ae6023086d1d15"
+              "value": "sha256:810079ae7b9add59b1ddc1b660639ef500b6d081ec7580e3604b2b8db73f811f"
             },
             {
               "name": "syft:location:0:path",
@@ -1881,7 +1881,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:c3c83dda73e373031fd376642f4b6a130a2d593f96dd039b77ae6023086d1d15"
+              "value": "sha256:810079ae7b9add59b1ddc1b660639ef500b6d081ec7580e3604b2b8db73f811f"
             },
             {
               "name": "syft:location:0:path",
@@ -1935,7 +1935,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:c3c83dda73e373031fd376642f4b6a130a2d593f96dd039b77ae6023086d1d15"
+              "value": "sha256:810079ae7b9add59b1ddc1b660639ef500b6d081ec7580e3604b2b8db73f811f"
             },
             {
               "name": "syft:location:0:path",
@@ -1989,7 +1989,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:c3c83dda73e373031fd376642f4b6a130a2d593f96dd039b77ae6023086d1d15"
+              "value": "sha256:810079ae7b9add59b1ddc1b660639ef500b6d081ec7580e3604b2b8db73f811f"
             },
             {
               "name": "syft:location:0:path",
@@ -2043,7 +2043,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:c3c83dda73e373031fd376642f4b6a130a2d593f96dd039b77ae6023086d1d15"
+              "value": "sha256:810079ae7b9add59b1ddc1b660639ef500b6d081ec7580e3604b2b8db73f811f"
             },
             {
               "name": "syft:location:0:path",
@@ -2097,7 +2097,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:c3c83dda73e373031fd376642f4b6a130a2d593f96dd039b77ae6023086d1d15"
+              "value": "sha256:810079ae7b9add59b1ddc1b660639ef500b6d081ec7580e3604b2b8db73f811f"
             },
             {
               "name": "syft:location:0:path",
@@ -2151,7 +2151,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:c3c83dda73e373031fd376642f4b6a130a2d593f96dd039b77ae6023086d1d15"
+              "value": "sha256:810079ae7b9add59b1ddc1b660639ef500b6d081ec7580e3604b2b8db73f811f"
             },
             {
               "name": "syft:location:0:path",
@@ -2204,7 +2204,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:c3c83dda73e373031fd376642f4b6a130a2d593f96dd039b77ae6023086d1d15"
+              "value": "sha256:810079ae7b9add59b1ddc1b660639ef500b6d081ec7580e3604b2b8db73f811f"
             },
             {
               "name": "syft:location:0:path",
@@ -2257,7 +2257,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:c3c83dda73e373031fd376642f4b6a130a2d593f96dd039b77ae6023086d1d15"
+              "value": "sha256:810079ae7b9add59b1ddc1b660639ef500b6d081ec7580e3604b2b8db73f811f"
             },
             {
               "name": "syft:location:0:path",
@@ -2311,7 +2311,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:c3c83dda73e373031fd376642f4b6a130a2d593f96dd039b77ae6023086d1d15"
+              "value": "sha256:810079ae7b9add59b1ddc1b660639ef500b6d081ec7580e3604b2b8db73f811f"
             },
             {
               "name": "syft:location:0:path",
@@ -2364,7 +2364,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:c3c83dda73e373031fd376642f4b6a130a2d593f96dd039b77ae6023086d1d15"
+              "value": "sha256:810079ae7b9add59b1ddc1b660639ef500b6d081ec7580e3604b2b8db73f811f"
             },
             {
               "name": "syft:location:0:path",
@@ -2417,7 +2417,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:c3c83dda73e373031fd376642f4b6a130a2d593f96dd039b77ae6023086d1d15"
+              "value": "sha256:810079ae7b9add59b1ddc1b660639ef500b6d081ec7580e3604b2b8db73f811f"
             },
             {
               "name": "syft:location:0:path",
@@ -2470,7 +2470,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:c3c83dda73e373031fd376642f4b6a130a2d593f96dd039b77ae6023086d1d15"
+              "value": "sha256:810079ae7b9add59b1ddc1b660639ef500b6d081ec7580e3604b2b8db73f811f"
             },
             {
               "name": "syft:location:0:path",
@@ -2524,7 +2524,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:c3c83dda73e373031fd376642f4b6a130a2d593f96dd039b77ae6023086d1d15"
+              "value": "sha256:810079ae7b9add59b1ddc1b660639ef500b6d081ec7580e3604b2b8db73f811f"
             },
             {
               "name": "syft:location:0:path",
@@ -2577,7 +2577,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:c3c83dda73e373031fd376642f4b6a130a2d593f96dd039b77ae6023086d1d15"
+              "value": "sha256:810079ae7b9add59b1ddc1b660639ef500b6d081ec7580e3604b2b8db73f811f"
             },
             {
               "name": "syft:location:0:path",
@@ -2630,7 +2630,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:c3c83dda73e373031fd376642f4b6a130a2d593f96dd039b77ae6023086d1d15"
+              "value": "sha256:810079ae7b9add59b1ddc1b660639ef500b6d081ec7580e3604b2b8db73f811f"
             },
             {
               "name": "syft:location:0:path",
@@ -2885,7 +2885,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:c3c83dda73e373031fd376642f4b6a130a2d593f96dd039b77ae6023086d1d15"
+              "value": "sha256:810079ae7b9add59b1ddc1b660639ef500b6d081ec7580e3604b2b8db73f811f"
             },
             {
               "name": "syft:location:0:path",
@@ -2938,7 +2938,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:c3c83dda73e373031fd376642f4b6a130a2d593f96dd039b77ae6023086d1d15"
+              "value": "sha256:810079ae7b9add59b1ddc1b660639ef500b6d081ec7580e3604b2b8db73f811f"
             },
             {
               "name": "syft:location:0:path",
@@ -3008,7 +3008,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:c3c83dda73e373031fd376642f4b6a130a2d593f96dd039b77ae6023086d1d15"
+              "value": "sha256:810079ae7b9add59b1ddc1b660639ef500b6d081ec7580e3604b2b8db73f811f"
             },
             {
               "name": "syft:location:0:path",
@@ -3061,7 +3061,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:c3c83dda73e373031fd376642f4b6a130a2d593f96dd039b77ae6023086d1d15"
+              "value": "sha256:810079ae7b9add59b1ddc1b660639ef500b6d081ec7580e3604b2b8db73f811f"
             },
             {
               "name": "syft:location:0:path",
@@ -3118,7 +3118,7 @@
             },
             {
               "name": "syft:location:0:layerID",
-              "value": "sha256:c3c83dda73e373031fd376642f4b6a130a2d593f96dd039b77ae6023086d1d15"
+              "value": "sha256:810079ae7b9add59b1ddc1b660639ef500b6d081ec7580e3604b2b8db73f811f"
             },
             {
               "name": "syft:location:0:path",
@@ -3242,9 +3242,64 @@
       ]
     },
     {
+      "ref": "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/github.com/runyontr/opa-scorecard@v0.0.7?package-id=b2fa30c536012d56#exporter-go",
+      "dependsOn": [
+        "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/github.com/beorn7/perks@v1.0.1?package-id=a2c3fa9be96fd1ba",
+        "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/github.com/cespare/xxhash@v2.1.2?package-id=734bee1e0ede4a1d#v2",
+        "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/github.com/davecgh/go-spew@v1.1.1?package-id=eb5b52bcd8d4a5b6",
+        "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/github.com/emicklei/go-restful@v2.9.5%2Bincompatible?package-id=e79794521ecae047",
+        "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/github.com/evanphx/json-patch@v4.12.0%2Bincompatible?package-id=deaac2251db67e00",
+        "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/github.com/go-logr/logr@v1.2.0?package-id=97585d8d899fe6cd",
+        "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/github.com/go-openapi/jsonpointer@v0.19.5?package-id=81a9aeaad2089ca2",
+        "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/github.com/go-openapi/jsonreference@v0.19.5?package-id=7305f4270d664ce6",
+        "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/github.com/go-openapi/swag@v0.19.14?package-id=88fd6c2f01f76086",
+        "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/github.com/gogo/protobuf@v1.3.2?package-id=53b48c1f144843fd",
+        "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/github.com/golang/protobuf@v1.5.2?package-id=d9483673009e3d14",
+        "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/github.com/google/gnostic@v0.5.7-v3refs?package-id=9fb865e1b28066fa",
+        "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/github.com/google/gofuzz@v1.1.0?package-id=bd1b963cbd41de8c",
+        "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/github.com/imdario/mergo@v0.3.10?package-id=edd4b4dee3edf596",
+        "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/github.com/josharian/intern@v1.0.0?package-id=359cc8a819692a5d",
+        "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/github.com/json-iterator/go@v1.1.12?package-id=a2d6450d003e8e25",
+        "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/github.com/mailru/easyjson@v0.7.6?package-id=6407ffdc36c7d8a1",
+        "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/github.com/matttproud/golang_protobuf_extensions@v1.0.2-0.20181231171920-c182affec369?package-id=78bb435d8ec53117",
+        "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/github.com/modern-go/concurrent@v0.0.0-20180306012644-bacd9c7ef1dd?package-id=171bc37cc85dab35",
+        "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/github.com/modern-go/reflect2@v1.0.2?package-id=ccfc9c7293e98c92",
+        "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/github.com/munnerz/goautoneg@v0.0.0-20191010083416-a7dc8b61c822?package-id=1b35ba9b63a1d466",
+        "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/github.com/pkg/errors@v0.9.1?package-id=82aa8ea458418393",
+        "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/github.com/prometheus/client_golang@v1.12.2?package-id=d5d51f0433272b97",
+        "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/github.com/prometheus/client_model@v0.2.0?package-id=9b90b6b362854038",
+        "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/github.com/prometheus/common@v0.32.1?package-id=81e2bd2592ab13cf",
+        "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/github.com/prometheus/procfs@v0.7.3?package-id=3433819a7693ef49",
+        "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/github.com/puerkitobio/purell@v1.1.1?package-id=c234e71c6db51dd9",
+        "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/github.com/puerkitobio/urlesc@v0.0.0-20170810143723-de5bf2ad4578?package-id=8a5df594d69d2ded",
+        "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/github.com/spf13/pflag@v1.0.5?package-id=baa8d8edbd0ea136",
+        "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/golang.org/x/net@v0.0.0-20220127200216-cd36cc0744dd?package-id=2b1b88fe248e52c6",
+        "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/golang.org/x/oauth2@v0.0.0-20211104180415-d3ed0bb246c8?package-id=4ce2225f019b0396",
+        "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/golang.org/x/sys@v0.0.0-20220209214540-3681064d5158?package-id=fe9de917d6f58abb",
+        "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/golang.org/x/term@v0.0.0-20210927222741-03fcf44c2211?package-id=eaa4ccd480bbbc1b",
+        "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/golang.org/x/text@v0.3.7?package-id=4c0363b8cc6b8e0c",
+        "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/golang.org/x/time@v0.0.0-20220210224613-90d013bbcef8?package-id=b13431a7c0ae0c4c",
+        "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/google.golang.org/protobuf@v1.28.0?package-id=efb83e903ad2ce67",
+        "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/gopkg.in/inf.v0@v0.9.1?package-id=7282444f2737ca21",
+        "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/gopkg.in/yaml.v2@v2.4.0?package-id=210fb0fbd8127682",
+        "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/gopkg.in/yaml.v3@v3.0.0-20210107192922-496545a6307b?package-id=ac9af3e191f38fca",
+        "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/k8s.io/api@v0.24.0?package-id=25fe20982784c583",
+        "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/k8s.io/apimachinery@v0.24.0?package-id=4dd36c36f1ee5407",
+        "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/k8s.io/client-go@v0.24.0?package-id=a96373e480400b16",
+        "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/k8s.io/klog/v2@v2.60.1?package-id=9fef9f5ff46e96c4",
+        "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/k8s.io/kube-openapi@v0.0.0-20220328201542-3ee0da9b0b42?package-id=b323f83c2e334bfb",
+        "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/k8s.io/utils@v0.0.0-20220210201930-3a6ce19ff2f9?package-id=99824d84d7bb3918",
+        "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/sigs.k8s.io/controller-runtime@v0.8.3?package-id=918e43df511a2194",
+        "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/sigs.k8s.io/json@v0.0.0-20211208200746-9f7c6b3444d2?package-id=2a06883d51ff58c6",
+        "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/sigs.k8s.io/structured-merge-diff/v4@v4.2.1?package-id=7c89fd46a8234cf5",
+        "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/sigs.k8s.io/yaml@v1.2.0?package-id=f57e33d421ff6dd8",
+        "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:pkg:golang/stdlib@1.18.10?package-id=979f320afddca7c0"
+      ]
+    },
+    {
       "ref": "cluster-auditor@0.0.1",
       "dependsOn": [
-        "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:c06f14735f17dc54"
+        "registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter@v0.0.7:601bff1e4d6351ef"
       ]
     }
   ]
