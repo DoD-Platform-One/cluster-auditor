@@ -3,124 +3,185 @@
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ---
+
 ## [1.5.0-bb.17] - 2024-06-03
+
 ### Changed
+
 - Updated to gluon 0.5.0
 
 ## [1.5.0-bb.16] - 2024-04-24
+
 ### Added
+
 - Add support for additional custom network policies through the values yaml
 
 ## [1.5.0-bb.15] - 2024-03-18
+
 ### Changed
+
 - Add istio egress whitelist
 
 ## [1.5.0-bb.14] - 2024-02-23
+
 ### Changed
+
 - README.md fix
 
 ## [1.5.0-bb.13] - 2024-01-24
+
 ### Changed
+
 - Updated gluon to 4.8; allow consumers to utilize custom scripts
 
 ## [1.5.0-bb.12] - 2024-1-3
+
 ### Changed
+
 - Added support for Istio Authorization Policies
 
 ## [1.5.0-bb.11] - 2023-11-30
+
 ### Changed
+
 - Updating OSCAL Component File.
 
 ## [1.5.0-bb.10] - 2023-11-02
+
 ### Changed
+
 - Hardened `opa-exporter` ServiceAccount with `automountServiceAccountToken: false` (overriden at Pod spec-level due to app requirements)
 
 ## [1.5.0-bb.9] - 2023-10-06
+
 ### Changed
+
 - Updated OSCAL version from 1.0.0 to 1.1.1
 
 ## [1.5.0-bb.8] - 2023-09-19
+
 ### Fixed
+
 - Updated to gluon 0.4.1 and Cypress 13.x
 - Updated Cypress tests to work with Cypress 13.x
 
 ## [1.5.0-bb.7] - 2023-08-24
+
 ### Fixed
+
 - Updated test to work when there are multiple targets present
 
 ## [1.5.0-bb.6] - 2023-08-22
+
 ### Fixed
+
 - Updated namespace for grafana dependency and reverted test values back to using the monitoring namespace
 
 ## [1.5.0-bb.5] - 2023-08-16
+
 ### Fixed
+
 - Update path and formatting in dependencies.yaml under tests directory
 
 ## [1.5.0-bb.4] - 2023-05-26
+
 ### Added
+
 - Added OpenShift support
 
 ## [1.5.0-bb.3] - 2023-05-19
+
 ### Changed
+
 - Update cypress tests for compatibility with latest monitoring version (45.27.2)
 
 ## [1.5.0-bb.2] - 2023-01-17
+
 ### Changed
+
 - Update gluon to new registry1 location + latest version (0.3.2)
 
 ## [1.5.0-bb.1] - 2022-10-26
+
 ### Added
+
 - Added contributing doc
 
 ## [1.5.0-bb.0] - 2022-09-16
+
 ### Changed
+
 - ironbank/bigbang/cluster-auditor/opa-exporter updated from 0.0.4 to 0.0.7
 
 ## [1.4.0-bb.10]
+
 ### Fixed
+
 - Resolved issues with cypress tests
 
 ## [1.4.0-bb.9]
+
 ### Changed
+
 - Removed mTLS exception
 
 ## [1.4.0-bb.8]
+
 ### Updated
+
 - Fixed dashboard check in cypress test
 
 ## [1.4.0-bb.7]
+
 ### Updated
+
 - PrometheusRule resource for OPA constraint alerts
 
 ## [1.4.0-bb.6]
+
 ### Updated
+
 - Cypress test now checks the table with the list of violations and the "violations by kind" bar chart for a "no data" message.
 
 ## [1.4.0-bb.5]
+
 ### Added
+
 - added securityContext: capabilities: drop: ALL
 - Updated gluon to 0.2.10
 
 ## [1.4.0-bb.4]
+
 ### Changed
+
 - Updated securityContext user and group  to nonroot
 
 ## [1.4.0-bb.3]
+
 ### Changed
+
 - Fixed typo in OSCAL document
 
 ## [1.4.0-bb.2]
+
 ### Added
+
 - CI tests to verify violations index
 
 ## [1.4.0-bb.1]
+
 ### Added
+
 - Added Tempo Zipkin Egress Policy
 
 ## [1.4.0-bb.0]
+
 ### Added
+
 - New Kptfile to follow other package version of kpt
+
 ### Changed
+
 - Image version to v0.0.4
 - App version to 0.0.4
 
@@ -142,7 +203,6 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 - Update Chart.yaml to follow new standardization for release automation
 - Added renovate check to update new standardization
-
 
 ## [1.2.0-bb.0]
 
