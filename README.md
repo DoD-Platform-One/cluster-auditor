@@ -5,6 +5,7 @@
 OPA Exporter Helm Chart providing monitoring of violations from OPA Gatekeeper
 
 ## Learn More
+
 * [Application Overview](docs/overview.md)
 * [Other Documentation](docs/)
 
@@ -16,12 +17,13 @@ OPA Exporter Helm Chart providing monitoring of violations from OPA Gatekeeper
 
 Install Helm
 
-https://helm.sh/docs/intro/install/
+<https://helm.sh/docs/intro/install/>
 
 ## Deployment
 
 * Clone down the repository
 * cd into directory
+
 ```bash
 helm install cluster-auditor chart/
 ```
