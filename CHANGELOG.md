@@ -4,6 +4,18 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ---
 
+## [1.5.0-bb.19] - 2024-07-03
+
+### Changed
+
+- Removing the shared authorization policies
+
+## [1.5.0-bb.18] - 2024-06-25
+
+### Changed
+
+- Updated DEVELOPMENT_MAINTENANCE.md with instructions for integration testing in pipeline
+
 ## [1.5.0-bb.17] - 2024-06-03
 
 ### Changed
