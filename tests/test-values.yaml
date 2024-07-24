@@ -6,21 +6,8 @@ elasticsearch:
   imagePullSecrets:
   - name: private-registry
 
-istio:
-  enabled: false
-
 networkPolicies:
   enabled: true
-
-imagePullSecrets:
-- name: private-registry
-
-monitoring:
-  enabled: true
-  dashboards:
-    label: 
-      grafana_dashboard: '1'
-    namespace: monitoring
 
 bbtests:
   enabled: true

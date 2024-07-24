@@ -4,6 +4,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ---
 
+## [1.5.0-bb.20] - 2024-07-24
+
+### Changed
+
+- Removed redundant entries in package test-values.yaml already in package values.yaml
+
 ## [1.5.0-bb.19] - 2024-07-03
 
 ### Changed
