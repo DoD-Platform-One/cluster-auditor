@@ -1,11 +1,10 @@
 # cluster-auditor
 
-![Version: 1.5.0-bb.19](https://img.shields.io/badge/Version-1.5.0--bb.19-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.0.7](https://img.shields.io/badge/AppVersion-0.0.7-informational?style=flat-square)
+![Version: 1.5.0-bb.20](https://img.shields.io/badge/Version-1.5.0--bb.20-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.0.7](https://img.shields.io/badge/AppVersion-0.0.7-informational?style=flat-square)
 
 OPA Exporter Helm Chart providing monitoring of violations from OPA Gatekeeper
 
 ## Learn More
-
 * [Application Overview](docs/overview.md)
 * [Other Documentation](docs/)
 
@@ -17,13 +16,12 @@ OPA Exporter Helm Chart providing monitoring of violations from OPA Gatekeeper
 
 Install Helm
 
-<https://helm.sh/docs/intro/install/>
+https://helm.sh/docs/intro/install/
 
 ## Deployment
 
 * Clone down the repository
 * cd into directory
-
 ```bash
 helm install cluster-auditor chart/
 ```
