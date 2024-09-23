@@ -19,8 +19,10 @@ spec:
       {{- end }}
       labels:
         app: opa-exporter
-        {{- include "bigbang.labels" . | nindent 8 }}
         {{- include "clusterauditor.labels" . | nindent 8 }}
+        {{- if .Values.podLabels }}
+          {{- tpl (toYaml .Values.podLabels) $ | nindent 8 }}
+        {{- end }}
     spec:
       nodeSelector:
         beta.kubernetes.io/os: linux

@@ -3,6 +3,12 @@
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ---
+## [1.5.0-bb.22] - 2024-09-04
+
+### Changed
+
+- Removed Kiali labels from package, run input labels through `tpl` to evaluate template expressions
+
 ## [1.5.0-bb.21] - 2024-07-30
 
 ### Changed

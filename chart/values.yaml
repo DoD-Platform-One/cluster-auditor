@@ -42,6 +42,8 @@ monitoring:
       grafana_dashboard: '1'
     namespace: monitoring
 
+podLabels: {}
+
 image:
   repo: registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter
   tag: v0.0.7
