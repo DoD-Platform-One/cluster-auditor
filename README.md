@@ -1,15 +1,11 @@
 <!-- Warning: Do not manually edit this file. See notes on gluon + helm-docs at the end of this file for more information. -->
 # cluster-auditor
 
-![Version: 1.5.0-bb.22](https://img.shields.io/badge/Version-1.5.0--bb.22-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.0.7](https://img.shields.io/badge/AppVersion-0.0.7-informational?style=flat-square)
+![Version: 1.5.0-bb.23](https://img.shields.io/badge/Version-1.5.0--bb.23-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.0.7](https://img.shields.io/badge/AppVersion-0.0.7-informational?style=flat-square) ![Maintenance Track: bb_integrated](https://img.shields.io/badge/Maintenance_Track-bb_integrated-green?style=flat-square)
 
 OPA Exporter Helm Chart providing monitoring of violations from OPA Gatekeeper
 
-## Upstream Packages
-
-This package has no upstream packages.
-
-### Upstream Release Notes
+## Upstream Release Notes
 
 This package has no upstream release note links on file. Please add some to [chart/Chart.yaml](chart/Chart.yaml) under `annotations.bigbang.dev/upstreamReleaseNotesMarkdown`.
 Example:
@@ -21,14 +17,15 @@ annotations:
 ```
 
 ## Learn More
-* [Application Overview](docs/overview.md)
-* [Other Documentation](docs/)
+
+- [Application Overview](docs/overview.md)
+- [Other Documentation](docs/)
 
 ## Pre-Requisites
 
-* Kubernetes Cluster deployed
-* Kubernetes config installed in `~/.kube/config`
-* Helm installed
+- Kubernetes Cluster deployed
+- Kubernetes config installed in `~/.kube/config`
+- Helm installed
 
 Install Helm
 
@@ -36,8 +33,9 @@ https://helm.sh/docs/intro/install/
 
 ## Deployment
 
-* Clone down the repository
-* cd into directory
+- Clone down the repository
+- cd into directory
+
 ```bash
 helm install cluster-auditor chart/
 ```
@@ -59,6 +57,7 @@ helm install cluster-auditor chart/
 | monitoring.enabled | bool | `true` |  |
 | monitoring.dashboards.label.grafana_dashboard | string | `"1"` |  |
 | monitoring.dashboards.namespace | string | `"monitoring"` |  |
+| podLabels | object | `{}` |  |
 | image.repo | string | `"registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter"` |  |
 | image.tag | string | `"v0.0.7"` |  |
 | image.imagePullPolicy | string | `"Always"` |  |
