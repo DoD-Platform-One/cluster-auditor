@@ -1,13 +1,37 @@
-collect:
-  objects: true
-
-elasticsearch:
-  dedicated: true
-  imagePullSecrets:
-  - name: private-registry
-
-networkPolicies:
+#########################
+# Disable Core Packages #
+#########################
+neuvector:
+  enabled: false
+loki:
+  enabled: false
+promtail:
+  enabled: false
+tempo:
+  enabled: false
+kyvernoReporter:
+  enabled: false
+kiali:
+  enabled: false
+addons:
+  minioOperator:
+    enabled: false
+########################
+# Required for package #
+########################
+clusterAuditor:
   enabled: true
-
-bbtests:
+monitoring:
   enabled: true
+grafana:
+  enabled: true
+gatekeeper:
+  enabled: true
+kyvernoPolicies:
+  values:
+    bbtests:
+      enabled: false
+kyverno:
+  values:
+    bbtests:
+      enabled: false
