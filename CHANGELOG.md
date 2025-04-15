@@ -3,6 +3,14 @@
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ---
+
+## [1.5.0-bb.24] - 2025-04-14
+
+### Changed
+
+- Updated Gluon to `0.5.15`
+- Updated Cypress tests
+
 ## [1.5.0-bb.23] - 2024-11-22
 
 ### Changed
