@@ -1,37 +1,61 @@
 {
-    "baseBranches": ["main"],
+    "baseBranches": [
+        "main"
+    ],
     "configWarningReuseIssue": false,
     "dependencyDashboard": true,
     "dependencyDashboardTitle": "Renovate: Upgrade Cluster Auditor Package Dependencies",
     "draftPR": true,
-    "enabledManagers": ["helm-values","regex"],
-    "ignorePaths": ["chart/charts/**"],
-    "labels": ["clusterAuditor","renovate"],
+    "enabledManagers": [
+        "helm-values",
+        "custom.regex"
+    ],
+    "ignorePaths": [
+        "chart/charts/**"
+    ],
+    "labels": [
+        "clusterAuditor",
+        "renovate"
+    ],
     "packageRules": [
         {
-            "matchDatasources": ["docker"],
+            "matchDatasources": [
+                "docker"
+            ],
             "groupName": "Ironbank",
-            "registryUrls": ["https://registry1.dso.mil"],
+            "registryUrls": [
+                "https://registry1.dso.mil"
+            ],
             "postUpgradeTasks": {
-              "commands": [
-                  "bump-chart-yaml",
-                  "regenerate-helm-docs",
-                  "bump-changelog '- {{{replace 'registry1.dso.mil/' '' depName}}} updated from {{{replace 'v' '' currentVersion}}} to {{{replace 'v' '' newVersion}}}'"
-              ],
-              "fileFilters": ["chart/Chart.yaml", "README.md", "CHANGELOG.md"]
+                "commands": [
+                    "bump-chart-yaml",
+                    "regenerate-helm-docs",
+                    "bump-changelog '- {{{replace 'registry1.dso.mil/' '' depName}}} updated from {{{replace 'v' '' currentVersion}}} to {{{replace 'v' '' newVersion}}}'"
+                ],
+                "fileFilters": [
+                    "chart/Chart.yaml",
+                    "README.md",
+                    "CHANGELOG.md"
+                ]
             }
-          }
+        }
     ],
-    "regexManagers": [
+    "customManagers": [
         {
-            "fileMatch": ["^chart/values\\.yaml$"],
+            "customType": "regex",
+            "fileMatch": [
+                "^chart/values\\.yaml$"
+            ],
             "matchStrings": [
                 "repo\\S*:\\s*(?<depName>\\S+).*\n\\s+tag:\\s*(?<currentValue>.+)"
             ],
             "datasourceTemplate": "docker"
         },
         {
-            "fileMatch": ["^chart/Chart\\.yaml$"],
+            "customType": "regex",
+            "fileMatch": [
+                "^chart/Chart\\.yaml$"
+            ],
             "matchStrings": [
                 "Cluster Auditor:\\s+(?<currentValue>.+)",
                 "appVersion:\\s+(?<currentValue>.+)"
@@ -42,7 +66,10 @@
             "registryUrlTemplate": "https://registry1.dso.mil"
         },
         {
-            "fileMatch": ["^chart/Chart\\.yaml$"],
+            "customType": "regex",
+            "fileMatch": [
+                "^chart/Chart\\.yaml$"
+            ],
             "matchStrings": [
                 "image:[^\\S\\r\\n]+(?<depName>.+):(?<currentValue>.+)"
             ],
@@ -50,5 +77,7 @@
         }
     ],
     "separateMajorMinor": false,
-    "postUpdateOptions": ["helmUpdateSubChartArchives"]
+    "postUpdateOptions": [
+        "helmUpdateSubChartArchives"
+    ]
 }
