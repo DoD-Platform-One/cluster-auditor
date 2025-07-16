@@ -4,6 +4,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ---
 
+## [1.5.0-bb.27] - 2025-07-15
+
+### Updated
+
+- Changed the package maintenance track
+
 ## [1.5.0-bb.26] - 2025-06-20
 
 ### Changed
