@@ -4,6 +4,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ---
 
+## [1.5.0-bb.29] - 2025-11-06
+
+### Updated
+
+- Clarified there is no upstream chart for cluster-auditor
+
 ## [1.5.0-bb.28] - 2025-09-18
 
 ### Updated

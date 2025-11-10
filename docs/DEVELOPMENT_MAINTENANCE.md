@@ -1,9 +1,9 @@
 # Code Changes for Updates
 
-Cluster-auditor is a modified version of the upstream chart for [opa-scorecard](https://github.com/runyontr/opa-scorecard/tree/master/kube-prometheus-stack). You can use `kpt` to update automatically from the upstream. To do this:
+Cluster-auditor is a modified version of the upstream repo for [opa-scorecard](https://github.com/runyontr/opa-scorecard/tree/master/kube-prometheus-stack). You can use `kpt` to update automatically from the upstream. To do this:
 
-1. Navigate to the opa-scorecard [upstream](https://github.com/runyontr/opa-scorecard/tree/master/kube-prometheus-stack) and find the latest chart version that works with the image update. 
-  a. For example, if updating to 0.0.7, search through the chart version git tags in the upstream until you find the most recent one that matches 0.0.7. For this example that would be [`exporter-go/v0.0.7`](https://github.com/runyontr/opa-scorecard/tree/exporter-go/v0.0.7/kube-prometheus-stack).
+1. Navigate to the opa-scorecard [upstream](https://github.com/runyontr/opa-scorecard/tree/master/kube-prometheus-stack) and find the latest version that works with the image update. 
+  a. For example, if updating to 0.0.7, search through the version git tags in the upstream until you find the most recent one that matches 0.0.7. For this example that would be [`exporter-go/v0.0.7`](https://github.com/runyontr/opa-scorecard/tree/exporter-go/v0.0.7/kube-prometheus-stack).
 
 2. From the top level of the repo run `kpt pkg update chart/dashboards/kube-prometheus-stack@{GIT TAG} --strategy alpha-git-patch` replacing `{GIT TAG}` with the tag you found in step one. You may run into some merge conflicts, resolve these in the way that makes the most sense. In general, if something is a Big Bang addition you will want to keep it, otherwise go with the upstream change.
 

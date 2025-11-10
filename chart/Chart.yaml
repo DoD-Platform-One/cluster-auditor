@@ -15,7 +15,7 @@ type: application
 # This is the chart version. This version number should be incremented each time you make changes
 # to the chart and its templates, including the app version.
 # Versions are expected to follow Semantic Versioning (https://semver.org/)
-version: 1.5.0-bb.28
+version: 1.5.0-bb.29
 # This is the version number of the application being deployed. This version number should be
 # incremented each time you make changes to the application. Versions are not expected to
 # follow Semantic Versioning. They should reflect the version the application is using.
@@ -31,3 +31,5 @@ annotations:
   helm.sh/images: |
     - name: opa-exporter
       image: registry1.dso.mil/ironbank/bigbang/cluster-auditor/opa-exporter:v0.0.7
+  bigbang.dev/upstreamReleaseNotesMarkdown: |
+    - This repo is a modified version of the upstream repo [opa-scorecard](https://github.com/runyontr/opa-scorecard/tree/master/kube-prometheus-stack)
