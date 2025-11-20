@@ -4,6 +4,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ---
 
+## [1.5.0-bb.30] - 2025-11-18
+
+### Updated
+
+- Updates the egress-kube-api NetworkPolicy to allow for setting the vpcCidr value
+
 ## [1.5.0-bb.29] - 2025-11-06
 
 ### Updated
