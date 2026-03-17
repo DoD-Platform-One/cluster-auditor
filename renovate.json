@@ -8,6 +8,7 @@
     "draftPR": true,
     "enabledManagers": [
         "helm-values",
+        "helmv3",
         "custom.regex"
     ],
     "ignorePaths": [
@@ -62,6 +63,18 @@
             ],
             "extractVersionTemplate": "^v(?<version>.*)$",
             "depNameTemplate": "ironbank/bigbang/cluster-auditor/opa-exporter",
+            "datasourceTemplate": "docker",
+            "registryUrlTemplate": "https://registry1.dso.mil"
+        },
+        {
+            "customType": "regex",
+            "managerFilePatterns": [
+                "/^chart/Chart\\.yaml$/"
+            ],
+            "matchStrings": [
+                "- name:[\\s]+gluon[\\s]+version:[\\s]+(?<currentValue>.*)"
+            ],
+            "depNameTemplate": "bigbang/gluon",
             "datasourceTemplate": "docker",
             "registryUrlTemplate": "https://registry1.dso.mil"
         },

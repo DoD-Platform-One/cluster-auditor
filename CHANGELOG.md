@@ -4,6 +4,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ---
 
+## [1.5.0-bb.31] - 2026-03-17
+
+### Changed
+
+- Updated gluon to `0.9.8`
+- Updated Renovate configuration to detect and update the gluon chart dependency
+
 ## [1.5.0-bb.30] - 2025-11-18
 
 ### Updated
